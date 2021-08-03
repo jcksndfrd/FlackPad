@@ -24,6 +24,7 @@ public class TextEditor extends JFrame {
 		frame = new JFrame(fileName + " - " + name);
 		listener = new Listener(this);
 		docListener = new DocListener(this);
+		frame.addWindowListener(new WinListener(this));
 		
 		menuBar = Layouts.getMenuBar(listener);
 		frame.add(menuBar);
@@ -34,50 +35,69 @@ public class TextEditor extends JFrame {
 		
 		frame.setSize(1000, 1000);
 		frame.setVisible(true);
-		frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 	}
-	TextEditor(JFrame window) {
-		try {
-			// Remove current window
-	        window.dispose();
-	        
-	        // Create new instance
-			new TextEditor();
-		}
-		catch (Exception e) {
-			System.out.println(e.toString());
+	
+	void newDoc() {
+		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(this);
+		int saved = FileIO.SAVED;
+		
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
+		if (saveChoice == JOptionPane.YES_OPTION) saved = FileIO.save(this);
+		
+		if (saved == FileIO.SAVED) {
+			this.setFile(null);
+			this.textArea.setText("");
+			this.setSaved(true);
 		}
 	}
-	public JFrame getFrame() {
+	
+	void exit() {
+		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(this);
+		int saved = FileIO.SAVED;
+		
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
+		if (saveChoice == JOptionPane.YES_OPTION) saved = FileIO.save(this);
+		
+		if (saved == FileIO.SAVED) {
+			frame.dispose();
+		}
+	}
+	
+	JFrame getFrame() {
 		return frame;
 	}
-	public JTextArea getTextArea() {
+	JTextArea getTextArea() {
 		return textArea;
 	}
 	
-	public boolean isSaved() {
+	boolean isSaved() {
 		return saved;
 	}
 	
-	public void setSaved(boolean saved) {
+	void setSaved(boolean saved) {
 		frame.setTitle((saved ? "" : "*") + fileName + " - " + name);
 		this.saved = saved;
 	}
 	
-	public File getFile() {
+	File getFile() {
 		return file;
 	}
 	
-	public void setFile(File file) {
+	void setFile(File file) {
 		this.file = file;
-		fileName = file.getName();
+		fileName = file == null ? "Untitled" : file.getName();
 	}
 	
-	public FileType getFileType() {
+	String getFileName() {
+		return fileName;
+	}
+	
+	FileType getFileType() {
 		return fileType;
 	}
 	
-	public void setFileType(FileType fileType) {
+	void setFileType(FileType fileType) {
 		this.fileType = fileType;
 	}
 	
