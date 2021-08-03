@@ -18,15 +18,14 @@ public class Listener implements ActionListener {
 
 		switch (e.getActionCommand()) {
 		case "New":
-			// 1. Check if the current file is saved
+			// Check if the current file is saved
 			// Saved --> Create a new file
 			// Unsaved --> Force user to save file
 
-			// Load a new file into the current window
-			boolean saved = true;
-			
-			if (!saved) {
+			if (!frame.isSaved()) {
 				// Force user to save this file
+				FileIO.save(frame);
+				break;
 			} 
 			else {
 				// Create new file in the same window
