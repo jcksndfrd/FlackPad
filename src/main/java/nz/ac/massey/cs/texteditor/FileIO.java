@@ -5,36 +5,48 @@ import javax.swing.*;
 
 public final class FileIO {
 	
+	public final static int SAVED = 0, NOT_SAVED = 1;
+	
 	private FileIO() {
 		throw new UnsupportedOperationException();
 	}
 
 	public static void open(TextEditor frame) {
-		JFileChooser fileChooser = new JFileChooser();
-		if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
-			loadFile(fileChooser.getSelectedFile().getAbsoluteFile(), frame);
-		};
-		frame.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
-		frame.setSaved(true);
+		int saveChoice = frame.isSaved() ? 1 : Dialogs.saveWarning(frame);
+		int saved = SAVED;
+
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
+		if (saveChoice == JOptionPane.YES_OPTION) saved = save(frame);
+
+		if (saved == SAVED) {
+			JFileChooser fileChooser = new JFileChooser();
+			if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
+				loadFile(fileChooser.getSelectedFile().getAbsoluteFile(), frame);
+				frame.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
+				frame.setSaved(true);
+			}
+		}
 	}
 	
-	public static void save(TextEditor frame) {
+	public static int save(TextEditor frame) {
 		if (frame.getFile() != null) {
 			saveFile(frame.getFile(), frame);
 			frame.setSaved(true);
-		} else {
-			saveAs(frame);
+			return SAVED;
 		}
+		return saveAs(frame);
 	}
 
-	public static void saveAs(TextEditor frame) {
+	public static int saveAs(TextEditor frame) {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Save As");
 		if (fileChooser.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
 			saveFile(fileChooser.getSelectedFile().getAbsoluteFile(), frame);
 			frame.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
 			frame.setSaved(true);
+			return SAVED;
 		}
+		return NOT_SAVED;
 	}
 
 	private static void loadFile(File file, TextEditor frame) {
@@ -62,5 +74,4 @@ public final class FileIO {
 			Dialogs.error("Something went wrong when saving that file", frame);
 		}
 	}
-
 }
