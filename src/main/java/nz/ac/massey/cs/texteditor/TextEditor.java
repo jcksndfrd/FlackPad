@@ -3,11 +3,13 @@ package nz.ac.massey.cs.texteditor;
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.event.DocumentListener;
 
 public class TextEditor extends JFrame {
+	private String name = "FlackPad";
 	private JFrame frame;
 	private ActionListener listener;
+	private DocumentListener docListener;
 	
 	private JMenuBar menuBar;
 	private JTextArea textArea;
@@ -15,16 +17,19 @@ public class TextEditor extends JFrame {
 	private boolean saved = true;
 	private File file;
 	private FileType fileType;
+	private String fileName;
 	
 	TextEditor() {
-		frame = new JFrame();
+		fileName = "Untitled";
+		frame = new JFrame(fileName + " - " + name);
 		listener = new Listener(this);
+		docListener = new DocListener(this);
 		
 		menuBar = Layouts.getMenuBar(listener);
 		frame.add(menuBar);
 		frame.setJMenuBar(menuBar);
 		
-		textArea = Layouts.getTextArea();
+		textArea = Layouts.getTextArea(docListener);
 		frame.add(new JScrollPane(textArea));
 		
 		frame.setSize(1000, 1000);
@@ -55,6 +60,7 @@ public class TextEditor extends JFrame {
 	}
 	
 	public void setSaved(boolean saved) {
+		frame.setTitle((saved ? "" : "*") + fileName + " - " + name);
 		this.saved = saved;
 	}
 	
@@ -64,6 +70,7 @@ public class TextEditor extends JFrame {
 	
 	public void setFile(File file) {
 		this.file = file;
+		fileName = file.getName();
 	}
 	
 	public FileType getFileType() {
