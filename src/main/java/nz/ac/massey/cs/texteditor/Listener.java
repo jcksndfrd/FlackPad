@@ -3,9 +3,15 @@ package nz.ac.massey.cs.texteditor;
 import java.awt.event.*;
 
 public class Listener implements ActionListener {
+	
+	private TextEditor frame;
+	
+	public Listener(TextEditor frame) {
+		this.frame = frame;
+	}
 
-	public void actionPerformed(ActionEvent e) {
-		System.out.println(e.getActionCommand());
+	public void actionPerformed(ActionEvent e) {		
+    
 		switch (e.getActionCommand()) {
 			case "New":
 				// 1. Check if the current file is saved
@@ -18,7 +24,15 @@ public class Listener implements ActionListener {
 				// Load a new text editor instance
 				new TextEditor();
 				break;
+      
+      case "Open":
+			  FileIO.open(frame);
+        
+      case "Save":
+			  FileIO.save(frame);
+        
+      case "Save As":
+			  FileIO.saveAs(frame);
 		}
 	}
-
 }
