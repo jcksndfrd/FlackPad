@@ -3,6 +3,7 @@ package nz.ac.massey.cs.texteditor;
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class TextEditor extends JFrame {
 	private JFrame frame;
@@ -24,8 +25,7 @@ public class TextEditor extends JFrame {
 		frame.setJMenuBar(menuBar);
 		
 		textArea = Layouts.getTextArea();
-		textArea.setBounds(5, 5, 900, 900);
-		frame.add(textArea);
+		frame.add(new JScrollPane(textArea));
 		
 		frame.setSize(1000, 1000);
 		frame.setVisible(true);

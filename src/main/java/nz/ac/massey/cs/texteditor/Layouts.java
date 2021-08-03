@@ -56,7 +56,7 @@ public final class Layouts {
 	
 	public static JTextArea getTextArea() {
 		JTextArea textArea = new JTextArea();
-		
+		textArea.setBorder(BorderFactory.createCompoundBorder(textArea.getBorder(), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 		return textArea;
 	}
 }
