@@ -10,17 +10,29 @@ public class Listener implements ActionListener {
 		this.frame = frame;
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		String action = e.getActionCommand();
-		
-		if (action == "Open") {
-			FileIO.open(frame);
-		}
-		if (action == "Save") {
-			FileIO.save(frame);
-		}
-		if (action == "Save As") {
-			FileIO.saveAs(frame);
+	public void actionPerformed(ActionEvent e) {		
+    
+		switch (e.getActionCommand()) {
+			case "New":
+				// 1. Check if the current file is saved
+				// 		Saved 	--> Create a new file
+				//		Unsaved 	--> Force user to save file 
+				
+				// Load a new file into the current window
+				
+			case "New Window":
+				// Load a new text editor instance
+				new TextEditor();
+				break;
+      
+      case "Open":
+			  FileIO.open(frame);
+        
+      case "Save":
+			  FileIO.save(frame);
+        
+      case "Save As":
+			  FileIO.saveAs(frame);
 		}
 	}
 }
