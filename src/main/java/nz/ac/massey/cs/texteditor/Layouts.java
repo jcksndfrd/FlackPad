@@ -3,7 +3,12 @@ package nz.ac.massey.cs.texteditor;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Layouts {
+public final class Layouts {
+	
+	private Layouts() {
+		throw new UnsupportedOperationException();
+	}
+	
 	public static JMenuBar getMenuBar(ActionListener listener) {
 		JMenuBar menuBar = new JMenuBar();
 		
