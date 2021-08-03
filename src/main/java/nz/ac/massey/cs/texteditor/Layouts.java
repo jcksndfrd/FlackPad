@@ -2,6 +2,7 @@ package nz.ac.massey.cs.texteditor;
 
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.event.DocumentListener;
 
 public final class Layouts {
 	
@@ -54,9 +55,10 @@ public final class Layouts {
 		return menuBar;
 	}
 	
-	public static JTextArea getTextArea() {
+	public static JTextArea getTextArea(DocumentListener docListener) {
 		JTextArea textArea = new JTextArea();
 		textArea.setBorder(BorderFactory.createCompoundBorder(textArea.getBorder(), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+		textArea.getDocument().addDocumentListener(docListener);
 		return textArea;
 	}
 }
