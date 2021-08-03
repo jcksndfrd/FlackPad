@@ -32,6 +32,7 @@ public class Listener implements ActionListener {
 				// Create new file in the same window
 				new TextEditor(jf);		
 			}
+			break;
 
 		case "New Window":
 			// Load a new text editor instance
