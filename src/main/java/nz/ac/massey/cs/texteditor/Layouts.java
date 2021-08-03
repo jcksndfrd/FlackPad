@@ -7,6 +7,7 @@ public class Layouts {
 	public static JMenuBar getMenuBar(ActionListener listener) {
 		JMenuBar menuBar = new JMenuBar();
 		
+		// Create main navigation menu
 		JMenu file = new JMenu("File");
 		JMenuItem[] fileItems = new JMenuItem[] {
 				new JMenuItem("New"),
@@ -21,6 +22,7 @@ public class Layouts {
 			file.add(fileItem);
 		}
 		
+		// Create edit navigation menu
 		JMenu edit = new JMenu("Edit");
 		JMenuItem[] editItems = new JMenuItem[] {
 				new JMenuItem("Cut"),
@@ -29,6 +31,7 @@ public class Layouts {
 				new JMenuItem("Delete"),
 				new JMenuItem("Find"),
 				new JMenuItem("Time and Date")};
+		// Add listeners to items
 		for (JMenuItem editItem:editItems) {
 			editItem.addActionListener(listener);
 			edit.add(editItem);
