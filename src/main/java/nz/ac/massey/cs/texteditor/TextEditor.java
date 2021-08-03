@@ -29,9 +29,23 @@ public class TextEditor extends JFrame {
 		
 		frame.setSize(1000, 1000);
 		frame.setVisible(true);
-		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
-	
+	TextEditor(JFrame window) {
+		try {
+			// Remove current window
+	        window.dispose();
+	        
+	        // Create new instance
+			new TextEditor();
+		}
+		catch (Exception e) {
+			System.out.println(e.toString());
+		}
+	}
+	public JFrame getFrame() {
+		return frame;
+	}
 	public JTextArea getTextArea() {
 		return textArea;
 	}
