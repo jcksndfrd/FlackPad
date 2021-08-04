@@ -3,6 +3,7 @@ package nz.ac.massey.cs.flackpad;
 import java.awt.event.*;
 import javax.swing.*;
 
+@SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
 	
 	private ActionListener menuListener;
