@@ -4,13 +4,14 @@ import java.awt.event.*;
 import java.io.File;
 import javax.swing.*;
 
+@SuppressWarnings("serial")
 class Window extends JFrame {
 	private String name = "FlackPad";
 	private JFrame frame;
 	private WindowListener winListener;
 	
-	private JMenuBar menuBar;
-	private JTextArea textArea;
+	private MenuBar menuBar;
+	private TextArea textArea;
 	
 	private boolean saved = true;
 	private File file;
@@ -65,7 +66,7 @@ class Window extends JFrame {
 	JFrame getFrame() {
 		return frame;
 	}
-	JTextArea getTextArea() {
+	TextArea getTextArea() {
 		return textArea;
 	}
 	
