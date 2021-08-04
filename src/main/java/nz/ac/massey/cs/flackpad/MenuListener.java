@@ -44,6 +44,8 @@ class MenuListener implements ActionListener {
 			break;
 		case "Paste":
 			break;
+		case "Select All":
+			break;
 		case "Delete":
 			break;
 		case "Find":
