@@ -32,6 +32,9 @@ class Window extends JFrame {
 		textArea = new TextArea(this);
 		frame.add(new JScrollPane(textArea));
 		
+		// Add key bindings to instance
+		new KeyBinder(this);
+				
 		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
