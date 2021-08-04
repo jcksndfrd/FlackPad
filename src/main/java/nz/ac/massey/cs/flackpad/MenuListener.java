@@ -16,39 +16,45 @@ class MenuListener implements ActionListener {
 		switch (e.getActionCommand()) {
 		//File menu
 		case "New":
-			window.newDoc();
+			Actions.performNew(window);
 			break;
 		case "New Window":
-			// Load a new text editor instance
-			new Window();
+			Actions.performNewWindow(window);
 			break;
 		case "Open":
-			FileIO.open(window);
+			Actions.performOpen(window);
 			break;
 		case "Save":
-			FileIO.save(window);
+			Actions.performSave(window);
 			break;
 		case "Save As":
-			FileIO.saveAs(window);
+			Actions.performSaveAs(window);
 			break;
 		case "Print":
+			Actions.performPrint(window);
 			break;
 		case "Exit":
-			window.exit();
+			Actions.performExit(window);
 			break;
 		
 		//Edit menu
 		case "Cut":
+			Actions.performCut(window);
 			break;
 		case "Copy":
+			Actions.performCopy(window);
 			break;
 		case "Paste":
+			Actions.performPaste(window);
 			break;
 		case "Select All":
+			Actions.performSelectAll(window);
 			break;
 		case "Delete":
+			Actions.performDelete(window);
 			break;
 		case "Find":
+			Actions.performFind(window);
 			break;
 		case"Time and Date":
 			window.getTextArea().addTimeAndDate();
