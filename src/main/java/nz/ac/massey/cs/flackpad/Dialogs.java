@@ -17,4 +17,8 @@ final class Dialogs {
 				"Warning: Unsaved Changes", 0, JOptionPane.PLAIN_MESSAGE, null, new String[] { "Save", "Don't Save", "Cancel" }, null);
 	}
 	
+	static void about(Window window) {
+		JOptionPane.showMessageDialog(window, "We're pretty cool\n- Fletch and Jack", "About FlackPad", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
 }
