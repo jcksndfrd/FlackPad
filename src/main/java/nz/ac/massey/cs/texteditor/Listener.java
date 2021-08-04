@@ -11,7 +11,6 @@ public class Listener implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
 		switch (e.getActionCommand()) {
 		case "New":
 			frame.newDoc();
@@ -37,4 +36,5 @@ public class Listener implements ActionListener {
 			frame.exit();
 		}
 	}
+	
 }

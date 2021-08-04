@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentListener;
 
 public class TextEditor extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private String name = "FlackPad";
 	private JFrame frame;
 	private ActionListener listener;
@@ -30,9 +31,13 @@ public class TextEditor extends JFrame {
 		frame.add(menuBar);
 		frame.setJMenuBar(menuBar);
 		
+		// Text area, with listener / key bindings
 		textArea = Layouts.getTextArea(docListener);
 		frame.add(new JScrollPane(textArea));
 		
+		((DocListener) docListener).addKeyBindings();////
+		
+		// Window size
 		frame.setSize(1000, 1000);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
