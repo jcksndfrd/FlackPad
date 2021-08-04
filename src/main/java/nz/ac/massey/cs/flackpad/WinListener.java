@@ -1,14 +1,14 @@
-package nz.ac.massey.cs.texteditor;
+package nz.ac.massey.cs.flackpad;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class WinListener implements WindowListener {
+class WinListener implements WindowListener {
 	
-	private TextEditor frame;
+	private Window window;
 	
-	public WinListener(TextEditor frame) {
-		this.frame = frame;
+	WinListener(Window window) {
+		this.window = window;
 	}
 
 	@Override
@@ -19,7 +19,7 @@ public class WinListener implements WindowListener {
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		frame.exit();
+		window.exit();
 	}
 
 	@Override
