@@ -1,6 +1,8 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.event.*;
+import java.util.LinkedHashMap;
+
 import javax.swing.*;
 
 @SuppressWarnings("serial")
@@ -20,19 +22,22 @@ class MenuBar extends JMenuBar {
 	
 	private void addFileMenu() {
 		JMenu fileMenu = new JMenu("File");
+		fileMenu.setMnemonic(KeyEvent.VK_F);
 		
-		JMenuItem[] fileItems = new JMenuItem[] {
-				new JMenuItem("New"),
-				new JMenuItem("New Window"),
-				new JMenuItem("Open"),
-				new JMenuItem("Save"),
-				new JMenuItem("Save As"),
-				new JMenuItem("Print"),
-				new JMenuItem("Exit")};
+		LinkedHashMap<String, KeyStroke> fileItems = new LinkedHashMap<String, KeyStroke>();
+		fileItems.put("New", KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK));
+		fileItems.put("New Window", KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK+InputEvent.SHIFT_DOWN_MASK));
+		fileItems.put("Open", KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
+		fileItems.put("Save", KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
+		fileItems.put("Save As", KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK+InputEvent.SHIFT_DOWN_MASK));
+		fileItems.put("Print", KeyStroke.getKeyStroke(KeyEvent.VK_P, InputEvent.CTRL_DOWN_MASK));
+		fileItems.put("Exit", KeyStroke.getKeyStroke(KeyEvent.VK_W, InputEvent.CTRL_DOWN_MASK));
 		
-		for (JMenuItem fileItem : fileItems) {
-			fileItem.addActionListener(menuListener);
-			fileMenu.add(fileItem);
+		for (String itemName : fileItems.keySet()) {
+			JMenuItem item = new JMenuItem(itemName);
+			item.setAccelerator(fileItems.get(itemName));
+			item.addActionListener(menuListener);
+			fileMenu.add(item);
 		}
 		
 		this.add(fileMenu);
@@ -40,18 +45,22 @@ class MenuBar extends JMenuBar {
 	
 	private void addEditMenu() {
 		JMenu editMenu = new JMenu("Edit");
+		editMenu.setMnemonic(KeyEvent.VK_E);
 		
-		JMenuItem[] editItems = new JMenuItem[] {
-				new JMenuItem("Cut"),
-				new JMenuItem("Copy"),
-				new JMenuItem("Paste"),
-				new JMenuItem("Delete"),
-				new JMenuItem("Find"),
-				new JMenuItem("Time and Date")};
+		LinkedHashMap<String, KeyStroke> editItems = new LinkedHashMap<String, KeyStroke>();
+		editItems.put("Cut", KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.CTRL_DOWN_MASK));
+		editItems.put("Copy", KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_DOWN_MASK));
+		editItems.put("Paste", KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_DOWN_MASK));
+		editItems.put("Select All",  KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
+		editItems.put("Delete", KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
+		editItems.put("Find", KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_DOWN_MASK));
+		editItems.put("Time and Date", KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0));
 		
-		for (JMenuItem editItem : editItems) {
-			editItem.addActionListener(menuListener);
-			editMenu.add(editItem);
+		for (String itemName : editItems.keySet()) {
+			JMenuItem item = new JMenuItem(itemName);
+			item.setAccelerator(editItems.get(itemName));
+			item.addActionListener(menuListener);
+			editMenu.add(item);
 		}
 		
 		this.add(editMenu);
@@ -59,6 +68,7 @@ class MenuBar extends JMenuBar {
 	
 	private void addHelpMenu() {
 		JMenu helpMenu = new JMenu("Help");
+		helpMenu.setMnemonic(KeyEvent.VK_H);
 		JMenuItem about = new JMenuItem("About");
 		about.addActionListener(menuListener);
 		helpMenu.add(about);
