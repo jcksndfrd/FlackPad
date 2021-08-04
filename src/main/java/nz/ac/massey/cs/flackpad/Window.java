@@ -1,15 +1,13 @@
-package nz.ac.massey.cs.texteditor;
+package nz.ac.massey.cs.flackpad;
 
 import java.awt.event.*;
 import java.io.File;
 import javax.swing.*;
-import javax.swing.event.DocumentListener;
 
-public class TextEditor extends JFrame {
+class Window extends JFrame {
 	private String name = "FlackPad";
 	private JFrame frame;
-	private ActionListener listener;
-	private DocumentListener docListener;
+	private WindowListener winListener;
 	
 	private JMenuBar menuBar;
 	private JTextArea textArea;
@@ -19,21 +17,21 @@ public class TextEditor extends JFrame {
 	private FileType fileType;
 	private String fileName;
 	
-	TextEditor() {
+	Window() {
 		fileName = "Untitled";
 		frame = new JFrame(fileName + " - " + name);
-		listener = new Listener(this);
-		docListener = new DocListener(this);
-		frame.addWindowListener(new WinListener(this));
 		
-		menuBar = Layouts.getMenuBar(listener);
+		winListener = new WinListener(this);
+		frame.addWindowListener(winListener);
+		
+		menuBar = new MenuBar(this);
 		frame.add(menuBar);
 		frame.setJMenuBar(menuBar);
 		
-		textArea = Layouts.getTextArea(docListener);
+		textArea = new TextArea(this);
 		frame.add(new JScrollPane(textArea));
 		
-		frame.setSize(1000, 1000);
+		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 	}
@@ -101,7 +99,4 @@ public class TextEditor extends JFrame {
 		this.fileType = fileType;
 	}
 	
-	public static void main(String[] args) {
-		new TextEditor();
-	}
 }
