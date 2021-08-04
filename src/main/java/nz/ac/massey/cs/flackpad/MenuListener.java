@@ -55,6 +55,7 @@ class MenuListener implements ActionListener {
 		
 		//Help menu
 		case "About":
+			Dialogs.about(window);
 			break;
 		}
 	}
