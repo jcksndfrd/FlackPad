@@ -1,10 +1,13 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.*;
 import java.util.LinkedHashMap;
 
 import javax.swing.*;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Highlighter;
 
 @SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
@@ -13,12 +16,14 @@ class MenuBar extends JMenuBar {
 	private JTextField findField;
 	private JButton exitFindButton;
 	private TextArea textarea;
+	private Window window;
 	
 	MenuBar(Window window) {
 		super();
 
 		menuListener = new MenuListener(window);
 		this.textarea = window.getTextArea();
+		this.window = window;
 		
 		this.addFileMenu();
 		this.addEditMenu();
@@ -92,7 +97,75 @@ class MenuBar extends JMenuBar {
 		findField.setVisible(false);
 		findField.addActionListener(menuListener);
 		this.add(findField);
+		
+		addListenersToFindBar();
+	}
+	private void addListenersToFindBar() {		
+		exitFindButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				hideFindBar();	
+			}
+		});
+		
+		// Set search listener
+		findField.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					TextArea textarea = window.getTextArea();
+	
+					String searchtext = findField.getText();
+					String text = textarea.getText();
+					
+					int offset = text.indexOf(searchtext);
+					int length = searchtext.length();
+					
+					// Remove all current highlights
+					textarea.getHighlighter().removeAllHighlights();
+			    
+					Highlighter.HighlightPainter painter = 
+						    new DefaultHighlighter.DefaultHighlightPainter( Color.cyan );
+					
+					// Get all occurrences
+					while ( offset != -1)
+					{
+					    try
+					    {
+					    	textarea.getHighlighter().addHighlight(offset, offset + length, painter);
+					        offset = text.indexOf(searchtext, offset + 1);
+					    }
+					    catch(Exception e1) { 
+							Dialogs.error("Could not highlight search phrase", window);
+					    }
+					}
+				
+				} catch (Exception err) {
+					Dialogs.error("Issue with find / replace listeners", window);
+				}
+			}
+		});		
+	}
+	public void hideFindBar() {
+		try {
+			findField.setVisible(false);
+			exitFindButton.setVisible(false);
+			TextArea textarea = window.getTextArea();
+			textarea.getHighlighter().removeAllHighlights();
+		} catch (Exception e) {
+			Dialogs.error("Could not hide search bar", window);
+		}
+		
+	}
+	public void showFindBar() {
+		try {
+			findField.setVisible(true);
+			exitFindButton.setVisible(true);
+			findField.requestFocus();
+		} catch (Exception e) {
+			Dialogs.error("Could not show search bar", window);
+		}
 	}
 	public JTextField getFindField() {
 		return findField;

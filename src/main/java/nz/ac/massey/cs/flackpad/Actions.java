@@ -100,61 +100,18 @@ public class Actions {
 	}
 
 	public static void performFind(Window windowInstance) {
-		TextArea area = windowInstance.getTextArea();
-		
-		// Show field with close button
-		JTextField findfield = windowInstance.getFindField();
-		findfield.setVisible(true);
-		JButton findclose = windowInstance.getFindClose();
-		findclose.setVisible(true);
-		
-		findclose.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Hide items for find / replace
-				findclose.setVisible(false);
-				findfield.setVisible(false);
-				// Remove all current highlights
-		    	area.getHighlighter().removeAllHighlights();
-
+		// Show find / replace bar
+		windowInstance.showFindBar();
+	}	
+	public static void performEscapeFind(Window windowInstance) {
+		try {
+			if (windowInstance.getFindField().isVisible()) {
+				windowInstance.hideFindBar();
 			}
-		});
-		findfield.requestFocus();
-		
-		// Set search listener
-		findfield.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {		
-				String searchtext = findfield.getText();
-				String text = area.getText();
-				
-				int offset = text.indexOf(searchtext);
-				int length = searchtext.length();
-				
-				// Remove all current highlights
-		    	area.getHighlighter().removeAllHighlights();
-		    
-				Highlighter.HighlightPainter painter = 
-					    new DefaultHighlighter.DefaultHighlightPainter( Color.cyan );
-				
-				// Get all occurrences
-				while ( offset != -1)
-				{
-				    try
-				    {
-				    	area.getHighlighter().addHighlight(offset, offset + length, painter);
-				        offset = text.indexOf(searchtext, offset + 1);
-
-				    }
-				    catch(Exception e1) { 
-						Dialogs.error("Could not highlight search phrase", windowInstance);
-				    }
-				}
-				
-			}
-		});
-		
+		} catch (Exception e) {
+			e.printStackTrace();
+			Dialogs.error("Could not escape search bar", windowInstance);
+		}
 	}	
 	public static void performDelete(Window windowInstance) {
 		windowInstance.getTextArea().replaceSelection(null);
