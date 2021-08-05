@@ -7,6 +7,10 @@ final class Dialogs {
 	private Dialogs() {
 		throw new UnsupportedOperationException();
 	}
+
+	public static void message(String message, Window window) {
+		JOptionPane.showMessageDialog(window, message, "Info", JOptionPane.INFORMATION_MESSAGE);
+	}
 	
 	static void error(String message, Window window) {
 		JOptionPane.showMessageDialog(window, message, "Error", JOptionPane.WARNING_MESSAGE);

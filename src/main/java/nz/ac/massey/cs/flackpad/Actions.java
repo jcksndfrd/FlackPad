@@ -163,4 +163,8 @@ public class Actions {
 	public static void performPrint(Window windowInstance) {
 		// Stub
 	}
+
+	public static void performPDFExport(Window window) {
+		FileIO.PDFExport(window);
+	}
 }

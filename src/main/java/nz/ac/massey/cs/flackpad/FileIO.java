@@ -1,9 +1,15 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.io.*;
+import java.net.InetAddress;
+
 import javax.swing.*;
 
 import org.apache.tika.Tika;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 final class FileIO {
 
@@ -119,6 +125,32 @@ final class FileIO {
 		}
 		
 		return LOADED;
+	}
+
+	public static void PDFExport(Window window) {
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setDialogTitle("Save As");
+		if (fileChooser.showSaveDialog(window) == JFileChooser.APPROVE_OPTION) {
+			Document document = new Document();
+			String filePath = fileChooser.getSelectedFile().getAbsolutePath();
+			if (!filePath.endsWith(".pdf")) filePath += ".pdf";
+			
+			try {
+				PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
+				
+				document.open();
+				document.addAuthor(InetAddress.getLocalHost().getHostName());
+				document.addCreationDate();
+				document.addCreator(window.getAppName());
+				document.add(new Paragraph(window.getTextArea().getText()));
+				document.close();
+				
+				writer.close();
+				Dialogs.message("Succesfully exported as \"" + filePath.substring(filePath.lastIndexOf("\\")+1) + "\"", window);
+			} catch (Exception e) {
+				Dialogs.error("Something wen't wrong exporting to PDF", window);
+			}
+		}
 	}
 
 }
