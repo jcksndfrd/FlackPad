@@ -12,6 +12,10 @@ final class Dialogs {
 		JOptionPane.showMessageDialog(window, message, "Error", JOptionPane.WARNING_MESSAGE);
 	}
 	
+	static void warning(String message, Window window) {
+		JOptionPane.showMessageDialog(window, message, "Warning", JOptionPane.WARNING_MESSAGE);
+	}
+	
 	static int saveWarning(Window window) {
 		return JOptionPane.showOptionDialog(window, "Do you want to save changes to " + window.getFileName(),
 				"Warning: Unsaved Changes", 0, JOptionPane.PLAIN_MESSAGE, null, new String[] { "Save", "Don't Save", "Cancel" }, null);
