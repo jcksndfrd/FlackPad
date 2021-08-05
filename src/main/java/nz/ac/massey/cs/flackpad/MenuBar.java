@@ -27,6 +27,7 @@ class MenuBar extends JMenuBar {
 		
 		this.addFileMenu();
 		this.addEditMenu();
+		this.addViewMenu();
 		this.addHelpMenu();
 		
 		this.addFindBar();
@@ -77,6 +78,25 @@ class MenuBar extends JMenuBar {
 		}
 		
 		this.add(editMenu);
+	}
+	
+	private void addViewMenu() {
+		JMenu viewMenu = new JMenu("View");
+		viewMenu.setMnemonic(KeyEvent.VK_V);
+		
+		LinkedHashMap<String, KeyStroke> viewItems = new LinkedHashMap<String, KeyStroke>();
+		viewItems.put("Zoom In", KeyStroke.getKeyStroke(KeyEvent.VK_CLOSE_BRACKET, InputEvent.CTRL_DOWN_MASK));
+		viewItems.put("Zoom Out", KeyStroke.getKeyStroke(KeyEvent.VK_OPEN_BRACKET, InputEvent.CTRL_DOWN_MASK));
+		viewItems.put("Reset Zoom", KeyStroke.getKeyStroke(KeyEvent.VK_0, InputEvent.CTRL_DOWN_MASK));
+		
+		for (String itemName : viewItems.keySet()) {
+			JMenuItem item = new JMenuItem(itemName);
+			item.setAccelerator(viewItems.get(itemName));
+			item.addActionListener(menuListener);
+			viewMenu.add(item);
+		}
+		
+		this.add(viewMenu);
 	}
 	
 	private void addHelpMenu() {

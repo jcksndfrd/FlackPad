@@ -59,8 +59,19 @@ class MenuListener implements ActionListener {
 		case "Find":
 			Actions.performFind(window);
 			break;
-		case"Time and Date":
+		case "Time and Date":
 			window.getTextArea().addTimeAndDate();
+			break;
+			
+		//View menu
+		case "Zoom In":
+			window.getTextArea().zoomIn();
+			break;
+		case "Zoom Out":
+			window.getTextArea().zoomOut();
+			break;
+		case "Reset Zoom":
+			window.getTextArea().resetZoom();
 			break;
 		
 		//Help menu
