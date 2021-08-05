@@ -73,6 +73,12 @@ class Window extends JFrame {
 		return menuBar.getFindClose();
 	}
 	
+	void showFindBar() {
+		menuBar.showFindBar();
+	}
+	void hideFindBar() {
+		menuBar.hideFindBar();
+	}
 	JFrame getFrame() {
 		return frame;
 	}
