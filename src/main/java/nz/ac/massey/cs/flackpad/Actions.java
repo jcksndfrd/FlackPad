@@ -157,7 +157,7 @@ public class Actions {
 		
 	}	
 	public static void performDelete(Window windowInstance) {
-		// Stub
+		windowInstance.getTextArea().replaceSelection(null);
 	}
 
 	public static void performPrint(Window windowInstance) {
