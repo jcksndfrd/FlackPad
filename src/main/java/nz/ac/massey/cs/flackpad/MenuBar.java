@@ -38,11 +38,12 @@ class MenuBar extends JMenuBar {
 		fileItems.put("Save", KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
 		fileItems.put("Save As", KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK+InputEvent.SHIFT_DOWN_MASK));
 		fileItems.put("Print", KeyStroke.getKeyStroke(KeyEvent.VK_P, InputEvent.CTRL_DOWN_MASK));
+		fileItems.put("Export to PDF", null);
 		fileItems.put("Exit", KeyStroke.getKeyStroke(KeyEvent.VK_W, InputEvent.CTRL_DOWN_MASK));
 		
 		for (String itemName : fileItems.keySet()) {
 			JMenuItem item = new JMenuItem(itemName);
-			item.setAccelerator(fileItems.get(itemName));
+			if (fileItems.get(itemName) != null) item.setAccelerator(fileItems.get(itemName));
 			item.addActionListener(menuListener);
 			fileMenu.add(item);
 		}

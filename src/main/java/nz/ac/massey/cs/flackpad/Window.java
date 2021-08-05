@@ -104,4 +104,8 @@ class Window extends JFrame {
 		return fileName;
 	}
 	
+	String getAppName() {
+		return name;
+	}
+	
 }
