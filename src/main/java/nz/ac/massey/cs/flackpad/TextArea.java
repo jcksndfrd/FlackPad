@@ -11,9 +11,9 @@ import javax.swing.text.BadLocationException;
 @SuppressWarnings("serial")
 class TextArea extends JTextArea {
 	
-	Window window;
-	int fontSize;
-	int fontPercentage;
+	private Window window;
+	private int fontSize;
+	private int fontPercentage;
 
 	TextArea(Window window) {
 		//Call JTextArea constructor
@@ -60,7 +60,6 @@ class TextArea extends JTextArea {
 	}
 	
 	private void zoom() {
-		System.out.println(fontPercentage);
 		setFont(new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100)));
 	}
 	
