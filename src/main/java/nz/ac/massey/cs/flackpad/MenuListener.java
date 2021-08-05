@@ -58,6 +58,7 @@ class MenuListener implements ActionListener {
 			break;
 		case"Time and Date":
 			window.getTextArea().addTimeAndDate();
+			break;
 		
 		//Help menu
 		case "About":

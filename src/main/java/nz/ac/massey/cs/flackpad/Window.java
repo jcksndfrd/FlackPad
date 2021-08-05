@@ -15,8 +15,8 @@ class Window extends JFrame {
 	
 	private boolean saved = true;
 	private File file;
-	private FileType fileType;
 	private String fileName;
+	private String fileMIME;
 	
 	Window() {
 		fileName = "Untitled";
@@ -89,18 +89,12 @@ class Window extends JFrame {
 	void setFile(File file) {
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
+		fileMIME = FileIO.getFileMIME(file);
+//		System.out.println(fileMIME);
 	}
 	
 	String getFileName() {
 		return fileName;
-	}
-	
-	FileType getFileType() {
-		return fileType;
-	}
-	
-	void setFileType(FileType fileType) {
-		this.fileType = fileType;
 	}
 	
 }
