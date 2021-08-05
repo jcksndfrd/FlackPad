@@ -1,5 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Dimension;
 import java.awt.event.*;
 import java.util.LinkedHashMap;
 
@@ -9,15 +10,21 @@ import javax.swing.*;
 class MenuBar extends JMenuBar {
 	
 	private ActionListener menuListener;
+	private JTextField findField;
+	private JButton exitFindButton;
+	private TextArea textarea;
 	
 	MenuBar(Window window) {
 		super();
 
 		menuListener = new MenuListener(window);
+		this.textarea = window.getTextArea();
 		
 		this.addFileMenu();
 		this.addEditMenu();
 		this.addHelpMenu();
+		
+		this.addFindBar();
 	}
 	
 	private void addFileMenu() {
@@ -75,4 +82,22 @@ class MenuBar extends JMenuBar {
 		this.add(helpMenu);
 	}
 	
+	private void addFindBar() {
+		exitFindButton = new JButton("X");
+		exitFindButton.setVisible(false);
+		this.add(exitFindButton);
+		
+		findField = new JTextField("");
+		findField.setVisible(false);
+		findField.addActionListener(menuListener);
+		this.add(findField);
+
+	}
+	public JTextField getFindField() {
+		return findField;
+	}
+	public JButton getFindClose() {
+		return exitFindButton;
+	}
+		
 }
