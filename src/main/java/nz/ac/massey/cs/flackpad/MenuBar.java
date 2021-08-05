@@ -5,7 +5,12 @@ import java.awt.Dimension;
 import java.awt.event.*;
 import java.util.LinkedHashMap;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
