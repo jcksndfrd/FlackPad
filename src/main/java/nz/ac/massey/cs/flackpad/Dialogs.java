@@ -1,8 +1,11 @@
 package nz.ac.massey.cs.flackpad;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 final class Dialogs {
+	
+	private static final ImageIcon icon = new ImageIcon("64x64.png");
 	
 	private Dialogs() {
 		throw new UnsupportedOperationException();
@@ -26,7 +29,7 @@ final class Dialogs {
 	}
 	
 	static void about(Window window) {
-		JOptionPane.showMessageDialog(window, "We're pretty cool\n- Fletch and Jack", "About FlackPad", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(window, "We're pretty cool\n- Fletch and Jack", "About FlackPad", JOptionPane.INFORMATION_MESSAGE, icon);
 	}
 	
 }

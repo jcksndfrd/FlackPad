@@ -1,8 +1,16 @@
 package nz.ac.massey.cs.flackpad;
 
-import java.awt.event.*;
+import java.awt.event.WindowListener;
 import java.io.File;
-import javax.swing.*;
+import java.util.List;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 
 @SuppressWarnings("serial")
 class Window extends JFrame {
@@ -19,22 +27,37 @@ class Window extends JFrame {
 	private String fileMIME;
 	
 	Window() {
+		// Create JFrame and set title
 		fileName = "Untitled";
 		frame = new JFrame(fileName + " - " + name);
 		
+		// Add icon
+//		ImageIcon icon = new ImageIcon("./flackpad.png");
+//		System.out.println(icon.getImageLoadStatus());
+//		frame.setIconImage(icon.getImage());
+		frame.setIconImages(List.of(
+				new ImageIcon("16x16.png").getImage(),
+				new ImageIcon("32x32.png").getImage(),
+				new ImageIcon("64x64.png").getImage(),
+				new ImageIcon("128x128.png").getImage()));
+		
+		// Add window listener
 		winListener = new WinListener(this);
 		frame.addWindowListener(winListener);
 		
+		// Add menu bar
 		menuBar = new MenuBar(this);
 		frame.add(menuBar);
 		frame.setJMenuBar(menuBar);
 		
+		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		frame.add(new JScrollPane(textArea));
 		
 		// Add key bindings to instance
 		new KeyBinder(this);
-				
+		
+		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
