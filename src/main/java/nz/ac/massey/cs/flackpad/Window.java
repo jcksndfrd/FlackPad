@@ -66,6 +66,13 @@ class Window extends JFrame {
 		}
 	}
 	
+	JTextField getFindField() {
+		return menuBar.getFindField();
+	}
+	JButton getFindClose() {
+		return menuBar.getFindClose();
+	}
+	
 	JFrame getFrame() {
 		return frame;
 	}

@@ -1,10 +1,20 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.Area;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Highlighter;
 
 public class Actions {
 
@@ -86,14 +96,67 @@ public class Actions {
 			textArea.setSelectionEnd(textArea.getText().length());
 		} catch (Exception err) {
 			Dialogs.error("Could not select all", windowInstance);
-		}
-	}
-
-	public static void performDelete(Window windowInstance) {
-		// Stub
+    	}
 	}
 
 	public static void performFind(Window windowInstance) {
+		TextArea area = windowInstance.getTextArea();
+		
+		// Show field with close button
+		JTextField findfield = windowInstance.getFindField();
+		findfield.setVisible(true);
+		JButton findclose = windowInstance.getFindClose();
+		findclose.setVisible(true);
+		
+		findclose.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// Hide items for find / replace
+				findclose.setVisible(false);
+				findfield.setVisible(false);
+				// Remove all current highlights
+		    	area.getHighlighter().removeAllHighlights();
+
+			}
+		});
+		findfield.requestFocus();
+		
+		// Set search listener
+		findfield.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {		
+				String searchtext = findfield.getText();
+				String text = area.getText();
+				
+				int offset = text.indexOf(searchtext);
+				int length = searchtext.length();
+				
+				// Remove all current highlights
+		    	area.getHighlighter().removeAllHighlights();
+		    
+				Highlighter.HighlightPainter painter = 
+					    new DefaultHighlighter.DefaultHighlightPainter( Color.cyan );
+				
+				// Get all occurrences
+				while ( offset != -1)
+				{
+				    try
+				    {
+				    	area.getHighlighter().addHighlight(offset, offset + length, painter);
+				        offset = text.indexOf(searchtext, offset + 1);
+
+				    }
+				    catch(Exception e1) { 
+						Dialogs.error("Could not highlight search phrase", windowInstance);
+				    }
+				}
+				
+			}
+		});
+		
+	}	
+	public static void performDelete(Window windowInstance) {
 		// Stub
 	}
 
