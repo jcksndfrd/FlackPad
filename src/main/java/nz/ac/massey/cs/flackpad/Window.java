@@ -17,6 +17,7 @@ class Window extends JFrame {
 	private String name = "FlackPad";
 	private JFrame frame;
 	private WindowListener winListener;
+	private Config config;
 	
 	private MenuBar menuBar;
 	private TextArea textArea;
@@ -32,14 +33,11 @@ class Window extends JFrame {
 		frame = new JFrame(fileName + " - " + name);
 		
 		// Add icon
-//		ImageIcon icon = new ImageIcon("./flackpad.png");
-//		System.out.println(icon.getImageLoadStatus());
-//		frame.setIconImage(icon.getImage());
 		frame.setIconImages(List.of(
-				new ImageIcon("16x16.png").getImage(),
-				new ImageIcon("32x32.png").getImage(),
-				new ImageIcon("64x64.png").getImage(),
-				new ImageIcon("128x128.png").getImage()));
+				new ImageIcon("icons/16x16.png").getImage(),
+				new ImageIcon("icons/32x32.png").getImage(),
+				new ImageIcon("icons/64x64.png").getImage(),
+				new ImageIcon("icons/128x128.png").getImage()));
 		
 		// Add window listener
 		winListener = new WinListener(this);
@@ -61,6 +59,12 @@ class Window extends JFrame {
 		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		
+		// Get config
+		config = new Config(this);
+		
+		// Set configuration
+		textArea.setFontWithZoom(config.getFont());
 	}
 	
 	void newDoc() {
@@ -85,6 +89,7 @@ class Window extends JFrame {
 		if (saveChoice == JOptionPane.YES_OPTION) saved = FileIO.save(this);
 		
 		if (saved == FileIO.SAVED) {
+			config.saveConfigFile();
 			frame.dispose();
 		}
 	}
@@ -126,7 +131,6 @@ class Window extends JFrame {
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
 		fileMIME = FileIO.getFileMIME(file);
-//		System.out.println(fileMIME);
 	}
 	
 	String getFileName() {

@@ -39,6 +39,12 @@ class TextArea extends JTextArea {
 		}
 	}
 	
+	void setFontWithZoom(Font font) {
+		fontSize = font.getSize();
+		setFont(font);
+		zoom();
+	}
+	
 	//Zoom methods work by changing font size
 	void zoomIn() {
 		if (fontPercentage < 1000) {

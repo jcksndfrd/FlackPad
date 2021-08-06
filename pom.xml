@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.ac.massey.cs</groupId>
 	<artifactId>nz.ac.massey.cs.flackpad</artifactId>
-	<version>0.3.4-SNAPSHOT</version>
+	<version>0.3.5</version>
 	<properties>
 		<javaVersion>16</javaVersion>
 		<maven.compiler.source>16</maven.compiler.source>
@@ -21,6 +21,11 @@
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.13.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.29</version>
 		</dependency>
 	</dependencies>
 	<build>
