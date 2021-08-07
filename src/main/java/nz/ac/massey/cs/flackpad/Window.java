@@ -158,7 +158,7 @@ class Window extends JFrame {
 	}
 	
 	void newDoc() {
-		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(this);
+		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, this);
 		int saved = FileIO.SAVED;
 		
 		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
@@ -172,7 +172,7 @@ class Window extends JFrame {
 	}
 	
 	void exit() {
-		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(this);
+		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, this);
 		int saved = FileIO.SAVED;
 		
 		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
@@ -234,5 +234,9 @@ class Window extends JFrame {
 	
 	String getAppName() {
 		return name;
-	}	
+	}
+	
+	void setText(String text) {
+		textArea.setText(text);
+	}
 }

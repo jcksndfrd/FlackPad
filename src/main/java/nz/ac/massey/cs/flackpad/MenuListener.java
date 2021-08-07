@@ -34,7 +34,7 @@ class MenuListener implements ActionListener {
 			Actions.performPrint(window);
 			break;
 		case "Export to PDF":
-			Actions.performPDFExport(window);
+			PdfExporter.export(window.getTextArea().getText(), window.getAppName(), window);
 			break;
 		case "Exit":
 			Actions.performExit(window);

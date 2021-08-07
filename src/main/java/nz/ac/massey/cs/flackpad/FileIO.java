@@ -1,27 +1,19 @@
 package nz.ac.massey.cs.flackpad;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.InetAddress;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import org.apache.tika.Tika;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
-
 final class FileIO {
 
 	final static int SAVED = 0, NOT_SAVED = 1;
-	private final static int LOADED = 0, NOT_LOADED = 1, WRONG_TYPE = 2;
+	private final static int NOT_LOADED = -1, LOADED = 0, WRONG_TYPE = 1, IMPORTED = 2;
 
 	private FileIO() {
 		throw new UnsupportedOperationException();
@@ -39,25 +31,34 @@ final class FileIO {
 	}
 
 	static void open(Window window) {
-		int saveChoice = window.isSaved() ? 1 : Dialogs.saveWarning(window);
+		int saveChoice = window.isSaved() ? 1 : Dialogs.saveWarning(window.getFileName(), window);
 		int saved = SAVED;
 
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
-		if (saveChoice == JOptionPane.YES_OPTION) saved = save(window);
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION)
+			return;
+		if (saveChoice == JOptionPane.YES_OPTION)
+			saved = save(window);
 
 		if (saved == SAVED) {
 			JFileChooser fileChooser = new JFileChooser();
 			if (fileChooser.showOpenDialog(window) == JFileChooser.APPROVE_OPTION) {
 				int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile(), window);
-				if (loaded == LOADED || loaded == WRONG_TYPE) {
+
+				if (loaded == LOADED || loaded == WRONG_TYPE || loaded == IMPORTED) {
 					window.getTextArea().setCaretPosition(0);
+				}
+
+				if (loaded == LOADED || loaded == WRONG_TYPE) {
 					window.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
 					window.setSaved(true);
-				} else if (loaded == NOT_LOADED) {
-					Dialogs.error("Something went wrong when loading that file", window);
 				}
+
 				if (loaded == WRONG_TYPE) {
 					Dialogs.warning("The contents of this file may not be displayed properly", window);
+				}
+
+				if (loaded == NOT_LOADED) {
+					Dialogs.error("Something went wrong when loading that file", window);
 				}
 			}
 		}
@@ -86,20 +87,32 @@ final class FileIO {
 
 	private static int loadFile(File file, Window window) {
 		String fileMIME = getFileMIME(file);
-		
-		if (fileMIME.startsWith("text")) return loadTextFile(file, window);
-		
-		if (fileMIME.startsWith("application")) {
-			switch (fileMIME.substring(12)) {
-			case "x-bat":
-				return loadTextFile(file, window);
-			case "xml":
-				return loadTextFile(file, window);
+
+		try {
+			if (fileMIME.startsWith("text")) {
+				window.setText(TextFileLoader.loadFile(file));
+				return LOADED;
 			}
+
+			if (fileMIME.startsWith("application")) {
+				switch (fileMIME.substring(12)) {
+				case "x-bat":
+					window.setText(TextFileLoader.loadFile(file));
+					return LOADED;
+				case "xml":
+					window.setText(TextFileLoader.loadFile(file));
+					return LOADED;
+				case "vnd.oasis.opendocument.text":
+					window.setText(OdtFileLoader.loadFile(file));
+					return IMPORTED;
+				}
+			}
+
+			window.setText(TextFileLoader.loadFile(file));
+			return WRONG_TYPE;
+		} catch (IOException e) {
+			return NOT_LOADED;
 		}
-		
-		loadTextFile(file, window);
-		return WRONG_TYPE;
 	}
 
 	private static void saveFile(File file, Window window) {
@@ -110,53 +123,6 @@ final class FileIO {
 			writer.close();
 		} catch (IOException e) {
 			Dialogs.error("Something went wrong when saving that file", window);
-		}
-	}
-
-	private static int loadTextFile(File file, Window window) {
-		window.getTextArea().setText("");
-
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(file));
-			String line = reader.readLine();
-			
-			while (line != null) {
-				window.getTextArea().append(line);
-				if ((line = reader.readLine()) != null)
-					window.getTextArea().append("\n");
-			}
-			
-			reader.close();
-		} catch (IOException e) {
-			return NOT_LOADED;
-		}
-		
-		return LOADED;
-	}
-
-	public static void PDFExport(Window window) {
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setDialogTitle("Save As");
-		if (fileChooser.showSaveDialog(window) == JFileChooser.APPROVE_OPTION) {
-			Document document = new Document();
-			String filePath = fileChooser.getSelectedFile().getAbsolutePath();
-			if (!filePath.endsWith(".pdf")) filePath += ".pdf";
-			
-			try {
-				PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
-				
-				document.open();
-				document.addAuthor(InetAddress.getLocalHost().getHostName());
-				document.addCreationDate();
-				document.addCreator(window.getAppName());
-				document.add(new Paragraph(window.getTextArea().getText()));
-				document.close();
-				
-				writer.close();
-				Dialogs.message("Succesfully exported as \"" + filePath.substring(filePath.lastIndexOf("\\")+1) + "\"", window);
-			} catch (Exception e) {
-				Dialogs.error("Something wen't wrong exporting to PDF", window);
-			}
 		}
 	}
 
