@@ -62,6 +62,9 @@ class MenuListener implements ActionListener {
 		case "Time and Date":
 			window.getTextArea().addTimeAndDate();
 			break;
+		case "Line Numbers":
+			Actions.performLineNumberToggle(window);
+			break;
 			
 		//View menu
 		case "Zoom In":

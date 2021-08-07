@@ -74,7 +74,8 @@ class MenuBar extends JMenuBar {
 		editItems.put("Delete", KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
 		editItems.put("Find", KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_DOWN_MASK));
 		editItems.put("Time and Date", KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0));
-		
+		editItems.put("Line Numbers", KeyStroke.getKeyStroke(KeyEvent.VK_L, InputEvent.CTRL_DOWN_MASK));
+
 		for (String itemName : editItems.keySet()) {
 			JMenuItem item = new JMenuItem(itemName);
 			item.setAccelerator(editItems.get(itemName));
