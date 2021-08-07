@@ -48,6 +48,10 @@ class Window extends JFrame {
 		frame.add(menuBar);
 		frame.setJMenuBar(menuBar);
 		
+		new TextLineNumber();
+		
+		
+		
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		frame.add(new JScrollPane(textArea));
