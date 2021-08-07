@@ -1,15 +1,22 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.Element;
 
 
 @SuppressWarnings("serial")
@@ -46,15 +53,61 @@ class Window extends JFrame {
 		// Add menu bar
 		menuBar = new MenuBar(this);
 		frame.add(menuBar);
-		frame.setJMenuBar(menuBar);
-		
-		new TextLineNumber();
-		
-		
+		frame.setJMenuBar(menuBar);	      
 		
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
-		frame.add(new JScrollPane(textArea));
+		
+		
+		// Get config
+		config = new Config(this);
+		
+		// Add lines to text area
+		JTextArea lines;
+	    lines = new JTextArea("1");
+	    lines.setBackground(Color.LIGHT_GRAY);
+	    lines.setEditable(false);
+	    
+	    Font currentfont = config.getFont();
+	    Font linefont = currentfont.deriveFont(currentfont.getSize());
+	    
+        lines.setFont(linefont);
+        lines.setBorder(BorderFactory.createCompoundBorder(lines.getBorder(), BorderFactory.createEmptyBorder(5, 10, 5, 5)));
+        lines.setBackground(Color.decode("#eeeeee")); // change to get from config
+        lines.setForeground(Color.decode("#888888")); // change to get from config
+
+		// Add listener 
+	    textArea.getDocument().addDocumentListener(new DocumentListener() {
+	         public String getText() {
+	            int caretPosition = textArea.getDocument().getLength();
+	            Element root = textArea.getDocument().getDefaultRootElement();
+	            String text = "1" + System.getProperty("line.separator");
+	               for(int i = 2; i < root.getElementIndex(caretPosition) + 2; i++) {
+	                  text += i + System.getProperty("line.separator");
+	               }
+	            return text;
+	         }
+	         @Override
+	         public void changedUpdate(DocumentEvent de) {
+	            lines.setText(getText());
+	         }
+	         @Override
+	         public void insertUpdate(DocumentEvent de) {
+	            lines.setText(getText());
+	         }
+	         @Override
+	         public void removeUpdate(DocumentEvent de) {
+	            lines.setText(getText());
+	         }
+	      });
+		JScrollPane scrollPaneItem = new JScrollPane();
+		scrollPaneItem.getViewport().add(textArea);
+		
+		// Set line height to that of the text area
+		scrollPaneItem.setRowHeaderView(lines);	
+		
+	    frame.setLocationRelativeTo(null);
+		frame.add(scrollPaneItem);     
 		
 		// Add key bindings to instance
 		new KeyBinder(this);
@@ -63,12 +116,12 @@ class Window extends JFrame {
 		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		
-		// Get config
-		config = new Config(this);
-		
+			
 		// Set configuration
 		textArea.setFontWithZoom(config.getFont());
+		
+		// Get initial cursor focus from the user
+		textArea.requestFocus();
 	}
 	
 	void newDoc() {

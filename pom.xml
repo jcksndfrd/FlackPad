@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.ac.massey.cs</groupId>
 	<artifactId>nz.ac.massey.cs.flackpad</artifactId>
-	<version>0.3.5</version>
+	<version>0.3.7</version>
 	<properties>
 		<javaVersion>16</javaVersion>
 		<maven.compiler.source>16</maven.compiler.source>

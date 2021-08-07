@@ -6,7 +6,10 @@ import java.time.format.DateTimeFormatter;
 
 import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.Element;
 
 @SuppressWarnings("serial")
 class TextArea extends JTextArea {
@@ -24,7 +27,7 @@ class TextArea extends JTextArea {
 		this.fontPercentage = 100;
 		//set border and add document listener
 		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-		this.getDocument().addDocumentListener(new DocListener(window));
+		this.getDocument().addDocumentListener(new DocListener(window));	      
 	}
 	
 	//Adds time and date to the top of the text area
@@ -68,5 +71,4 @@ class TextArea extends JTextArea {
 	private void zoom() {
 		setFont(new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100)));
 	}
-	
 }
