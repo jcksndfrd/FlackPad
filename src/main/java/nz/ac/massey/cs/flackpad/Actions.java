@@ -1,23 +1,37 @@
 package nz.ac.massey.cs.flackpad;
 
-import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.geom.Area;
+import java.awt.print.PrinterJob;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.DefaultHighlighter;
-import javax.swing.text.Highlighter;
+import javax.print.Doc;
+import javax.print.DocFlavor;
+import javax.print.DocPrintJob;
+import javax.print.PrintException;
+import javax.print.PrintService;
+import javax.print.PrintServiceLookup;
+import javax.print.ServiceUI;
+import javax.print.SimpleDoc;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.Copies;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.printing.PDFPageable;
 
 public class Actions {
-
 	public static void performPaste(Window windowInstance) {
 		try {
 			TextArea textArea = windowInstance.getTextArea();
@@ -118,8 +132,55 @@ public class Actions {
 	}
 
 	public static void performPrint(Window windowInstance) {
-		// Stub
+		try {
+			DocFlavor docfavour = javax.print.DocFlavor.BYTE_ARRAY.AUTOSENSE;
+			
+			// Get available printers
+			PrintService[] allPrinters = PrintServiceLookup.lookupPrintServices(docfavour, null);
+			PrintService preferredPrinter = PrintServiceLookup.lookupDefaultPrintService();
+			PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
+			
+			// Get printer choice from user
+			PrintService selection = ServiceUI.printDialog(null, 100, 100, allPrinters, preferredPrinter, null, aset); 
+			if (selection == null) {
+				return; // User chose not to print
+			}
+				
+			DocPrintJob job = selection.createPrintJob();
+			String data = windowInstance.getTextArea().getText();
+						 
+			Doc doc = new SimpleDoc(data.getBytes(), docfavour, null);
+			PrintRequestAttributeSet attrs = new HashPrintRequestAttributeSet();
+			attrs.add(new Copies(1));
+			
+			// Option 1 - doesn't print
+			//job.print(doc, attrs); 
+			
+			// Option 2
+			InputStream stream = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
+			Actions.printer(selection, null, attrs);
+						
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Issue with printing document");
+		}
 	}
+	
+	private static boolean printer(PrintService printService, InputStream inputStream, PrintRequestAttributeSet attributes)
+		    throws Exception {
+		    try {
+		        PDDocument pdf = PDDocument.load(inputStream);
+		        PrinterJob job = PrinterJob.getPrinterJob();
+		        job.setPrintService(printService);
+		        PDFPageable pageable = new PDFPageable(pdf);
+		        job.setPageable(pageable); // Problematic line of code
+		        job.print(attributes);
+		    } 
+		    catch (Exception e) {
+		    	e.printStackTrace();
+		    }
+		    return true;
+		}
 
 	public static void performPDFExport(Window window) {
 		FileIO.PDFExport(window);
