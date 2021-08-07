@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.BorderFactory;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -69,6 +70,8 @@ class TextArea extends JTextArea {
 	}
 	
 	private void zoom() {
-		setFont(new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100)));
+		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100));
+		setFont(newFont);
+		window.getLineScrollTextArea().setFont(newFont);
 	}
 }

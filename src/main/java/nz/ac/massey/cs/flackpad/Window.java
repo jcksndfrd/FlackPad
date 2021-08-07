@@ -2,6 +2,8 @@ package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.List;
@@ -24,10 +26,12 @@ class Window extends JFrame {
 	private String name = "FlackPad";
 	private JFrame frame;
 	private WindowListener winListener;
+	private JScrollPane scrollPaneItem;
 	private Config config;
 	
 	private MenuBar menuBar;
 	private TextArea textArea;
+	private JTextArea lines;
 	
 	private boolean saved = true;
 	private File file;
@@ -62,8 +66,9 @@ class Window extends JFrame {
 		// Get config
 		config = new Config(this);
 		
+		scrollPaneItem = new JScrollPane();
+
 		// Add lines to text area
-		JTextArea lines;
 	    lines = new JTextArea("1");
 	    lines.setBackground(Color.LIGHT_GRAY);
 	    lines.setEditable(false);
@@ -75,7 +80,36 @@ class Window extends JFrame {
         lines.setBorder(BorderFactory.createCompoundBorder(lines.getBorder(), BorderFactory.createEmptyBorder(5, 10, 5, 5)));
         lines.setBackground(Color.decode("#eeeeee")); // change to get from config
         lines.setForeground(Color.decode("#888888")); // change to get from config
+        
+        lines.addMouseListener(new MouseListener() {
 
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				scrollPaneItem.getRowHeader().setVisible(false);
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+		        lines.setBackground(Color.decode("#bbbbbb")); // change to get from config
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+		        lines.setBackground(Color.decode("#eeeeee")); // change to get from config
+			}
+        	
+        });
+        
 		// Add listener 
 	    textArea.getDocument().addDocumentListener(new DocumentListener() {
 	         public String getText() {
@@ -100,7 +134,6 @@ class Window extends JFrame {
 	            lines.setText(getText());
 	         }
 	      });
-		JScrollPane scrollPaneItem = new JScrollPane();
 		scrollPaneItem.getViewport().add(textArea);
 		
 		// Set line height to that of the text area
@@ -150,7 +183,12 @@ class Window extends JFrame {
 			frame.dispose();
 		}
 	}
-	
+	JScrollPane getLineScrollPane() {
+		return scrollPaneItem; 
+	} 
+	JTextArea getLineScrollTextArea() {
+		return lines; 
+	} 	
 	JTextField getFindField() {
 		return menuBar.getFindField();
 	}
@@ -196,6 +234,5 @@ class Window extends JFrame {
 	
 	String getAppName() {
 		return name;
-	}
-	
+	}	
 }

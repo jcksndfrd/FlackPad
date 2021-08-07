@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Area;
 
 import javax.swing.JButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
@@ -123,5 +124,19 @@ public class Actions {
 
 	public static void performPDFExport(Window window) {
 		FileIO.PDFExport(window);
+	}
+	public static void performLineNumberToggle(Window window) {
+		JScrollPane scrollPaneItem = window.getLineScrollPane();
+		if (scrollPaneItem == null) {
+			return;
+		}
+		boolean isVisible = scrollPaneItem.getRowHeader().isVisible();
+		if (isVisible) {
+			// Hide panel
+			scrollPaneItem.getRowHeader().setVisible(false);
+		} else {
+			// Show panel
+			scrollPaneItem.getRowHeader().setVisible(true);
+		}
 	}
 }
