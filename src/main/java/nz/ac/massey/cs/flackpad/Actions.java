@@ -97,13 +97,14 @@ public class Actions {
 			textArea.setSelectionEnd(textArea.getText().length());
 		} catch (Exception err) {
 			Dialogs.error("Could not select all", windowInstance);
-    	}
+		}
 	}
 
 	public static void performFind(Window windowInstance) {
 		// Show find / replace bar
 		windowInstance.showFindBar();
-	}	
+	}
+
 	public static void performEscapeFind(Window windowInstance) {
 		try {
 			if (windowInstance.getFindField().isVisible()) {
@@ -113,7 +114,8 @@ public class Actions {
 			e.printStackTrace();
 			Dialogs.error("Could not escape search bar", windowInstance);
 		}
-	}	
+	}
+
 	public static void performDelete(Window windowInstance) {
 		windowInstance.getTextArea().replaceSelection(null);
 	}
@@ -122,9 +124,6 @@ public class Actions {
 		// Stub
 	}
 
-	public static void performPDFExport(Window window) {
-		FileIO.PDFExport(window);
-	}
 	public static void performLineNumberToggle(Window window) {
 		JScrollPane scrollPaneItem = window.getLineScrollPane();
 		if (scrollPaneItem == null) {

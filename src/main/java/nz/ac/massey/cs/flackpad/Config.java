@@ -26,7 +26,7 @@ class Config {
 	}
 	
 	private void loadDefaults() {
-		defaults.put("fontFamily", "Consolas");
+		defaults.put("fontFamily", "Dialog");
 		defaults.put("fontStyle", Font.PLAIN);
 		defaults.put("fontSize", 12);
 	}
