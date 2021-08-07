@@ -31,6 +31,7 @@ class Window extends JFrame {
 	
 	private MenuBar menuBar;
 	private TextArea textArea;
+	private JTextArea lines;
 	
 	private boolean saved = true;
 	private File file;
@@ -68,7 +69,6 @@ class Window extends JFrame {
 		scrollPaneItem = new JScrollPane();
 
 		// Add lines to text area
-		JTextArea lines;
 	    lines = new JTextArea("1");
 	    lines.setBackground(Color.LIGHT_GRAY);
 	    lines.setEditable(false);
@@ -186,7 +186,9 @@ class Window extends JFrame {
 	JScrollPane getLineScrollPane() {
 		return scrollPaneItem; 
 	} 
-	
+	JTextArea getLineScrollTextArea() {
+		return lines; 
+	} 	
 	JTextField getFindField() {
 		return menuBar.getFindField();
 	}
