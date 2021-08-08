@@ -28,17 +28,17 @@ class Window extends JFrame {
 	private String name = "FlackPad";
 	private JFrame frame;
 	private WindowListener winListener;
-	private JScrollPane scrollPaneItem;
 	private Config config;
+	private FileMIME MIME = new FileMIME();
 	
 	private MenuBar menuBar;
 	private TextArea textArea;
 	private JTextArea lines;
+	private JScrollPane scrollPaneItem;
 	
 	private boolean saved = true;
 	private File file;
 	private String fileName;
-	private String fileMIME;
 	
 	Window() {
 		// Create JFrame and set title
@@ -139,7 +139,7 @@ class Window extends JFrame {
 	         }
 	      });
 		// Get initial cursor focus from the user
-	    textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA); // specify language here !!!
+	    textArea.setSyntaxEditingStyle("text/plain"); // specify language here !!!
 	    textArea.setCodeFoldingEnabled(true);
 		textArea.setFontWithZoom(config.getFont());
 		
@@ -230,7 +230,7 @@ class Window extends JFrame {
 	void setFile(File file) {
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
-		fileMIME = FileIO.getFileMIME(file);
+		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
 	}
 	
 	String getFileName() {
