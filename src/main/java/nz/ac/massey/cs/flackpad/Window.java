@@ -141,14 +141,13 @@ class Window extends JFrame {
 	         }
 	      });
 		// Get initial cursor focus from the user
-		textArea.requestFocus();
 	    textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA); // specify language here !!!
 	    textArea.setCodeFoldingEnabled(true);
 		textArea.setFontWithZoom(config.getFont());
 		
 		scrollPaneItem.getViewport().add(textArea);		
 		scrollPaneItem.setRowHeaderView(lines);	
-		//scrollPaneItem.setBorder(null);
+		scrollPaneItem.setBorder(null);
 
 		
 	    frame.setLocationRelativeTo(null);
@@ -162,6 +161,9 @@ class Window extends JFrame {
 		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		frame.requestFocus();
+		textArea.grabFocus();
+	
 	}
 	
 	void newDoc() {

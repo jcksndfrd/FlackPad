@@ -9,6 +9,8 @@ import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import java.awt.Color;
+
 
 @SuppressWarnings("serial")
 class TextArea extends RSyntaxTextArea {
@@ -26,7 +28,16 @@ class TextArea extends RSyntaxTextArea {
 		this.fontPercentage = 100;
 		//set border and add document listener
 		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-		this.getDocument().addDocumentListener(new DocListener(window));	      
+		this.getDocument().addDocumentListener(new DocListener(window));	
+		setTheme();
+	}
+	
+	void setTheme() {
+		this.setCaretColor(Color.decode("#eeeeee")); // caret color
+		this.setSelectionColor(Color.decode("#770BD8")); // selection color
+		this.setBackground(Color.decode("#333333"));
+		this.setForeground(Color.decode("#aaaaaa"));
+		this.setCurrentLineHighlightColor(Color.decode("#444444")); // line highlight color
 	}
 	
 	//Adds time and date to the top of the text area
