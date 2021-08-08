@@ -95,8 +95,8 @@ class MenuBar extends JMenuBar {
 		viewMenu.setMnemonic(KeyEvent.VK_V);
 		
 		LinkedHashMap<String, KeyStroke> viewItems = new LinkedHashMap<String, KeyStroke>();
-		viewItems.put("Zoom In", KeyStroke.getKeyStroke(KeyEvent.VK_CLOSE_BRACKET, InputEvent.CTRL_DOWN_MASK));
-		viewItems.put("Zoom Out", KeyStroke.getKeyStroke(KeyEvent.VK_OPEN_BRACKET, InputEvent.CTRL_DOWN_MASK));
+		viewItems.put("Zoom In", KeyStroke.getKeyStroke(KeyEvent.VK_8, InputEvent.CTRL_DOWN_MASK));
+		viewItems.put("Zoom Out", KeyStroke.getKeyStroke(KeyEvent.VK_9, InputEvent.CTRL_DOWN_MASK));
 		viewItems.put("Reset Zoom", KeyStroke.getKeyStroke(KeyEvent.VK_0, InputEvent.CTRL_DOWN_MASK));
 		
 		for (String itemName : viewItems.keySet()) {
