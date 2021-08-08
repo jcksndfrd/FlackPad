@@ -14,20 +14,11 @@ final class FileIO {
 
 	final static int SAVED = 0, NOT_SAVED = 1;
 	private final static int NOT_LOADED = -1, LOADED = 0, WRONG_TYPE = 1, IMPORTED = 2;
+	
+	private static FileMIME MIME = new FileMIME();
 
 	private FileIO() {
 		throw new UnsupportedOperationException();
-	}
-
-	static String getFileMIME(File file) {
-		Tika tika = new Tika();
-		String fileMIME = null;
-		try {
-			fileMIME = tika.detect(file);
-		} catch (Exception e) {
-			return fileMIME;
-		}
-		return fileMIME;
 	}
 
 	static void open(Window window) {
@@ -86,7 +77,7 @@ final class FileIO {
 	}
 
 	private static int loadFile(File file, Window window) {
-		String fileMIME = getFileMIME(file);
+		String fileMIME = MIME.getFileMIME(file);
 
 		try {
 			if (fileMIME.startsWith("text")) {
