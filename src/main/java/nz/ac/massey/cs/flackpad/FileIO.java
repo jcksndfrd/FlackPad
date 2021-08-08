@@ -8,8 +8,6 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import org.apache.tika.Tika;
-
 final class FileIO {
 
 	final static int SAVED = 0, NOT_SAVED = 1;
