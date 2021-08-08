@@ -24,7 +24,7 @@ final class FileIO {
 		String fileMIME = null;
 		try {
 			fileMIME = tika.detect(file);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			return fileMIME;
 		}
 		return fileMIME;

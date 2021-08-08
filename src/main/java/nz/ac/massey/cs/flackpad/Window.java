@@ -20,6 +20,8 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Element;
 
+import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
+
 
 @SuppressWarnings("serial")
 class Window extends JFrame {
@@ -75,11 +77,15 @@ class Window extends JFrame {
 	    
 	    Font currentfont = config.getFont();
 	    Font linefont = currentfont.deriveFont(currentfont.getSize());
+        Color linesBackgroundColorHover = Color.decode("#222222");
+        Color linesBackgroundColor = Color.decode("#383838");
 	    
         lines.setFont(linefont);
         lines.setBorder(BorderFactory.createCompoundBorder(lines.getBorder(), BorderFactory.createEmptyBorder(5, 10, 5, 5)));
-        lines.setBackground(Color.decode("#eeeeee")); // change to get from config
-        lines.setForeground(Color.decode("#888888")); // change to get from config
+        lines.setBackground(linesBackgroundColor); // change to get from config
+        lines.setForeground(textArea.getSelectionColor()); // change to get from config      
+        
+        
         
         lines.addMouseListener(new MouseListener() {
 
@@ -100,12 +106,12 @@ class Window extends JFrame {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-		        lines.setBackground(Color.decode("#bbbbbb")); // change to get from config
+		        lines.setBackground(linesBackgroundColorHover); // change to get from config
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-		        lines.setBackground(Color.decode("#eeeeee")); // change to get from config
+		        lines.setBackground(linesBackgroundColor); // change to get from config
 			}
         	
         });
@@ -134,13 +140,20 @@ class Window extends JFrame {
 	            lines.setText(getText());
 	         }
 	      });
-		scrollPaneItem.getViewport().add(textArea);
+		// Get initial cursor focus from the user
+		textArea.requestFocus();
+	    textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA); // specify language here !!!
+	    textArea.setCodeFoldingEnabled(true);
+		textArea.setFontWithZoom(config.getFont());
 		
-		// Set line height to that of the text area
+		scrollPaneItem.getViewport().add(textArea);		
 		scrollPaneItem.setRowHeaderView(lines);	
+		//scrollPaneItem.setBorder(null);
+
 		
 	    frame.setLocationRelativeTo(null);
-		frame.add(scrollPaneItem);     
+		frame.add(scrollPaneItem);   
+		
 		
 		// Add key bindings to instance
 		new KeyBinder(this);
@@ -149,12 +162,6 @@ class Window extends JFrame {
 		frame.setSize(1000, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-			
-		// Set configuration
-		textArea.setFontWithZoom(config.getFont());
-		
-		// Get initial cursor focus from the user
-		textArea.requestFocus();
 	}
 	
 	void newDoc() {

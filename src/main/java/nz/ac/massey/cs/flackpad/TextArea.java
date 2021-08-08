@@ -8,8 +8,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
 
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+
 @SuppressWarnings("serial")
-class TextArea extends JTextArea {
+class TextArea extends RSyntaxTextArea {
 	
 	private Window window;
 	private int fontSize;
