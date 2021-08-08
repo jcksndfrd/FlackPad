@@ -1,7 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.*;
 import java.util.LinkedHashMap;
 
@@ -22,7 +21,9 @@ class MenuBar extends JMenuBar {
 	private JButton exitFindButton;
 	private TextArea textarea;
 	private Window window;
-	
+	private Color menuBackground = Color.decode("#ffffff");
+	private Color menuItemTabForeground = Color.decode("#555555");
+
 	MenuBar(Window window) {
 		super();
 
@@ -34,12 +35,13 @@ class MenuBar extends JMenuBar {
 		this.addEditMenu();
 		this.addViewMenu();
 		this.addHelpMenu();
-		
 		this.addFindBar();
+		this.setBackground(menuBackground);
 	}
 	
 	private void addFileMenu() {
 		JMenu fileMenu = new JMenu("File");
+		fileMenu.setForeground(menuItemTabForeground);
 		fileMenu.setMnemonic(KeyEvent.VK_F);
 		
 		LinkedHashMap<String, KeyStroke> fileItems = new LinkedHashMap<String, KeyStroke>();
@@ -64,6 +66,7 @@ class MenuBar extends JMenuBar {
 	
 	private void addEditMenu() {
 		JMenu editMenu = new JMenu("Edit");
+		editMenu.setForeground(menuItemTabForeground);
 		editMenu.setMnemonic(KeyEvent.VK_E);
 		
 		LinkedHashMap<String, KeyStroke> editItems = new LinkedHashMap<String, KeyStroke>();
@@ -88,6 +91,7 @@ class MenuBar extends JMenuBar {
 	
 	private void addViewMenu() {
 		JMenu viewMenu = new JMenu("View");
+		viewMenu.setForeground(menuItemTabForeground);
 		viewMenu.setMnemonic(KeyEvent.VK_V);
 		
 		LinkedHashMap<String, KeyStroke> viewItems = new LinkedHashMap<String, KeyStroke>();
@@ -103,17 +107,16 @@ class MenuBar extends JMenuBar {
 		}
 		
 		this.add(viewMenu);
-	}
-	
+	}	
 	private void addHelpMenu() {
 		JMenu helpMenu = new JMenu("Help");
+		helpMenu.setForeground(menuItemTabForeground);
 		helpMenu.setMnemonic(KeyEvent.VK_H);
 		JMenuItem about = new JMenuItem("About");
 		about.addActionListener(menuListener);
 		helpMenu.add(about);
 		this.add(helpMenu);
 	}
-	
 	private void addFindBar() {
 		exitFindButton = new JButton("X");
 		exitFindButton.setVisible(false);
@@ -152,7 +155,7 @@ class MenuBar extends JMenuBar {
 					textarea.getHighlighter().removeAllHighlights();
 			    
 					Highlighter.HighlightPainter painter = 
-						    new DefaultHighlighter.DefaultHighlightPainter( Color.cyan );
+						    new DefaultHighlighter.DefaultHighlightPainter(window.getTextArea().getSelectionColor());
 					
 					// Get all occurrences
 					while ( offset != -1)

@@ -85,8 +85,6 @@ class Window extends JFrame {
         lines.setBackground(linesBackgroundColor); // change to get from config
         lines.setForeground(textArea.getSelectionColor()); // change to get from config      
         
-        
-        
         lines.addMouseListener(new MouseListener() {
 
 			@Override
@@ -148,19 +146,17 @@ class Window extends JFrame {
 		scrollPaneItem.getViewport().add(textArea);		
 		scrollPaneItem.setRowHeaderView(lines);	
 		scrollPaneItem.setBorder(null);
-
 		
-	    frame.setLocationRelativeTo(null);
-		frame.add(scrollPaneItem);   
-		
+		frame.add(scrollPaneItem);   		
 		
 		// Add key bindings to instance
 		new KeyBinder(this);
 		
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
-		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+	    frame.setVisible(true);
+
 		frame.requestFocus();
 		textArea.grabFocus();
 	

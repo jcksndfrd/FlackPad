@@ -78,7 +78,7 @@ class TextArea extends RSyntaxTextArea {
 		zoom();
 	}
 	
-	private void zoom() {
+	private void zoom() {		
 		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100));
 		setFont(newFont);
 		window.getLineScrollTextArea().setFont(newFont);
