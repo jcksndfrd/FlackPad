@@ -11,6 +11,7 @@ import javax.swing.text.BadLocationException;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import java.awt.Color;
+import java.awt.ComponentOrientation;
 
 
 @SuppressWarnings("serial")
@@ -32,7 +33,7 @@ class TextArea extends RSyntaxTextArea {
 		this.fontSize = getFont().getSize();
 		this.fontPercentage = 100;
 		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
 		this.getDocument().addDocumentListener(new DocListener(window));	
 		this.addCaretListener(new CaretListener() {
 	        public void caretUpdate(CaretEvent e) {
@@ -52,7 +53,7 @@ class TextArea extends RSyntaxTextArea {
 		this.fontSize = getFont().getSize();
 		this.fontPercentage = 100;
 		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
 		setFont(config.getFont());
 		this.setText(startVal);
 		this.setHighlighter(null);
@@ -65,7 +66,6 @@ class TextArea extends RSyntaxTextArea {
 		setBackground(Color.decode("#333333"));
 		setForeground(Color.decode("#aaaaaa"));
 		setCurrentLineHighlightColor(Color.decode("#444444")); // line highlight color
-		
 		setSyntaxEditingStyle("text/plain");
 		setCodeFoldingEnabled(true);
 		setFont(config.getFont());
@@ -110,9 +110,21 @@ class TextArea extends RSyntaxTextArea {
 	}
 	
 	private void zoom() {		
-		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100));
+		int roundedZoomVal = Math.round(fontSize * fontPercentage / 100);
+		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), roundedZoomVal);
 		setFont(newFont);
 		window.getLines().setFont(newFont);
+		try {
+			if (fontPercentage == 100) {
+				// Hide percentage information
+				window.setInformationBarZoomVisible(false);
+			} else {
+				window.setInformationBarZoomVisible(true);
+				window.setInformationBarZoomText(Integer.toString(fontPercentage) + "%");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void updateInformationBar() {

@@ -36,6 +36,10 @@ class Window extends JFrame {
 	private boolean saved = true;
 	private File file;
 	private String fileName;
+	
+	// Get below colours from config
+	Color linesBackgroundColorHover = Color.decode("#222222");
+	Color linesBackgroundColor = Color.decode("#383838");
 
 	Window() {
 		// Create JFrame and set title
@@ -66,17 +70,12 @@ class Window extends JFrame {
 
 		// Add lines to text area
 		lines = new TextArea(this, config, "1");
+		
 		lines.setBackground(Color.LIGHT_GRAY);
 		lines.setEditable(false);
-		lines.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-
-		Color linesBackgroundColorHover = Color.decode("#222222");
-		Color linesBackgroundColor = Color.decode("#383838");
-
-		lines.setBorder(
-				BorderFactory.createCompoundBorder(lines.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 5)));
-		lines.setBackground(linesBackgroundColor); // change to get from config
-		lines.setForeground(textArea.getSelectionColor()); // change to get from config
+				
+		lines.setBackground(linesBackgroundColor); 
+		lines.setForeground(textArea.getSelectionColor());
 
 		lines.addMouseListener(new MouseListener() {
 
@@ -97,12 +96,12 @@ class Window extends JFrame {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lines.setBackground(linesBackgroundColorHover); // change to get from config
+				lines.setBackground(linesBackgroundColorHover);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lines.setBackground(linesBackgroundColor); // change to get from config
+				lines.setBackground(linesBackgroundColor);
 			}
 
 		});
@@ -143,6 +142,7 @@ class Window extends JFrame {
 
 		// Add key bindings to instance
 		new KeyBinder(this);
+
 
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
@@ -187,6 +187,12 @@ class Window extends JFrame {
 
 	void setInformationBar(String val) {
 		menuBar.setInformationBarText(val);;
+	}
+	void setInformationBarZoomText(String val) {
+		menuBar.setInformationBarZoomText(val);;
+	}
+	public void setInformationBarZoomVisible(boolean isVisible) {
+		menuBar.setInformationBarZoomVisible(isVisible);
 	}
 	JScrollPane getLineScrollPane() {
 		return scrollPane;
@@ -240,6 +246,7 @@ class Window extends JFrame {
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
 		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
+		menuBar.setInformationBarFileText(MIME.getFileStyle(file));
 	}
 
 	String getFileName() {

@@ -27,6 +27,8 @@ class MenuBar extends JMenuBar {
 	private Window window;
 	private Color menuBackground = Color.decode("#ffffff");
 	private Color menuItemTabForeground = Color.decode("#555555");
+	private JLabel filetype;
+	private JLabel zoomlevel;
 
 	MenuBar(Window window) {
 		super();
@@ -43,14 +45,40 @@ class MenuBar extends JMenuBar {
 		this.setBackground(menuBackground);
 	}
 	private void addInformationBar() {
-		details = new JLabel();
+		// Char count
+		details = new JLabel("0 | Char");
 		details.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
 	    this.add(Box.createHorizontalGlue());
 	    details.setForeground(Color.decode("#990000"));
 		this.add(details);
+		
+		// Zoom percentage
+		zoomlevel = new JLabel();
+		zoomlevel.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
+		zoomlevel.setForeground(Color.decode("#444444"));
+		this.add(zoomlevel);
+		
+		// File type label
+		filetype = new JLabel();
+		filetype.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
+		filetype.setForeground(Color.decode("#777777"));
+		this.add(filetype);
 	}
 	public void setInformationBarText(String val) {
 		details.setText(val);
+	}
+	public void setInformationBarFileText(String val) {
+		if (val.startsWith("text/")) {
+			filetype.setText(val.substring(5).toUpperCase());
+		} else {
+			filetype.setText(val);
+		}
+	}
+	public void setInformationBarZoomText(String val) {
+		zoomlevel.setText(val);
+	}
+	public void setInformationBarZoomVisible(boolean isVisible) {
+		zoomlevel.setVisible(isVisible);
 	}
 
 	private void addFileMenu() {
@@ -91,7 +119,6 @@ class MenuBar extends JMenuBar {
 		editItems.put("Delete", KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0));
 		editItems.put("Find", KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_DOWN_MASK));
 		editItems.put("Time and Date", KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0));
-		editItems.put("Line Numbers", KeyStroke.getKeyStroke(KeyEvent.VK_L, InputEvent.CTRL_DOWN_MASK));
 
 		for (String itemName : editItems.keySet()) {
 			JMenuItem item = new JMenuItem(itemName);
@@ -112,6 +139,8 @@ class MenuBar extends JMenuBar {
 		viewItems.put("Zoom In", KeyStroke.getKeyStroke(KeyEvent.VK_8, InputEvent.CTRL_DOWN_MASK));
 		viewItems.put("Zoom Out", KeyStroke.getKeyStroke(KeyEvent.VK_9, InputEvent.CTRL_DOWN_MASK));
 		viewItems.put("Reset Zoom", KeyStroke.getKeyStroke(KeyEvent.VK_0, InputEvent.CTRL_DOWN_MASK));
+		viewItems.put("Line Numbers", KeyStroke.getKeyStroke(KeyEvent.VK_L, InputEvent.CTRL_DOWN_MASK));
+
 		
 		for (String itemName : viewItems.keySet()) {
 			JMenuItem item = new JMenuItem(itemName);
