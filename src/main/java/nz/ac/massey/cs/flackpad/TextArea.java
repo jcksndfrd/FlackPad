@@ -30,9 +30,26 @@ class TextArea extends RSyntaxTextArea {
 		this.fontSize = getFont().getSize();
 		this.fontPercentage = 100;
 		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 5)));
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
 		this.getDocument().addDocumentListener(new DocListener(window));	
 		setTheme();
+	}
+	
+	TextArea(Window window, Config config, String startVal) {
+		//Call RSyntaxTextArea constructor
+		super();
+		//Set variables
+		this.window = window;
+		this.config = config;
+		
+		this.fontSize = getFont().getSize();
+		this.fontPercentage = 100;
+		//set border and add document listener
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
+		setFont(config.getFont());
+		this.setText(startVal);
+		this.setHighlighter(null);
+		setCurrentLineHighlightColor(new Color(12, 12, 12, 0)); // Hide highlight
 	}
 	
 	void setTheme() {
@@ -88,6 +105,6 @@ class TextArea extends RSyntaxTextArea {
 	private void zoom() {		
 		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100));
 		setFont(newFont);
-		window.getLineScrollTextArea().setFont(newFont); //find another way of doing this maybe through window class
+		window.getLines().setFont(newFont);
 	}
 }

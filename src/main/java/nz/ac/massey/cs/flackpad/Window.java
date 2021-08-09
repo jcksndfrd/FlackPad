@@ -31,7 +31,7 @@ class Window extends JFrame {
 
 	private MenuBar menuBar;
 	private TextArea textArea;
-	private JTextArea lines;
+	private TextArea lines;
 	private JScrollPane scrollPane;
 
 	private boolean saved = true;
@@ -66,17 +66,14 @@ class Window extends JFrame {
 		scrollPane = new JScrollPane();
 
 		// Add lines to text area
-		lines = new JTextArea("1");
+		lines = new TextArea(this, config, "1");
 		lines.setBackground(Color.LIGHT_GRAY);
 		lines.setEditable(false);
 		lines.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
-		Font currentfont = config.getFont();
-		Font linefont = currentfont.deriveFont(currentfont.getSize());
 		Color linesBackgroundColorHover = Color.decode("#222222");
 		Color linesBackgroundColor = Color.decode("#383838");
 
-		lines.setFont(linefont);
 		lines.setBorder(
 				BorderFactory.createCompoundBorder(lines.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 		lines.setBackground(linesBackgroundColor); // change to get from config
@@ -219,6 +216,9 @@ class Window extends JFrame {
 
 	TextArea getTextArea() {
 		return textArea;
+	}
+	TextArea getLines() {
+		return lines;
 	}
 
 	boolean isSaved() {
