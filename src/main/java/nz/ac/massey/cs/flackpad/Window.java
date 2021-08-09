@@ -13,6 +13,7 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -186,6 +187,9 @@ class Window extends JFrame {
 		}
 	}
 
+	void setInformationBar(String val) {
+		menuBar.setInformationBarText(val);;
+	}
 	JScrollPane getLineScrollPane() {
 		return scrollPane;
 	}

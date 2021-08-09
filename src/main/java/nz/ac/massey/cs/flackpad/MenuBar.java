@@ -1,10 +1,15 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -13,6 +18,8 @@ import javax.swing.KeyStroke;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
+import javax.swing.Box;
+
 @SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
 	
@@ -20,6 +27,7 @@ class MenuBar extends JMenuBar {
 	private JTextField findField;
 	private JButton exitFindButton;
 	private TextArea textarea;
+	private JLabel details;
 	private Window window;
 	private Color menuBackground = Color.decode("#ffffff");
 	private Color menuItemTabForeground = Color.decode("#555555");
@@ -36,9 +44,20 @@ class MenuBar extends JMenuBar {
 		this.addViewMenu();
 		this.addHelpMenu();
 		this.addFindBar();
+		this.addInformationBar();
 		this.setBackground(menuBackground);
 	}
-	
+	private void addInformationBar() {
+		details = new JLabel();
+		details.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
+	    this.add(Box.createHorizontalGlue());
+	    details.setForeground(Color.decode("#990000"));
+		this.add(details);
+	}
+	public void setInformationBarText(String val) {
+		details.setText(val);
+	}
+
 	private void addFileMenu() {
 		JMenu fileMenu = new JMenu("File");
 		fileMenu.setForeground(menuItemTabForeground);

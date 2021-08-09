@@ -1,11 +1,15 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Font;
+import java.awt.Point;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.BorderFactory;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.Caret;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import java.awt.Color;
@@ -19,6 +23,8 @@ class TextArea extends RSyntaxTextArea {
 	
 	private int fontSize;
 	private int fontPercentage;
+	
+	private CaretListener mainCaretListener;
 
 	TextArea(Window window, Config config) {
 		//Call RSyntaxTextArea constructor
@@ -32,6 +38,11 @@ class TextArea extends RSyntaxTextArea {
 		//set border and add document listener
 		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
 		this.getDocument().addDocumentListener(new DocListener(window));	
+		this.addCaretListener(new CaretListener() {
+	        public void caretUpdate(CaretEvent e) {
+	            updateInformationBar();
+	        }
+	    });	
 		setTheme();
 	}
 	
@@ -106,5 +117,22 @@ class TextArea extends RSyntaxTextArea {
 		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), Math.round(fontSize * fontPercentage / 100));
 		setFont(newFont);
 		window.getLines().setFont(newFont);
+	}
+	
+	private void updateInformationBar() {
+		TextArea area = window.getTextArea();
+		
+		String text = "";
+        try
+        {
+        	text = Integer.toString(area.getText().length()) + " | Char";
+        	
+            // Update text
+    		window.setInformationBar(text);
+    	}
+        catch (NullPointerException exc)
+        {
+            exc.printStackTrace();
+        }
 	}
 }
