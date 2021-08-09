@@ -1,10 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import javax.swing.BorderFactory;
@@ -26,7 +23,6 @@ class MenuBar extends JMenuBar {
 	private ActionListener menuListener;
 	private JTextField findField;
 	private JButton exitFindButton;
-	private TextArea textarea;
 	private JLabel details;
 	private Window window;
 	private Color menuBackground = Color.decode("#ffffff");
@@ -36,7 +32,6 @@ class MenuBar extends JMenuBar {
 		super();
 
 		menuListener = new MenuListener(window);
-		this.textarea = window.getTextArea();
 		this.window = window;
 		
 		this.addFileMenu();

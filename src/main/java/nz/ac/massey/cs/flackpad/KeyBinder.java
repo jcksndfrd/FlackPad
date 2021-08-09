@@ -19,7 +19,8 @@ public class KeyBinder {
 	
 	private void addKeyBindings() {
 		// Escape key binding
-    	Action escapeFind = new AbstractAction() {
+    	@SuppressWarnings("serial")
+		Action escapeFind = new AbstractAction() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -1,7 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Font;
-import java.awt.Point;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,7 +8,6 @@ import javax.swing.BorderFactory;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.Caret;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import java.awt.Color;
@@ -24,8 +22,6 @@ class TextArea extends RSyntaxTextArea {
 	private int fontSize;
 	private int fontPercentage;
 	
-	private CaretListener mainCaretListener;
-
 	TextArea(Window window, Config config) {
 		//Call RSyntaxTextArea constructor
 		super();
