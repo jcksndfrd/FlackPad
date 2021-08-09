@@ -25,5 +25,4 @@ class DocListener implements DocumentListener {
 	public void changedUpdate(DocumentEvent e) {
 		window.setSaved(false);
 	}
-
 }

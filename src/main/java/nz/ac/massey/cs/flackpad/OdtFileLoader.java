@@ -23,6 +23,7 @@ final class OdtFileLoader {
 
 	static String loadFile(File file) throws IOException {
 
+		@SuppressWarnings("resource")
 		ZipFile odt = new ZipFile(file);
 		InputStream contentStream = odt.getInputStream(odt.getEntry("content.xml"));
 

@@ -1,7 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
-import java.awt.Font;
+import java.awt.ComponentOrientation;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowListener;
@@ -20,72 +20,68 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Element;
 
-
 @SuppressWarnings("serial")
 class Window extends JFrame {
 	private String name = "FlackPad";
 	private JFrame frame;
 	private WindowListener winListener;
-	private JScrollPane scrollPaneItem;
 	private Config config;
-	
+	private FileMIME MIME = new FileMIME();
+
 	private MenuBar menuBar;
 	private TextArea textArea;
-	private JTextArea lines;
-	
+	private TextArea lines;
+	private JScrollPane scrollPane;
+
 	private boolean saved = true;
 	private File file;
 	private String fileName;
-	private String fileMIME;
 	
+	// Get below colours from config
+	Color linesBackgroundColorHover = Color.decode("#222222");
+	Color linesBackgroundColor = Color.decode("#383838");
+
 	Window() {
 		// Create JFrame and set title
 		fileName = "Untitled";
 		frame = new JFrame(fileName + " - " + name);
-		
+
 		// Add icon
-		frame.setIconImages(List.of(
-				new ImageIcon("icons/16x16.png").getImage(),
-				new ImageIcon("icons/32x32.png").getImage(),
-				new ImageIcon("icons/64x64.png").getImage(),
-				new ImageIcon("icons/128x128.png").getImage()));
-		
+		frame.setIconImages(
+				List.of(new ImageIcon("icons/16x16.png").getImage(), new ImageIcon("icons/32x32.png").getImage(),
+						new ImageIcon("icons/64x64.png").getImage(), new ImageIcon("icons/128x128.png").getImage()));
+
+		// Get config
+		config = new Config(this);
+
 		// Add window listener
 		winListener = new WinListener(this);
 		frame.addWindowListener(winListener);
-		
+
 		// Add menu bar
 		menuBar = new MenuBar(this);
 		frame.add(menuBar);
-		frame.setJMenuBar(menuBar);	      
-		
+		frame.setJMenuBar(menuBar);
+
 		// Add text area in a scroll pane
-		textArea = new TextArea(this);
-		
-		
-		// Get config
-		config = new Config(this);
-		
-		scrollPaneItem = new JScrollPane();
+		textArea = new TextArea(this, config);
+
+		scrollPane = new JScrollPane();
 
 		// Add lines to text area
-	    lines = new JTextArea("1");
-	    lines.setBackground(Color.LIGHT_GRAY);
-	    lines.setEditable(false);
-	    
-	    Font currentfont = config.getFont();
-	    Font linefont = currentfont.deriveFont(currentfont.getSize());
-	    
-        lines.setFont(linefont);
-        lines.setBorder(BorderFactory.createCompoundBorder(lines.getBorder(), BorderFactory.createEmptyBorder(5, 10, 5, 5)));
-        lines.setBackground(Color.decode("#eeeeee")); // change to get from config
-        lines.setForeground(Color.decode("#888888")); // change to get from config
-        
-        lines.addMouseListener(new MouseListener() {
+		lines = new TextArea(this, config, "1");
+		
+		lines.setBackground(Color.LIGHT_GRAY);
+		lines.setEditable(false);
+				
+		lines.setBackground(linesBackgroundColor); 
+		lines.setForeground(textArea.getSelectionColor());
+
+		lines.addMouseListener(new MouseListener() {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				scrollPaneItem.getRowHeader().setVisible(false);
+				scrollPane.getRowHeader().setVisible(false);
 			}
 
 			@Override
@@ -100,142 +96,167 @@ class Window extends JFrame {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-		        lines.setBackground(Color.decode("#bbbbbb")); // change to get from config
+				lines.setBackground(linesBackgroundColorHover);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-		        lines.setBackground(Color.decode("#eeeeee")); // change to get from config
+				lines.setBackground(linesBackgroundColor);
 			}
-        	
-        });
-        
-		// Add listener 
-	    textArea.getDocument().addDocumentListener(new DocumentListener() {
-	         public String getText() {
-	            int caretPosition = textArea.getDocument().getLength();
-	            Element root = textArea.getDocument().getDefaultRootElement();
-	            String text = "1" + System.getProperty("line.separator");
-	               for(int i = 2; i < root.getElementIndex(caretPosition) + 2; i++) {
-	                  text += i + System.getProperty("line.separator");
-	               }
-	            return text;
-	         }
-	         @Override
-	         public void changedUpdate(DocumentEvent de) {
-	            lines.setText(getText());
-	         }
-	         @Override
-	         public void insertUpdate(DocumentEvent de) {
-	            lines.setText(getText());
-	         }
-	         @Override
-	         public void removeUpdate(DocumentEvent de) {
-	            lines.setText(getText());
-	         }
-	      });
-		scrollPaneItem.getViewport().add(textArea);
-		
-		// Set line height to that of the text area
-		scrollPaneItem.setRowHeaderView(lines);	
-		
-	    frame.setLocationRelativeTo(null);
-		frame.add(scrollPaneItem);     
-		
+
+		});
+
+		// Add listener
+		textArea.getDocument().addDocumentListener(new DocumentListener() {
+			public String getText() {
+				int caretPosition = textArea.getDocument().getLength();
+				Element root = textArea.getDocument().getDefaultRootElement();
+				String text = "1" + System.getProperty("line.separator");
+				for (int i = 2; i < root.getElementIndex(caretPosition) + 2; i++) {
+					text += i + System.getProperty("line.separator");
+				}
+				return text;
+			}
+
+			@Override
+			public void changedUpdate(DocumentEvent de) {
+				lines.setText(getText());
+			}
+
+			@Override
+			public void insertUpdate(DocumentEvent de) {
+				lines.setText(getText());
+			}
+
+			@Override
+			public void removeUpdate(DocumentEvent de) {
+				lines.setText(getText());
+			}
+		});
+
+		scrollPane.getViewport().add(textArea);
+		scrollPane.setRowHeaderView(lines);
+		scrollPane.setBorder(null);
+
+		frame.add(scrollPane);
+
 		// Add key bindings to instance
 		new KeyBinder(this);
-		
+
+
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
-		frame.setVisible(true);
 		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-			
-		// Set configuration
-		textArea.setFontWithZoom(config.getFont());
-		
-		// Get initial cursor focus from the user
-		textArea.requestFocus();
+		frame.setVisible(true);
+
+		frame.requestFocus();
+		textArea.grabFocus();
+
 	}
-	
+
 	void newDoc() {
 		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, this);
 		int saved = FileIO.SAVED;
-		
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
-		if (saveChoice == JOptionPane.YES_OPTION) saved = FileIO.save(this);
-		
+
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION)
+			return;
+		if (saveChoice == JOptionPane.YES_OPTION)
+			saved = FileIO.save(this);
+
 		if (saved == FileIO.SAVED) {
 			this.setFile(null);
 			this.textArea.setText("");
 			this.setSaved(true);
 		}
 	}
-	
+
 	void exit() {
 		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, this);
 		int saved = FileIO.SAVED;
-		
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) return;
-		if (saveChoice == JOptionPane.YES_OPTION) saved = FileIO.save(this);
-		
+
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION)
+			return;
+		if (saveChoice == JOptionPane.YES_OPTION)
+			saved = FileIO.save(this);
+
 		if (saved == FileIO.SAVED) {
 			config.saveConfigFile();
 			frame.dispose();
 		}
 	}
+
+	void setInformationBar(String val) {
+		menuBar.setInformationBarText(val);;
+	}
+	void setInformationBarZoomText(String val) {
+		menuBar.setInformationBarZoomText(val);;
+	}
+	public void setInformationBarZoomVisible(boolean isVisible) {
+		menuBar.setInformationBarZoomVisible(isVisible);
+	}
 	JScrollPane getLineScrollPane() {
-		return scrollPaneItem; 
-	} 
+		return scrollPane;
+	}
+
 	JTextArea getLineScrollTextArea() {
-		return lines; 
-	} 	
+		return lines;
+	}
+
 	JTextField getFindField() {
 		return menuBar.getFindField();
 	}
+
 	JButton getFindClose() {
 		return menuBar.getFindClose();
 	}
-	
+
 	void showFindBar() {
 		menuBar.showFindBar();
 	}
+
 	void hideFindBar() {
 		menuBar.hideFindBar();
 	}
+
 	JFrame getFrame() {
 		return frame;
 	}
+
 	TextArea getTextArea() {
 		return textArea;
 	}
-	
+	TextArea getLines() {
+		return lines;
+	}
+
 	boolean isSaved() {
 		return saved;
 	}
-	
+
 	void setSaved(boolean saved) {
 		frame.setTitle((saved ? "" : "*") + fileName + " - " + name);
 		this.saved = saved;
 	}
-	
+
 	File getFile() {
 		return file;
 	}
-	
+
 	void setFile(File file) {
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
-		fileMIME = FileIO.getFileMIME(file);
+		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
+		menuBar.setInformationBarFileText(MIME.getFileStyle(file));
 	}
-	
+
 	String getFileName() {
 		return fileName;
 	}
-	
+
 	String getAppName() {
 		return name;
 	}
-	
+
 	void setText(String text) {
 		textArea.setText(text);
 	}
