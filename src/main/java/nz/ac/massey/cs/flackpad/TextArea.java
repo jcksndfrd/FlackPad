@@ -18,57 +18,45 @@ import java.awt.ComponentOrientation;
 class TextArea extends RSyntaxTextArea {
 	
 	private Window window;
-	private Config config;
 	
 	private int fontSize;
 	private int fontPercentage;
 	
 	TextArea(Window window, Config config) {
-		//Call RSyntaxTextArea constructor
+		// Call RSyntaxTextArea constructor
 		super();
-		//Set variables
+		// Set variables
 		this.window = window;
-		this.config = config;
 		
 		this.fontSize = getFont().getSize();
 		this.fontPercentage = 100;
-		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
+		// Set border and add document listener
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
 		this.getDocument().addDocumentListener(new DocListener(window));	
 		this.addCaretListener(new CaretListener() {
 	        public void caretUpdate(CaretEvent e) {
 	            updateInformationBar();
 	        }
 	    });	
-		setTheme();
-	}
-	
-	TextArea(Window window, Config config, String startVal) {
-		//Call RSyntaxTextArea constructor
-		super();
-		//Set variables
-		this.window = window;
-		this.config = config;
 		
-		this.fontSize = getFont().getSize();
-		this.fontPercentage = 100;
-		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
-		setFont(config.getFont());
-		this.setText(startVal);
-		this.setHighlighter(null);
-		setCurrentLineHighlightColor(new Color(12, 12, 12, 0)); // Hide highlight
+		// Set font and colours
+		setTheme(config);
 	}
 	
-	void setTheme() {
+	void setTheme(Config config) {
+		// Set font
+		setFontWithZoom(config.getFont());
+		
+		// Set colours
+		Theme theme = config.getTheme();
+		
+		setBackground(theme.getTextBackground());
+		// Add these to theme and config
 		setCaretColor(Color.decode("#eeeeee")); // caret color
 		setSelectionColor(Color.decode("#770BD8")); // selection color
-		setBackground(Color.decode("#333333"));
 		setForeground(Color.decode("#aaaaaa"));
 		setCurrentLineHighlightColor(Color.decode("#444444")); // line highlight color
-		setSyntaxEditingStyle("text/plain");
 		setCodeFoldingEnabled(true);
-		setFont(config.getFont());
 	}
 	
 	//Adds time and date to the top of the text area
@@ -79,7 +67,7 @@ class TextArea extends RSyntaxTextArea {
 			//Add time and date to text area
 			this.getDocument().insertString(0, formatter.format(LocalDateTime.now()) + "\n", null);
 		} catch (BadLocationException e) {
-			Dialogs.error("Something went wrong when getting the time and date", window);
+			Dialogs.error("Something went wrong when getting the time and date", window.getFrame());
 		}
 	}
 	
@@ -113,7 +101,6 @@ class TextArea extends RSyntaxTextArea {
 		int roundedZoomVal = Math.round(fontSize * fontPercentage / 100);
 		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), roundedZoomVal);
 		setFont(newFont);
-		window.getLines().setFont(newFont);
 		try {
 			if (fontPercentage == 100) {
 				// Hide percentage information
@@ -127,20 +114,12 @@ class TextArea extends RSyntaxTextArea {
 		}
 	}
 	
-	private void updateInformationBar() {
-		TextArea area = window.getTextArea();
-		
-		String text = "";
-        try
-        {
-        	text = Integer.toString(area.getText().length()) + " | Char";
-        	
+	private void updateInformationBar() {		
+        try {
             // Update text
-    		window.setInformationBar(text);
-    	}
-        catch (NullPointerException exc)
-        {
-            exc.printStackTrace();
+    		window.setInformationBar(Integer.toString(window.getText().length()) + " | Char");
+    	} catch (NullPointerException e) {
+    		window.setInformationBar("0");
         }
 	}
 }

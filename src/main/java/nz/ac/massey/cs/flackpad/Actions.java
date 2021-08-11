@@ -10,9 +10,9 @@ import javax.swing.JScrollPane;
 
 public class Actions {
 
-	public static void performPaste(Window windowInstance) {
+	public static void performPaste(Window window) {
 		try {
-			TextArea textArea = windowInstance.getTextArea();
+			TextArea textArea = window.getTextArea();
 			/*
 			 * Handle 2 cases: a. Paste with text selected b. Paste with no text selected
 			 */
@@ -29,104 +29,65 @@ public class Actions {
 			}
 
 		} catch (Exception err) {
-			Dialogs.error("Could not paste from clipboard", windowInstance);
+			Dialogs.error("Could not paste from clipboard", window.getFrame());
 		}
 
 	}
 
-	public static void performCopy(Window windowInstance) {
+	public static void performCopy(Window window) {
 		try {
-			TextArea textArea = windowInstance.getTextArea();
+			TextArea textArea = window.getTextArea();
 			StringSelection stringSelection = new StringSelection(textArea.getSelectedText());
 			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 			clipboard.setContents(stringSelection, null);
 		} catch (Exception err) {
-			Dialogs.error("Could not copy selected text to clipboard", windowInstance);
+			Dialogs.error("Could not copy selected text to clipboard", window.getFrame());
 		}
 	}
 
-	public static void performCut(Window windowInstance) {
+	public static void performCut(Window window) {
 		try {
-			TextArea textArea = windowInstance.getTextArea();
+			TextArea textArea = window.getTextArea();
 			StringSelection stringSelection = new StringSelection(textArea.getSelectedText());
 			textArea.replaceSelection("");
 			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 			clipboard.setContents(stringSelection, null);
 		} catch (Exception err) {
-			Dialogs.error("Could not cut selected", windowInstance);
+			Dialogs.error("Could not cut selected", window.getFrame());
 		}
 	}
 
-	public static void performSave(Window windowInstance) {
-		FileIO.save(windowInstance);
-	}
-
-	public static void performSaveAs(Window windowInstance) {
-		FileIO.saveAs(windowInstance);
-	}
-
-	public static void performNewWindow(Window windowInstance) {
-		new Window();
-	}
-
-	public static void performNew(Window windowInstance) {
-		windowInstance.newDoc();
-	}
-
-	public static void performOpen(Window windowInstance) {
-		FileIO.open(windowInstance);
-	}
-
-	public static void performExit(Window windowInstance) {
-		windowInstance.exit();
-	}
-
-	public static void performSelectAll(Window windowInstance) {
+	public static void performSelectAll(Window window) {
 		try {
-			TextArea textArea = windowInstance.getTextArea();
+			TextArea textArea = window.getTextArea();
 			textArea.setSelectionStart(0);
 			textArea.setSelectionEnd(textArea.getText().length());
 		} catch (Exception err) {
-			Dialogs.error("Could not select all", windowInstance);
+			Dialogs.error("Could not select all", window.getFrame());
 		}
 	}
 
-	public static void performFind(Window windowInstance) {
+	public static void performFind(Window window) {
 		// Show find / replace bar
-		windowInstance.showFindBar();
+		window.showFindBar();
 	}
 
-	public static void performEscapeFind(Window windowInstance) {
+	public static void performEscapeFind(Window window) {
 		try {
-			if (windowInstance.getFindField().isVisible()) {
-				windowInstance.hideFindBar();
+			if (window.getFindField().isVisible()) {
+				window.hideFindBar();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			Dialogs.error("Could not escape search bar", windowInstance);
+			Dialogs.error("Could not escape search bar", window.getFrame());
 		}
 	}
 
-	public static void performDelete(Window windowInstance) {
-		windowInstance.getTextArea().replaceSelection(null);
+	public static void performDelete(Window window) {
+		window.getTextArea().replaceSelection(null);
 	}
 
-	public static void performPrint(Window windowInstance) {
+	public static void performPrint(Window window) {
 		// Stub
-	}
-
-	public static void performLineNumberToggle(Window window) {
-		JScrollPane scrollPaneItem = window.getLineScrollPane();
-		if (scrollPaneItem == null) {
-			return;
-		}
-		boolean isVisible = scrollPaneItem.getRowHeader().isVisible();
-		if (isVisible) {
-			// Hide panel
-			scrollPaneItem.getRowHeader().setVisible(false);
-		} else {
-			// Show panel
-			scrollPaneItem.getRowHeader().setVisible(true);
-		}
 	}
 }
