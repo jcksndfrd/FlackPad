@@ -10,6 +10,8 @@ import javax.swing.event.CaretListener;
 import javax.swing.text.BadLocationException;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import org.fife.ui.rtextarea.Gutter;
+
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 
@@ -57,6 +59,10 @@ class TextArea extends RSyntaxTextArea {
 		setForeground(Color.decode("#aaaaaa"));
 		setCurrentLineHighlightColor(Color.decode("#444444")); // line highlight color
 		setCodeFoldingEnabled(true);
+	}
+	void setGutterTheme(Gutter gutter) {
+		gutter.setBorderColor(Color.decode("#770BD8"));		
+		gutter.setLineNumberColor(Color.decode("#aaaaaa"));
 	}
 	
 	//Adds time and date to the top of the text area

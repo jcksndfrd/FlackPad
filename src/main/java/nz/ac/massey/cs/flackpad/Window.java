@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+
+import org.fife.ui.rtextarea.Gutter;
 
 class Window {
 	private String name = "FlackPad";
@@ -57,6 +60,10 @@ class Window {
 		textArea = new TextArea(this, config);
 		scrollPane = new ScrollPane(textArea, config);
 		scrollPane.getGutter().setLineNumberFont(config.getFont());
+		textArea.setGutterTheme(scrollPane.getGutter());
+		
+		scrollPane.setBorder(null);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 
 		frame.add(scrollPane);
 
@@ -103,7 +110,6 @@ class Window {
 			frame.dispose();
 		}
 	}
-	
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
 	}
