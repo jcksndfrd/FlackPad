@@ -1,6 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
 import javax.swing.BorderFactory;
+import javax.swing.ScrollPaneConstants;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rtextarea.RTextScrollPane;
@@ -17,6 +18,9 @@ public class ScrollPane extends RTextScrollPane {
 		
 		// Set font and colours
 		setTheme(config);
+		
+		setBorder(null);
+		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 
 	void setTheme(Config config) {
@@ -24,8 +28,9 @@ public class ScrollPane extends RTextScrollPane {
 		getGutter().setLineNumberFont(config.getFont());
 		
 		// Set colours
-		Theme theme = config.getTheme();
-		getGutter().setBackground(theme.getGutterBackground());
+		getGutter().setBackground(Theme.gutterBackground);
+		getGutter().setBorderColor(Theme.gutterBorder);		
+		getGutter().setLineNumberColor(Theme.gutterLineNumber);
 	}
 
 }

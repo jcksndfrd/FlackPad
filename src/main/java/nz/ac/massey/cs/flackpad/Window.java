@@ -1,6 +1,5 @@
 package nz.ac.massey.cs.flackpad;
 
-import java.awt.Color;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.List;
@@ -11,9 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.ScrollPaneConstants;
-
-import org.fife.ui.rtextarea.Gutter;
 
 class Window {
 	private String name = "FlackPad";
@@ -29,10 +25,6 @@ class Window {
 	private boolean saved = true;
 	private File file;
 	private String fileName;
-
-	// Get below colours from config
-	Color linesBackgroundColorHover = Color.decode("#222222");
-	Color linesBackgroundColor = Color.decode("#383838");
 
 	Window() {
 		// Create JFrame and set title
@@ -59,11 +51,6 @@ class Window {
 		// Add text area in a scroll pane
 		textArea = new TextArea(this, config);
 		scrollPane = new ScrollPane(textArea, config);
-		scrollPane.getGutter().setLineNumberFont(config.getFont());
-		textArea.setGutterTheme(scrollPane.getGutter());
-		
-		scrollPane.setBorder(null);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 
 		frame.add(scrollPane);
 
