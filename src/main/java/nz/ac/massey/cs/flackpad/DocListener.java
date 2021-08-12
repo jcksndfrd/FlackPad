@@ -1,8 +1,11 @@
 package nz.ac.massey.cs.flackpad;
 
-import javax.swing.event.*;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
-class DocListener implements DocumentListener {
+class DocListener implements DocumentListener, CaretListener {
 	
 	private Window window;
 
@@ -14,15 +17,23 @@ class DocListener implements DocumentListener {
 	@Override
 	public void insertUpdate(DocumentEvent e) {
 		window.setSaved(false);
+		window.updateInformationBar();
 	}
 
 	@Override
 	public void removeUpdate(DocumentEvent e) {
 		window.setSaved(false);
+		window.updateInformationBar();
 	}
 
 	@Override
 	public void changedUpdate(DocumentEvent e) {
 		window.setSaved(false);
+		window.updateInformationBar();
+	}
+
+	@Override
+	public void caretUpdate(CaretEvent e) {
+		window.updateInformationBar();
 	}
 }

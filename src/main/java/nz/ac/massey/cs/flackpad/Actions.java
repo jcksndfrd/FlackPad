@@ -80,9 +80,6 @@ public class Actions {
 			Dialogs.error("Could not escape search bar", window.getFrame());
 		}
 	}
-	public static void performToggleTheme(Window window) {
-		window.toggleTheme();
-	}
 
 	public static void performDelete(Window window) {
 		window.getTextArea().replaceSelection(null);

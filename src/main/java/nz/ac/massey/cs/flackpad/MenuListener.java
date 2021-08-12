@@ -35,9 +35,6 @@ class MenuListener implements ActionListener {
 			break;
 		case "Export to PDF":
 			PdfExporter.export(window.getTextArea().getText(), window.getAppName(), window.getFrame());
-		case "Toggle Theme":
-			Actions.performToggleTheme(window);
-			break;
 		case "Exit":
 			window.exit();
 			break;
@@ -77,6 +74,9 @@ class MenuListener implements ActionListener {
 			break;
 		case "Line Numbers":
 			window.gutterToggle();
+			break;
+		case "Toggle Theme":
+			window.toggleTheme();
 			break;
 		
 		//Help menu

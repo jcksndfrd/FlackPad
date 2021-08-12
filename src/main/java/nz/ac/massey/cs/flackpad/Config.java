@@ -36,7 +36,7 @@ class Config {
 		defaults.put("fontFamily", "Dialog");
 		defaults.put("fontStyle", Font.PLAIN);
 		defaults.put("fontSize", 12);
-		defaults.put("theme", "dark");
+		defaults.put("theme", "light");
 	}
 
 	void loadConfigFile() {
@@ -90,8 +90,11 @@ class Config {
 		if (themeValue.getClass() == String.class) {
 			String themeName = (String) themeValue;
 			// Check theme value is valid
-			if (themeName.contentEquals("dark") || themeName.contentEquals("light")) {
-				theme = new MainTheme(themeName);
+			if (themeName.contentEquals("light")) {
+				theme = new MainTheme("light");
+				return;
+			} else if (themeName.contentEquals("dark")) {
+				theme = new MainTheme("dark");
 				return;
 			}
 		}
@@ -136,6 +139,16 @@ class Config {
 
 	MainTheme getTheme() {
 		return theme;
+	}
+	
+	void setTheme(String themeName) {
+		// Check themeName is valid
+		if (themeName == "dark" || themeName == "light") {
+			config.put("theme", themeName);
+			getThemeFromConfig();
+		} else {
+			Dialogs.error("Theme \"" + themeName + "\" is not a valid theme", parent);
+		}
 	}
 
 }

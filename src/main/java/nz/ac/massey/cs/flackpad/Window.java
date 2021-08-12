@@ -1,7 +1,9 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Image;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -24,20 +26,20 @@ class Window {
 
 	private boolean saved = true;
 	private File file;
-	private String fileName;
-	private MainTheme theme;
+	private String fileName = "Untitled";
 
 	Window() {
 		// Create JFrame and set title
-		fileName = "Untitled";
 		frame = new JFrame(fileName + " - " + name);
 
-		// Add icon
-		frame.setIconImages(
-				List.of(new ImageIcon("icons/16x16.png").getImage(), new ImageIcon("icons/32x32.png").getImage(),
-						new ImageIcon("icons/64x64.png").getImage(), new ImageIcon("icons/128x128.png").getImage()));
+		// Add icons
+		List<Image> iconList = new ArrayList<Image>();
+		iconList.add(new ImageIcon("icons/16x16.png").getImage());
+		iconList.add(new ImageIcon("icons/32x32.png").getImage());
+		iconList.add(new ImageIcon("icons/64x64.png").getImage());
+		iconList.add(new ImageIcon("icons/128x128.png").getImage());
+		frame.setIconImages(iconList);
 
-		
 		// Add window listener
 		winListener = new WinListener(this);
 		frame.addWindowListener(winListener);
@@ -50,16 +52,14 @@ class Window {
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		scrollPane = new ScrollPane(textArea);
-		
+
 		// Get config
 		config = new Config(frame);
-		theme = config.getTheme();
-		theme.setTheme(textArea); // This must be before textArea.setTheme() and scrollPane.setTheme()
-		
+
 		// Set font and colours for textarea, scrollpane, etc.
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
-		
+
 		frame.add(scrollPane);
 
 		// Add key bindings to instance
@@ -73,24 +73,6 @@ class Window {
 		frame.requestFocus();
 		textArea.grabFocus();
 
-	}
-
-	void toggleTheme() {
-		switch (theme.getThemeString()) {
-		case "dark":
-			theme.setThemeString("light");
-			theme.setTheme(textArea);
-			scrollPane.setTheme(config);
-			textArea.setTheme(config);
-
-			break;
-		case "light":
-			theme.setThemeString("dark");
-			theme.setTheme(textArea);
-			scrollPane.setTheme(config);
-			textArea.setTheme(config);
-			break;
-		}
 	}
 
 	void newDoc() {
@@ -124,21 +106,52 @@ class Window {
 		}
 	}
 
+	void toggleTheme() {
+		String currentThemeName = config.getTheme().getThemeName();
+		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
+		textArea.setTheme(config);
+		scrollPane.setTheme(config);
+	}
+
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
+	}
+
+	public void addTimeAndDate() {
+		textArea.addTimeAndDate();
+	}
+
+	public void zoomIn() {
+		textArea.zoomIn();
+		menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
+		menuBar.setInformationBarZoomVisible(true);
+	}
+
+	public void zoomOut() {
+		textArea.zoomOut();
+		menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
+		menuBar.setInformationBarZoomVisible(true);
+	}
+
+	public void resetZoom() {
+		textArea.resetZoom();
+		menuBar.setInformationBarZoomText("100%");
+		menuBar.setInformationBarZoomVisible(false);
 	}
 
 	void setInformationBar(String val) {
 		menuBar.setInformationBarText(val);
 	}
 
-	void setInformationBarZoomText(String val) {
-		menuBar.setInformationBarZoomText(val);
+	void updateInformationBar() {
+		try {
+			// Update text
+			menuBar.setInformationBarText(Integer.toString(getText().length()) + " | Char");
+		} catch (NullPointerException e) {
+			menuBar.setInformationBarText("0");
+		}
 	}
 
-	public void setInformationBarZoomVisible(boolean isVisible) {
-		menuBar.setInformationBarZoomVisible(isVisible);
-	}
 	JScrollPane getLineScrollPane() {
 		return scrollPane;
 	}
@@ -198,24 +211,8 @@ class Window {
 	void setText(String text) {
 		textArea.setText(text);
 	}
-	
+
 	String getText() {
 		return textArea.getText();
-	}
-
-	public void zoomIn() {
-		textArea.zoomIn();
-	}
-
-	public void zoomOut() {
-		textArea.zoomOut();
-	}
-
-	public void resetZoom() {
-		textArea.resetZoom();
-	}
-
-	public void addTimeAndDate() {
-		textArea.addTimeAndDate();
 	}
 }

@@ -104,7 +104,6 @@ class MenuBar extends JMenuBar {
 				KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK + InputEvent.SHIFT_DOWN_MASK));
 		fileItems.put("Print", KeyStroke.getKeyStroke(KeyEvent.VK_P, InputEvent.CTRL_DOWN_MASK));
 		fileItems.put("Export to PDF", null);
-		fileItems.put("Toggle Theme", KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK));
 		fileItems.put("Exit", KeyStroke.getKeyStroke(KeyEvent.VK_W, InputEvent.CTRL_DOWN_MASK));
 
 		for (String itemName : fileItems.keySet()) {
@@ -152,6 +151,7 @@ class MenuBar extends JMenuBar {
 		viewItems.put("Zoom Out", KeyStroke.getKeyStroke(KeyEvent.VK_8, InputEvent.CTRL_DOWN_MASK));
 		viewItems.put("Reset Zoom", KeyStroke.getKeyStroke(KeyEvent.VK_0, InputEvent.CTRL_DOWN_MASK));
 		viewItems.put("Line Numbers", KeyStroke.getKeyStroke(KeyEvent.VK_L, InputEvent.CTRL_DOWN_MASK));
+		viewItems.put("Toggle Theme", KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK));
 
 		for (String itemName : viewItems.keySet()) {
 			JMenuItem item = new JMenuItem(itemName);
