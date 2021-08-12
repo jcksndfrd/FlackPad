@@ -6,8 +6,6 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 
-import javax.swing.JScrollPane;
-
 public class Actions {
 
 	public static void performPaste(Window window) {
@@ -81,6 +79,9 @@ public class Actions {
 			e.printStackTrace();
 			Dialogs.error("Could not escape search bar", window.getFrame());
 		}
+	}
+	public static void performToggleTheme(Window window) {
+		window.toggleTheme();
 	}
 
 	public static void performDelete(Window window) {

@@ -19,25 +19,22 @@ class TextArea extends RSyntaxTextArea {
 	private int fontSize;
 	private int fontPercentage;
 	
-	TextArea(Window window, Config config) {
+	TextArea(Window window) {
 		// Call RSyntaxTextArea constructor
 		super();
 		// Set variables
 		this.window = window;
-		
+
 		this.fontSize = getFont().getSize();
 		this.fontPercentage = 100;
 		// Set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
+		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
 		this.getDocument().addDocumentListener(new DocListener(window));	
 		this.addCaretListener(new CaretListener() {
 	        public void caretUpdate(CaretEvent e) {
 	            updateInformationBar();
 	        }
 	    });	
-		
-		// Set font and colours
-		setTheme(config);
 	}
 	
 	void setTheme(Config config) {
@@ -45,12 +42,12 @@ class TextArea extends RSyntaxTextArea {
 		setFontWithZoom(config.getFont());
 		
 		// Set colours		
-		setBackground(Theme.textBackground);
+		setBackground(MainTheme.textBackground);
 		// Add these to theme and config
-		setCaretColor(Theme.caretForeground); // caret color
-		setSelectionColor(Theme.selectionHighlight); // selection color
-		setForeground(Theme.textForeground);
-		setCurrentLineHighlightColor(Theme.currentLineHightlightBackground); // line highlight color
+		setCaretColor(MainTheme.caretForeground); // caret color
+		setSelectionColor(MainTheme.selectionHighlight); // selection color
+		setForeground(MainTheme.textForeground);
+		setCurrentLineHighlightColor(MainTheme.currentLineHightlightBackground); // line highlight color
 		setCodeFoldingEnabled(true);
 	}
 	

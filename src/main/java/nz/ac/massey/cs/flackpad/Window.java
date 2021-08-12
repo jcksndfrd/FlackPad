@@ -25,6 +25,7 @@ class Window {
 	private boolean saved = true;
 	private File file;
 	private String fileName;
+	private MainTheme theme;
 
 	Window() {
 		// Create JFrame and set title
@@ -36,9 +37,7 @@ class Window {
 				List.of(new ImageIcon("icons/16x16.png").getImage(), new ImageIcon("icons/32x32.png").getImage(),
 						new ImageIcon("icons/64x64.png").getImage(), new ImageIcon("icons/128x128.png").getImage()));
 
-		// Get config
-		config = new Config(frame);
-
+		
 		// Add window listener
 		winListener = new WinListener(this);
 		frame.addWindowListener(winListener);
@@ -49,9 +48,18 @@ class Window {
 		frame.setJMenuBar(menuBar);
 
 		// Add text area in a scroll pane
-		textArea = new TextArea(this, config);
-		scrollPane = new ScrollPane(textArea, config);
-
+		textArea = new TextArea(this);
+		scrollPane = new ScrollPane(textArea);
+		
+		// Get config
+		config = new Config(frame);
+		theme = config.getTheme();
+		theme.setTheme(textArea); // This must be before textArea.setTheme() and scrollPane.setTheme()
+		
+		// Set font and colours for textarea, scrollpane, etc.
+		textArea.setTheme(config);
+		scrollPane.setTheme(config);
+		
 		frame.add(scrollPane);
 
 		// Add key bindings to instance
@@ -65,6 +73,24 @@ class Window {
 		frame.requestFocus();
 		textArea.grabFocus();
 
+	}
+
+	void toggleTheme() {
+		switch (theme.getThemeString()) {
+		case "dark":
+			theme.setThemeString("light");
+			theme.setTheme(textArea);
+			scrollPane.setTheme(config);
+			textArea.setTheme(config);
+
+			break;
+		case "light":
+			theme.setThemeString("dark");
+			theme.setTheme(textArea);
+			scrollPane.setTheme(config);
+			textArea.setTheme(config);
+			break;
+		}
 	}
 
 	void newDoc() {
@@ -97,6 +123,7 @@ class Window {
 			frame.dispose();
 		}
 	}
+
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
 	}
@@ -112,7 +139,6 @@ class Window {
 	public void setInformationBarZoomVisible(boolean isVisible) {
 		menuBar.setInformationBarZoomVisible(isVisible);
 	}
-
 	JScrollPane getLineScrollPane() {
 		return scrollPane;
 	}

@@ -9,15 +9,12 @@ import org.fife.ui.rtextarea.RTextScrollPane;
 @SuppressWarnings("serial")
 public class ScrollPane extends RTextScrollPane {
 	
-	ScrollPane(RSyntaxTextArea textArea, Config config) {
+	ScrollPane(RSyntaxTextArea textArea) {
 		// Call RTextScrollPane constructor with textArea as the contained text area
 		super(textArea);
 		
 		// Add border
-		getGutter().setBorder(BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(5, 5, 0, 5)));
-		
-		// Set font and colours
-		setTheme(config);
+		getGutter().setBorder(BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
 		
 		setBorder(null);
 		setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -28,9 +25,9 @@ public class ScrollPane extends RTextScrollPane {
 		getGutter().setLineNumberFont(config.getFont());
 		
 		// Set colours
-		getGutter().setBackground(Theme.gutterBackground);
-		getGutter().setBorderColor(Theme.gutterBorder);		
-		getGutter().setLineNumberColor(Theme.gutterLineNumber);
+		getGutter().setBackground(MainTheme.gutterBackground);
+		getGutter().setBorderColor(MainTheme.gutterBorder);		
+		getGutter().setLineNumberColor(MainTheme.gutterLineNumber);
 	}
 
 }

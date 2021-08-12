@@ -20,7 +20,7 @@ class Config {
 
 	private Component parent;
 	private Font font;
-	private Theme theme;
+	private MainTheme theme;
 
 	Config(Component parent) {
 		// Save parent component to instance
@@ -91,14 +91,14 @@ class Config {
 			String themeName = (String) themeValue;
 			// Check theme value is valid
 			if (themeName.contentEquals("dark") || themeName.contentEquals("light")) {
-				theme = new Theme(themeName);
+				theme = new MainTheme(themeName);
 				return;
 			}
 		}
 		
 		// Use default theme
 		config.put("theme", defaults.get("theme"));
-		theme = new Theme((String) config.get("theme"));
+		theme = new MainTheme((String) config.get("theme"));
 		Dialogs.error("Something wen't wrong when loading the configured theme, using default theme \""
 				+ (String) config.get("theme") + "\".", parent);
 	}
@@ -134,7 +134,7 @@ class Config {
 		getFontFromConfig();
 	}
 
-	Theme getTheme() {
+	MainTheme getTheme() {
 		return theme;
 	}
 
