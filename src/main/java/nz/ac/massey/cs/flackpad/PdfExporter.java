@@ -37,7 +37,7 @@ final class PdfExporter {
 				writer.close();
 				Dialogs.message("Succesfully exported as \"" + filePath.substring(filePath.lastIndexOf("\\")+1) + "\"", parent);
 			} catch (Exception e) {
-				Dialogs.error("Something wen't wrong exporting to PDF", parent);
+				Dialogs.error("Something went wrong exporting to PDF", parent);
 			}
 		}
 	}

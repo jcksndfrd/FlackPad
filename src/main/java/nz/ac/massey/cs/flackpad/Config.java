@@ -50,7 +50,7 @@ class Config {
 		} catch (FileNotFoundException e) {
 			Dialogs.error("Configuration file does not exist, using defaults", parent);
 		} catch (IOException e) {
-			Dialogs.error("Something wen't wrong when loading configuration file", parent);
+			Dialogs.error("Something went wrong when loading configuration file", parent);
 		}
 
 		// Set missing values with defaults
@@ -78,7 +78,7 @@ class Config {
 			// Use default font
 			setFont(new Font((String) defaults.get("fontFamily"), (int) defaults.get("fontStyle"),
 					(int) defaults.get("fontSize")));
-			Dialogs.error("Something wen't wrong when loading the configured font, using default font.", parent);
+			Dialogs.error("Something went wrong when loading the configured font, using default font.", parent);
 		}
 	}
 
@@ -102,7 +102,7 @@ class Config {
 		// Use default theme
 		config.put("theme", defaults.get("theme"));
 		theme = new MainTheme((String) config.get("theme"));
-		Dialogs.error("Something wen't wrong when loading the configured theme, using default theme \""
+		Dialogs.error("Something went wrong when loading the configured theme, using default theme \""
 				+ (String) config.get("theme") + "\".", parent);
 	}
 
@@ -120,7 +120,7 @@ class Config {
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
-			Dialogs.error("Something wen't wrong when saving configuration", parent);
+			Dialogs.error("Something went wrong when saving configuration", parent);
 		}
 	}
 
