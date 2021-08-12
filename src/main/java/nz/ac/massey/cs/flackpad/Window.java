@@ -1,8 +1,13 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +65,11 @@ class Window {
 		scrollPane.setTheme(config);
 
 		frame.add(scrollPane);
+		
+		// Enable/disable menu items
+		updateUndoRedoEnable();
+		updateCCDEnable();
+		updateZoomEnable();
 
 		// Add key bindings to instance
 		new KeyBinder(this);
@@ -132,20 +142,39 @@ class Window {
 
 	void zoomIn() {
 		textArea.zoomIn();
-		menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
-		menuBar.setInformationBarZoomVisible(true);
+		updateZoomEnable();
 	}
 
 	void zoomOut() {
 		textArea.zoomOut();
-		menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
-		menuBar.setInformationBarZoomVisible(true);
+		updateZoomEnable();
 	}
 
 	void resetZoom() {
 		textArea.resetZoom();
-		menuBar.setInformationBarZoomText("100%");
-		menuBar.setInformationBarZoomVisible(false);
+		updateZoomEnable();
+	}
+	
+	void updateUndoRedoEnable() {
+		menuBar.setUndoEnabled(textArea.canUndo());
+		menuBar.setRedoEnabled(textArea.canRedo());
+	}
+	
+	void updateCCDEnable() {
+		menuBar.setCCDEnabled(textArea.getSelectedText() != null);
+	}
+	
+	void updateZoomEnable() {
+		menuBar.setZoomInEnabled(textArea.getZoomPercentage() < 1000);
+		menuBar.setZoomOutEnabled(textArea.getZoomPercentage() > 10);
+		menuBar.setResetZoomEnabled(textArea.getZoomPercentage() != 100);
+		
+		if (textArea.getZoomPercentage() != 100) {
+			menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
+			menuBar.setInformationBarZoomVisible(true);
+		} else {
+			menuBar.setInformationBarZoomVisible(false);
+		}
 	}
 
 	void setInformationBar(String val) {
