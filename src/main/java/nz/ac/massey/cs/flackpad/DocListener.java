@@ -18,22 +18,26 @@ class DocListener implements DocumentListener, CaretListener {
 	public void insertUpdate(DocumentEvent e) {
 		window.setSaved(false);
 		window.updateInformationBar();
+		window.updateUndoRedoEnable();
 	}
 
 	@Override
 	public void removeUpdate(DocumentEvent e) {
 		window.setSaved(false);
 		window.updateInformationBar();
+		window.updateUndoRedoEnable();
 	}
 
 	@Override
 	public void changedUpdate(DocumentEvent e) {
 		window.setSaved(false);
 		window.updateInformationBar();
+		window.updateUndoRedoEnable();
 	}
 
 	@Override
 	public void caretUpdate(CaretEvent e) {
-		window.updateInformationBar();
+//		window.updateInformationBar();
+		window.updateCCDEnable();
 	}
 }

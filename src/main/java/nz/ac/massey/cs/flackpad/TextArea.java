@@ -14,7 +14,7 @@ class TextArea extends RSyntaxTextArea {
 
 	private Window window;
 
-	private int fontSize;
+	private float fontSize;
 	private int zoomPercentage;
 
 	TextArea(Window window) {
@@ -31,7 +31,7 @@ class TextArea extends RSyntaxTextArea {
 		// Add listeners
 		DocListener listener = new DocListener(window);
 		getDocument().addDocumentListener(listener);
-//		addCaretListener(listener);
+		addCaretListener(listener);
 	}
 
 	void setTheme(Config config) {
@@ -71,20 +71,14 @@ class TextArea extends RSyntaxTextArea {
 	}
 
 	// Zoom methods work by changing font size
-	int zoomIn() {
-		if (zoomPercentage < 1000) {
-			zoomPercentage += 10;
-			zoom();
-		}
-		return zoomPercentage;
+	void zoomIn() {
+		zoomPercentage += 10;
+		zoom();
 	}
 
-	int zoomOut() {
-		if (zoomPercentage > 10) {
-			zoomPercentage -= 10;
-			zoom();
-		}
-		return zoomPercentage;
+	void zoomOut() {
+		zoomPercentage -= 10;
+		zoom();
 	}
 
 	void resetZoom() {
@@ -97,8 +91,6 @@ class TextArea extends RSyntaxTextArea {
 	}
 
 	private void zoom() {
-		int roundedZoomVal = Math.round(fontSize * zoomPercentage / 100);
-		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), roundedZoomVal);
-		setFont(newFont);
+		setFont(getFont().deriveFont(fontSize * zoomPercentage / 100));
 	}
 }

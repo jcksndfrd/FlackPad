@@ -99,11 +99,11 @@ class MenuBar extends JMenuBar {
 		add(filetype);
 	}
 
-	public void setInformationBarText(String val) {
+	void setInformationBarText(String val) {
 		details.setText(val);
 	}
 
-	public void setInformationBarFileText(String val) {
+	void setInformationBarFileText(String val) {
 		if (val.startsWith("text/")) {
 			filetype.setText(val.substring(5).toUpperCase());
 		} else {
@@ -111,11 +111,11 @@ class MenuBar extends JMenuBar {
 		}
 	}
 
-	public void setInformationBarZoomText(String val) {
+	void setInformationBarZoomText(String val) {
 		zoomlevel.setText(val);
 	}
 
-	public void setInformationBarZoomVisible(boolean isVisible) {
+	void setInformationBarZoomVisible(boolean isVisible) {
 		zoomlevel.setVisible(isVisible);
 	}
 
@@ -322,7 +322,7 @@ class MenuBar extends JMenuBar {
 		});
 	}
 
-	public void hideFindBar() {
+	void hideFindBar() {
 		try {
 			findField.setVisible(false);
 			exitFindButton.setVisible(false);
@@ -334,7 +334,7 @@ class MenuBar extends JMenuBar {
 
 	}
 
-	public void showFindBar() {
+	void showFindBar() {
 		try {
 			findField.setVisible(true);
 			exitFindButton.setVisible(true);
@@ -344,12 +344,38 @@ class MenuBar extends JMenuBar {
 		}
 	}
 
-	public JTextField getFindField() {
+	JTextField getFindField() {
 		return findField;
 	}
 
-	public JButton getFindClose() {
+	JButton getFindClose() {
 		return exitFindButton;
+	}
+	
+	void setUndoEnabled(Boolean enabled) {
+		undoItem.setEnabled(enabled);
+	}
+	
+	void setRedoEnabled(Boolean enabled) {
+		redoItem.setEnabled(enabled);
+	}
+	
+	void setCCDEnabled(Boolean enabled) {
+		cutItem.setEnabled(enabled);
+		copyItem.setEnabled(enabled);
+		deleteItem.setEnabled(enabled);
+	}
+	
+	void setZoomInEnabled(Boolean enabled) {
+		zoomInItem.setEnabled(enabled);
+	}
+	
+	void setZoomOutEnabled(Boolean enabled) {
+		zoomOutItem.setEnabled(enabled);
+	}
+	
+	void setResetZoomEnabled(Boolean enabled) {
+		resetZoomItem.setEnabled(enabled);
 	}
 
 }
