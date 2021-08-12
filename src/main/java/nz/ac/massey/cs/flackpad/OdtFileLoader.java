@@ -15,13 +15,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-final class OdtFileLoader {
+class OdtFileLoader {
 
-	private OdtFileLoader() {
-		throw new UnsupportedOperationException();
+	OdtFileLoader() {
 	}
 
-	static String loadFile(File file) throws IOException {
+	String loadFile(File file) throws IOException {
 
 		@SuppressWarnings("resource")
 		ZipFile odt = new ZipFile(file);
