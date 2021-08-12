@@ -10,7 +10,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 class Window {
@@ -72,6 +71,7 @@ class Window {
 
 		frame.requestFocus();
 		textArea.grabFocus();
+		
 
 	}
 
@@ -85,9 +85,10 @@ class Window {
 			saved = FileIO.save(this);
 
 		if (saved == FileIO.SAVED) {
-			this.setFile(null);
-			this.textArea.setText("");
-			this.setSaved(true);
+			setFile(null);
+			textArea.setText("");
+			setSaved(true);
+			textArea.discardAllEdits();
 		}
 	}
 
@@ -116,24 +117,32 @@ class Window {
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
 	}
+	
+	void undo() {
+		textArea.undoLastAction();
+	}
+	
+	void redo() {
+		textArea.redoLastAction();
+	}
 
-	public void addTimeAndDate() {
+	void addTimeAndDate() {
 		textArea.addTimeAndDate();
 	}
 
-	public void zoomIn() {
+	void zoomIn() {
 		textArea.zoomIn();
 		menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
 		menuBar.setInformationBarZoomVisible(true);
 	}
 
-	public void zoomOut() {
+	void zoomOut() {
 		textArea.zoomOut();
 		menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
 		menuBar.setInformationBarZoomVisible(true);
 	}
 
-	public void resetZoom() {
+	void resetZoom() {
 		textArea.resetZoom();
 		menuBar.setInformationBarZoomText("100%");
 		menuBar.setInformationBarZoomVisible(false);
@@ -150,10 +159,6 @@ class Window {
 		} catch (NullPointerException e) {
 			menuBar.setInformationBarText("0");
 		}
-	}
-
-	JScrollPane getLineScrollPane() {
-		return scrollPane;
 	}
 
 	JTextField getFindField() {
@@ -198,6 +203,7 @@ class Window {
 		fileName = file == null ? "Untitled" : file.getName();
 		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
 		menuBar.setInformationBarFileText(MIME.getFileStyle(file));
+		textArea.discardAllEdits();
 	}
 
 	String getFileName() {

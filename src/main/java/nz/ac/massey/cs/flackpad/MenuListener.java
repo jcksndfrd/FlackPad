@@ -34,12 +34,18 @@ class MenuListener implements ActionListener {
 			Actions.performPrint(window);
 			break;
 		case "Export to PDF":
-			PdfExporter.export(window.getTextArea().getText(), window.getAppName(), window.getFrame());
+			PdfExporter.export(window.getText(), window.getAppName(), window.getFrame());
 		case "Exit":
 			window.exit();
 			break;
 		
 		//Edit menu
+		case "Undo":
+			window.undo();
+			break;
+		case "Redo":
+			window.redo();
+			break;
 		case "Cut":
 			Actions.performCut(window);
 			break;
