@@ -123,6 +123,8 @@ class MenuBar extends JMenuBar {
 		editMenu.setMnemonic(KeyEvent.VK_E);
 
 		LinkedHashMap<String, KeyStroke> editItems = new LinkedHashMap<String, KeyStroke>();
+		editItems.put("Undo", KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK));
+		editItems.put("Redo", KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_DOWN_MASK));
 		editItems.put("Cut", KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.CTRL_DOWN_MASK));
 		editItems.put("Copy", KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_DOWN_MASK));
 		editItems.put("Paste", KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_DOWN_MASK));
