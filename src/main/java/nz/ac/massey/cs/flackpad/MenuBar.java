@@ -75,50 +75,6 @@ class MenuBar extends JMenuBar {
 		setBackground(menuBackground);
 	}
 
-	private void addInformationBar() {
-		// Char count
-		details = new JLabel("0 | Char");
-		details.setBorder(
-				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
-		add(Box.createHorizontalGlue());
-		details.setForeground(Color.decode("#990000"));
-		add(details);
-
-		// Zoom percentage
-		zoomlevel = new JLabel();
-		zoomlevel.setBorder(
-				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
-		zoomlevel.setForeground(Color.decode("#444444"));
-		add(zoomlevel);
-
-		// File type label
-		filetype = new JLabel();
-		filetype.setBorder(
-				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
-		filetype.setForeground(Color.decode("#777777"));
-		add(filetype);
-	}
-
-	void setInformationBarText(String val) {
-		details.setText(val);
-	}
-
-	void setInformationBarFileText(String val) {
-		if (val.startsWith("text/")) {
-			filetype.setText(val.substring(5).toUpperCase());
-		} else {
-			filetype.setText(val);
-		}
-	}
-
-	void setInformationBarZoomText(String val) {
-		zoomlevel.setText(val);
-	}
-
-	void setInformationBarZoomVisible(boolean isVisible) {
-		zoomlevel.setVisible(isVisible);
-	}
-
 	private void addFileMenu() {
 		JMenu fileMenu = new JMenu("File");
 		fileMenu.setForeground(menuItemTabForeground);
@@ -275,6 +231,50 @@ class MenuBar extends JMenuBar {
 		add(findField);
 
 		addListenersToFindBar();
+	}
+
+	private void addInformationBar() {
+		// Char count
+		details = new JLabel("0 | Char");
+		details.setBorder(
+				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
+		add(Box.createHorizontalGlue());
+		details.setForeground(Color.decode("#990000"));
+		add(details);
+
+		// Zoom percentage
+		zoomlevel = new JLabel();
+		zoomlevel.setBorder(
+				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
+		zoomlevel.setForeground(Color.decode("#444444"));
+		add(zoomlevel);
+
+		// File type label
+		filetype = new JLabel("PLAIN");
+		filetype.setBorder(
+				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
+		filetype.setForeground(Color.decode("#777777"));
+		add(filetype);
+	}
+
+	void setInformationBarText(String val) {
+		details.setText(val);
+	}
+
+	void setInformationBarFileText(String val) {
+		if (val.startsWith("text/")) {
+			filetype.setText(val.substring(5).toUpperCase());
+		} else {
+			filetype.setText(val);
+		}
+	}
+
+	void setInformationBarZoomText(String val) {
+		zoomlevel.setText(val);
+	}
+
+	void setInformationBarZoomVisible(boolean isVisible) {
+		zoomlevel.setVisible(isVisible);
 	}
 
 	private void addListenersToFindBar() {
