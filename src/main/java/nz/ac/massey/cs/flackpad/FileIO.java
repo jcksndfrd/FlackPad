@@ -53,7 +53,7 @@ class FileIO {
 		// If user saved, didn't want to or there were no changes
 		if (saved == SAVED) {
 			// Get file from open dialog
-			JFileChooser fileChooser = new JFileChooser();
+			JFileChooser fileChooser = new JFileChooser(window.getFile());
 			if (fileChooser.showOpenDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 				// Load file and save load type
 				int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile(), window);
@@ -98,7 +98,7 @@ class FileIO {
 
 	int saveAs() {
 		// Open save as dialog and get user choice
-		JFileChooser fileChooser = new JFileChooser();
+		JFileChooser fileChooser = new JFileChooser(window.getFile());
 		fileChooser.setDialogTitle("Save As");
 		if (fileChooser.showSaveDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 			// Save file to user choice
@@ -160,7 +160,7 @@ class FileIO {
 	}
 	
 	void exportToPdf() {
-		pdfExporter.export(window.getText());
+		pdfExporter.export(window.getText(), window.getFile());
 	}
 
 }
