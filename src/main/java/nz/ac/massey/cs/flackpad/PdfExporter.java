@@ -1,6 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Component;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.net.InetAddress;
 
@@ -10,14 +11,18 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-final class PdfExporter {
+class PdfExporter {
 	
-	private PdfExporter() {
-		throw new UnsupportedOperationException();
+	private String appName;
+	private Component parent;
+	
+	PdfExporter(String appName, Component parent) {
+		this.appName = appName;
+		this.parent = parent;
 	}
 
-	static void export(String text, String appName, Component parent) {
-		JFileChooser fileChooser = new JFileChooser();
+	void export(String text, File location) {
+		JFileChooser fileChooser = new JFileChooser(location);
 		fileChooser.setDialogTitle("Save As");
 		if (fileChooser.showSaveDialog(parent) == JFileChooser.APPROVE_OPTION) {
 			Document document = new Document();

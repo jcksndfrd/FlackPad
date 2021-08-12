@@ -22,19 +22,20 @@ class MenuListener implements ActionListener {
 			new Window();
 			break;
 		case "Open":
-			FileIO.open(window);
+			window.getFileIO().open();
 			break;
 		case "Save":
-			FileIO.save(window);
+			window.getFileIO().save();
 			break;
 		case "Save As":
-			FileIO.saveAs(window);
+			window.getFileIO().saveAs();
 			break;
 		case "Print":
 			Actions.performPrint(window);
 			break;
 		case "Export to PDF":
-			PdfExporter.export(window.getText(), window.getAppName(), window.getFrame());
+			window.getFileIO().exportToPdf();
+			break;
 		case "Exit":
 			window.exit();
 			break;

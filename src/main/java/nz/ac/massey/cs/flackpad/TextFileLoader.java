@@ -5,14 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-final class TextFileLoader {
+class TextFileLoader {
 
-	private TextFileLoader() {
-		throw new UnsupportedOperationException();
+	TextFileLoader() {
 	}
 
-	static String loadFile(File file) throws IOException {
-//		window.getTextArea().setText("");
+	String loadFile(File file) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		String text = "";
 		String line = reader.readLine();

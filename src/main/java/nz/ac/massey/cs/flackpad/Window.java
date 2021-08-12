@@ -18,6 +18,7 @@ class Window {
 	private WindowListener winListener;
 	private Config config;
 	private FileMIME MIME = new FileMIME();
+	private FileIO fileIO;
 
 	private MenuBar menuBar;
 	private TextArea textArea;
@@ -51,6 +52,9 @@ class Window {
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		scrollPane = new ScrollPane(textArea);
+		
+		// Add FileIO instance
+		fileIO = new FileIO(this);
 
 		// Get config
 		config = new Config(frame);
@@ -84,16 +88,23 @@ class Window {
 		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, frame);
 		int saved = FileIO.SAVED;
 
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION)
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) {
 			return;
-		if (saveChoice == JOptionPane.YES_OPTION)
-			saved = FileIO.save(this);
+		}
+		
+		if (saveChoice == JOptionPane.YES_OPTION) {
+			saved = fileIO.save();
+		}
 
 		if (saved == FileIO.SAVED) {
 			setFile(null);
 			textArea.setText("");
 			setSaved(true);
 			textArea.discardAllEdits();
+
+			// Enable/disable menu items
+			updateUndoRedoEnable();
+			updateCCDEnable();
 		}
 	}
 
@@ -101,10 +112,13 @@ class Window {
 		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, frame);
 		int saved = FileIO.SAVED;
 
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION)
+		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) {
 			return;
-		if (saveChoice == JOptionPane.YES_OPTION)
-			saved = FileIO.save(this);
+		}
+		
+		if (saveChoice == JOptionPane.YES_OPTION) {
+			saved = fileIO.save();
+		}
 
 		if (saved == FileIO.SAVED) {
 			config.saveConfigFile();
@@ -220,6 +234,10 @@ class Window {
 
 	File getFile() {
 		return file;
+	}
+	
+	FileIO getFileIO() {
+		return fileIO;
 	}
 
 	void setFile(File file) {
