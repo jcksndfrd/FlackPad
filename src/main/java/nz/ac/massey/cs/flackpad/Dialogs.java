@@ -7,8 +7,6 @@ import javax.swing.JOptionPane;
 
 final class Dialogs {
 	
-	private static final ImageIcon icon = new ImageIcon("icons/64x64.png");
-	
 	private Dialogs() {
 		throw new UnsupportedOperationException();
 	}
@@ -30,7 +28,7 @@ final class Dialogs {
 				"Warning: Unsaved Changes", 0, JOptionPane.PLAIN_MESSAGE, null, new String[] { "Save", "Don't Save", "Cancel" }, null);
 	}
 	
-	static void about(Component parent) {
+	static void about(Component parent, ImageIcon icon) {
 		JOptionPane.showMessageDialog(parent, "We're pretty cool\n- Fletch and Jack", "About FlackPad", JOptionPane.INFORMATION_MESSAGE, icon);
 	}
 	

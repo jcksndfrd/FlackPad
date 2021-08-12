@@ -33,10 +33,10 @@ class Window {
 
 		// Add icons
 		List<Image> iconList = new ArrayList<Image>();
-		iconList.add(new ImageIcon("icons/16x16.png").getImage());
-		iconList.add(new ImageIcon("icons/32x32.png").getImage());
-		iconList.add(new ImageIcon("icons/64x64.png").getImage());
-		iconList.add(new ImageIcon("icons/128x128.png").getImage());
+		iconList.add(new ImageIcon(getClass().getResource("/icons/16x16.png")).getImage());
+		iconList.add(new ImageIcon(getClass().getResource("/icons/32x32.png")).getImage());
+		iconList.add(new ImageIcon(getClass().getResource("/icons/64x64.png")).getImage());
+		iconList.add(new ImageIcon(getClass().getResource("/icons/128x128.png")).getImage());
 		frame.setIconImages(iconList);
 
 		// Add window listener
@@ -244,5 +244,9 @@ class Window {
 
 	String getText() {
 		return textArea.getText();
+	}
+	
+	ImageIcon getIcon() {
+		return new ImageIcon(getClass().getResource("/icons/64x64.png"));
 	}
 }

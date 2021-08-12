@@ -3,4 +3,3 @@ target/
 *.class
 config.yaml
 dependency-reduced-pom.xml
-icons/

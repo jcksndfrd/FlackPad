@@ -87,7 +87,7 @@ class MenuListener implements ActionListener {
 		
 		//Help menu
 		case "About":
-			Dialogs.about(window.getFrame());
+			Dialogs.about(window.getFrame(), window.getIcon());
 			break;
 		}
 	}
