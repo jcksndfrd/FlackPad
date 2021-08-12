@@ -228,6 +228,10 @@ class Window {
 		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
 		menuBar.setInformationBarFileText(MIME.getFileStyle(file));
 		textArea.discardAllEdits();
+		// Enable/disable menu items
+		updateUndoRedoEnable();
+		updateCCDEnable();
+		updateZoomEnable();
 	}
 
 	String getFileName() {
