@@ -16,28 +16,27 @@ class MenuListener implements ActionListener {
 		switch (e.getActionCommand()) {
 		//File menu
 		case "New":
-			Actions.performNew(window);
+			window.newDoc();
 			break;
 		case "New Window":
-			Actions.performNewWindow(window);
+			new Window();
 			break;
 		case "Open":
-			Actions.performOpen(window);
+			FileIO.open(window);
 			break;
 		case "Save":
-			Actions.performSave(window);
+			FileIO.save(window);
 			break;
 		case "Save As":
-			Actions.performSaveAs(window);
+			FileIO.saveAs(window);
 			break;
 		case "Print":
 			Actions.performPrint(window);
 			break;
 		case "Export to PDF":
-			PdfExporter.export(window.getTextArea().getText(), window.getAppName(), window);
-			break;
+			PdfExporter.export(window.getTextArea().getText(), window.getAppName(), window.getFrame());
 		case "Exit":
-			Actions.performExit(window);
+			window.exit();
 			break;
 		
 		//Edit menu
@@ -60,26 +59,29 @@ class MenuListener implements ActionListener {
 			Actions.performFind(window);
 			break;
 		case "Time and Date":
-			window.getTextArea().addTimeAndDate();
-			break;
-		case "Line Numbers":
-			Actions.performLineNumberToggle(window);
+			window.addTimeAndDate();
 			break;
 			
 		//View menu
 		case "Zoom In":
-			window.getTextArea().zoomIn();
+			window.zoomIn();
 			break;
 		case "Zoom Out":
-			window.getTextArea().zoomOut();
+			window.zoomOut();
 			break;
 		case "Reset Zoom":
-			window.getTextArea().resetZoom();
+			window.resetZoom();
+			break;
+		case "Line Numbers":
+			window.gutterToggle();
+			break;
+		case "Toggle Theme":
+			window.toggleTheme();
 			break;
 		
 		//Help menu
 		case "About":
-			Dialogs.about(window);
+			Dialogs.about(window.getFrame());
 			break;
 		}
 	}

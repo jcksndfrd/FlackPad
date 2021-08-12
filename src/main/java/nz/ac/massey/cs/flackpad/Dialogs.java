@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 final class Dialogs {
 	
-	private static final ImageIcon icon = new ImageIcon("64x64.png");
+	private static final ImageIcon icon = new ImageIcon("icons/64x64.png");
 	
 	private Dialogs() {
 		throw new UnsupportedOperationException();

@@ -5,142 +5,100 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.BorderFactory;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
 import javax.swing.text.BadLocationException;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
-import java.awt.Color;
-import java.awt.ComponentOrientation;
-
 
 @SuppressWarnings("serial")
 class TextArea extends RSyntaxTextArea {
-	
+
 	private Window window;
-	private Config config;
-	
+
 	private int fontSize;
-	private int fontPercentage;
-	
-	TextArea(Window window, Config config) {
-		//Call RSyntaxTextArea constructor
+	private int zoomPercentage;
+
+	TextArea(Window window) {
+		// Call RSyntaxTextArea constructor
 		super();
-		//Set variables
+		// Set variables
 		this.window = window;
-		this.config = config;
-		
-		this.fontSize = getFont().getSize();
-		this.fontPercentage = 100;
-		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
-		this.getDocument().addDocumentListener(new DocListener(window));	
-		this.addCaretListener(new CaretListener() {
-	        public void caretUpdate(CaretEvent e) {
-	            updateInformationBar();
-	        }
-	    });	
-		setTheme();
+
+		fontSize = getFont().getSize();
+		zoomPercentage = 100;
+		// Set border
+		setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
+
+		// Add listeners
+		DocListener listener = new DocListener(window);
+		getDocument().addDocumentListener(listener);
+//		addCaretListener(listener);
 	}
-	
-	TextArea(Window window, Config config, String startVal) {
-		//Call RSyntaxTextArea constructor
-		super();
-		//Set variables
-		this.window = window;
-		this.config = config;
-		
-		this.fontSize = getFont().getSize();
-		this.fontPercentage = 100;
-		//set border and add document listener
-		this.setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
-		setFont(config.getFont());
-		this.setText(startVal);
-		this.setHighlighter(null);
-		setCurrentLineHighlightColor(new Color(12, 12, 12, 0)); // Hide highlight
-	}
-	
-	void setTheme() {
-		setCaretColor(Color.decode("#eeeeee")); // caret color
-		setSelectionColor(Color.decode("#770BD8")); // selection color
-		setBackground(Color.decode("#333333"));
-		setForeground(Color.decode("#aaaaaa"));
-		setCurrentLineHighlightColor(Color.decode("#444444")); // line highlight color
-		setSyntaxEditingStyle("text/plain");
+
+	void setTheme(Config config) {
+		MainTheme theme = config.getTheme();
+
+		// Set syntax theme
+		theme.getSyntaxTheme().apply(this);
+
+		// Set colours
+		setBackground(theme.getTextBackground());
+		setCaretColor(theme.getCaretForeground()); // caret color
+		setSelectionColor(theme.getSelectionHighlight()); // selection color
+		setForeground(theme.getTextForeground());
+		setCurrentLineHighlightColor(theme.getCurrentLineHighlightBackground()); // line highlight color
 		setCodeFoldingEnabled(true);
-		setFont(config.getFont());
+
+		// Set font
+		setFontWithZoom(config.getFont());
 	}
-	
-	//Adds time and date to the top of the text area
+
+	// Adds time and date to the top of the text area
 	void addTimeAndDate() {
-		//Set time and date format
+		// Set time and date format
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
 		try {
-			//Add time and date to text area
-			this.getDocument().insertString(0, formatter.format(LocalDateTime.now()) + "\n", null);
+			// Add time and date to text area
+			getDocument().insertString(0, formatter.format(LocalDateTime.now()) + "\n", null);
 		} catch (BadLocationException e) {
-			Dialogs.error("Something went wrong when getting the time and date", window);
+			Dialogs.error("Something went wrong when getting the time and date", window.getFrame());
 		}
 	}
-	
+
 	void setFontWithZoom(Font font) {
 		fontSize = font.getSize();
 		setFont(font);
 		zoom();
 	}
-	
-	//Zoom methods work by changing font size
-	void zoomIn() {
-		if (fontPercentage < 1000) {
-			fontPercentage += 10;
+
+	// Zoom methods work by changing font size
+	int zoomIn() {
+		if (zoomPercentage < 1000) {
+			zoomPercentage += 10;
 			zoom();
 		}
-	}
-	
-	void zoomOut() {
-		if (fontPercentage > 10) {
-			fontPercentage -= 10;
-			zoom();
-		}
+		return zoomPercentage;
 	}
 
-	public void resetZoom() {
-		fontPercentage = 100;
+	int zoomOut() {
+		if (zoomPercentage > 10) {
+			zoomPercentage -= 10;
+			zoom();
+		}
+		return zoomPercentage;
+	}
+
+	void resetZoom() {
+		zoomPercentage = 100;
 		zoom();
 	}
-	
-	private void zoom() {		
-		int roundedZoomVal = Math.round(fontSize * fontPercentage / 100);
+
+	int getZoomPercentage() {
+		return zoomPercentage;
+	}
+
+	private void zoom() {
+		int roundedZoomVal = Math.round(fontSize * zoomPercentage / 100);
 		Font newFont = new Font(getFont().getFamily(), getFont().getStyle(), roundedZoomVal);
 		setFont(newFont);
-		window.getLines().setFont(newFont);
-		try {
-			if (fontPercentage == 100) {
-				// Hide percentage information
-				window.setInformationBarZoomVisible(false);
-			} else {
-				window.setInformationBarZoomVisible(true);
-				window.setInformationBarZoomText(Integer.toString(fontPercentage) + "%");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private void updateInformationBar() {
-		TextArea area = window.getTextArea();
-		
-		String text = "";
-        try
-        {
-        	text = Integer.toString(area.getText().length()) + " | Char";
-        	
-            // Update text
-    		window.setInformationBar(text);
-    	}
-        catch (NullPointerException exc)
-        {
-            exc.printStackTrace();
-        }
 	}
 }

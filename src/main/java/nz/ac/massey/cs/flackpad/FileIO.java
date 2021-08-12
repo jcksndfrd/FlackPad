@@ -20,7 +20,7 @@ final class FileIO {
 	}
 
 	static void open(Window window) {
-		int saveChoice = window.isSaved() ? 1 : Dialogs.saveWarning(window.getFileName(), window);
+		int saveChoice = window.isSaved() ? 1 : Dialogs.saveWarning(window.getFileName(), window.getFrame());
 		int saved = SAVED;
 
 		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION)
@@ -30,7 +30,7 @@ final class FileIO {
 
 		if (saved == SAVED) {
 			JFileChooser fileChooser = new JFileChooser();
-			if (fileChooser.showOpenDialog(window) == JFileChooser.APPROVE_OPTION) {
+			if (fileChooser.showOpenDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 				int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile(), window);
 
 				if (loaded == LOADED || loaded == WRONG_TYPE || loaded == IMPORTED) {
@@ -43,11 +43,11 @@ final class FileIO {
 				}
 
 				if (loaded == WRONG_TYPE) {
-					Dialogs.warning("The contents of this file may not be displayed properly", window);
+					Dialogs.warning("The contents of this file may not be displayed properly", window.getFrame());
 				}
 
 				if (loaded == NOT_LOADED) {
-					Dialogs.error("Something went wrong when loading that file", window);
+					Dialogs.error("Something went wrong when loading that file", window.getFrame());
 				}
 			}
 		}
@@ -65,7 +65,7 @@ final class FileIO {
 	static int saveAs(Window window) {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("Save As");
-		if (fileChooser.showSaveDialog(window) == JFileChooser.APPROVE_OPTION) {
+		if (fileChooser.showSaveDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 			saveFile(fileChooser.getSelectedFile().getAbsoluteFile(), window);
 			window.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
 			window.setSaved(true);
@@ -107,11 +107,11 @@ final class FileIO {
 	private static void saveFile(File file, Window window) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
-			writer.write(window.getTextArea().getText());
+			writer.write(window.getText());
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
-			Dialogs.error("Something went wrong when saving that file", window);
+			Dialogs.error("Something went wrong when saving that file", window.getFrame());
 		}
 	}
 
