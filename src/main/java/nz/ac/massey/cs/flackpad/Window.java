@@ -241,10 +241,13 @@ class Window {
 	}
 
 	void setFile(File file) {
+		// Set file and file name used in window title
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
+		// Set syntax highlighting and info bar text based on file type
 		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
 		menuBar.setInformationBarFileText(MIME.getFileStyle(file));
+		// Clear undo/redo history
 		textArea.discardAllEdits();
 	}
 
