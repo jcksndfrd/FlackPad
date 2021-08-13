@@ -23,6 +23,8 @@ class Window {
 	private MenuBar menuBar;
 	private TextArea textArea;
 	private ScrollPane scrollPane;
+	
+	private ThemeDialog themeDialog;
 
 	private boolean saved = true;
 	private File file;
@@ -72,6 +74,9 @@ class Window {
 
 		// Add key bindings to instance
 		new KeyBinder(this);
+		
+		// Get theme dialog instance
+		themeDialog = new ThemeDialog(frame);
 
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
@@ -131,6 +136,10 @@ class Window {
 		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
+	}
+	
+	void openThemeDialog() {
+		themeDialog.setVisible(true);
 	}
 
 	void gutterToggle() {

@@ -85,6 +85,9 @@ class MenuListener implements ActionListener {
 		case "Toggle Theme":
 			window.toggleTheme();
 			break;
+		case "Font and Theme":
+			window.openThemeDialog();
+			break;
 		
 		//Help menu
 		case "About":
