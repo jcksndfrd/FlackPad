@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.BorderFactory;
 import javax.swing.text.BadLocationException;
 
+import org.fife.rsta.ac.LanguageSupportFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
 @SuppressWarnings("serial")
@@ -29,9 +30,12 @@ class TextArea extends RSyntaxTextArea {
 		setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
 
 		// Add listeners
-		DocListener listener = new DocListener(window);
+		TextAreaListener listener = new TextAreaListener(window);
 		getDocument().addDocumentListener(listener);
 		addCaretListener(listener);
+		
+		// Add language support
+		LanguageSupportFactory.get().register(this);
 	}
 
 	void setTheme(Config config) {

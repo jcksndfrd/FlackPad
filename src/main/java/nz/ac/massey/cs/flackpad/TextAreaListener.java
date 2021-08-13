@@ -5,11 +5,11 @@ import javax.swing.event.CaretListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-class DocListener implements DocumentListener, CaretListener {
+class TextAreaListener implements DocumentListener, CaretListener {
 	
 	private Window window;
 
-	DocListener(Window window) {
+	TextAreaListener(Window window) {
 		super();
 		this.window = window;
 	}
@@ -40,4 +40,5 @@ class DocListener implements DocumentListener, CaretListener {
 //		window.updateInformationBar();
 		window.updateCCDEnable();
 	}
+	
 }
