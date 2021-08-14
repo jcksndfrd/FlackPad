@@ -32,16 +32,16 @@ class MainTheme {
 	public void setTheme(String themeName) throws IOException {
 		// Set theme colours
 		switch (themeName) {
-		case "dark":
-			setDarkTheme();
-			break;
 		case "light":
 			setLightTheme();
+			break;
+		case "dark":
+			setDarkTheme();
 			break;
 		default:
 			// Incorrect theme parameter
 			throw new IllegalArgumentException(
-					"Unknown theme " + themeName + ". Please choose from \"dark\" or \"light\"");
+					"Unknown theme " + themeName + ". Please choose from \"light\" or \"dark\"");
 		}
 		
 		this.themeName = themeName;

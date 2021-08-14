@@ -95,6 +95,7 @@ class TextArea extends RSyntaxTextArea {
 	}
 
 	private void zoom() {
-		setFont(getFont().deriveFont(fontSize * zoomPercentage / 100));
+		float newSize = fontSize * zoomPercentage / 100;
+		setFont(getFont().deriveFont(getFont().getStyle(), newSize > 1 ? newSize : 1));
 	}
 }

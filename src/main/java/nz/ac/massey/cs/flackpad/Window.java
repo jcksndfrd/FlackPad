@@ -1,5 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.WindowListener;
 import java.io.File;
@@ -23,8 +24,6 @@ class Window {
 	private MenuBar menuBar;
 	private TextArea textArea;
 	private ScrollPane scrollPane;
-	
-	private ThemeDialog themeDialog;
 
 	private boolean saved = true;
 	private File file;
@@ -74,9 +73,6 @@ class Window {
 
 		// Add key bindings to instance
 		new KeyBinder(this);
-		
-		// Get theme dialog instance
-		themeDialog = new ThemeDialog(frame);
 
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
@@ -85,8 +81,6 @@ class Window {
 
 		frame.requestFocus();
 		textArea.grabFocus();
-		
-
 	}
 
 	void newDoc() {
@@ -139,7 +133,14 @@ class Window {
 	}
 	
 	void openThemeDialog() {
-		themeDialog.setVisible(true);
+		ThemeDialog themeDialog = new ThemeDialog(frame, config.getFont(), config.getThemeName(), config.getDefaultFont(), config.getDefaultThemeName());
+		if (themeDialog.showDialog() == ThemeDialog.SAVE_OPTION) {
+			config.setFont(themeDialog.getFontChoice());
+			config.setTheme(themeDialog.getThemeChoice());
+			textArea.setTheme(config);
+			scrollPane.setTheme(config);
+			config.saveConfigFile();
+		}
 	}
 
 	void gutterToggle() {
