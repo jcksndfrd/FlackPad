@@ -49,8 +49,8 @@ class MainTheme {
 
 	private void setLightTheme() throws IOException {
 		// Syntax theme
-		syntaxTheme = Theme.load(getClass().getResourceAsStream("/org/fife/ui/rsyntaxtextarea/themes/" + "default" + ".xml"));
-		
+		syntaxTheme = Theme.load(getClass().getResourceAsStream("/themes/" + "default" + ".xml"));
+
 		// Text area colours
 		textBackground = Color.white;
 		textForeground = Color.decode("#383838");
@@ -66,7 +66,7 @@ class MainTheme {
 
 	private void setDarkTheme() throws IOException {
 		// Syntax theme
-		syntaxTheme = Theme.load(getClass().getResourceAsStream("/org/fife/ui/rsyntaxtextarea/themes/" + "dark" + ".xml"));
+		syntaxTheme = Theme.load(getClass().getResourceAsStream("/themes/" + "dark" + ".xml"));
 		
 		// Text area colours
 		textBackground = Color.decode("#333333");
