@@ -45,10 +45,8 @@ class Window {
 		winListener = new WinListener(this);
 		frame.addWindowListener(winListener);
 
-		// Add menu bar
-		menuBar = new MenuBar(this);
-		frame.add(menuBar);
-		frame.setJMenuBar(menuBar);
+		// Get config
+		config = new Config(frame);
 
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
@@ -57,13 +55,15 @@ class Window {
 		// Add FileIO instance
 		fileIO = new FileIO(this);
 
-		// Get config
-		config = new Config(frame);
-
 		// Set font and colours for textarea, scrollpane, etc.
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 
+		// Add menu bar
+		menuBar = new MenuBar(this, config);
+		menuBar.setTheme(config);
+		frame.add(menuBar);
+		frame.setJMenuBar(menuBar);
 		frame.add(scrollPane);
 		
 		// Enable/disable menu items
@@ -130,6 +130,7 @@ class Window {
 		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
+		menuBar.setTheme(config);
 	}
 	
 	void openThemeDialog() {
@@ -139,6 +140,7 @@ class Window {
 			config.setTheme(themeDialog.getThemeChoice());
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
+			menuBar.setTheme(config);
 			config.saveConfigFile();
 		}
 	}

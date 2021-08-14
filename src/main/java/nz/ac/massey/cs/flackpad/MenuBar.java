@@ -61,7 +61,7 @@ class MenuBar extends JMenuBar {
 	// Help menu items
 	private JMenuItem aboutItem;
 
-	MenuBar(Window window) {
+	MenuBar(Window window, Config config) {
 		super();
 
 		menuListener = new MenuListener(window);
@@ -245,7 +245,6 @@ class MenuBar extends JMenuBar {
 		details.setBorder(
 				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
 		add(Box.createHorizontalGlue());
-		details.setForeground(Color.decode("#990000"));
 		add(details);
 
 		// Zoom percentage
@@ -261,6 +260,10 @@ class MenuBar extends JMenuBar {
 				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
 		filetype.setForeground(Color.decode("#777777"));
 		add(filetype);
+	}
+	void setTheme(Config config) {
+		Color theme = config.getThemeName().equals("light") ? Color.decode("#990000") : Color.decode("#770BD8");
+		details.setForeground(theme);
 	}
 
 	void setInformationBarText(String val) {
