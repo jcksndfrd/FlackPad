@@ -1,16 +1,34 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Desktop;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.WindowListener;
+import java.awt.print.PageFormat;
+import java.awt.print.Paper;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.print.Doc;
+import javax.print.DocFlavor;
+import javax.print.DocPrintJob;
+import javax.print.PrintException;
+import javax.print.PrintService;
+import javax.print.PrintServiceLookup;
+import javax.print.SimpleDoc;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.print.ServiceUI;
 
 class Window {
 	private String name = "FlackPad";
@@ -81,7 +99,7 @@ class Window {
 		frame.requestFocus();
 		textArea.grabFocus();
 		
-
+		
 	}
 
 	void newDoc() {
@@ -107,7 +125,79 @@ class Window {
 			updateCCDEnable();
 		}
 	}
+	
+	void printDoc() { // Experimental method
+        try
+        {
+            PrintService[] services = PrinterJob.lookupPrintServices();
+            // if there is print services available, choose the first one 
+            if (services.length > 0) 
+            {
+                 
+                 
+                 for (PrintService s : services) {
+                	 System.out.println(s.getName());
+                 }
+                 
+                 System.out.println("selected printer: " + services[services.length -1]);
 
+                 PrinterJob pjob = PrinterJob.getPrinterJob();
+                 pjob.setPrintService(services[services.length-1]);
+                 pjob.setPrintable(new DocPrinter(getFile()), new PageFormat());
+                 pjob.print();
+             }
+        }
+        catch(Throwable t)
+        {
+            t.printStackTrace();
+        }
+	}
+
+	
+	void printDoc2() throws FileNotFoundException, PrintException { // Experimental method (1)
+
+		  PrinterJob printJob = PrinterJob.getPrinterJob();
+		  PageFormat format = printJob.defaultPage();
+		  Paper paper = format.getPaper();
+		  paper.setImageableArea(100, 100, 100, 100);// Paper format for receipt printer
+		  format.setPaper(paper);
+		  printJob.setPrintable(new DocPrinter(getFile()), format);
+		  if (printJob.printDialog())
+		  {
+		    try
+		    {
+		      printJob.print();
+		    }
+		    catch (PrinterException pe)
+		    {
+		    	pe.printStackTrace();
+		    }
+		  }
+	}
+	
+	void printDoc3() { // Experimental method (2)
+		try {
+			//new OtherPrinter(getFile());
+			File f = getFile();
+			File file = f;
+			Desktop.getDesktop().print(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	void printDoc4() {// Experimental method (3)
+		try {
+			//new OtherPrinter(getFile());
+			File f = getFile();
+			File file = f;
+			Desktop.getDesktop().print(file);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	void exit() {
 		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, frame);
 		int saved = FileIO.SAVED;
@@ -127,10 +217,19 @@ class Window {
 	}
 
 	void toggleTheme() {
+		/*// Uncomment the below code after testing the printing functions
 		String currentThemeName = config.getTheme().getThemeName();
 		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
+		
+		*/
+		try { // Move this call to be made via CTRL + P, simply placed here for easy testing
+			printDoc2();
+		} catch (FileNotFoundException | PrintException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	void gutterToggle() {
