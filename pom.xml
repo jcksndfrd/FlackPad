@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.ac.massey.cs</groupId>
 	<artifactId>nz.ac.massey.cs.flackpad</artifactId>
-	<version>0.4.11</version>
+	<version>0.5.0</version>
 
 	<properties>
 		<javaVersion>1.8</javaVersion>
@@ -20,7 +20,7 @@
 			<artifactId>languagesupport</artifactId>
 			<version>3.1.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.fifesoft</groupId>
 			<artifactId>autocomplete</artifactId>
@@ -49,6 +49,18 @@
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
 			<version>1.29</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.9</version>
 		</dependency>
 
 	</dependencies>

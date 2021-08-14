@@ -56,6 +56,7 @@ class MenuBar extends JMenuBar {
 	private JMenuItem resetZoomItem;
 	private JMenuItem lineNumbersItem;
 	private JMenuItem themeItem;
+	private JMenuItem themeDialogItem;
 
 	// Help menu items
 	private JMenuItem aboutItem;
@@ -204,6 +205,11 @@ class MenuBar extends JMenuBar {
 		themeItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK));
 		themeItem.addActionListener(menuListener);
 		viewMenu.add(themeItem);
+		
+		themeDialogItem = new JMenuItem("Font and Theme");
+		themeDialogItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK));
+		themeDialogItem.addActionListener(menuListener);
+		viewMenu.add(themeDialogItem);
 
 		add(viewMenu);
 	}

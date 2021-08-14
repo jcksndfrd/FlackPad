@@ -1,5 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.WindowListener;
 import java.io.File;
@@ -80,8 +81,6 @@ class Window {
 
 		frame.requestFocus();
 		textArea.grabFocus();
-		
-
 	}
 
 	void newDoc() {
@@ -131,6 +130,17 @@ class Window {
 		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
+	}
+	
+	void openThemeDialog() {
+		ThemeDialog themeDialog = new ThemeDialog(frame, config.getFont(), config.getThemeName(), config.getDefaultFont(), config.getDefaultThemeName());
+		if (themeDialog.showDialog() == ThemeDialog.SAVE_OPTION) {
+			config.setFont(themeDialog.getFontChoice());
+			config.setTheme(themeDialog.getThemeChoice());
+			textArea.setTheme(config);
+			scrollPane.setTheme(config);
+			config.saveConfigFile();
+		}
 	}
 
 	void gutterToggle() {

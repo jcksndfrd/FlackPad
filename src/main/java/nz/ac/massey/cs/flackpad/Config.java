@@ -33,7 +33,7 @@ class Config {
 
 	private void loadDefaults() {
 		// Default values
-		defaults.put("fontFamily", "Dialog");
+		defaults.put("fontFamily", "Consolas");
 		defaults.put("fontStyle", Font.PLAIN);
 		defaults.put("fontSize", 12);
 		defaults.put("theme", "light");
@@ -48,7 +48,7 @@ class Config {
 			config = yaml.load(inputStream);
 			inputStream.close();
 		} catch (FileNotFoundException e) {
-			Dialogs.error("Configuration file does not exist, using defaults", parent);
+			Dialogs.warning("Configuration file does not exist, using defaults", parent);
 		} catch (IOException e) {
 			Dialogs.error("Something went wrong when loading configuration file", parent);
 		}
@@ -90,10 +90,10 @@ class Config {
 		if (themeValue.getClass() == String.class) {
 			String themeName = (String) themeValue;
 			// Check theme value is valid
-			if (themeName.contentEquals("light")) {
+			if (themeName.equals("light")) {
 				theme = new MainTheme("light");
 				return;
-			} else if (themeName.contentEquals("dark")) {
+			} else if (themeName.equals("dark")) {
 				theme = new MainTheme("dark");
 				return;
 			}
@@ -126,7 +126,7 @@ class Config {
 
 	Font getFont() {
 		// return new Font instance with the same values as saved font
-		return font.deriveFont(font.getSize());
+		return font.deriveFont(font.getStyle(), font.getSize());
 	}
 
 	void setFont(Font font) {
@@ -141,14 +141,26 @@ class Config {
 		return theme;
 	}
 	
+	String getThemeName() {
+		return (String) config.get("theme");
+	}
+	
 	void setTheme(String themeName) {
 		// Check themeName is valid
-		if (themeName == "dark" || themeName == "light") {
+		if (themeName.equals("light") || themeName.equals("dark")) {
 			config.put("theme", themeName);
 			getThemeFromConfig();
 		} else {
 			Dialogs.error("Theme \"" + themeName + "\" is not a valid theme", parent);
 		}
+	}
+	
+	Font getDefaultFont() {
+		return new Font((String) defaults.get("fontFamily"), (Integer) defaults.get("fontStyle"), (Integer) defaults.get("fontSize"));
+	}
+	
+	String getDefaultThemeName() {
+		return (String) defaults.get("theme");
 	}
 
 }
