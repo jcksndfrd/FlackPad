@@ -3,6 +3,7 @@ package nz.ac.massey.cs.flackpad;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.WindowListener;
+import java.awt.print.PrinterException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -145,6 +146,16 @@ class Window {
 
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
+	}
+	
+	void print() {
+		Printer printer = new Printer();
+		try {
+			printer.printString(getText(), config.getFont());
+		} catch (PrinterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	void undo() {
