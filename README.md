@@ -18,7 +18,26 @@ Student ID:   19025303
 ## **II. Flackpad Application**
 ### *1. How to run our program*
 
-### *2. Additional features worth mentioning*
+### *2. Core features*
+This application has the following core features, as per the assignment brief: 
+ - New, Open, Exit, Time & Date, About
+ - Select, Copy, Paste & Cut, Delete
+ - Save, Save As, Search
+ - Export as PDF (PDF Conversion Function)
+ - Source Code Syntax Highlighting (Theme-Based)
+ - Configuration files (YAML)
+
+### *3. Additional features worth mentioning*
+ - New Window ('New Window' will open a new text-editing instance in an additional application window, whilst 'New' will open a new text-editing instance in the current application window)
+ - Select All (Select all current text)
+ - Keyboard Shorcuts (Mnemonics, including additional keyboard combinations, for all listed operations)
+ - Line Numbers
+ - Brace Folding (Syntactical) 
+ - Dark & Light Themes
+ - Character Count
+ - File Type Detection (Shown adjacent to Character Count) 
+ - Redo / Undo
+ - Zoom In / Zoom Out / Reset
 
 ## **III. Significant Commit ID's**
 Fletcher:
