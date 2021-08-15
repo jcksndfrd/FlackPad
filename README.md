@@ -45,16 +45,16 @@ This application has the following core features, as per the assignment brief:
 ## **III. Significant Commit ID's**
 Fletcher:
 
- [commit-1](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/93f2ea64619445a802a6b3ba8a7047c658c18670)
+ [commit-1](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/859ee5b86d1c50ebb8d46de17d0d4dbbac2842b1)
  
- [commit-2](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/9ee712f43a32385435bd94083db488c63b4278c7)
- 
- [commit-3](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/2f2b275a6a69d346a888cdf9867a2b718dd06ebc)
- 
- [commit-4](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/855052590b90ec928c91624a0a2e1ce73db5fead)
- 
- [commit-5](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/a1c5db24ebc85dd6be162539c2821ab47877e7b8)
+ [commit-2](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/93f2ea64619445a802a6b3ba8a7047c658c18670)
 
+ [commit-3](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/9ee712f43a32385435bd94083db488c63b4278c7)
+ 
+ [commit-4](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/2f2b275a6a69d346a888cdf9867a2b718dd06ebc)
+ 
+ [commit-5](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/855052590b90ec928c91624a0a2e1ce73db5fead)
+ 
 Jack:
 
 ---
