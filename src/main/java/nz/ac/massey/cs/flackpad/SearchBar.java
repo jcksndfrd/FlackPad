@@ -1,6 +1,9 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -9,7 +12,9 @@ import java.awt.event.FocusListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
@@ -26,49 +31,58 @@ public class SearchBar {
 	
 	private JTextField findField;
 	private JTextField replaceField;
+	private Border padding;
 	private ActionListener menuListener;
 
 	public SearchBar(Window window, JMenuBar menu, ActionListener menuListener) {
 		this.menu = menu;
 		this.window = window;
 		this.menuListener = menuListener;
+		JMenuItem item = new JMenuItem();
+		item.setMargin(new Insets(2, 5, 2, 5));
+		item.setBackground(Color.white);
+		padding = BorderFactory.createEmptyBorder(1, 5, 1, 5);
+		menu.add(item); // Left margin
 		this.addFindBar();
 		this.addReplaceBar();
+		menu.add(item); // Right margin
+
 		addListenersToSearchBar();
 	}
 
 	private void addReplaceBar() {
-		
 		defaultReplaceText = "Replace with...";
-
 		replaceField = new JTextField("");
 		replaceField.setVisible(false);
 		replaceField.addActionListener(menuListener);
-		menu.add(replaceField);
-		
 		replaceField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
 		replaceField.setForeground(Color.GRAY);
 		replaceField.setText(defaultReplaceText);
+		replaceField.setBorder(BorderFactory.createCompoundBorder(replaceField.getBorder(), padding));
+
+		menu.add(replaceField);
 		
 		replaceButton = new JButton("Replace");
 		replaceButton.setVisible(false);
 		menu.add(replaceButton);
 	}
 	private void addFindBar() {
+				
 		exitFindButton = new JButton("X");
 		exitFindButton.setVisible(false);
 		menu.add(exitFindButton);
 		
 		defaultFindText = "Find text...";
-		
 		findField = new JTextField("");
 		findField.setVisible(false);
 		findField.addActionListener(menuListener);
 		findField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
+		findField.setBorder(BorderFactory.createCompoundBorder(findField.getBorder(), padding));
+
     	findField.setForeground(Color.GRAY);
     	findField.setText(defaultFindText);
 		menu.add(findField);
-		
+				
 		findButton = new JButton("Find");
 		findButton.setVisible(false);
 		menu.add(findButton);
@@ -106,7 +120,6 @@ public class SearchBar {
 			Dialogs.error("Issue with find / replace listeners", window.getFrame());
 		}
 	}
-
 	private void replaceText() {
 		// If there is no text in the find bar or replace bar, do not replace anything
 		if (!checkReplaceWarnings() || (!checkFindWarnings())) {
@@ -123,24 +136,32 @@ public class SearchBar {
 			System.out.println("Could not replace occurences of text");
 		}
 	}
+	
 	private boolean checkFindWarnings() {
 		if (findField.getText().equals(defaultFindText)) {
 			// Make field border red
 			findField.setBorder(BorderFactory.createLineBorder(Color.decode("#990000"), warningBorderWidth));
+			findField.setBorder(BorderFactory.createCompoundBorder(findField.getBorder(), padding));
+
 			return false;
 		}
 		findField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
+		findField.setBorder(BorderFactory.createCompoundBorder(findField.getBorder(), padding));
 		return true;
 	}
+	
 	private boolean checkReplaceWarnings() {
 		if (replaceField.getText().equals(defaultReplaceText)) {
 			// Make field border red
 			replaceField.setBorder(BorderFactory.createLineBorder(Color.decode("#990000"), warningBorderWidth));
+			replaceField.setBorder(BorderFactory.createCompoundBorder(replaceField.getBorder(), padding));
 			return false;
 		} 
 		replaceField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
+		replaceField.setBorder(BorderFactory.createCompoundBorder(replaceField.getBorder(), padding));
 		return true;
 	}
+	
 	private void addListenersToSearchBar() {
 		exitFindButton.addActionListener(new ActionListener() {
 			@Override
@@ -237,12 +258,11 @@ public class SearchBar {
 			Dialogs.error("Could not show search bar", window.getFrame());
 		}
 	}
-
 	JTextField getFindField() {
 		return findField;
 	}
-
 	JButton getFindClose() {
 		return exitFindButton;
 	}
 }
+

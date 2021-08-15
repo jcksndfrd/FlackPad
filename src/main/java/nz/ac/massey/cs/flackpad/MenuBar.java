@@ -3,22 +3,15 @@ package nz.ac.massey.cs.flackpad;
 import java.awt.Color;
 import java.awt.event.*;
 
-import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JTextField;
 import javax.swing.KeyStroke;
-import javax.swing.text.DefaultHighlighter;
-import javax.swing.text.Highlighter;
 
 @SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
 
 	private ActionListener menuListener;
-	private JTextField findField;
-	private JButton exitFindButton;
-	private Window window;
 	private Color menuBackground = Color.decode("#ffffff");
 	private Color menuItemTabForeground = Color.decode("#555555");
 
@@ -58,13 +51,13 @@ class MenuBar extends JMenuBar {
 		super();
 
 		menuListener = new MenuListener(window);
-		this.window = window;
 
 		addFileMenu();
 		addEditMenu();
 		addViewMenu();
 		addHelpMenu();
 		setBackground(menuBackground);
+
 	}
 	public ActionListener getMenuListener() {
 		return menuListener;
@@ -115,6 +108,7 @@ class MenuBar extends JMenuBar {
 		fileMenu.add(exitItem);
 
 		add(fileMenu);
+		
 	}
 
 	private void addEditMenu() {
