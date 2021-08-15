@@ -23,6 +23,7 @@ class Window {
 
 	private MenuBar menuBar;
 	private TextArea textArea;
+	private SearchBar searchBar;
 	private ScrollPane scrollPane;
 
 	private boolean saved = true;
@@ -54,6 +55,7 @@ class Window {
 		textArea = new TextArea(this);
 		scrollPane = new ScrollPane(textArea);
 		informationBar = new InformationBar(menuBar);
+		searchBar = new SearchBar(this, menuBar, menuBar.getMenuListener());
 		
 		// Add FileIO instance
 		fileIO = new FileIO(this);
@@ -214,19 +216,19 @@ class Window {
 	}
 
 	JTextField getFindField() {
-		return menuBar.getFindField();
+		return searchBar.getFindField();
 	}
 
 	JButton getFindClose() {
-		return menuBar.getFindClose();
+		return searchBar.getFindClose();
 	}
 
 	void showFindBar() {
-		menuBar.showFindBar();
+		searchBar.showFindBar();
 	}
 
 	void hideFindBar() {
-		menuBar.hideFindBar();
+		searchBar.hideFindBar();
 	}
 
 	JFrame getFrame() {
