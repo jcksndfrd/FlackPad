@@ -189,7 +189,7 @@ class Window {
 	
 	void updateZoomEnable() {
 		menuBar.setZoomInEnabled(textArea.getZoomPercentage() < 1000);
-		menuBar.setZoomOutEnabled(textArea.getZoomPercentage() > 10);
+		menuBar.setZoomOutEnabled(textArea.getZoomPercentage() > 50);
 		menuBar.setResetZoomEnabled(textArea.getZoomPercentage() != 100);
 		
 		if (textArea.getZoomPercentage() != 100) {
