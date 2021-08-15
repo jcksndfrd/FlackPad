@@ -81,6 +81,9 @@ class TextArea extends RSyntaxTextArea {
 	}
 
 	void zoomOut() {
+		if (zoomPercentage <= 50) {
+			return;
+		}
 		zoomPercentage -= 10;
 		zoom();
 	}
