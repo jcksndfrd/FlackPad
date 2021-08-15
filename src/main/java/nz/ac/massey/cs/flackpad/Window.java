@@ -23,6 +23,7 @@ class Window {
 
 	private MenuBar menuBar;
 	private TextArea textArea;
+	private SearchBar searchBar;
 	private ScrollPane scrollPane;
 
 	private boolean saved = true;
@@ -53,6 +54,7 @@ class Window {
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		scrollPane = new ScrollPane(textArea);
+		searchBar = new SearchBar(this, menuBar, menuBar.getMenuListener());
 		informationBar = new InformationBar(menuBar);
 		
 		// Add FileIO instance
@@ -189,7 +191,7 @@ class Window {
 	
 	void updateZoomEnable() {
 		menuBar.setZoomInEnabled(textArea.getZoomPercentage() < 1000);
-		menuBar.setZoomOutEnabled(textArea.getZoomPercentage() > 10);
+		menuBar.setZoomOutEnabled(textArea.getZoomPercentage() > 50);
 		menuBar.setResetZoomEnabled(textArea.getZoomPercentage() != 100);
 		
 		if (textArea.getZoomPercentage() != 100) {
@@ -214,19 +216,19 @@ class Window {
 	}
 
 	JTextField getFindField() {
-		return menuBar.getFindField();
+		return searchBar.getFindField();
 	}
 
 	JButton getFindClose() {
-		return menuBar.getFindClose();
+		return searchBar.getFindClose();
 	}
 
 	void showFindBar() {
-		menuBar.showFindBar();
+		searchBar.showFindBar();
 	}
 
 	void hideFindBar() {
-		menuBar.hideFindBar();
+		searchBar.hideFindBar();
 	}
 
 	JFrame getFrame() {

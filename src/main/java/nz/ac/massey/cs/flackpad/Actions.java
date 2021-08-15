@@ -80,6 +80,18 @@ public class Actions {
 			Dialogs.error("Could not escape search bar", window.getFrame());
 		}
 	}
+	
+	public static void performFindString(Window window) {
+		try {
+			if (window.getFindField().isVisible()) {
+				window.hideFindBar();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Dialogs.error("Could not escape search bar", window.getFrame());
+		}
+	}
+	
 
 	public static void performDelete(Window window) {
 		window.getTextArea().replaceSelection(null);

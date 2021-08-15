@@ -3,22 +3,15 @@ package nz.ac.massey.cs.flackpad;
 import java.awt.Color;
 import java.awt.event.*;
 
-import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JTextField;
 import javax.swing.KeyStroke;
-import javax.swing.text.DefaultHighlighter;
-import javax.swing.text.Highlighter;
 
 @SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
 
 	private ActionListener menuListener;
-	private JTextField findField;
-	private JButton exitFindButton;
-	private Window window;
 	private Color menuBackground = Color.decode("#ffffff");
 	private Color menuItemTabForeground = Color.decode("#555555");
 
@@ -58,15 +51,17 @@ class MenuBar extends JMenuBar {
 		super();
 
 		menuListener = new MenuListener(window);
-		this.window = window;
 
 		addFileMenu();
 		addEditMenu();
 		addViewMenu();
 		addHelpMenu();
-		addFindBar();
 		setBackground(menuBackground);
+
 	}
+	public ActionListener getMenuListener() {
+		return menuListener;
+	} 
 
 	private void addFileMenu() {
 		JMenu fileMenu = new JMenu("File");
@@ -113,6 +108,7 @@ class MenuBar extends JMenuBar {
 		fileMenu.add(exitItem);
 
 		add(fileMenu);
+		
 	}
 
 	private void addEditMenu() {
@@ -218,95 +214,6 @@ class MenuBar extends JMenuBar {
 		add(helpMenu);
 	}
 
-	private void addFindBar() {
-		exitFindButton = new JButton("X");
-		exitFindButton.setVisible(false);
-		add(exitFindButton);
-
-		findField = new JTextField("");
-		findField.setVisible(false);
-		findField.addActionListener(menuListener);
-		add(findField);
-
-		addListenersToFindBar();
-	}
-
-
-	private void addListenersToFindBar() {
-		exitFindButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				hideFindBar();
-			}
-		});
-
-		// Set search listener
-		findField.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				try {
-					TextArea textarea = window.getTextArea();
-
-					String searchtext = findField.getText();
-					String text = textarea.getText();
-
-					int offset = text.indexOf(searchtext);
-					int length = searchtext.length();
-
-					// Remove all current highlights
-					textarea.getHighlighter().removeAllHighlights();
-
-					Highlighter.HighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(
-							window.getTextArea().getSelectionColor());
-
-					// Get all occurrences
-					while (offset != -1) {
-						try {
-							textarea.getHighlighter().addHighlight(offset, offset + length, painter);
-							offset = text.indexOf(searchtext, offset + 1);
-						} catch (Exception e1) {
-							Dialogs.error("Could not highlight search phrase", window.getFrame());
-						}
-					}
-
-				} catch (Exception err) {
-					Dialogs.error("Issue with find / replace listeners", window.getFrame());
-				}
-			}
-		});
-	}
-
-	void hideFindBar() {
-		try {
-			findField.setVisible(false);
-			exitFindButton.setVisible(false);
-			TextArea textarea = window.getTextArea();
-			textarea.getHighlighter().removeAllHighlights();
-		} catch (Exception e) {
-			Dialogs.error("Could not hide search bar", window.getFrame());
-		}
-
-	}
-
-	void showFindBar() {
-		try {
-			findField.setVisible(true);
-			exitFindButton.setVisible(true);
-			findField.requestFocus();
-		} catch (Exception e) {
-			Dialogs.error("Could not show search bar", window.getFrame());
-		}
-	}
-
-	JTextField getFindField() {
-		return findField;
-	}
-
-	JButton getFindClose() {
-		return exitFindButton;
-	}
-	
 	void setUndoEnabled(Boolean enabled) {
 		undoItem.setEnabled(enabled);
 	}
