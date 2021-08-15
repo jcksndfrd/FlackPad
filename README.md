@@ -23,6 +23,7 @@ This application has the following core features, as per the assignment brief:
  - New, Open, Exit, Time & Date, About
  - Select, Copy, Paste & Cut, Delete
  - Save, Save As, Search
+ - Print
  - Export as PDF (PDF Conversion Function)
  - Source Code Syntax Highlighting (Theme-Based)
  - Configuration files (YAML)
