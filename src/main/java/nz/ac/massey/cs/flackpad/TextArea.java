@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.BorderFactory;
+import javax.swing.JScrollBar;
 import javax.swing.text.BadLocationException;
 
 import org.fife.rsta.ac.LanguageSupportFactory;
@@ -35,7 +36,7 @@ class TextArea extends RSyntaxTextArea {
 		addCaretListener(listener);
 		
 		// Add language support
-		LanguageSupportFactory.get().register(this);
+		LanguageSupportFactory.get().register(this);		
 	}
 
 	void setTheme(Config config) {

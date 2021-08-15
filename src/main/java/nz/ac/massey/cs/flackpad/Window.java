@@ -1,5 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.WindowListener;
 import java.io.File;
@@ -10,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 
 class Window {
@@ -25,6 +28,7 @@ class Window {
 	private TextArea textArea;
 	private SearchBar searchBar;
 	private ScrollPane scrollPane;
+	private JScrollBar scrollbarVert;
 
 	private boolean saved = true;
 	private File file;
@@ -67,6 +71,12 @@ class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
+
+		// Custom Scrollbar
+	    scrollbarVert = scrollPane.getVerticalScrollBar();
+	    scrollbarVert.setSize(new Dimension(25, Integer.MAX_VALUE));
+	    scrollbarVert.setUI(new CustomScrollbar());	
+	    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 
 		frame.add(scrollPane);
 		
@@ -135,6 +145,7 @@ class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
+	    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 	}
 	
 	void openThemeDialog() {
@@ -145,7 +156,7 @@ class Window {
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
 			informationBar.setTheme(config);
-			config.saveConfigFile();
+		    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 		}
 	}
 
