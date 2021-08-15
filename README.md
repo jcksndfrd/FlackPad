@@ -30,14 +30,17 @@ This application has the following core features, as per the assignment brief:
 ### *3. Additional features worth mentioning*
  - New Window ('New Window' will open a new text-editing instance in an additional application window, whilst 'New' will open a new text-editing instance in the current application window)
  - Select All (Select all current text)
+ - Replace Text (In conjunction with 'Search' feature)
  - Keyboard Shorcuts (Mnemonics, including additional keyboard combinations, for all listed operations)
  - Line Numbers
  - Brace Folding (Syntactical) 
  - Dark & Light Themes
+ - Editor Configuration Dialog (Fonts, Sizing, & Theme Selection)
  - Character Count
  - File Type Detection (Shown adjacent to Character Count) 
  - Redo / Undo
  - Zoom In / Zoom Out / Reset
+ - Basic Autocompletion
 
 ## **III. Significant Commit ID's**
 Fletcher:
