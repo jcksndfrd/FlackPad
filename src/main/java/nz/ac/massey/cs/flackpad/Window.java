@@ -8,6 +8,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,6 +30,7 @@ class Window {
 	private SearchBar searchBar;
 	private ScrollPane scrollPane;
 	private JScrollBar scrollbarVert;
+	private JScrollBar scrollbarHor;
 
 	private boolean saved = true;
 	private File file;
@@ -75,9 +77,15 @@ class Window {
 		// Custom Scrollbar
 	    scrollbarVert = scrollPane.getVerticalScrollBar();
 	    scrollbarVert.setSize(new Dimension(25, Integer.MAX_VALUE));
-	    scrollbarVert.setUI(new CustomScrollbar());	
+	    scrollbarVert.setUI(new CustomScrollbar(0));	
 	    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 
+		// Custom Scrollbar
+	    scrollbarHor = scrollPane.getHorizontalScrollBar();
+	    scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, 25));
+	    scrollbarHor.setUI(new CustomScrollbar(1));	
+	    scrollbarHor.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+	    	    	   
 		frame.add(scrollPane);
 		
 		// Enable/disable menu items
@@ -146,6 +154,7 @@ class Window {
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
 	    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+	    scrollbarHor.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 	}
 	
 	void openThemeDialog() {
@@ -157,6 +166,7 @@ class Window {
 			scrollPane.setTheme(config);
 			informationBar.setTheme(config);
 		    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		    scrollbarHor.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 		}
 	}
 

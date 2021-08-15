@@ -13,8 +13,14 @@ import javax.swing.JScrollBar;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
 public class CustomScrollbar extends BasicScrollBarUI {
-	  private final Dimension d = new Dimension();
+	
+	  private final Dimension dimension = new Dimension(0, 0);
+	  private int orientation; // default to vertical
 
+	  CustomScrollbar(int o) {
+		  orientation = o;
+	  }
+	  
 	  @Override
 	  protected JButton createDecreaseButton(int orientation) {
 	    return new JButton() {
@@ -22,7 +28,7 @@ public class CustomScrollbar extends BasicScrollBarUI {
 
 		@Override
 	      public Dimension getPreferredSize() {
-	        return d;
+	        return dimension;
 	      }
 	    };
 	  }
@@ -34,26 +40,32 @@ public class CustomScrollbar extends BasicScrollBarUI {
 
 		@Override
 	      public Dimension getPreferredSize() {
-	        return d;
+	        return dimension;
 	      }
 	    };
 	  }
 
 	  @Override
 	  protected void paintTrack(Graphics g, JComponent c, Rectangle r) {
+		    
 	  }
 
 	  @Override
 	  protected void paintThumb(Graphics g, JComponent c, Rectangle r) {
 	    Graphics2D g2 = (Graphics2D) g.create();
-	    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-	        RenderingHints.VALUE_ANTIALIAS_ON);
-	    Color color = null;
-	    JScrollBar sb = (JScrollBar) c;
+	    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 	    
-	    if (!sb.isEnabled() || r.width > r.height) {
+	    JScrollBar scrollbar = (JScrollBar) c;
+	    
+	    Color color;
+
+	    if (!scrollbar.isEnabled()) {
+	    	return;
+	    }
+	    else if ((r.width > r.height) && (orientation == 0)) {
 	      return;
-	    } else if (isDragging) {
+	    }
+	    else if (isDragging) {
 	      color = Color.decode("#787878");
 	    } else if (isThumbRollover()) {
 	      color = Color.decode("#787878");
@@ -61,9 +73,18 @@ public class CustomScrollbar extends BasicScrollBarUI {
 	      color = Color.decode("#565656");
 	    }
 	    g2.setPaint(color);	    
-	    g2.fillRoundRect(r.x, r.y, r.width, r.height, 20, 10);
-	    g2.setPaint(Color.BLACK);
-	    g2.drawRoundRect(r.x, r.y, r.width, r.height, 20, 10);
+	    switch(orientation) {
+	    case 0:
+		    g2.fillRoundRect(r.x, r.y, r.width, r.height, 20, 10);
+		    g2.setPaint(Color.BLACK);
+		    g2.drawRoundRect(r.x, r.y, r.width, r.height, 20, 10);
+		    break;
+	    case 1:
+		    g2.fillRoundRect(r.x, r.y, r.width, r.height, 10, 20);
+		    g2.setPaint(Color.BLACK);
+		    g2.drawRoundRect(r.x, r.y, r.width, r.height, 10, 20);
+		    break;
+	    }
 	    g2.dispose();
 	  }
 
