@@ -3,9 +3,7 @@ package nz.ac.massey.cs.flackpad;
 import java.awt.Color;
 import java.awt.event.*;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -14,20 +12,15 @@ import javax.swing.KeyStroke;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
-import javax.swing.Box;
-
 @SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
 
 	private ActionListener menuListener;
 	private JTextField findField;
 	private JButton exitFindButton;
-	private JLabel details;
 	private Window window;
 	private Color menuBackground = Color.decode("#ffffff");
 	private Color menuItemTabForeground = Color.decode("#555555");
-	private JLabel filetype;
-	private JLabel zoomlevel;
 
 	// File menu items
 	private JMenuItem newItem;
@@ -61,7 +54,7 @@ class MenuBar extends JMenuBar {
 	// Help menu items
 	private JMenuItem aboutItem;
 
-	MenuBar(Window window, Config config) {
+	MenuBar(Window window) {
 		super();
 
 		menuListener = new MenuListener(window);
@@ -72,7 +65,6 @@ class MenuBar extends JMenuBar {
 		addViewMenu();
 		addHelpMenu();
 		addFindBar();
-		addInformationBar();
 		setBackground(menuBackground);
 	}
 
@@ -239,52 +231,6 @@ class MenuBar extends JMenuBar {
 		addListenersToFindBar();
 	}
 
-	private void addInformationBar() {
-		// Char count
-		details = new JLabel("0 | Char");
-		details.setBorder(
-				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
-		add(Box.createHorizontalGlue());
-		add(details);
-
-		// Zoom percentage
-		zoomlevel = new JLabel();
-		zoomlevel.setBorder(
-				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
-		zoomlevel.setForeground(Color.decode("#444444"));
-		add(zoomlevel);
-
-		// File type label
-		filetype = new JLabel("PLAIN");
-		filetype.setBorder(
-				BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(0, 0, 0, 10)));
-		filetype.setForeground(Color.decode("#777777"));
-		add(filetype);
-	}
-	void setTheme(Config config) {
-		Color theme = config.getThemeName().equals("light") ? Color.decode("#990000") : Color.decode("#770BD8");
-		details.setForeground(theme);
-	}
-
-	void setInformationBarText(String val) {
-		details.setText(val);
-	}
-
-	void setInformationBarFileText(String val) {
-		if (val.startsWith("text/")) {
-			filetype.setText(val.substring(5).toUpperCase());
-		} else {
-			filetype.setText(val);
-		}
-	}
-
-	void setInformationBarZoomText(String val) {
-		zoomlevel.setText(val);
-	}
-
-	void setInformationBarZoomVisible(boolean isVisible) {
-		zoomlevel.setVisible(isVisible);
-	}
 
 	private void addListenersToFindBar() {
 		exitFindButton.addActionListener(new ActionListener() {

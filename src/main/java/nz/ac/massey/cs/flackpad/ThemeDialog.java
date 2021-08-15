@@ -2,7 +2,6 @@ package nz.ac.massey.cs.flackpad;
 
 import java.awt.BorderLayout;
 import java.awt.Choice;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
