@@ -1,6 +1,5 @@
 package nz.ac.massey.cs.flackpad;
 
-import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.WindowListener;
 import java.io.File;
@@ -16,6 +15,7 @@ import javax.swing.JTextField;
 class Window {
 	private String name = "FlackPad";
 	private JFrame frame;
+	private InformationBar informationBar;
 	private WindowListener winListener;
 	private Config config;
 	private FileMIME MIME = new FileMIME();
@@ -53,6 +53,7 @@ class Window {
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		scrollPane = new ScrollPane(textArea);
+		informationBar = new InformationBar(menuBar);
 		
 		// Add FileIO instance
 		fileIO = new FileIO(this);
@@ -63,6 +64,7 @@ class Window {
 		// Set font and colours for textarea, scrollpane, etc.
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
+		informationBar.setTheme(config);
 
 		frame.add(scrollPane);
 		
@@ -130,6 +132,7 @@ class Window {
 		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
+		informationBar.setTheme(config);
 	}
 	
 	void openThemeDialog() {
@@ -139,6 +142,7 @@ class Window {
 			config.setTheme(themeDialog.getThemeChoice());
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
+			informationBar.setTheme(config);
 			config.saveConfigFile();
 		}
 	}
@@ -189,23 +193,23 @@ class Window {
 		menuBar.setResetZoomEnabled(textArea.getZoomPercentage() != 100);
 		
 		if (textArea.getZoomPercentage() != 100) {
-			menuBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
-			menuBar.setInformationBarZoomVisible(true);
+			informationBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
+			informationBar.setInformationBarZoomVisible(true);
 		} else {
-			menuBar.setInformationBarZoomVisible(false);
+			informationBar.setInformationBarZoomVisible(false);
 		}
 	}
 
 	void setInformationBar(String val) {
-		menuBar.setInformationBarText(val);
+		informationBar.setInformationBarText(val);
 	}
 
 	void updateInformationBar() {
 		try {
 			// Update text
-			menuBar.setInformationBarText(Integer.toString(getText().length()) + " | Char");
+			informationBar.setInformationBarText(Integer.toString(getText().length()) + " | Char");
 		} catch (NullPointerException e) {
-			menuBar.setInformationBarText("0");
+			informationBar.setInformationBarText("0");
 		}
 	}
 
@@ -256,7 +260,7 @@ class Window {
 		fileName = file == null ? "Untitled" : file.getName();
 		// Set syntax highlighting and info bar text based on file type
 		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
-		menuBar.setInformationBarFileText(MIME.getFileStyle(file));
+		informationBar.setInformationBarFileText(MIME.getFileStyle(file));
 		// Clear undo/redo history
 		textArea.discardAllEdits();
 	}
