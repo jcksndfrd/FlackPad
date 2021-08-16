@@ -25,7 +25,7 @@
 			<groupId>com.fifesoft</groupId>
 			<artifactId>autocomplete</artifactId>
 			<version>3.1.2</version>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>com.fifesoft</groupId>
 			<artifactId>rsyntaxtextarea</artifactId>
@@ -38,7 +38,7 @@
 			<artifactId>tika-core</artifactId>
 			<version>1.27</version>
 		</dependency>
-		
+
 		<!-- PDF Export Library -->
 		<dependency>
 			<groupId>com.itextpdf</groupId>
@@ -94,7 +94,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
 			<!-- Package -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -130,8 +130,16 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
+				<configuration>
+					<systemPropertyVariables>
+						<java.awt.headless>false</java.awt.headless>
+						<awt.toolkit>com.github.caciocavallosilano.cacio.ctc.CTCToolkit</awt.toolkit>
+						<java.awt.graphicsenv>com.github.caciocavallosilano.cacio.ctc.CTCGraphicsEnvironment</java.awt.graphicsenv>
+					</systemPropertyVariables>
+				</configuration>
 			</plugin>
 
 		</plugins>

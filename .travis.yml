@@ -1,5 +1,2 @@
 language: java
-dist: xenial
-services:
-  - xvfb
-script: xvfb-run -a mvn clean test
+script: mvn clean test
