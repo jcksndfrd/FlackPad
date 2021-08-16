@@ -120,7 +120,7 @@ public class SearchBar {
 	}
 	private void replaceText() {
 		// If there is no text in the find bar or replace bar, do not replace anything
-		if (!checkReplaceWarnings() || (!checkFindWarnings())) {
+		if (!checkReplaceWarnings() || !checkFindWarnings()) {
 			return;
 		}
 		try {

@@ -62,7 +62,7 @@ public class CustomScrollbar extends BasicScrollBarUI {
 	    if (!scrollbar.isEnabled()) {
 	    	return;
 	    }
-	    else if ((r.width > r.height) && (orientation == 0)) {
+	    else if (r.width > r.height && orientation == 0) {
 	      return;
 	    }
 	    else if (isDragging) {
