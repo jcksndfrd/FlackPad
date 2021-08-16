@@ -2,4 +2,4 @@ language: java
 dist: xenial
 services:
   - xvfb
-script: xvfb-run mvn clean test
+script: xvfb-run -a mvn clean test
