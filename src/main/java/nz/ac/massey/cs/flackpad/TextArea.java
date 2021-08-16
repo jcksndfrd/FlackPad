@@ -35,7 +35,7 @@ class TextArea extends RSyntaxTextArea {
 		addCaretListener(listener);
 		
 		// Add language support
-		LanguageSupportFactory.get().register(this);
+		LanguageSupportFactory.get().register(this);		
 	}
 
 	void setTheme(Config config) {
