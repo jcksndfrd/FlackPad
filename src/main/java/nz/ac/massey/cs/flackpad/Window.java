@@ -258,6 +258,10 @@ class Window {
 			informationBar.setInformationBarText("0");
 		}
 	}
+	
+	SearchBar getSearchBar() {
+		return searchBar;
+	}
 
 	JTextField getFindField() {
 		return searchBar.getFindField();
