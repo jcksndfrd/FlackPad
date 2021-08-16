@@ -24,11 +24,11 @@ public class SearchBar {
 	private JButton findButton;
 	private JButton exitFindButton;
 	private JButton replaceButton;
-	
+
 	private int warningBorderWidth = 1;
 	private String defaultFindText;
 	private String defaultReplaceText;
-	
+
 	private JTextField findField;
 	private JTextField replaceField;
 	private Border padding;
@@ -61,17 +61,18 @@ public class SearchBar {
 		replaceField.setBorder(BorderFactory.createCompoundBorder(replaceField.getBorder(), padding));
 
 		menu.add(replaceField);
-		
+
 		replaceButton = new JButton("Replace");
 		replaceButton.setVisible(false);
 		menu.add(replaceButton);
 	}
+
 	private void addFindBar() {
-				
+
 		exitFindButton = new JButton("X");
 		exitFindButton.setVisible(false);
 		menu.add(exitFindButton);
-		
+
 		defaultFindText = "Find text...";
 		findField = new JTextField("");
 		findField.setVisible(false);
@@ -79,15 +80,16 @@ public class SearchBar {
 		findField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
 		findField.setBorder(BorderFactory.createCompoundBorder(findField.getBorder(), padding));
 
-    	findField.setForeground(Color.GRAY);
-    	findField.setText(defaultFindText);
+		findField.setForeground(Color.GRAY);
+		findField.setText(defaultFindText);
 		menu.add(findField);
-				
+
 		findButton = new JButton("Find");
 		findButton.setVisible(false);
 		menu.add(findButton);
 	}
-	private void findText() {
+
+	void findText() {
 		try {
 			if (!checkFindWarnings()) {
 				return;
@@ -120,6 +122,7 @@ public class SearchBar {
 			Dialogs.error("Issue with find / replace listeners", window.getFrame());
 		}
 	}
+
 	private void replaceText() {
 		// If there is no text in the find bar or replace bar, do not replace anything
 		if (!checkReplaceWarnings() || (!checkFindWarnings())) {
@@ -131,12 +134,11 @@ public class SearchBar {
 			String replacementtext = replaceField.getText();
 			String result = textarea.getText().replaceAll(searchtext, replacementtext);
 			textarea.setText(result);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("Could not replace occurences of text");
 		}
 	}
-	
+
 	private boolean checkFindWarnings() {
 		if (findField.getText().equals(defaultFindText)) {
 			// Make field border red
@@ -149,19 +151,19 @@ public class SearchBar {
 		findField.setBorder(BorderFactory.createCompoundBorder(findField.getBorder(), padding));
 		return true;
 	}
-	
+
 	private boolean checkReplaceWarnings() {
 		if (replaceField.getText().equals(defaultReplaceText)) {
 			// Make field border red
 			replaceField.setBorder(BorderFactory.createLineBorder(Color.decode("#990000"), warningBorderWidth));
 			replaceField.setBorder(BorderFactory.createCompoundBorder(replaceField.getBorder(), padding));
 			return false;
-		} 
+		}
 		replaceField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
 		replaceField.setBorder(BorderFactory.createCompoundBorder(replaceField.getBorder(), padding));
 		return true;
 	}
-	
+
 	private void addListenersToSearchBar() {
 		exitFindButton.addActionListener(new ActionListener() {
 			@Override
@@ -179,20 +181,21 @@ public class SearchBar {
 		});
 		// Set focus listener
 		findField.addFocusListener(new FocusListener() {
-		    @Override
-		    public void focusGained(FocusEvent e) {
-		        if (findField.getText().equals(defaultFindText)) {
-		        	findField.setText("");
-		        	findField.setForeground(Color.BLACK);
-		        }
-		    }
-		    @Override
-		    public void focusLost(FocusEvent e) {
-		        if (findField.getText().isEmpty()) {
-		        	findField.setForeground(Color.GRAY);
-		        	findField.setText(defaultFindText);
-		        }
-		    }
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (findField.getText().equals(defaultFindText)) {
+					findField.setText("");
+					findField.setForeground(Color.BLACK);
+				}
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (findField.getText().isEmpty()) {
+					findField.setForeground(Color.GRAY);
+					findField.setText(defaultFindText);
+				}
+			}
 		});
 		findButton.addActionListener(new ActionListener() {
 			@Override
@@ -200,7 +203,7 @@ public class SearchBar {
 				findText();
 			}
 		});
-		
+
 		// Set replace listeners
 		replaceField.addActionListener(new ActionListener() {
 			@Override
@@ -210,20 +213,21 @@ public class SearchBar {
 		});
 		// set focus listener
 		replaceField.addFocusListener(new FocusListener() {
-		    @Override
-		    public void focusGained(FocusEvent e) {
-		        if (replaceField.getText().equals(defaultReplaceText)) {
-		        	replaceField.setText("");
-		        	replaceField.setForeground(Color.BLACK);
-		        }
-		    }
-		    @Override
-		    public void focusLost(FocusEvent e) {
-		        if (replaceField.getText().isEmpty()) {
-		        	replaceField.setForeground(Color.GRAY);
-		        	replaceField.setText(defaultReplaceText);
-		        }
-		    }
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (replaceField.getText().equals(defaultReplaceText)) {
+					replaceField.setText("");
+					replaceField.setForeground(Color.BLACK);
+				}
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (replaceField.getText().isEmpty()) {
+					replaceField.setForeground(Color.GRAY);
+					replaceField.setText(defaultReplaceText);
+				}
+			}
 		});
 		replaceButton.addActionListener(new ActionListener() {
 			@Override
@@ -232,6 +236,7 @@ public class SearchBar {
 			}
 		});
 	}
+
 	void hideFindBar() {
 		try {
 			findField.setVisible(false);
@@ -246,6 +251,7 @@ public class SearchBar {
 		}
 
 	}
+
 	void showFindBar() {
 		try {
 			findField.setVisible(true);
@@ -258,11 +264,12 @@ public class SearchBar {
 			Dialogs.error("Could not show search bar", window.getFrame());
 		}
 	}
+
 	JTextField getFindField() {
 		return findField;
 	}
+
 	JButton getFindClose() {
 		return exitFindButton;
 	}
 }
-

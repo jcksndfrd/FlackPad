@@ -56,7 +56,7 @@ class FileIO {
 			JFileChooser fileChooser = new JFileChooser(window.getFile());
 			if (fileChooser.showOpenDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 				// Load file and save load type
-				int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile(), window);
+				int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile());
 				
 				// File loaded
 				if (loaded == LOADED || loaded == WRONG_TYPE || loaded == IMPORTED) {
@@ -111,7 +111,7 @@ class FileIO {
 		return NOT_SAVED;
 	}
 
-	private int loadFile(File file, Window window) {
+	int loadFile(File file) {
 		// Get file MIME type
 		String fileMIME = mime.getFileMIME(file);
 
@@ -146,7 +146,7 @@ class FileIO {
 		}
 	}
 
-	private void saveFile(File file) {
+	void saveFile(File file) {
 		try {
 			// Save text to file
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
