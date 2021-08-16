@@ -19,7 +19,7 @@ class MenuListener implements ActionListener {
 			window.newDoc();
 			break;
 		case "New Window":
-			new Window();
+			new Window(false);
 			break;
 		case "Open":
 			window.getFileIO().open();

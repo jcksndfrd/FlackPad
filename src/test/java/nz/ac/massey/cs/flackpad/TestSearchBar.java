@@ -5,7 +5,7 @@ import javax.swing.text.Highlighter.Highlight;
 import org.junit.jupiter.api.*;
 
 public class TestSearchBar {
-	private final Window window = new Window();
+	private final Window window = new Window(true);
 	
 	@Test
 	public void testSearch() {

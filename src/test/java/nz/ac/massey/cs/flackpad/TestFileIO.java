@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 public class TestFileIO {
-	private final Window window = new Window();
+	private final Window window = new Window(true);
 	private final FileIO fileIO = new FileIO(window);
 	
 	@AfterEach

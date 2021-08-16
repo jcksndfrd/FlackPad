@@ -41,7 +41,7 @@ class Window {
 	private File file;
 	private String fileName = "Untitled";
 
-	Window() {
+	Window(boolean headless) {
 		// Create JFrame and set title
 		frame = new JFrame(fileName + " - " + name);
 
@@ -116,7 +116,7 @@ class Window {
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		frame.setVisible(true);
+		frame.setVisible(!headless);
 
 		frame.requestFocus();
 		textArea.grabFocus();

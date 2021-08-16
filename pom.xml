@@ -80,13 +80,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.caciocavallosilano</groupId>
-			<artifactId>cacio-tta</artifactId>
-			<version>1.11</version>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -141,11 +134,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
 				<configuration>
-					<systemPropertyVariables>
-						<java.awt.headless>false</java.awt.headless>
-						<awt.toolkit>com.github.caciocavallosilano.cacio.ctc.CTCToolkit</awt.toolkit>
-						<java.awt.graphicsenv>com.github.caciocavallosilano.cacio.ctc.CTCGraphicsEnvironment</java.awt.graphicsenv>
-					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 
