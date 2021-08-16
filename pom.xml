@@ -80,6 +80,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.caciocavallosilano</groupId>
+			<artifactId>cacio-tta</artifactId>
+			<version>1.11</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
