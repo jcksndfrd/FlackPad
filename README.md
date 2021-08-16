@@ -1,5 +1,6 @@
 
 # FLACKPAD README
+[![Build Status](https://travis-ci.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch.svg?token=3iNyKMBw8kts3fofKzyU&branch=master)](https://travis-ci.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch)
 ---
 ## **I. Student Information**
 
