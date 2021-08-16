@@ -1,8 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -125,7 +123,7 @@ public class SearchBar {
 
 	private void replaceText() {
 		// If there is no text in the find bar or replace bar, do not replace anything
-		if (!checkReplaceWarnings() || (!checkFindWarnings())) {
+		if (!checkReplaceWarnings() || !checkFindWarnings()) {
 			return;
 		}
 		try {

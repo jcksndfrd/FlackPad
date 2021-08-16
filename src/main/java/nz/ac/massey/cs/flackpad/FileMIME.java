@@ -58,6 +58,9 @@ class FileMIME {
 		try {
 			fileMIME = tika.detect(file);
 		} catch (Exception e) {e.printStackTrace();}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		return fileMIME;
 	}
