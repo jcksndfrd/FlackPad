@@ -8,13 +8,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 class Window {
 	private String name = "FlackPad";
@@ -31,6 +32,10 @@ class Window {
 	private ScrollPane scrollPane;
 	private JScrollBar scrollbarVert;
 	private JScrollBar scrollbarHor;
+	private JPanel bottomRightCorner;
+	private JPanel bottomLeftCorner;
+	
+	private int scrollBarBreadth = 13;
 
 	private boolean saved = true;
 	private File file;
@@ -76,16 +81,28 @@ class Window {
 
 		// Custom Scrollbar
 	    scrollbarVert = scrollPane.getVerticalScrollBar();
-	    scrollbarVert.setSize(new Dimension(25, Integer.MAX_VALUE));
+	    scrollbarVert.setSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
+	    scrollbarVert.setMaximumSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
+	    scrollbarVert.setPreferredSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
 	    scrollbarVert.setUI(new CustomScrollbar(0));	
-	    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+	    scrollbarVert.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 
 		// Custom Scrollbar
 	    scrollbarHor = scrollPane.getHorizontalScrollBar();
-	    scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, 25));
+	    scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
+	    scrollbarHor.setMaximumSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
+	    scrollbarHor.setPreferredSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
 	    scrollbarHor.setUI(new CustomScrollbar(1));	
-	    scrollbarHor.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-	    	    	   
+	    scrollbarHor.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+	    
+	    // Set corners
+	    bottomLeftCorner = new JPanel();
+	    bottomRightCorner = new JPanel();
+	    scrollPane.setCorner(ScrollPaneConstants.LOWER_LEFT_CORNER, bottomLeftCorner);
+		scrollPane.setCorner(ScrollPaneConstants.LOWER_RIGHT_CORNER, bottomRightCorner);
+		bottomLeftCorner.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomRightCorner.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+
 		frame.add(scrollPane);
 		
 		// Enable/disable menu items
@@ -103,6 +120,7 @@ class Window {
 
 		frame.requestFocus();
 		textArea.grabFocus();
+		
 	}
 
 	void newDoc() {
@@ -153,8 +171,11 @@ class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
-	    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-	    scrollbarHor.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+	    scrollbarVert.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+	    scrollbarHor.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomLeftCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomRightCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		
 	}
 	
 	void openThemeDialog() {
@@ -165,8 +186,10 @@ class Window {
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
 			informationBar.setTheme(config);
-		    scrollbarVert.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		    scrollbarHor.setBackground(config.getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		    scrollbarVert.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		    scrollbarHor.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+			bottomLeftCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+			bottomRightCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 		}
 	}
 
