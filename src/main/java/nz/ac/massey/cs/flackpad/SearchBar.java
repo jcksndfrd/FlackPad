@@ -41,6 +41,7 @@ public class SearchBar {
 		item.setBackground(Color.white);
 		padding = BorderFactory.createEmptyBorder(1, 5, 1, 5);
 		menu.add(item); // Left margin
+		item.setEnabled(false);
 		this.addFindBar();
 		this.addReplaceBar();
 		menu.add(item); // Right margin
