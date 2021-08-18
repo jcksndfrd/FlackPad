@@ -255,7 +255,7 @@ class Window {
 			// Update text
 			informationBar.setInformationBarText(Integer.toString(getText().length()) + " | Char");
 		} catch (NullPointerException e) {
-			informationBar.setInformationBarText("0");
+			informationBar.setInformationBarText("0" + " | Char");
 		}
 	}
 	

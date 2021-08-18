@@ -113,12 +113,12 @@ public class SearchBar {
 					textarea.getHighlighter().addHighlight(offset, offset + length, painter);
 					offset = text.indexOf(searchtext, offset + 1);
 				} catch (Exception e1) {
-					Dialogs.error("Could not highlight search phrase", window.getFrame());
+					System.out.println("SearchBar\\findText() - Error: Could not highlight search phrase");
 				}
 			}
 
 		} catch (Exception err) {
-			Dialogs.error("Issue with find / replace listeners", window.getFrame());
+			System.out.println("SearchBar\\findText() - Error: Issue with finding text");
 		}
 	}
 
@@ -134,7 +134,7 @@ public class SearchBar {
 			String result = textarea.getText().replaceAll(searchtext, replacementtext);
 			textarea.setText(result);
 		} catch (Exception e) {
-			System.out.println("Could not replace occurences of text");
+			System.out.println("SearchBar\\replaceText() - Error: Could not replace occurrences of text");
 		}
 	}
 
@@ -246,7 +246,7 @@ public class SearchBar {
 			TextArea textarea = window.getTextArea();
 			textarea.getHighlighter().removeAllHighlights();
 		} catch (Exception e) {
-			Dialogs.error("Could not hide search bar", window.getFrame());
+			System.out.println("SearchBar\\hideFindBar() - Error: Could not hide search bar");
 		}
 
 	}
@@ -260,7 +260,7 @@ public class SearchBar {
 			replaceButton.setVisible(true);
 			replaceField.setVisible(true);
 		} catch (Exception e) {
-			Dialogs.error("Could not show search bar", window.getFrame());
+			System.out.println("SearchBar\\showFindBar() - Error: Could not show search bar");
 		}
 	}
 

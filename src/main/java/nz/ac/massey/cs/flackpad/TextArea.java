@@ -13,8 +13,6 @@ import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 @SuppressWarnings("serial")
 class TextArea extends RSyntaxTextArea {
 
-	private Window window;
-
 	private float fontSize;
 	private int zoomPercentage;
 
@@ -22,8 +20,6 @@ class TextArea extends RSyntaxTextArea {
 		// Call RSyntaxTextArea constructor
 		super();
 		// Set variables
-		this.window = window;
-
 		fontSize = getFont().getSize();
 		zoomPercentage = 100;
 		// Set border
@@ -64,7 +60,7 @@ class TextArea extends RSyntaxTextArea {
 			// Add time and date to text area
 			getDocument().insertString(0, formatter.format(LocalDateTime.now()) + "\n", null);
 		} catch (BadLocationException e) {
-			Dialogs.error("Something went wrong when getting the time and date", window.getFrame());
+			System.out.println("TextArea\\addTimeAndDate() - Error: Could not retrieve time and/or date");
 		}
 	}
 

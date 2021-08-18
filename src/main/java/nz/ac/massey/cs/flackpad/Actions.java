@@ -27,7 +27,7 @@ public class Actions {
 			}
 
 		} catch (Exception err) {
-			Dialogs.error("Could not paste from clipboard", window.getFrame());
+			System.out.println("Actions\\performPaste() - Error: Could not paste from clipboard");
 		}
 
 	}
@@ -39,7 +39,7 @@ public class Actions {
 			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 			clipboard.setContents(stringSelection, null);
 		} catch (Exception err) {
-			Dialogs.error("Could not copy selected text to clipboard", window.getFrame());
+			System.out.println("Actions\\performCopy() - Error: Could not copy selected text to clipboard");
 		}
 	}
 
@@ -51,7 +51,7 @@ public class Actions {
 			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 			clipboard.setContents(stringSelection, null);
 		} catch (Exception err) {
-			Dialogs.error("Could not cut selected", window.getFrame());
+			System.out.println("Actions\\performCut() - Error: Could not cut selected text");
 		}
 	}
 
@@ -61,7 +61,7 @@ public class Actions {
 			textArea.setSelectionStart(0);
 			textArea.setSelectionEnd(textArea.getText().length());
 		} catch (Exception err) {
-			Dialogs.error("Could not select all", window.getFrame());
+			System.out.println("Actions\\performSelectAll() - Error: Could not select all text");
 		}
 	}
 
@@ -76,8 +76,7 @@ public class Actions {
 				window.hideFindBar();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
-			Dialogs.error("Could not escape search bar", window.getFrame());
+			System.out.println("Actions\\performEscapeFind() - Error: Could not escape find");
 		}
 	}
 	
@@ -87,14 +86,16 @@ public class Actions {
 				window.hideFindBar();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
-			Dialogs.error("Could not escape search bar", window.getFrame());
+			System.out.println("Actions\\performCopy() - Error: Could not search for string");
 		}
 	}
 	
-
 	public static void performDelete(Window window) {
-		window.getTextArea().replaceSelection(null);
+		try {
+			window.getTextArea().replaceSelection(null);
+		} catch (Exception e) {
+			System.out.println("Actions\\performDelete() - Error: Could not delete text");
+		}
 	}
 
 	public static void performPrint(Window window) {
