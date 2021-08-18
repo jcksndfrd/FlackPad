@@ -37,7 +37,6 @@ class TextAreaListener implements DocumentListener, CaretListener {
 
 	@Override
 	public void caretUpdate(CaretEvent e) {
-//		window.updateInformationBar();
 		window.updateCCDEnable();
 	}
 	

@@ -58,7 +58,7 @@ class FileMIME {
 		try {
 			fileMIME = tika.detect(file);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("FileMIME\\getFileMIME() - Error: Could not detect file MIME");
 		}
 		
 		return fileMIME;
