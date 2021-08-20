@@ -162,8 +162,8 @@ class FileIO {
 		}
 	}
 	
-	void exportToPdf() {
-		pdfExporter.export(window.getText(), window.getFile());
+	void exportToPdf(String text, File file) {
+		pdfExporter.export(text, file);
 	}
 
 }

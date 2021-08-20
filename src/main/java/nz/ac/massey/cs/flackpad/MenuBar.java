@@ -99,6 +99,7 @@ class MenuBar extends JMenuBar {
 		fileMenu.add(printItem);
 
 		pdfItem = new JMenuItem("Export as...");
+		pdfItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK));
 		pdfItem.addActionListener(menuListener);
 		fileMenu.add(pdfItem);
 

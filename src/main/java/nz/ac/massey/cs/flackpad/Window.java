@@ -194,9 +194,17 @@ class Window {
 	}
 	
 	void export() {
-		ExportDialog exportDialog = new ExportDialog(frame);
+		ExportDialog exportDialog = new ExportDialog(frame, file, fileName);
 		if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
-			
+			switch (exportDialog.getFormatChoice()) {
+			case "pdf":
+				fileIO.exportToPdf(textArea.getText(), exportDialog.getFileChoice());
+				break;
+			case "odt":
+				break;
+			case "rtf":
+				break;
+			}
 		}
 	}
 
