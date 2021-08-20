@@ -59,4 +59,13 @@ Fletcher:
  
 Jack:
 
+ [commit-1](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/f800d66775d4122f571637ae4a80baa1cf949e3b)
+
+ [commit-2](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/cf044f57f0db3d5c0eb623af2703864b26c03a25)
+
+ [commit-3](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/5f719a4aea00bb850eed37d79b72a2dd6c906e9b)
+
+ [commit-4](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/726d3de7b88aaf54c0bc2ed2288176ac85199606)
+
+ [commit-5](https://github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch/commit/5710b718baa5ad91dec23e15271e42a813222644)
 ---
