@@ -20,6 +20,7 @@ class FileIO {
 	// File loaders
 	TextFileLoader textFileLoader;
 	OdtFileLoader odtFileLoader;
+	RtfFileLoader rtfFileLoader;
 	PdfExporter pdfExporter;
 
 	FileIO(Window window) {
@@ -30,9 +31,8 @@ class FileIO {
 		// Save loader instances
 		textFileLoader = new TextFileLoader();
 		odtFileLoader = new OdtFileLoader();
-		pdfExporter = new PdfExporter(window.getAppName(), window.getFrame());
-		
-		
+		rtfFileLoader = new RtfFileLoader();
+		pdfExporter = new PdfExporter(window.getAppName(), window.getFrame());		
 	}
 
 	void open() {
@@ -133,6 +133,9 @@ class FileIO {
 					return LOADED;
 				case "vnd.oasis.opendocument.text":
 					window.setText(odtFileLoader.loadFile(file));
+					return IMPORTED;
+				case "rtf":
+					window.setText(rtfFileLoader.loadFile(file));
 					return IMPORTED;
 				}
 			}
