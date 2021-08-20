@@ -192,6 +192,13 @@ class Window {
 			bottomRightCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 		}
 	}
+	
+	void export() {
+		ExportDialog exportDialog = new ExportDialog(frame);
+		if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
+			
+		}
+	}
 
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
