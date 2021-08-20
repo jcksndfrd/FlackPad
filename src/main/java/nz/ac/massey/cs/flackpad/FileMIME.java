@@ -1,6 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,15 +54,15 @@ class FileMIME {
 	}
 
 	String getFileMIME(File file) {
-		String fileMIME = null;
-		
-		try {
-			fileMIME = tika.detect(file);
-		} catch (Exception e) {
-			System.out.println("FileMIME\\getFileMIME() - Error: Could not detect file MIME");
+		if (file == null) {
+			return null;
 		}
-		
-		return fileMIME;
+		try {
+			return tika.detect(file);
+		} catch (IOException e) {
+			System.out.println("FileMIME\\getFileMIME() - Error: Could not detect file MIME");
+			return null;
+		}
 	}
 	
 	String getFileStyle(File file) {
