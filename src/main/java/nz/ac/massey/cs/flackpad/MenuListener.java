@@ -31,7 +31,6 @@ class MenuListener implements ActionListener {
 				window.getFileIO().saveAs();
 				break;
 			case "Print":
-				Actions.performPrint(window);
 				break;
 			case "Export as...":
 				window.export();
