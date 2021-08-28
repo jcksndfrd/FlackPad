@@ -1,11 +1,14 @@
 package nz.ac.massey.cs.flackpad;
 
+import javax.swing.JMenuBar;
+import javax.swing.JTextArea;
 import javax.swing.text.Highlighter.Highlight;
 
 import org.junit.jupiter.api.*;
 
 public class TestSearchBar {
-	private final Window window = new Window();
+	private final JTextArea textArea = new JTextArea();
+	private final SearchBar searchBar = new SearchBar(textArea, new JMenuBar());
 	
 	@Test
 	public void testSearch() {
@@ -13,13 +16,13 @@ public class TestSearchBar {
 		String searchText = "test";
 		
 		// Set text area text
-		window.setText(testText);
+		textArea.setText(testText);
 		// Set search phrase
-		window.getFindField().setText(searchText);
+		searchBar.getFindField().setText(searchText);
 		// Perform search
-		window.getSearchBar().findText();
+		searchBar.findText();
 		// Check highlighted text
-		Highlight[] highlights = window.getTextArea().getHighlighter().getHighlights();
+		Highlight[] highlights = textArea.getHighlighter().getHighlights();
 		for (Highlight highlight : highlights) {
 			Assertions.assertEquals(testText.substring(highlight.getStartOffset(), highlight.getEndOffset()), searchText);
 		}

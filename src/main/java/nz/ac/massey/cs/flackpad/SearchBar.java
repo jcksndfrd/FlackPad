@@ -11,6 +11,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.text.DefaultHighlighter;
@@ -18,7 +19,7 @@ import javax.swing.text.Highlighter;
 
 public class SearchBar {
 	private JMenuBar menu;
-	private Window window;
+	private JTextArea textArea;
 	private JButton findButton;
 	private JButton exitFindButton;
 	private JButton replaceButton;
@@ -30,12 +31,10 @@ public class SearchBar {
 	private JTextField findField;
 	private JTextField replaceField;
 	private Border padding;
-	private ActionListener menuListener;
 
-	public SearchBar(Window window, JMenuBar menu, ActionListener menuListener) {
+	public SearchBar(JTextArea textArea, JMenuBar menu) {
 		this.menu = menu;
-		this.window = window;
-		this.menuListener = menuListener;
+		this.textArea = textArea;
 		JMenuItem item = new JMenuItem();
 		item.setMargin(new Insets(2, 5, 2, 5));
 		item.setBackground(Color.white);
@@ -53,7 +52,6 @@ public class SearchBar {
 		defaultReplaceText = "Replace with...";
 		replaceField = new JTextField("");
 		replaceField.setVisible(false);
-		replaceField.addActionListener(menuListener);
 		replaceField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
 		replaceField.setForeground(Color.GRAY);
 		replaceField.setText(defaultReplaceText);
@@ -75,7 +73,6 @@ public class SearchBar {
 		defaultFindText = "Find text...";
 		findField = new JTextField("");
 		findField.setVisible(false);
-		findField.addActionListener(menuListener);
 		findField.setBorder(BorderFactory.createLineBorder(Color.decode("#000099"), warningBorderWidth));
 		findField.setBorder(BorderFactory.createCompoundBorder(findField.getBorder(), padding));
 
@@ -93,24 +90,23 @@ public class SearchBar {
 			if (!checkFindWarnings()) {
 				return;
 			}
-			TextArea textarea = window.getTextArea();
 
 			String searchtext = findField.getText();
-			String text = textarea.getText();
+			String text = textArea.getText();
 
 			int offset = text.indexOf(searchtext);
 			int length = searchtext.length();
 
 			// Remove all current highlights
-			textarea.getHighlighter().removeAllHighlights();
+			textArea.getHighlighter().removeAllHighlights();
 
 			Highlighter.HighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(
-					window.getTextArea().getSelectionColor());
+					textArea.getSelectionColor());
 
 			// Get all occurrences
 			while (offset != -1) {
 				try {
-					textarea.getHighlighter().addHighlight(offset, offset + length, painter);
+					textArea.getHighlighter().addHighlight(offset, offset + length, painter);
 					offset = text.indexOf(searchtext, offset + 1);
 				} catch (Exception e1) {
 					System.out.println("SearchBar\\findText() - Error: Could not highlight search phrase");
@@ -128,11 +124,10 @@ public class SearchBar {
 			return;
 		}
 		try {
-			TextArea textarea = window.getTextArea();
 			String searchtext = findField.getText();
 			String replacementtext = replaceField.getText();
-			String result = textarea.getText().replaceAll(searchtext, replacementtext);
-			textarea.setText(result);
+			String result = textArea.getText().replaceAll(searchtext, replacementtext);
+			textArea.setText(result);
 		} catch (Exception e) {
 			System.out.println("SearchBar\\replaceText() - Error: Could not replace occurrences of text");
 		}
@@ -243,8 +238,7 @@ public class SearchBar {
 			exitFindButton.setVisible(false);
 			replaceButton.setVisible(false);
 			replaceField.setVisible(false);
-			TextArea textarea = window.getTextArea();
-			textarea.getHighlighter().removeAllHighlights();
+			textArea.getHighlighter().removeAllHighlights();
 		} catch (Exception e) {
 			System.out.println("SearchBar\\hideFindBar() - Error: Could not hide search bar");
 		}

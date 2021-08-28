@@ -79,7 +79,7 @@ public class Actions {
 			System.out.println("Actions\\performEscapeFind() - Error: Could not escape find");
 		}
 	}
-	
+
 	public static void performFindString(Window window) {
 		try {
 			if (window.getFindField().isVisible()) {
@@ -89,7 +89,7 @@ public class Actions {
 			System.out.println("Actions\\performCopy() - Error: Could not search for string");
 		}
 	}
-	
+
 	public static void performDelete(Window window) {
 		try {
 			window.getTextArea().replaceSelection(null);
@@ -98,7 +98,4 @@ public class Actions {
 		}
 	}
 
-	public static void performPrint(Window window) {
-		// Stub
-	}
 }

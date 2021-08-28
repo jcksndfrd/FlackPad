@@ -65,7 +65,7 @@ class Window {
 		// Add text area in a scroll pane
 		textArea = new TextArea(this);
 		scrollPane = new ScrollPane(textArea);
-		searchBar = new SearchBar(this, menuBar, menuBar.getMenuListener());
+		searchBar = new SearchBar(textArea, menuBar);
 		informationBar = new InformationBar(menuBar);
 		
 		// Add FileIO instance
