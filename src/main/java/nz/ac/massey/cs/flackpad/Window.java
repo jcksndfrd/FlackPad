@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 class Window {
-	private String name = "FlackPad";
+	private String appName = "FlackPad";
 	private JFrame frame;
 	private InformationBar informationBar;
 	private WindowListener winListener;
@@ -43,7 +43,7 @@ class Window {
 
 	Window() {
 		// Create JFrame and set title
-		frame = new JFrame(fileName + " - " + name);
+		frame = new JFrame(fileName + " - " + appName);
 
 		// Add icons
 		List<Image> iconList = new ArrayList<Image>();
@@ -198,11 +198,13 @@ class Window {
 		if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
 			switch (exportDialog.getFormatChoice()) {
 			case "pdf":
-				fileIO.exportToPdf(textArea.getText(), exportDialog.getFileChoice());
+				fileIO.exportToPdf(textArea.getText(), appName, exportDialog.getFileChoice());
 				break;
 			case "odt":
+				fileIO.exportToOdt(textArea.getText(), exportDialog.getFileChoice());
 				break;
 			case "rtf":
+				fileIO.exportToRtf(textArea.getText(), exportDialog.getFileChoice());
 				break;
 			}
 		}
@@ -307,7 +309,7 @@ class Window {
 	}
 
 	void setSaved(boolean saved) {
-		frame.setTitle((saved ? "" : "*") + fileName + " - " + name);
+		frame.setTitle((saved ? "" : "*") + fileName + " - " + appName);
 		this.saved = saved;
 	}
 
@@ -335,7 +337,7 @@ class Window {
 	}
 
 	String getAppName() {
-		return name;
+		return appName;
 	}
 
 	void setText(String text) {

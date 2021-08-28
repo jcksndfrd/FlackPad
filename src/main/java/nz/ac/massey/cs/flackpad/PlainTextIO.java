@@ -1,13 +1,15 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
-class TextFileLoader {
+class PlainTextIO {
 
-	TextFileLoader() {
+	PlainTextIO() {
 	}
 
 	String loadFile(File file) throws IOException {
@@ -24,6 +26,14 @@ class TextFileLoader {
 		reader.close();
 
 		return text;
+	}
+
+	void saveFile(String text, File file) throws IOException {
+		// Save text to file
+		BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
+		writer.write(text);
+		writer.flush();
+		writer.close();
 	}
 
 }

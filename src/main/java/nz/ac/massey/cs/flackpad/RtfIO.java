@@ -8,7 +8,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.rtf.RTFEditorKit;
 
-class RtfFileLoader {
+class RtfIO {
 	
 	String loadFile (File file) throws IOException {
 		String text = "";
@@ -30,5 +30,15 @@ class RtfFileLoader {
 		// Close stream and return read text
 		stream.close();
 		return text;
+	}
+	
+	String export(String text, File file) {
+		String filePath = file.getAbsolutePath();
+		if (!filePath.endsWith(".rtf")) {
+			filePath += ".rtf";
+		}
+		
+
+		return filePath.substring(filePath.lastIndexOf("\\") + 1);
 	}
 }
