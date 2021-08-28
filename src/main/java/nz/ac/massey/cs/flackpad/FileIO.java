@@ -152,7 +152,7 @@ class FileIO {
 			// Unknown type
 			window.setText(plainTextIO.loadFile(file));
 			return WRONG_TYPE;
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// Error loading file
 			return NOT_LOADED;
 		}

@@ -9,22 +9,23 @@ import java.io.IOException;
 
 class PlainTextIO {
 
-	PlainTextIO() {
-	}
-
 	String loadFile(File file) throws IOException {
+		// Get file reader
 		BufferedReader reader = new BufferedReader(new FileReader(file));
+		
+		// Read lines
 		String text = "";
 		String line = reader.readLine();
-
 		while (line != null) {
 			text += line;
 			if ((line = reader.readLine()) != null)
 				text += System.getProperty("line.separator");
 		}
 
+		// Close reader
 		reader.close();
 
+		// Return read text
 		return text;
 	}
 
