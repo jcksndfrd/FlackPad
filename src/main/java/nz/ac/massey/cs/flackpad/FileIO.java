@@ -107,7 +107,7 @@ class FileIO {
 		if (fileChooser.showSaveDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 			// Save file to user choice
 			try {
-				plainTextIO.saveFile(window.getText(), window.getFile());
+				plainTextIO.saveFile(window.getText(), fileChooser.getSelectedFile().getAbsoluteFile());
 				window.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
 				window.setSaved(true);
 				return SAVED;
