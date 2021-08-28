@@ -18,6 +18,8 @@ Student ID:   19025303
 
 ## **II. Flackpad Application**
 ### *1. How to run our program*
+ - Java version 1.8 or greater is required to launch this application
+ - Simply launch the FlackPad application (JAR)
 
 ### *2. Core features*
 This application has the following core features, as per the assignment brief: 
@@ -27,7 +29,7 @@ This application has the following core features, as per the assignment brief:
  - Print
  - Export to PDF (PDF Conversion Function)
  - Source Code Syntax Highlighting (Theme-Based)
- - Configuration files (YAML)
+ - Configuration File to Save Font & Theme Options (YAML)
 
 ### *3. Additional features worth mentioning*
  - New Window ('New Window' will open a new text-editing instance in an additional application window, whilst 'New' will open a new text-editing instance in the current application window)
