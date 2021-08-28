@@ -25,7 +25,7 @@ This application has the following core features, as per the assignment brief:
  - Select, Copy, Paste & Cut, Delete
  - Save, Save As, Search
  - Print
- - Export as PDF (PDF Conversion Function)
+ - Export to PDF (PDF Conversion Function)
  - Source Code Syntax Highlighting (Theme-Based)
  - Configuration files (YAML)
 
@@ -43,6 +43,8 @@ This application has the following core features, as per the assignment brief:
  - Redo / Undo
  - Zoom In / Zoom Out / Reset
  - Basic Autocompletion
+ - RTF (Without overwriting the original file) 
+ - ODT (Without overwriting the original file) 
 
 ## **III. Significant Commit ID's**
 Fletcher:
