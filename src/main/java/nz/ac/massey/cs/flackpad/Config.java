@@ -48,7 +48,7 @@ class Config {
 			config = yaml.load(inputStream);
 			inputStream.close();
 		} catch (FileNotFoundException e) {
-			Dialogs.warning("Configuration file does not exist, using defaults", parent);
+			Dialogs.message("Configuration file does not exist, using defaults", parent);
 		} catch (IOException e) {
 			Dialogs.error("Something went wrong when loading configuration file", parent);
 		}

@@ -61,7 +61,7 @@ class MenuBar extends JMenuBar {
 	}
 	public ActionListener getMenuListener() {
 		return menuListener;
-	} 
+	}
 
 	private void addFileMenu() {
 		JMenu fileMenu = new JMenu("File");
