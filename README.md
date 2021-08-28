@@ -43,8 +43,11 @@ This application has the following core features, as per the assignment brief:
  - Redo / Undo
  - Zoom In / Zoom Out / Reset
  - Basic Autocompletion
- - RTF (Without overwriting the original file) 
- - ODT (Without overwriting the original file) 
+ - RTF (Without overwriting the original file) & Exporting to RTF
+ - ODT (Without overwriting the original file) & Exporting to ODT
+ - Custom scrollbar
+ - Testing & Continuous Integration (Travis)
+ - Status bar
 
 ## **III. Significant Commit ID's**
 Fletcher:
