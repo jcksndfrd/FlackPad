@@ -8,19 +8,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 public class TestFileIO {
-	private final Window window = new Window();
-	private final FileIO fileIO = new FileIO(window);
-	
-	@AfterEach
-	void clearTextArea() {
-		window.setText("");
-	}
+	private final PlainTextIO plainTextIO = new PlainTextIO();
 	
 	@Test
 	void loadFileTest() {
 		
 		String nl = System.getProperty("line.separator");
 		String testText = "This"+nl+"Is"+nl+"A"+nl+"Test";
+		String readText = "";
 		
 		try {
 			// Create temp file
@@ -30,7 +25,7 @@ public class TestFileIO {
 			writer.close();
 			
 			// Load temp file
-			fileIO.loadFile(tempFile);
+			readText = plainTextIO.loadFile(tempFile);
 			
 			// Delete temp file
 			tempFile.delete();
@@ -39,7 +34,7 @@ public class TestFileIO {
 		}
 		
 		// Check it loaded correctly
-		Assertions.assertEquals(window.getText(), testText);
+		Assertions.assertEquals(readText, testText);
 	}
 	
 	@Test
@@ -48,14 +43,11 @@ public class TestFileIO {
 		String nl = System.getProperty("line.separator");
 		String testText = "This"+nl+"Is"+nl+"A"+nl+"Test";
 		String readText = "";
-		
-		// Set text area text
-		window.setText(testText);
 
 		try {
 			// Save to temp file
 			File tempFile = File.createTempFile("temp", ".txt");
-			fileIO.saveFile(tempFile);
+			plainTextIO.saveFile(testText, tempFile);
 			
 			// Read file
 			readText = new String(Files.readAllBytes(tempFile.toPath()));

@@ -88,7 +88,7 @@ class MenuBar extends JMenuBar {
 		saveItem.addActionListener(menuListener);
 		fileMenu.add(saveItem);
 
-		saveAsItem = new JMenuItem("Save As");
+		saveAsItem = new JMenuItem("Save As...");
 		saveAsItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK));
 		saveAsItem.addActionListener(menuListener);
 		fileMenu.add(saveAsItem);
@@ -98,7 +98,8 @@ class MenuBar extends JMenuBar {
 		printItem.addActionListener(menuListener);
 		fileMenu.add(printItem);
 
-		pdfItem = new JMenuItem("Export to PDF");
+		pdfItem = new JMenuItem("Export as...");
+		pdfItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK));
 		pdfItem.addActionListener(menuListener);
 		fileMenu.add(pdfItem);
 
