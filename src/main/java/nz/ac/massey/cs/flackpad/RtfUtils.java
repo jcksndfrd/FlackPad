@@ -28,12 +28,7 @@ final class RtfUtils {
 		return document.getText(0, document.getLength());
 	}
 
-	static String export(String text, File file) throws IOException, BadLocationException {
-		// Make sure file has correct extension
-		String filePath = file.getAbsolutePath();
-		if (!filePath.endsWith(".rtf")) {
-			filePath += ".rtf";
-		}
+	static void export(String text, File file) throws IOException, BadLocationException {
 
 		// Get RTFEditorKit and a blank document to write to
 		final RTFEditorKit kit = new RTFEditorKit();
@@ -43,11 +38,9 @@ final class RtfUtils {
 		document.insertString(0, text, null);
 
 		// Write document to output stream
-		try (FileOutputStream stream = new FileOutputStream(filePath)) {
+		try (FileOutputStream stream = new FileOutputStream(file)) {
 			kit.write(stream, document, 0, -1);
 		}
-
-		// Return file name
-		return filePath.substring(filePath.lastIndexOf("\\") + 1);
 	}
+	
 }

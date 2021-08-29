@@ -90,7 +90,7 @@ class FileIO {
 		int saveStatus = NOT_SAVED;
 
 		// Open save as dialog and get user choice
-		final JFileChooser fileChooser = new JFileChooser(window.getFile());
+		final SaveAsChooser fileChooser = new SaveAsChooser(window.getFile());
 		fileChooser.setDialogTitle("Save As");
 		if (fileChooser.showSaveDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 			// Save file to user choice
@@ -179,17 +179,18 @@ class FileIO {
 
 	void exportToPdf(String text, String appName, File file) {
 		try {
-			final String fileName = PdfUtils.export(text, appName, file);
-			DialogUtils.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
+			PdfUtils.export(text, appName, file);
+			DialogUtils.message("Succesfully exported as \"" + file.getName() + "\"", window.getFrame());
 		} catch (Exception error) {
+			error.printStackTrace();
 			DialogUtils.error("Something went wrong when exporting to PDF", window.getFrame());
 		}
 	}
 
 	void exportToOdt(String text, File file) {
 		try {
-			final String fileName = OdtUtils.export(text, file);
-			DialogUtils.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
+			OdtUtils.export(text, file);
+			DialogUtils.message("Succesfully exported as \"" + file.getName() + "\"", window.getFrame());
 		} catch (Exception error) {
 			DialogUtils.error("Something went wrong when exporting to ODT", window.getFrame());
 		}
@@ -197,8 +198,8 @@ class FileIO {
 
 	void exportToRtf(String text, File file) {
 		try {
-			final String fileName = RtfUtils.export(text, file);
-			DialogUtils.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
+			RtfUtils.export(text, file);
+			DialogUtils.message("Succesfully exported as \"" + file.getName() + "\"", window.getFrame());
 		} catch (Exception error) {
 			DialogUtils.error("Something went wrong when exporting to RTF", window.getFrame());
 		}

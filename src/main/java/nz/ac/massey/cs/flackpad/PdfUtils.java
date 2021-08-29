@@ -17,16 +17,11 @@ final class PdfUtils {
 		throw new UnsupportedOperationException();
 	}
 	
-	static String export(String text, String appName, File file) throws FileNotFoundException, DocumentException, UnknownHostException {
-		// Make sure file has correct extension
-		String filePath = file.getAbsolutePath();
-		if (!filePath.endsWith(".pdf")) {
-			filePath += ".pdf";
-		}
+	static void export(String text, String appName, File file) throws FileNotFoundException, DocumentException, UnknownHostException {
 
 		// Get document and writer
 		final Document document = new Document();
-		final PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
+		final PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
 
 		// Add meta and text to document
 		document.open();
@@ -38,9 +33,6 @@ final class PdfUtils {
 
 		// Close writer
 		writer.close();
-		
-		// Return file name
-		return filePath.substring(filePath.lastIndexOf("\\") + 1);
 	}
 
 }
