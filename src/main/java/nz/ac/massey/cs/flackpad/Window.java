@@ -1,7 +1,6 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Image;
-import java.awt.event.WindowListener;
 import java.awt.print.PrinterException;
 import java.io.File;
 import java.util.ArrayList;
