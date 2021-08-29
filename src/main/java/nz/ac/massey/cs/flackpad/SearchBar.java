@@ -14,6 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.event.MenuDragMouseListener;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
@@ -36,6 +37,8 @@ public class SearchBar {
 		this.menu = menu;
 		this.textArea = textArea;
 		JMenuItem item = new JMenuItem();
+		item.removeMouseListener(item.getMouseListeners()[0]);
+		item.setFocusable(false);
 		item.setMargin(new Insets(2, 5, 2, 5));
 		item.setBackground(Color.white);
 		padding = BorderFactory.createEmptyBorder(1, 5, 1, 5);
