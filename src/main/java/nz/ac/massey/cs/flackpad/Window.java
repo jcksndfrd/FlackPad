@@ -67,8 +67,9 @@ final class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
+		frame.getContentPane().setBackground(config.getTheme().getSyntaxTheme().bgColor);
 
-		frame.add(scrollPane);
+		frame.getContentPane().add(scrollPane);
 
 		// Enable/disable menu items
 		updateUndoRedoEnable();
@@ -116,6 +117,7 @@ final class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
+		frame.getContentPane().setBackground(config.getTheme().getSyntaxTheme().bgColor);
 	}
 
 	void openThemeDialog() {
@@ -127,6 +129,7 @@ final class Window {
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
 			informationBar.setTheme(config);
+			frame.getContentPane().setBackground(config.getTheme().getSyntaxTheme().bgColor);
 		}
 	}
 

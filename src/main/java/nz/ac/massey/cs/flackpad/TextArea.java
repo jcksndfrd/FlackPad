@@ -23,7 +23,7 @@ class TextArea extends RSyntaxTextArea {
 		fontSize = getFont().getSize();
 		zoomPercentage = 100;
 		// Set border
-		setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
+		setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
 		// Add listeners
 		final TextAreaListener listener = new TextAreaListener(window);

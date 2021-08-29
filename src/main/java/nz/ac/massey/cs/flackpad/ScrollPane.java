@@ -26,8 +26,8 @@ public class ScrollPane extends RTextScrollPane {
 		super(textArea);
 
 		// Add border
-		getGutter().setBorder(BorderFactory.createCompoundBorder(getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
-		setBorder(null);
+		setBorder(BorderFactory.createEmptyBorder(3, 0, 0, 0));
+		setOpaque(false);
 		
 		// Set up custom scrollbar
 		scrollbarVert = getVerticalScrollBar();
