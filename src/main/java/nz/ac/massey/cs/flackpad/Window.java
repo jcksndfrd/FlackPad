@@ -131,18 +131,22 @@ final class Window {
 	}
 
 	void export() {
-		final ExportDialog exportDialog = new ExportDialog(frame, file, fileName);
-		if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
-			switch (exportDialog.getFormatChoice()) {
-			case "pdf":
-				fileIO.exportToPdf(textArea.getText(), appName, exportDialog.getFileChoice());
-				break;
-			case "odt":
-				fileIO.exportToOdt(textArea.getText(), exportDialog.getFileChoice());
-				break;
-			case "rtf":
-				fileIO.exportToRtf(textArea.getText(), exportDialog.getFileChoice());
-				break;
+		if (getText().length() == 0) {
+			DialogUtils.message("There is nothing to export", frame);
+		} else {
+			final ExportDialog exportDialog = new ExportDialog(frame, file, fileName);
+			if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
+				switch (exportDialog.getFormatChoice()) {
+				case ".pdf":
+					fileIO.exportToPdf(textArea.getText(), appName, exportDialog.getFileChoice());
+					break;
+				case ".odt":
+					fileIO.exportToOdt(textArea.getText(), exportDialog.getFileChoice());
+					break;
+				case ".rtf":
+					fileIO.exportToRtf(textArea.getText(), exportDialog.getFileChoice());
+					break;
+				}
 			}
 		}
 	}
@@ -150,7 +154,7 @@ final class Window {
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
 	}
-	
+
 	void print() {
 		final Printer printer = new Printer();
 		try {
@@ -159,7 +163,7 @@ final class Window {
 			DialogUtils.error("Something went wrong when printing", frame);
 		}
 	}
-  
+
 	void undo() {
 		textArea.undoLastAction();
 	}
@@ -294,10 +298,11 @@ final class Window {
 	}
 
 	String getText() {
-		return textArea.getText();
+		return textArea.getText() == null ? "" : textArea.getText();
 	}
 
 	ImageIcon getIcon() {
 		return new ImageIcon(getClass().getResource("/icons/64x64.png"));
 	}
+
 }

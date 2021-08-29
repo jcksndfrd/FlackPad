@@ -46,12 +46,7 @@ final class OdtUtils {
 		return text;
 	}
 
-	static String export(String text, File file) throws Exception {
-		// Make sure file has correct extension
-		String filePath = file.getAbsolutePath();
-		if (!filePath.endsWith(".odt")) {
-			filePath += ".odt";
-		}
+	static void export(String text, File file) throws Exception {
 
 		// Split text into lines
 		final String[] lines = text.split("\n");
@@ -64,11 +59,8 @@ final class OdtUtils {
 				document.newParagraph(lines[i]);
 			}
 			// Save document to file
-			document.save(filePath);
+			document.save(file);
 		}
-
-		// Return file name
-		return filePath.substring(filePath.lastIndexOf("\\") + 1);
 	}
 
 	// Gets just text nodes
