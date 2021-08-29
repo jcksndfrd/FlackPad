@@ -54,17 +54,7 @@
 <tr class="b">
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#classnamingconventions">ClassNamingConventions</a></td>
 <td>The utility class name 'AboutDialog' doesn't match '[A-Z][a-zA-Z0-9]+(Utils?|Helper|Constants)'</td>
-<td>19&#x2013;98</td></tr></table></section><section>
-<h4><a name="nz.2Fac.2Fmassey.2Fcs.2Fflackpad.2FRunApp.java"></a>nz/ac/massey/cs/flackpad/RunApp.java</h4>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Rule</th>
-<th>Violation</th>
-<th>Line</th></tr>
-<tr class="b">
-<td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#classwithonlyprivateconstructorsshouldbefinal">ClassWithOnlyPrivateConstructorsShouldBeFinal</a></td>
-<td>A class which only has private constructors should be final</td>
-<td>3&#x2013;13</td></tr></table></section></section><section>
+<td>19&#x2013;98</td></tr></table></section></section><section>
 <h3><a name="Priority_2"></a>Priority 2</h3><section>
 <h4><a name="nz.2Fac.2Fmassey.2Fcs.2Fflackpad.2FAboutDialog.java"></a>nz/ac/massey/cs/flackpad/AboutDialog.java</h4>
 <table border="0" class="bodyTable">
@@ -267,6 +257,16 @@
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception">SignatureDeclareThrowsException</a></td>
 <td>A method/constructor should not explicitly throw java.lang.Exception</td>
 <td>49</td></tr></table></section><section>
+<h4><a name="nz.2Fac.2Fmassey.2Fcs.2Fflackpad.2FRunApp.java"></a>nz/ac/massey/cs/flackpad/RunApp.java</h4>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Rule</th>
+<th>Violation</th>
+<th>Line</th></tr>
+<tr class="b">
+<td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#useutilityclass">UseUtilityClass</a></td>
+<td>All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.</td>
+<td>3&#x2013;9</td></tr></table></section><section>
 <h4><a name="nz.2Fac.2Fmassey.2Fcs.2Fflackpad.2FScrollPane.java"></a>nz/ac/massey/cs/flackpad/ScrollPane.java</h4>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -488,15 +488,15 @@
 <tr class="b">
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanymethods">TooManyMethods</a></td>
 <td>This class has too many methods, consider refactoring it.</td>
-<td>14&#x2013;293</td></tr>
+<td>15&#x2013;303</td></tr>
 <tr class="a">
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#godclass">GodClass</a></td>
-<td>Possible God Class (WMC=48, ATFD=74, TCC=32.620%)</td>
-<td>14&#x2013;293</td></tr>
+<td>Possible God Class (WMC=50, ATFD=75, TCC=31.933%)</td>
+<td>15&#x2013;303</td></tr>
 <tr class="b">
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#finalfieldcouldbestatic">FinalFieldCouldBeStatic</a></td>
 <td>This final field could be made static</td>
-<td>15</td></tr></table></section></section></section><section>
+<td>16</td></tr></table></section></section></section><section>
 <h2><a name="Files"></a>Files</h2><section>
 <h3><a name="nz.2Fac.2Fmassey.2Fcs.2Fflackpad.2FAboutDialog.java"></a>nz/ac/massey/cs/flackpad/AboutDialog.java</h3>
 <table border="0" class="bodyTable">
@@ -694,10 +694,10 @@
 <th>Priority</th>
 <th>Line</th></tr>
 <tr class="b">
-<td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#classwithonlyprivateconstructorsshouldbefinal">ClassWithOnlyPrivateConstructorsShouldBeFinal</a></td>
-<td>A class which only has private constructors should be final</td>
-<td>1</td>
-<td>3&#x2013;13</td></tr></table></section><section>
+<td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#useutilityclass">UseUtilityClass</a></td>
+<td>All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.</td>
+<td>3</td>
+<td>3&#x2013;9</td></tr></table></section><section>
 <h3><a name="nz.2Fac.2Fmassey.2Fcs.2Fflackpad.2FScrollPane.java"></a>nz/ac/massey/cs/flackpad/ScrollPane.java</h3>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -1020,17 +1020,17 @@
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanymethods">TooManyMethods</a></td>
 <td>This class has too many methods, consider refactoring it.</td>
 <td>3</td>
-<td>14&#x2013;293</td></tr>
+<td>15&#x2013;303</td></tr>
 <tr class="b">
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#godclass">GodClass</a></td>
-<td>Possible God Class (WMC=48, ATFD=74, TCC=32.620%)</td>
+<td>Possible God Class (WMC=50, ATFD=75, TCC=31.933%)</td>
 <td>3</td>
-<td>14&#x2013;293</td></tr>
+<td>15&#x2013;303</td></tr>
 <tr class="a">
 <td><a class="externalLink" href="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#finalfieldcouldbestatic">FinalFieldCouldBeStatic</a></td>
 <td>This final field could be made static</td>
 <td>3</td>
-<td>15</td></tr></table></section></section>
+<td>16</td></tr></table></section></section>
       </div>
     </div>
     <div class="clear">

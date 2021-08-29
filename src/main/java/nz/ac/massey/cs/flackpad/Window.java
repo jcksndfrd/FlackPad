@@ -152,12 +152,11 @@ final class Window {
 	}
 	
 	void print() {
-		Printer printer = new Printer();
+		final Printer printer = new Printer();
 		try {
 			printer.printString(getText(), config.getFont());
-		} catch (PrinterException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (PrinterException error) {
+			DialogUtils.error("Something went wrong when printing", frame);
 		}
 	}
   

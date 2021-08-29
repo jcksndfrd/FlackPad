@@ -11,11 +11,12 @@ import java.awt.print.PrinterJob;
 import javax.swing.JTextArea;
 
 class Printer implements Printable {
-	private PrinterJob printerJob;
-	JTextArea textArea;
+	final private PrinterJob printerJob;
+	final JTextArea textArea;
 	Font font;
 
 	Printer() {
+		// Get printer job and set up text area
 		printerJob = PrinterJob.getPrinterJob();
 
 		textArea = new JTextArea();
@@ -24,9 +25,10 @@ class Printer implements Printable {
 	}
 
 	void printString(String text, Font font) throws PrinterException {
+		// Set text and font
 		textArea.setText(text);
 		textArea.setFont(font);
-
+		// Open print dialog and print
 		printerJob.setPrintable(this);
 		if (printerJob.printDialog()) {
 			printerJob.print();
@@ -35,15 +37,20 @@ class Printer implements Printable {
 
 	@Override
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+		int pageStatus;
+		
 		if (pageIndex > 0) {
-			return NO_SUCH_PAGE;
+			pageStatus = NO_SUCH_PAGE;
+		} else {
+			// Paint text area to graphics
+			final Graphics2D graphics2D = (Graphics2D) graphics;
+			graphics2D.translate(pageFormat.getImageableX() + 10, pageFormat.getImageableY() + 10);
+			textArea.setBounds(graphics2D.getClipBounds());
+			textArea.paint(graphics2D);
+
+			pageStatus = PAGE_EXISTS;
 		}
-
-		Graphics2D graphics2D = (Graphics2D) graphics;
-		graphics2D.translate(pageFormat.getImageableX() + 10, pageFormat.getImageableY() + 10);
-		textArea.setBounds(graphics2D.getClipBounds());
-		textArea.paint(graphics2D);
-
-		return PAGE_EXISTS;
+		
+		return pageStatus;
 	}
 }
