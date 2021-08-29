@@ -15,10 +15,10 @@ import org.yaml.snakeyaml.Yaml;
 
 class Config {
 
-	private Map<String, Object> defaults = new LinkedHashMap<String, Object>();
-	private Map<String, Object> config = new LinkedHashMap<String, Object>();
+	private final Map<String, Object> defaultsMap = new LinkedHashMap<>();
+	private Map<String, Object> configMap = new LinkedHashMap<>();
 
-	private Component parent;
+	private final Component parent;
 	private Font font;
 	private MainTheme theme;
 
@@ -33,94 +33,84 @@ class Config {
 
 	private void loadDefaults() {
 		// Default values
-		defaults.put("fontFamily", "Consolas");
-		defaults.put("fontStyle", Font.PLAIN);
-		defaults.put("fontSize", 12);
-		defaults.put("theme", "light");
+		defaultsMap.put("fontFamily", "Consolas");
+		defaultsMap.put("fontStyle", Font.PLAIN);
+		defaultsMap.put("fontSize", 12);
+		defaultsMap.put("theme", "light");
 	}
 
-	void loadConfigFile() {
+	private void loadConfigFile() {
 		// Read config file
-		Yaml yaml = new Yaml();
+		final Yaml yaml = new Yaml();
 
-		try {
-			InputStream inputStream = new FileInputStream("config.yaml");
-			config = yaml.load(inputStream);
-			inputStream.close();
+		try (InputStream inputStream = new FileInputStream("config.yaml")) {
+			configMap = yaml.load(inputStream);
 		} catch (FileNotFoundException e) {
-			Dialogs.message("Configuration file does not exist, using defaults", parent);
+			DialogUtils.message("Configuration file does not exist, using defaults", parent);
 		} catch (IOException e) {
-			Dialogs.error("Something went wrong when loading configuration file", parent);
+			DialogUtils.error("Something went wrong when loading configuration file", parent);
 		}
 
 		// Set missing values with defaults
-		for (String key : defaults.keySet()) {
-			if (!config.containsKey(key))
-				config.put(key, defaults.get(key));
+		for (final String key : defaultsMap.keySet()) {
+			if (!configMap.containsKey(key)) {
+				configMap.put(key, defaultsMap.get(key));
+			}
 		}
 
-		// Get Theme object from config theme value
-		getFontFromConfig();
-		getThemeFromConfig();
+		// Get Theme object from config map theme value
+		setFontFromMap();
+		setThemeFromMap();
 	}
 
-	private void getFontFromConfig() {
+	private void setFontFromMap() {
 		// Get font values
-		Object fontFamily = config.get("fontFamily");
-		Object fontStyle = config.get("fontStyle");
-		Object fontSize = config.get("fontSize");
+		final Object fontFamily = configMap.get("fontFamily");
+		final Object fontStyle = configMap.get("fontStyle");
+		final Object fontSize = configMap.get("fontSize");
 
-		// Check font values are valid
+		// Check font values are valid and set font
 		if (fontFamily.getClass() == String.class && fontStyle.getClass() == Integer.class
 				&& fontSize.getClass() == Integer.class) {
 			font = new Font((String) fontFamily, (Integer) fontStyle, (Integer) fontSize);
 		} else {
 			// Use default font
-			setFont(new Font((String) defaults.get("fontFamily"), (int) defaults.get("fontStyle"),
-					(int) defaults.get("fontSize")));
-			Dialogs.error("Something went wrong when loading the configured font, using default font.", parent);
+			setFont(new Font((String) defaultsMap.get("fontFamily"), (int) defaultsMap.get("fontStyle"),
+					(int) defaultsMap.get("fontSize")));
+			DialogUtils.error("Something went wrong when loading the configured font, using default font.", parent);
 		}
 	}
 
-	private void getThemeFromConfig() {
+	private void setThemeFromMap() {
 		// Get theme value
-		Object themeValue = config.get("theme");
-
-		// Check theme value is a string
-		if (themeValue.getClass() == String.class) {
-			String themeName = (String) themeValue;
-			// Check theme value is valid
-			if (themeName.equals("light")) {
-				theme = new MainTheme("light");
-				return;
-			} else if (themeName.equals("dark")) {
-				theme = new MainTheme("dark");
-				return;
-			}
+		final Object themeName = configMap.get("theme");
+		// Set theme
+		if ("light".equals(themeName)) {
+			theme = new MainTheme("light");
+		} else if ("dark".equals(themeName)) {
+			theme = new MainTheme("dark");
+		} else {
+			// Use default theme
+			configMap.put("theme", defaultsMap.get("theme"));
+			theme = new MainTheme((String) configMap.get("theme"));
+			DialogUtils.error("Something went wrong when loading the configured theme, using default theme \""
+					+ (String) configMap.get("theme") + "\".", parent);
 		}
-		
-		// Use default theme
-		config.put("theme", defaults.get("theme"));
-		theme = new MainTheme((String) config.get("theme"));
-		Dialogs.error("Something went wrong when loading the configured theme, using default theme \""
-				+ (String) config.get("theme") + "\".", parent);
 	}
 
 	void saveConfigFile() {
 		// Get Yaml instance with format options
-		DumperOptions options = new DumperOptions();
+		final DumperOptions options = new DumperOptions();
 		options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
 		options.setPrettyFlow(true);
-		Yaml yaml = new Yaml(options);
+		final Yaml yaml = new Yaml(options);
 
 		// Write config map to yaml file
-		try {
-			PrintWriter writer = new PrintWriter("config.yaml");
-			yaml.dump(config, writer);
+		try (PrintWriter writer = new PrintWriter("config.yaml")) {
+			yaml.dump(configMap, writer);
 			writer.flush();
-			writer.close();
 		} catch (IOException e) {
-			Dialogs.error("Something went wrong when saving configuration", parent);
+			DialogUtils.error("Something went wrong when saving configuration", parent);
 		}
 	}
 
@@ -131,36 +121,37 @@ class Config {
 
 	void setFont(Font font) {
 		// Set font values
-		config.put("fontFamily", font.getFamily());
-		config.put("fontStyle", font.getStyle());
-		config.put("fontSize", font.getSize());
-		getFontFromConfig();
+		configMap.put("fontFamily", font.getFamily());
+		configMap.put("fontStyle", font.getStyle());
+		configMap.put("fontSize", font.getSize());
+		setFontFromMap();
 	}
 
 	MainTheme getTheme() {
 		return theme;
 	}
-	
+
 	String getThemeName() {
-		return (String) config.get("theme");
+		return (String) configMap.get("theme");
 	}
-	
+
 	void setTheme(String themeName) {
 		// Check themeName is valid
-		if (themeName.equals("light") || themeName.equals("dark")) {
-			config.put("theme", themeName);
-			getThemeFromConfig();
+		if ("light".equals(themeName) || "dark".equals(themeName)) {
+			configMap.put("theme", themeName);
+			setThemeFromMap();
 		} else {
-			Dialogs.error("Theme \"" + themeName + "\" is not a valid theme", parent);
+			DialogUtils.error("Theme \"" + themeName + "\" is not a valid theme", parent);
 		}
 	}
-	
+
 	Font getDefaultFont() {
-		return new Font((String) defaults.get("fontFamily"), (Integer) defaults.get("fontStyle"), (Integer) defaults.get("fontSize"));
+		return new Font((String) defaultsMap.get("fontFamily"), (Integer) defaultsMap.get("fontStyle"),
+				(Integer) defaultsMap.get("fontSize"));
 	}
-	
+
 	String getDefaultThemeName() {
-		return (String) defaults.get("theme");
+		return (String) defaultsMap.get("theme");
 	}
 
 }

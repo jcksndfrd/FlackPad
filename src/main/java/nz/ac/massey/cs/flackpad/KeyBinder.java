@@ -8,8 +8,8 @@ import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 
 public class KeyBinder {
-	private TextArea areaInstance;
-	private Window windowInstance;
+	private final TextArea areaInstance;
+	private final Window windowInstance;
 
 	KeyBinder(Window windowInstance) {
 		this.areaInstance = windowInstance.getTextArea();
@@ -20,11 +20,11 @@ public class KeyBinder {
 	private void addKeyBindings() {
 		// Escape key binding
 		@SuppressWarnings("serial")
-		Action escapeFind = new AbstractAction() {
+		final Action escapeFind = new AbstractAction() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				Actions.performEscapeFind(windowInstance);
+			public void actionPerformed(ActionEvent eevent) {
+				TextActionUtils.performEscapeFind(windowInstance);
 			}
 
 		};
@@ -32,7 +32,7 @@ public class KeyBinder {
 		// Bind to main textarea
 		bindToMainArea(areaInstance, KeyStroke.getKeyStroke("ESCAPE"), "escape_find", escapeFind);
 		// Bind to search field
-		JTextField textfield = windowInstance.getFindField();
+		final JTextField textfield = windowInstance.getFindField();
 		textfield.getInputMap().put(KeyStroke.getKeyStroke("ESCAPE"), "escape_find");
 		textfield.getActionMap().put("escape_find", escapeFind);
 	}

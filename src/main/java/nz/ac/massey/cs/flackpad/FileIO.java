@@ -7,181 +7,200 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 class FileIO {
-	
-	// Static variables
-	final static int SAVED = 0, NOT_SAVED = 1;
-	private final static int NOT_LOADED = -1, LOADED = 0, WRONG_TYPE = 1, IMPORTED = 2;
 
-	private Window window;
-	private FileMIME mime;
-	
-	// File IO classes
-	PlainTextIO plainTextIO;
-	OdtIO odtIO;
-	RtfIO rtfIO;
-	PdfExporter pdfExporter;
+	// Static variables
+	final static int SAVED = 0;
+	final static int NOT_SAVED = 1;
+
+	private final static int NOT_LOADED = -1;
+	private final static int LOADED = 0;
+	private final static int WRONG_TYPE = 1;
+	private final static int IMPORTED = 2;
+
+	private final Window window;
+	private final FileMime mime;
 
 	FileIO(Window window) {
 		// Save window and FileMIME instances
 		this.window = window;
-		mime = new FileMIME();
-		
-		// Save loader instances
-		plainTextIO = new PlainTextIO();
-		odtIO = new OdtIO();
-		rtfIO = new RtfIO();
-		pdfExporter = new PdfExporter();		
+		mime = new FileMime();
 	}
 
 	void open() {
-		// Check if user wants to save
-		int saveChoice = window.isSaved() ? 1 : Dialogs.saveWarning(window.getFileName(), window.getFrame());
-		int saved = SAVED;
-		
-		// Do nothing if user cancels
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) {
-			return;
+		if (saveWarning() == SAVED) {
+			openDialog();
 		}
-		
-		// Save if user wants to
-		if (saveChoice == JOptionPane.YES_OPTION) {
-			saved = save();
-		}
-		
-		// If user saved, didn't want to or there were no changes
-		if (saved == SAVED) {
-			// Get file from open dialog
-			JFileChooser fileChooser = new JFileChooser(window.getFile());
-			if (fileChooser.showOpenDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
-				// Load file and save load type
-				int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile());
-				
-				// File loaded
-				if (loaded == LOADED || loaded == WRONG_TYPE || loaded == IMPORTED) {
-					window.getTextArea().setCaretPosition(0);
-					window.getTextArea().discardAllEdits();
-					window.updateUndoRedoEnable();
-					window.updateCCDEnable();
-				}
+	}
 
-				// Editing actual file
-				if (loaded == LOADED || loaded == WRONG_TYPE) {
-					window.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
-					window.setSaved(true);
-				}
-				
-				// Warn user that file is not supported
-				if (loaded == WRONG_TYPE) {
-					Dialogs.warning("The contents of this file may not be displayed properly", window.getFrame());
-				}
+	private void openDialog() {
+		// Get file from open dialog
+		final JFileChooser fileChooser = new JFileChooser(window.getFile());
+		if (fileChooser.showOpenDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
+			// Load file and save load type
+			final int loaded = loadFile(fileChooser.getSelectedFile().getAbsoluteFile());
 
-				// Show error dialog if file loading failed
-				if (loaded == NOT_LOADED) {
-					Dialogs.error("Something went wrong when loading that file", window.getFrame());
-				}
+			// File loaded
+			if (loaded == LOADED || loaded == WRONG_TYPE || loaded == IMPORTED) {
+				window.getTextArea().setCaretPosition(0);
+				window.getTextArea().discardAllEdits();
+				window.updateUndoRedoEnable();
+				window.updateCCDEnable();
+			}
+
+			// Editing actual file
+			if (loaded == LOADED || loaded == WRONG_TYPE) {
+				window.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
+				window.setSaved(true);
+			}
+
+			// Warn user that file is not supported
+			if (loaded == WRONG_TYPE) {
+				DialogUtils.warning("The contents of this file may not be displayed properly", window.getFrame());
+			}
+
+			// Show error dialog if file loading failed
+			if (loaded == NOT_LOADED) {
+				DialogUtils.error("Something went wrong when loading that file", window.getFrame());
 			}
 		}
 	}
 
 	int save() {
-		// Save to current file if it exists
-		if (window.getFile() != null) {
+		int saveStatus = NOT_SAVED;
+
+		// Save to current file if it exists otherwise open save as dialog
+		if (window.getFile() == null) {
+			saveStatus = saveAs();
+		} else {
 			try {
-				plainTextIO.saveFile(window.getText(), window.getFile());
+				PlainTextUtils.saveFile(window.getText(), window.getFile());
 				window.setSaved(true);
-				return SAVED;
-			} catch (IOException e) {
+				saveStatus = SAVED;
+			} catch (IOException error) {
 				// Problem when saving to current file
-				Dialogs.error("Something went wrong when saving that file", window.getFrame());
-				return NOT_SAVED;
+				DialogUtils.error("Something went wrong when saving that file", window.getFrame());
 			}
 		}
-		// Otherwise open save as dialog
-		return saveAs();
+
+		// Return saved status
+		return saveStatus;
 	}
 
 	int saveAs() {
+		int saveStatus = NOT_SAVED;
+
 		// Open save as dialog and get user choice
-		JFileChooser fileChooser = new JFileChooser(window.getFile());
+		final JFileChooser fileChooser = new JFileChooser(window.getFile());
 		fileChooser.setDialogTitle("Save As");
 		if (fileChooser.showSaveDialog(window.getFrame()) == JFileChooser.APPROVE_OPTION) {
 			// Save file to user choice
 			try {
-				plainTextIO.saveFile(window.getText(), fileChooser.getSelectedFile().getAbsoluteFile());
+				PlainTextUtils.saveFile(window.getText(), fileChooser.getSelectedFile().getAbsoluteFile());
 				window.setFile(fileChooser.getSelectedFile().getAbsoluteFile());
 				window.setSaved(true);
-				return SAVED;
-			} catch (IOException e) {
+				saveStatus = SAVED;
+			} catch (IOException error) {
 				// Problem when saving to chosen file
-				Dialogs.error("Something went wrong when saving that file", window.getFrame());
+				DialogUtils.error("Something went wrong when saving that file", window.getFrame());
 			}
 		}
-		// User cancelled or error
-		return NOT_SAVED;
+
+		// Return saved status
+		return saveStatus;
 	}
 
 	int loadFile(File file) {
+		int loadStatus = NOT_LOADED;
+
 		// Get file MIME type
-		String fileMIME = mime.getFileMIME(file);
+		final String fileMime = mime.getFileMime(file);
 
 		try {
 			// File is plain text
-			if (fileMIME.startsWith("text")) {
-				window.setText(plainTextIO.loadFile(file));
-				return LOADED;
+			if (fileMime.startsWith("text")) {
+				window.setText(PlainTextUtils.loadFile(file));
+				loadStatus = LOADED;
 			}
-			
+
 			// Check compatibility with other types
-			if (fileMIME.startsWith("application")) {
-				switch (fileMIME.substring(12)) {
+			if (fileMime.startsWith("application")) {
+				switch (fileMime.substring(12)) {
 				case "x-bat":
-					window.setText(plainTextIO.loadFile(file));
-					return LOADED;
+					window.setText(PlainTextUtils.loadFile(file));
+					loadStatus = LOADED;
+					break;
 				case "xml":
-					window.setText(plainTextIO.loadFile(file));
-					return LOADED;
+					window.setText(PlainTextUtils.loadFile(file));
+					loadStatus = LOADED;
+					break;
 				case "vnd.oasis.opendocument.text":
-					window.setText(odtIO.loadFile(file));
-					return IMPORTED;
+					window.setText(OdtUtils.loadFile(file));
+					loadStatus = IMPORTED;
+					break;
 				case "rtf":
-					window.setText(rtfIO.loadFile(file));
-					return IMPORTED;
+					window.setText(RtfUtils.loadFile(file));
+					loadStatus = IMPORTED;
+					break;
 				}
 			}
-			
+
 			// Unknown type
-			window.setText(plainTextIO.loadFile(file));
-			return WRONG_TYPE;
-		} catch (Exception e) {
+			if (loadStatus == NOT_LOADED) {
+				window.setText(PlainTextUtils.loadFile(file));
+				loadStatus = WRONG_TYPE;
+			}
+
+		} catch (Exception error) {
 			// Error loading file
-			return NOT_LOADED;
+			loadStatus = NOT_LOADED;
 		}
+
+		// return load status
+		return loadStatus;
 	}
-	
+
+	int saveWarning() {
+		// Check if user wants to save
+		final int saveChoice = window.isSaved() ? 1 : DialogUtils.saveWarning(window.getFileName(), window.getFrame());
+
+		// Do nothing if cancelled
+		int saveStatus = NOT_SAVED;
+
+		if (saveChoice == JOptionPane.NO_OPTION) {
+			// User doesn't want to save
+			saveStatus = SAVED;
+		} else if (saveChoice == JOptionPane.YES_OPTION) {
+			// User wants to save
+			saveStatus = save();
+		}
+		
+		return saveStatus;
+	}
+
 	void exportToPdf(String text, String appName, File file) {
 		try {
-			String fileName = pdfExporter.export(text, appName, file);
-			Dialogs.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
-		} catch (Exception e) {
-			Dialogs.error("Something went wrong when exporting to PDF", window.getFrame());
+			final String fileName = PdfUtils.export(text, appName, file);
+			DialogUtils.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
+		} catch (Exception error) {
+			DialogUtils.error("Something went wrong when exporting to PDF", window.getFrame());
 		}
 	}
-	
+
 	void exportToOdt(String text, File file) {
 		try {
-			String fileName = odtIO.export(text, file);
-			Dialogs.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
-		} catch (Exception e) {
-			Dialogs.error("Something went wrong when exporting to ODT", window.getFrame());
+			final String fileName = OdtUtils.export(text, file);
+			DialogUtils.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
+		} catch (Exception error) {
+			DialogUtils.error("Something went wrong when exporting to ODT", window.getFrame());
 		}
 	}
-	
+
 	void exportToRtf(String text, File file) {
 		try {
-			String fileName = rtfIO.export(text, file);
-			Dialogs.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
-		} catch (Exception e) {
-			Dialogs.error("Something went wrong when exporting to RTF", window.getFrame());
+			final String fileName = RtfUtils.export(text, file);
+			DialogUtils.message("Succesfully exported as \"" + fileName + "\"", window.getFrame());
+		} catch (Exception error) {
+			DialogUtils.error("Something went wrong when exporting to RTF", window.getFrame());
 		}
 	}
 

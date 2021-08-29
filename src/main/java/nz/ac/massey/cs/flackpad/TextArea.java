@@ -26,16 +26,16 @@ class TextArea extends RSyntaxTextArea {
 		setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(3, 5, 0, 5)));
 
 		// Add listeners
-		TextAreaListener listener = new TextAreaListener(window);
+		final TextAreaListener listener = new TextAreaListener(window);
 		getDocument().addDocumentListener(listener);
 		addCaretListener(listener);
-		
+
 		// Add language support
-		LanguageSupportFactory.get().register(this);		
+		LanguageSupportFactory.get().register(this);
 	}
 
 	void setTheme(Config config) {
-		MainTheme theme = config.getTheme();
+		final MainTheme theme = config.getTheme();
 
 		// Set syntax theme
 		theme.getSyntaxTheme().apply(this);
@@ -53,15 +53,11 @@ class TextArea extends RSyntaxTextArea {
 	}
 
 	// Adds time and date to the top of the text area
-	void addTimeAndDate() {
+	void addTimeAndDate() throws BadLocationException {
 		// Set time and date format
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
-		try {
-			// Add time and date to text area
-			getDocument().insertString(0, formatter.format(LocalDateTime.now()) + "\n", null);
-		} catch (BadLocationException e) {
-			System.out.println("TextArea\\addTimeAndDate() - Error: Could not retrieve time and/or date");
-		}
+		final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
+		// Add time and date to text area
+		getDocument().insertString(0, formatter.format(LocalDateTime.now()) + "\n", null);
 	}
 
 	void setFontWithZoom(Font font) {
@@ -91,7 +87,7 @@ class TextArea extends RSyntaxTextArea {
 	}
 
 	private void zoom() {
-		float newSize = fontSize * zoomPercentage / 100;
+		final float newSize = fontSize * zoomPercentage / 100;
 		setFont(getFont().deriveFont(getFont().getStyle(), newSize > 1 ? newSize : 1));
 	}
 }

@@ -1,16 +1,23 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-class PdfExporter {
-
-	String export(String text, String appName, File file) throws Exception {
+final class PdfUtils {
+	
+	private PdfUtils() {
+		throw new UnsupportedOperationException();
+	}
+	
+	static String export(String text, String appName, File file) throws FileNotFoundException, DocumentException, UnknownHostException {
 		// Make sure file has correct extension
 		String filePath = file.getAbsolutePath();
 		if (!filePath.endsWith(".pdf")) {
@@ -18,8 +25,8 @@ class PdfExporter {
 		}
 
 		// Get document and writer
-		Document document = new Document();
-		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
+		final Document document = new Document();
+		final PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
 
 		// Add meta and text to document
 		document.open();
