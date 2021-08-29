@@ -1,7 +1,5 @@
 package nz.ac.massey.cs.flackpad;
 
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
@@ -10,10 +8,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JTextField;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.text.BadLocationException;
 
 final class Window {
@@ -29,12 +24,6 @@ final class Window {
 	private final TextArea textArea;
 	private final SearchBar searchBar;
 	private final ScrollPane scrollPane;
-	private final JScrollBar scrollbarVert;
-	private final JScrollBar scrollbarHor;
-	private final JPanel bottomRightCorner;
-	private final JPanel bottomLeftCorner;
-
-	private final int scrollBarBreadth = 13;
 
 	// State variables
 	private boolean saved = true;
@@ -77,34 +66,6 @@ final class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
-
-		// Custom Scrollbar
-		scrollbarVert = scrollPane.getVerticalScrollBar();
-		scrollbarVert.setSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-		scrollbarVert.setMaximumSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-		scrollbarVert.setPreferredSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-		scrollbarVert.setUI(new CustomScrollbar(0));
-		scrollbarVert.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-
-		// Custom Scrollbar
-		scrollbarHor = scrollPane.getHorizontalScrollBar();
-		scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-		scrollbarHor.setMaximumSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-		scrollbarHor.setPreferredSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-		scrollbarHor.setUI(new CustomScrollbar(1));
-		scrollbarHor.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-
-		// Set corners
-		bottomLeftCorner = new JPanel();
-		bottomRightCorner = new JPanel();
-		scrollPane.setCorner(ScrollPaneConstants.LOWER_LEFT_CORNER, bottomLeftCorner);
-		scrollPane.setCorner(ScrollPaneConstants.LOWER_RIGHT_CORNER, bottomRightCorner);
-		bottomLeftCorner.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomRightCorner.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 
 		frame.add(scrollPane);
 
@@ -154,14 +115,6 @@ final class Window {
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
-		scrollbarVert.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		scrollbarHor.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomLeftCorner.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomRightCorner.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 	}
 
 	void openThemeDialog() {
@@ -173,14 +126,6 @@ final class Window {
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
 			informationBar.setTheme(config);
-			scrollbarVert.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
-					: Color.decode("#202020"));
-			scrollbarHor.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
-					: Color.decode("#202020"));
-			bottomLeftCorner.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
-					: Color.decode("#202020"));
-			bottomRightCorner.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
-					: Color.decode("#202020"));
 		}
 	}
 

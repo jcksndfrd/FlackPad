@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.tika.Tika;
 
-class FileMime {
+final class FileMime {
 	
 	private final Map<String, String> mimeMap = new HashMap<>();
 	private final Tika tika = new Tika();
