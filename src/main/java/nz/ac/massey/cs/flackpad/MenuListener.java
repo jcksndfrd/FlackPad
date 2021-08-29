@@ -14,31 +14,32 @@ class MenuListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 
-		switch (event.getActionCommand()) {
-			//File menu
-			case "New":
-				window.newDoc();
-				break;
-			case "New Window":
-				new Window();
-				break;
-			case "Open":
-				window.getFileIO().open();
-				break;
-			case "Save":
-				window.getFileIO().save();
-				break;
-			case "Save As...":
-				window.getFileIO().saveAs();
-				break;
-			case "Print":
-				break;
-			case "Export as...":
-				window.export();
-				break;
-			case "Exit":
-				window.exit();
-				break;
+		switch (e.getActionCommand()) {
+		//File menu
+		case "New":
+			window.newDoc();
+			break;
+		case "New Window":
+			new Window();
+			break;
+		case "Open":
+			window.getFileIO().open();
+			break;
+		case "Save":
+			window.getFileIO().save();
+			break;
+		case "Save As":
+			window.getFileIO().saveAs();
+			break;
+		case "Print":
+			window.print();
+			break;
+		case "Export to PDF":
+			window.getFileIO().exportToPdf();
+			break;
+		case "Exit":
+			window.exit();
+			break;
 			
 			//Edit menu
 			case "Undo":
