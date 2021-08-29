@@ -42,14 +42,11 @@ public class ScrollPane extends RTextScrollPane {
 		// Set font
 		getGutter().setLineNumberFont(config.getFont());
 
-		scrollbarVert.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		scrollbarHor.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomLeftCorner.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomRightCorner.setBackground(
-				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		final Color scrollbarColor = config.getTheme().getScrollbarColor();
+		scrollbarVert.setBackground(scrollbarColor);
+		scrollbarHor.setBackground(scrollbarColor);
+		bottomLeftCorner.setBackground(scrollbarColor);
+		bottomRightCorner.setBackground(scrollbarColor);
 	}
 
 	private void setCustomScrollBar() {
