@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.BadLocationException;
 
 final class Window {
@@ -79,11 +81,17 @@ final class Window {
 		// Add key bindings to instance
 		new KeyBinder(this);
 
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException error) {
+			// ignore, use default look and feel
+		}
+		
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.setVisible(true);
-
 		frame.requestFocus();
 		textArea.grabFocus();
 
