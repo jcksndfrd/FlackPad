@@ -18,6 +18,9 @@ import javax.swing.SwingConstants;
 
 final class AboutDialog {
 	
+	private static final Color LINK_COLOUR = Color.decode("#008787");
+	private static final Color HOVER_COLOUR = Color.decode("#009900");
+	
 	private AboutDialog() {
 		throw new UnsupportedOperationException();
 	}
@@ -41,11 +44,11 @@ final class AboutDialog {
             } 
             @Override
             public void mouseEntered(MouseEvent event) {
-            	jack.setForeground(Color.decode("#009900"));
+            	jack.setForeground(HOVER_COLOUR);
             } 
             @Override
             public void mouseExited(MouseEvent event) {
-            	jack.setForeground(Color.decode("#008787"));
+            	jack.setForeground(LINK_COLOUR);
             } 
         });
         
@@ -63,15 +66,15 @@ final class AboutDialog {
             } 
             @Override
             public void mouseEntered(MouseEvent event) {
-                fletch.setForeground(Color.decode("#009900"));
+                fletch.setForeground(HOVER_COLOUR);
             } 
             @Override
             public void mouseExited(MouseEvent event) {
-                fletch.setForeground(Color.decode("#008787"));
+                fletch.setForeground(LINK_COLOUR);
             } 
         });	 
-	    fletch.setForeground(Color.decode("#008787"));
-	    jack.setForeground(Color.decode("#008787"));
+	    fletch.setForeground(LINK_COLOUR);
+	    jack.setForeground(LINK_COLOUR);
 	    
 	    final JLabel mainMessageA = new JLabel("This application was created for a tertiary assignment in late 2021."); 
 	    final JLabel mainMessageB = new JLabel("We hope you enjoy using it at much as we enjoyed making it!");

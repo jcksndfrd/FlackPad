@@ -39,13 +39,7 @@ class TextArea extends RSyntaxTextArea {
 
 		// Set syntax theme
 		theme.getSyntaxTheme().apply(this);
-
-		// Set colours
-		setBackground(theme.getTextBackground());
-		setCaretColor(theme.getCaretForeground()); // caret color
-		setSelectionColor(theme.getSelectionHighlight()); // selection color
-		setForeground(theme.getTextForeground());
-		setCurrentLineHighlightColor(theme.getCurrentLineHighlightBackground()); // line highlight color
+		
 		setCodeFoldingEnabled(true);
 
 		// Set font

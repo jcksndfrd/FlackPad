@@ -13,7 +13,7 @@ import java.util.Map;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 
-class Config {
+final class Config {
 
 	private final Map<String, Object> defaultsMap = new LinkedHashMap<>();
 	private Map<String, Object> configMap = new LinkedHashMap<>();
