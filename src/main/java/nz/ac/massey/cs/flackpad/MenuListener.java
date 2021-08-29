@@ -12,9 +12,9 @@ class MenuListener implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent event) {
 
-		switch (e.getActionCommand()) {
+		switch (event.getActionCommand()) {
 			//File menu
 			case "New":
 				window.newDoc();
@@ -48,22 +48,22 @@ class MenuListener implements ActionListener {
 				window.redo();
 				break;
 			case "Cut":
-				Actions.performCut(window);
+				TextActionUtils.performCut(window);
 				break;
 			case "Copy":
-				Actions.performCopy(window);
+				TextActionUtils.performCopy(window);
 				break;
 			case "Paste":
-				Actions.performPaste(window);
+				TextActionUtils.performPaste(window);
 				break;
 			case "Select All":
-				Actions.performSelectAll(window);
+				TextActionUtils.performSelectAll(window);
 				break;
 			case "Delete":
-				Actions.performDelete(window);
+				TextActionUtils.performDelete(window);
 				break;
 			case "Find":
-				Actions.performFind(window);
+				TextActionUtils.performFind(window);
 				break;
 			case "Time and Date":
 				window.addTimeAndDate();
@@ -91,7 +91,7 @@ class MenuListener implements ActionListener {
 			
 			//Help menu
 			case "About":
-				Dialogs.about(window.getFrame(), window.getIcon());
+				DialogUtils.about(window.getFrame(), window.getIcon());
 				break;
 		}
 	}

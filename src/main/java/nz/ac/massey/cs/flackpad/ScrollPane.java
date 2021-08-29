@@ -26,7 +26,7 @@ public class ScrollPane extends RTextScrollPane {
 		getGutter().setLineNumberFont(config.getFont());
 
 		// Set colours
-		MainTheme theme = config.getTheme();
+		final MainTheme theme = config.getTheme();
 		getGutter().setBackground(theme.getGutterBackground());
 		getGutter().setBorderColor(theme.getGutterBorder());
 		getGutter().setLineNumberColor(theme.getGutterLineNumber());

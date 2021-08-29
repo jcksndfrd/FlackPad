@@ -10,20 +10,21 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.text.BadLocationException;
 
-class Window {
+final class Window {
 	private final String appName = "FlackPad";
-	private final JFrame frame;
-	private final InformationBar informationBar;
 	private final Config config;
 	private final FileMime mime = new FileMime();
 	private final FileIO fileIO;
 
+	// Swing components
+	private final JFrame frame;
+	private final InformationBar informationBar;
 	private final MenuBar menuBar;
 	private final TextArea textArea;
 	private final SearchBar searchBar;
@@ -32,9 +33,10 @@ class Window {
 	private final JScrollBar scrollbarHor;
 	private final JPanel bottomRightCorner;
 	private final JPanel bottomLeftCorner;
-	
-	private int scrollBarBreadth = 13;
 
+	private final int scrollBarBreadth = 13;
+
+	// State variables
 	private boolean saved = true;
 	private File file;
 	private String fileName = "Untitled";
@@ -44,7 +46,7 @@ class Window {
 		frame = new JFrame(fileName + " - " + appName);
 
 		// Add icons
-		List<Image> iconList = new ArrayList<Image>();
+		final List<Image> iconList = new ArrayList<>();
 		iconList.add(new ImageIcon(getClass().getResource("/icons/16x16.png")).getImage());
 		iconList.add(new ImageIcon(getClass().getResource("/icons/32x32.png")).getImage());
 		iconList.add(new ImageIcon(getClass().getResource("/icons/64x64.png")).getImage());
@@ -64,7 +66,7 @@ class Window {
 		scrollPane = new ScrollPane(textArea);
 		searchBar = new SearchBar(textArea, menuBar);
 		informationBar = new InformationBar(menuBar);
-		
+
 		// Add FileIO instance
 		fileIO = new FileIO(this);
 
@@ -77,31 +79,35 @@ class Window {
 		informationBar.setTheme(config);
 
 		// Custom Scrollbar
-	    scrollbarVert = scrollPane.getVerticalScrollBar();
-	    scrollbarVert.setSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-	    scrollbarVert.setMaximumSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-	    scrollbarVert.setPreferredSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-	    scrollbarVert.setUI(new CustomScrollbar(0));	
-	    scrollbarVert.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		scrollbarVert = scrollPane.getVerticalScrollBar();
+		scrollbarVert.setSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
+		scrollbarVert.setMaximumSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
+		scrollbarVert.setPreferredSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
+		scrollbarVert.setUI(new CustomScrollbar(0));
+		scrollbarVert.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 
 		// Custom Scrollbar
-	    scrollbarHor = scrollPane.getHorizontalScrollBar();
-	    scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-	    scrollbarHor.setMaximumSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-	    scrollbarHor.setPreferredSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-	    scrollbarHor.setUI(new CustomScrollbar(1));	
-	    scrollbarHor.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-	    
-	    // Set corners
-	    bottomLeftCorner = new JPanel();
-	    bottomRightCorner = new JPanel();
-	    scrollPane.setCorner(ScrollPaneConstants.LOWER_LEFT_CORNER, bottomLeftCorner);
+		scrollbarHor = scrollPane.getHorizontalScrollBar();
+		scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
+		scrollbarHor.setMaximumSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
+		scrollbarHor.setPreferredSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
+		scrollbarHor.setUI(new CustomScrollbar(1));
+		scrollbarHor.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+
+		// Set corners
+		bottomLeftCorner = new JPanel();
+		bottomRightCorner = new JPanel();
+		scrollPane.setCorner(ScrollPaneConstants.LOWER_LEFT_CORNER, bottomLeftCorner);
 		scrollPane.setCorner(ScrollPaneConstants.LOWER_RIGHT_CORNER, bottomRightCorner);
-		bottomLeftCorner.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomRightCorner.setBackground(config.getTheme().getThemeName() == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomLeftCorner.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomRightCorner.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 
 		frame.add(scrollPane);
-		
+
 		// Enable/disable menu items
 		updateUndoRedoEnable();
 		updateCCDEnable();
@@ -117,22 +123,12 @@ class Window {
 
 		frame.requestFocus();
 		textArea.grabFocus();
-		
+
 	}
 
 	void newDoc() {
-		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, frame);
-		int saved = FileIO.SAVED;
-
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) {
-			return;
-		}
-		
-		if (saveChoice == JOptionPane.YES_OPTION) {
-			saved = fileIO.save();
-		}
-
-		if (saved == FileIO.SAVED) {
+		if (fileIO.saveWarning() == FileIO.SAVED) {
+			// Clear text area
 			setFile(null);
 			textArea.setText("");
 			setSaved(true);
@@ -145,53 +141,51 @@ class Window {
 	}
 
 	void exit() {
-		int saveChoice = this.isSaved() ? 1 : Dialogs.saveWarning(fileName, frame);
-		int saved = FileIO.SAVED;
-
-		if (saveChoice == JOptionPane.CANCEL_OPTION || saveChoice == JOptionPane.CLOSED_OPTION) {
-			return;
-		}
-		
-		if (saveChoice == JOptionPane.YES_OPTION) {
-			saved = fileIO.save();
-		}
-
-		if (saved == FileIO.SAVED) {
+		if (fileIO.saveWarning() == FileIO.SAVED) {
+			// Save config file and dispose frame
 			config.saveConfigFile();
 			frame.dispose();
 		}
 	}
 
 	void toggleTheme() {
-		String currentThemeName = config.getTheme().getThemeName();
-		config.setTheme(currentThemeName == "dark" ? "light" : "dark");
+		final String currentThemeName = config.getTheme().getThemeName();
+		config.setTheme("light".equals(currentThemeName) ? "dark" : "light");
 		textArea.setTheme(config);
 		scrollPane.setTheme(config);
 		informationBar.setTheme(config);
-	    scrollbarVert.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-	    scrollbarHor.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomLeftCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		bottomRightCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		
+		scrollbarVert.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		scrollbarHor.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomLeftCorner.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+		bottomRightCorner.setBackground(
+				"light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa") : Color.decode("#202020"));
 	}
-	
+
 	void openThemeDialog() {
-		ThemeDialog themeDialog = new ThemeDialog(frame, config.getFont(), config.getThemeName(), config.getDefaultFont(), config.getDefaultThemeName());
+		final ThemeDialog themeDialog = new ThemeDialog(frame, config.getFont(), config.getThemeName(),
+				config.getDefaultFont(), config.getDefaultThemeName());
 		if (themeDialog.showDialog() == ThemeDialog.SAVE_OPTION) {
 			config.setFont(themeDialog.getFontChoice());
 			config.setTheme(themeDialog.getThemeChoice());
 			textArea.setTheme(config);
 			scrollPane.setTheme(config);
 			informationBar.setTheme(config);
-		    scrollbarVert.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-		    scrollbarHor.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-			bottomLeftCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
-			bottomRightCorner.setBackground(config.getTheme().getThemeName()  == "light" ? Color.decode("#aaaaaa") : Color.decode("#202020"));
+			scrollbarVert.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
+					: Color.decode("#202020"));
+			scrollbarHor.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
+					: Color.decode("#202020"));
+			bottomLeftCorner.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
+					: Color.decode("#202020"));
+			bottomRightCorner.setBackground("light".equals(config.getTheme().getThemeName()) ? Color.decode("#aaaaaa")
+					: Color.decode("#202020"));
 		}
 	}
-	
+
 	void export() {
-		ExportDialog exportDialog = new ExportDialog(frame, file, fileName);
+		final ExportDialog exportDialog = new ExportDialog(frame, file, fileName);
 		if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
 			switch (exportDialog.getFormatChoice()) {
 			case "pdf":
@@ -210,17 +204,21 @@ class Window {
 	void gutterToggle() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
 	}
-	
+
 	void undo() {
 		textArea.undoLastAction();
 	}
-	
+
 	void redo() {
 		textArea.redoLastAction();
 	}
 
 	void addTimeAndDate() {
-		textArea.addTimeAndDate();
+		try {
+			textArea.addTimeAndDate();
+		} catch (BadLocationException error) {
+			DialogUtils.error("Something went wrong when getting the time and date", frame);
+		}
 	}
 
 	void zoomIn() {
@@ -237,26 +235,26 @@ class Window {
 		textArea.resetZoom();
 		updateZoomEnable();
 	}
-	
+
 	void updateUndoRedoEnable() {
 		menuBar.setUndoEnabled(textArea.canUndo());
 		menuBar.setRedoEnabled(textArea.canRedo());
 	}
-	
+
 	void updateCCDEnable() {
 		menuBar.setCCDEnabled(textArea.getSelectedText() != null);
 	}
-	
+
 	void updateZoomEnable() {
 		menuBar.setZoomInEnabled(textArea.getZoomPercentage() < 1000);
 		menuBar.setZoomOutEnabled(textArea.getZoomPercentage() > 50);
 		menuBar.setResetZoomEnabled(textArea.getZoomPercentage() != 100);
-		
-		if (textArea.getZoomPercentage() != 100) {
+
+		if (textArea.getZoomPercentage() == 100) {
+			informationBar.setInformationBarZoomVisible(false);
+		} else {
 			informationBar.setInformationBarZoomText(Integer.toString(textArea.getZoomPercentage()) + "%");
 			informationBar.setInformationBarZoomVisible(true);
-		} else {
-			informationBar.setInformationBarZoomVisible(false);
 		}
 	}
 
@@ -265,14 +263,13 @@ class Window {
 	}
 
 	void updateInformationBar() {
-		try {
-			// Update text
-			informationBar.setInformationBarText(Integer.toString(getText().length()) + " | Char");
-		} catch (NullPointerException e) {
+		if (getText() == null) {
 			informationBar.setInformationBarText("0" + " | Char");
+		} else {
+			informationBar.setInformationBarText(Integer.toString(getText().length()) + " | Char");
 		}
 	}
-	
+
 	SearchBar getSearchBar() {
 		return searchBar;
 	}
@@ -313,7 +310,7 @@ class Window {
 	File getFile() {
 		return file;
 	}
-	
+
 	FileIO getFileIO() {
 		return fileIO;
 	}
@@ -344,7 +341,7 @@ class Window {
 	String getText() {
 		return textArea.getText();
 	}
-	
+
 	ImageIcon getIcon() {
 		return new ImageIcon(getClass().getResource("/icons/64x64.png"));
 	}

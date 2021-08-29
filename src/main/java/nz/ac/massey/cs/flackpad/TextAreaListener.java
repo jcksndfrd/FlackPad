@@ -15,28 +15,28 @@ class TextAreaListener implements DocumentListener, CaretListener {
 	}
 
 	@Override
-	public void insertUpdate(DocumentEvent e) {
+	public void insertUpdate(DocumentEvent event) {
 		window.setSaved(false);
 		window.updateInformationBar();
 		window.updateUndoRedoEnable();
 	}
 
 	@Override
-	public void removeUpdate(DocumentEvent e) {
+	public void removeUpdate(DocumentEvent event) {
 		window.setSaved(false);
 		window.updateInformationBar();
 		window.updateUndoRedoEnable();
 	}
 
 	@Override
-	public void changedUpdate(DocumentEvent e) {
+	public void changedUpdate(DocumentEvent event) {
 		window.setSaved(false);
 		window.updateInformationBar();
 		window.updateUndoRedoEnable();
 	}
 
 	@Override
-	public void caretUpdate(CaretEvent e) {
+	public void caretUpdate(CaretEvent event) {
 		window.updateCCDEnable();
 	}
 	

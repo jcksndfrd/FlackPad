@@ -15,7 +15,6 @@
 	</rule>
 	
 	<rule ref="category/java/codestyle.xml">
-		<exclude name="ClassNamingConventions" />
 		<exclude name="MethodArgumentCouldBeFinal" />
 		<exclude name="CommentDefaultAccessModifier" />
 		<exclude name="DefaultPackage" />
@@ -25,7 +24,9 @@
 		<exclude name="ModifiedCyclomaticComplexity" />
 		<exclude name="StdCyclomaticComplexity" />
 		<exclude name="CyclomaticComplexity" />
+		<exclude name="NcssCount" />
 		<exclude name="NPathComplexity" />
+		<exclude name="LawOfDemeter" />
 	</rule>
 	
 	<rule ref="category/java/errorprone.xml">

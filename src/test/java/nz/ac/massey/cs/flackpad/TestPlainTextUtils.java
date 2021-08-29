@@ -7,8 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class TestFileIO {
-	private final PlainTextIO plainTextIO = new PlainTextIO();
+public class TestPlainTextUtils {
 	
 	@Test
 	void loadFileTest() {
@@ -25,7 +24,7 @@ public class TestFileIO {
 			writer.close();
 			
 			// Load temp file
-			readText = plainTextIO.loadFile(tempFile);
+			readText = PlainTextUtils.loadFile(tempFile);
 			
 			// Delete temp file
 			tempFile.delete();
@@ -47,7 +46,7 @@ public class TestFileIO {
 		try {
 			// Save to temp file
 			File tempFile = File.createTempFile("temp", ".txt");
-			plainTextIO.saveFile(testText, tempFile);
+			PlainTextUtils.saveFile(testText, tempFile);
 			
 			// Read file
 			readText = new String(Files.readAllBytes(tempFile.toPath()));

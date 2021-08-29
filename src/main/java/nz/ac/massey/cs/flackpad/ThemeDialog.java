@@ -71,8 +71,8 @@ class ThemeDialog extends JDialog implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {		
-		switch (e.getActionCommand()) {
+	public void actionPerformed(ActionEvent event) {		
+		switch (event.getActionCommand()) {
 		case "Load Defaults":
 			fontChoice = defaultFont;
 			themeChoice = defaultTheme;
@@ -101,7 +101,7 @@ class ThemeDialog extends JDialog implements ActionListener {
 
 	private JPanel getContentPanel() {
 		// Create content panel
-		JPanel contentPanel = new JPanel();
+		final JPanel contentPanel = new JPanel();
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
 
@@ -116,15 +116,15 @@ class ThemeDialog extends JDialog implements ActionListener {
 
 	private JPanel getFontFamilyPanel() {
 		// Create font family panel
-		JPanel fontPanel = new JPanel(new BorderLayout(0, 5));
+		final JPanel fontPanel = new JPanel(new BorderLayout(0, 5));
 		fontPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		// Add label
-		JLabel fontLabel = new JLabel("Font:");
+		final JLabel fontLabel = new JLabel("Font:");
 		fontPanel.add(fontLabel, BorderLayout.NORTH);
 
 		// Add list
-		fontList = new JList<String>();
+		fontList = new JList<>();
 		fontPanel.add(new JScrollPane(fontList), BorderLayout.CENTER);
 
 		// Populate list
@@ -135,16 +135,16 @@ class ThemeDialog extends JDialog implements ActionListener {
 
 	private JPanel getFontStylePanel() {
 		// Create font style panel
-		JPanel stylePanel = new JPanel(new BorderLayout(0, 5));
+		final JPanel stylePanel = new JPanel(new BorderLayout(0, 5));
 		stylePanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		// Add label
-		JLabel styleLabel = new JLabel("Style:");
+		final JLabel styleLabel = new JLabel("Style:");
 		stylePanel.add(styleLabel, BorderLayout.NORTH);
 
 		// Add list
-		JPanel content = new JPanel(new BorderLayout(0, 0));
-		styleList = new JList<String>();
+		final JPanel content = new JPanel(new BorderLayout(0, 0));
+		styleList = new JList<>();
 		content.add(styleList, BorderLayout.NORTH);
 		stylePanel.add(content, BorderLayout.CENTER);
 
@@ -156,15 +156,15 @@ class ThemeDialog extends JDialog implements ActionListener {
 
 	private JPanel getFontSizePanel() {
 		// Create font size panel
-		JPanel sizePanel = new JPanel(new BorderLayout(0, 5));
+		final JPanel sizePanel = new JPanel(new BorderLayout(0, 5));
 		sizePanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		// Add label
-		JLabel sizeLabel = new JLabel("Size:");
+		final JLabel sizeLabel = new JLabel("Size:");
 		sizePanel.add(sizeLabel, BorderLayout.NORTH);
 
 		// Add spinner
-		JPanel content = new JPanel(new BorderLayout(0, 0));
+		final JPanel content = new JPanel(new BorderLayout(0, 0));
 		sizeSpinner = new JSpinner(new SpinnerNumberModel(1, 1, 72, 1));
 		content.add(sizeSpinner, BorderLayout.NORTH);
 		sizePanel.add(content, BorderLayout.CENTER);
@@ -174,15 +174,15 @@ class ThemeDialog extends JDialog implements ActionListener {
 
 	private JPanel getThemePanel() {
 		// Create theme panel
-		JPanel themePanel = new JPanel(new BorderLayout(0, 5));
+		final JPanel themePanel = new JPanel(new BorderLayout(0, 5));
 		themePanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		// Add label
-		JLabel themeLabel = new JLabel("Theme:");
+		final JLabel themeLabel = new JLabel("Theme:");
 		themePanel.add(themeLabel, BorderLayout.NORTH);
 		
 		// Add choice menu
-		JPanel content = new JPanel(new BorderLayout(0, 0));
+		final JPanel content = new JPanel(new BorderLayout(0, 0));
 		themeMenu = new Choice();
 		content.add(themeMenu, BorderLayout.NORTH);
 		themePanel.add(content, BorderLayout.CENTER);
@@ -196,24 +196,24 @@ class ThemeDialog extends JDialog implements ActionListener {
 
 	private JPanel getButtonPanel() {
 		// Create button panel
-		JPanel buttonPanel = new JPanel();
+		final JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new BorderLayout(0, 0));
 
 		// Set defaults panel
-		JPanel defaultPanel = new JPanel();
+		final JPanel defaultPanel = new JPanel();
 
-		JButton defaultButton = new JButton("Load Defaults");
+		final JButton defaultButton = new JButton("Load Defaults");
 		defaultButton.addActionListener(this);
 		defaultPanel.add(defaultButton);
 
 		// Save and cancel panel
-		JPanel savePanel = new JPanel();
+		final JPanel savePanel = new JPanel();
 
-		JButton saveButton = new JButton("Save");
+		final JButton saveButton = new JButton("Save");
 		saveButton.addActionListener(this);
 		savePanel.add(saveButton);
 
-		JButton cancelButton = new JButton("Cancel");
+		final JButton cancelButton = new JButton("Cancel");
 		cancelButton.addActionListener(this);
 		savePanel.add(cancelButton);
 
@@ -225,7 +225,7 @@ class ThemeDialog extends JDialog implements ActionListener {
 	}
 
 	private void setStyleMap() {
-		styleMap = new DualLinkedHashBidiMap<Integer, String>();
+		styleMap = new DualLinkedHashBidiMap<>();
 		styleMap.put(Font.PLAIN, "Plain");
 		styleMap.put(Font.BOLD, "Bold");
 		styleMap.put(Font.ITALIC, "Italic");

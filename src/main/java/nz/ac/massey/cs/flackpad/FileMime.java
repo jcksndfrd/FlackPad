@@ -9,7 +9,7 @@ import org.apache.tika.Tika;
 
 class FileMime {
 	
-	private final Map<String, String> mimeMap = new HashMap<String, String>();
+	private final Map<String, String> mimeMap = new HashMap<>();
 	private final Tika tika = new Tika();
 	
 	FileMime() {
@@ -54,24 +54,35 @@ class FileMime {
 	}
 
 	String getFileMime(File file) {
-		if (file == null) {
-			return null;
+		String fileMime = null;
+		
+		// Detect MIME
+		if (file != null) {
+			try {
+				fileMime = tika.detect(file);
+			} catch (IOException e) {
+				// Unable to detect MIME
+				fileMime = null;
+			}
 		}
-		try {
-			return tika.detect(file);
-		} catch (IOException e) {
-			return null;
-		}
+		
+		// Return MIME
+		return fileMime;
 	}
 	
 	String getFileStyle(File file) {
-		String fileMime = getFileMime(file);
+		String fileStyle = "text/plain";
 		
+		// Get MIME
+		final String fileMime = getFileMime(file);
+		
+		// Convert to style
 		if (mimeMap.containsKey(fileMime)) {
-			return mimeMap.get(fileMime);
-		} else {
-			return "text/plain";
+			fileStyle = mimeMap.get(fileMime);
 		}
+		
+		// Return style
+		return fileStyle;
 	}
 
 }

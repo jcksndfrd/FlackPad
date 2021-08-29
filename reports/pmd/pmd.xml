@@ -1,155 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.29.0" timestamp="2021-08-29T20:50:55.251">
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\Actions.java">
-<violation beginline="9" endline="101" begincolumn="15" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#useutilityclass" priority="3">
-All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
-</violation>
-<violation beginline="13" endline="13" begincolumn="4" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'textArea' could be declared final
-</violation>
-<violation beginline="17" endline="17" begincolumn="4" endcolumn="73" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'clipboard' could be declared final
-</violation>
-<violation beginline="17" endline="17" begincolumn="26" endcolumn="73" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="18" endline="18" begincolumn="4" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'data' could be declared final
-</violation>
-<violation beginline="18" endline="18" begincolumn="24" endcolumn="50" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="19" endline="19" begincolumn="4" endcolumn="76" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'plaintext' could be declared final
-</violation>
-<violation beginline="19" endline="19" begincolumn="32" endcolumn="76" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="21" endline="27" begincolumn="4" endcolumn="4" rule="ConfusingTernary" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
-Avoid if (x != y) ..; else ..;
-</violation>
-<violation beginline="21" endline="21" begincolumn="8" endcolumn="33" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="23" endline="23" begincolumn="5" endcolumn="40" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="26" endline="26" begincolumn="5" endcolumn="59" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="26" endline="26" begincolumn="32" endcolumn="58" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="29" endline="29" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="30" endline="30" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-<violation beginline="37" endline="37" begincolumn="4" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'textArea' could be declared final
-</violation>
-<violation beginline="38" endline="38" begincolumn="4" endcolumn="84" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'stringSelection' could be declared final
-</violation>
-<violation beginline="38" endline="38" begincolumn="58" endcolumn="83" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="39" endline="39" begincolumn="4" endcolumn="73" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'clipboard' could be declared final
-</violation>
-<violation beginline="39" endline="39" begincolumn="26" endcolumn="73" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="40" endline="40" begincolumn="4" endcolumn="47" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="41" endline="41" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="42" endline="42" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCopy" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-<violation beginline="48" endline="48" begincolumn="4" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'textArea' could be declared final
-</violation>
-<violation beginline="49" endline="49" begincolumn="4" endcolumn="84" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'stringSelection' could be declared final
-</violation>
-<violation beginline="49" endline="49" begincolumn="58" endcolumn="83" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="50" endline="50" begincolumn="4" endcolumn="32" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="51" endline="51" begincolumn="4" endcolumn="73" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'clipboard' could be declared final
-</violation>
-<violation beginline="51" endline="51" begincolumn="26" endcolumn="73" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="52" endline="52" begincolumn="4" endcolumn="47" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="53" endline="53" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="54" endline="54" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-<violation beginline="60" endline="60" begincolumn="4" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'textArea' could be declared final
-</violation>
-<violation beginline="61" endline="61" begincolumn="4" endcolumn="32" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="62" endline="62" begincolumn="29" endcolumn="55" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="62" endline="62" begincolumn="4" endcolumn="56" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="62" endline="62" begincolumn="29" endcolumn="55" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="63" endline="63" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="64" endline="64" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performSelectAll" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-<violation beginline="75" endline="75" begincolumn="8" endcolumn="40" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performEscapeFind" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="78" endline="78" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performEscapeFind" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="79" endline="79" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performEscapeFind" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-<violation beginline="85" endline="85" begincolumn="8" endcolumn="40" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performFindString" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="88" endline="88" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performFindString" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="89" endline="89" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performFindString" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-<violation beginline="95" endline="95" begincolumn="4" endcolumn="46" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performDelete" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="96" endline="96" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Actions" method="performDelete" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="97" endline="97" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Actions" method="performDelete" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
-</violation>
-</file>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.29.0" timestamp="2021-08-30T00:54:12.662">
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\Config.java">
-<violation beginline="31" endline="31" begincolumn="3" endcolumn="18" rule="ConstructorCallsOverridableMethod" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Config" method="Config" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#constructorcallsoverridablemethod" priority="1">
-Overridable method 'loadConfigFile' called during object construction
-</violation>
 <violation beginline="36" endline="36" begincolumn="19" endcolumn="30" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Config" method="loadDefaults" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
 The String literal "fontFamily" appears 5 times in this file; the first occurrence is on line 36
 </violation>
@@ -165,394 +16,90 @@ The String literal "light" appears 4 times in this file; the first occurrence is
 <violation beginline="39" endline="39" begincolumn="19" endcolumn="25" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Config" method="loadDefaults" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
 The String literal "theme" appears 9 times in this file; the first occurrence is on line 39
 </violation>
-<violation beginline="44" endline="44" begincolumn="3" endcolumn="24" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="loadConfigFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'yaml' could be declared final
-</violation>
-<violation beginline="47" endline="47" begincolumn="16" endcolumn="26" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Config" method="loadConfigFile" variable="inputStream" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this FileInputStream object are closed after use
-</violation>
-<violation beginline="47" endline="47" begincolumn="4" endcolumn="63" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="loadConfigFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'inputStream' could be declared final
-</violation>
-<violation beginline="57" endline="57" begincolumn="8" endcolumn="17" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="loadConfigFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'key' could be declared final
-</violation>
-<violation beginline="70" endline="70" begincolumn="3" endcolumn="49" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="fontFromConfig" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fontFamily' could be declared final
-</violation>
-<violation beginline="71" endline="71" begincolumn="3" endcolumn="47" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="fontFromConfig" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fontStyle' could be declared final
-</violation>
-<violation beginline="72" endline="72" begincolumn="3" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="fontFromConfig" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fontSize' could be declared final
-</violation>
-<violation beginline="75" endline="75" begincolumn="7" endcolumn="27" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Config" method="fontFromConfig" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="75" endline="75" begincolumn="48" endcolumn="67" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Config" method="fontFromConfig" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="76" endline="76" begincolumn="8" endcolumn="26" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Config" method="fontFromConfig" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="88" endline="88" begincolumn="3" endcolumn="44" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="themeFromConfig" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'themeValue' could be declared final
-</violation>
-<violation beginline="91" endline="91" begincolumn="7" endcolumn="27" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Config" method="themeFromConfig" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="92" endline="92" begincolumn="4" endcolumn="41" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="themeFromConfig" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'themeName' could be declared final
-</violation>
-<violation beginline="96" endline="96" begincolumn="5" endcolumn="11" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="themeFromConfig" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="112" endline="112" begincolumn="3" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="saveConfigFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'options' could be declared final
-</violation>
-<violation beginline="115" endline="115" begincolumn="3" endcolumn="31" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="saveConfigFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'yaml' could be declared final
-</violation>
-<violation beginline="119" endline="119" begincolumn="16" endcolumn="21" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Config" method="saveConfigFile" variable="writer" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this PrintWriter object are closed after use
-</violation>
-<violation beginline="119" endline="119" begincolumn="4" endcolumn="54" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Config" method="saveConfigFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'writer' could be declared final
-</violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\CustomScrollbar.java">
-<violation beginline="20" endline="20" begincolumn="24" endcolumn="24" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="CustomScrollbar" variable="o" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like o
-</violation>
-<violation beginline="20" endline="22" begincolumn="4" endcolumn="4" rule="CallSuperInConstructor" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="CustomScrollbar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#callsuperinconstructor" priority="3">
-It is a good practice to call super() in a constructor
-</violation>
-<violation beginline="49" endline="49" begincolumn="53" endcolumn="53" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintTrack" variable="c" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like c
-</violation>
-<violation beginline="49" endline="49" begincolumn="39" endcolumn="39" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintTrack" variable="g" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like g
-</violation>
-<violation beginline="49" endline="49" begincolumn="66" endcolumn="66" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintTrack" variable="r" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like r
-</violation>
-<violation beginline="54" endline="54" begincolumn="53" endcolumn="53" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" variable="c" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like c
-</violation>
-<violation beginline="54" endline="54" begincolumn="39" endcolumn="39" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" variable="g" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like g
-</violation>
-<violation beginline="54" endline="54" begincolumn="66" endcolumn="66" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" variable="r" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like r
-</violation>
-<violation beginline="55" endline="55" begincolumn="17" endcolumn="18" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" variable="g2" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like g2
-</violation>
-<violation beginline="55" endline="55" begincolumn="6" endcolumn="44" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'g2' could be declared final
-</violation>
-<violation beginline="56" endline="56" begincolumn="6" endcolumn="92" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="58" endline="58" begincolumn="6" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'scrollbar' could be declared final
-</violation>
-<violation beginline="62" endline="74" begincolumn="6" endcolumn="6" rule="ConfusingTernary" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
+<violation beginline="59" endline="69" begincolumn="3" endcolumn="3" rule="ConfusingTernary" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
 Avoid if (x != y) ..; else ..;
 </violation>
-<violation beginline="62" endline="62" begincolumn="11" endcolumn="31" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="63" endline="63" begincolumn="7" endcolumn="13" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+<violation beginline="60" endline="60" begincolumn="4" endcolumn="10" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="75" endline="75" begincolumn="6" endcolumn="23" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="88" endline="88" begincolumn="6" endcolumn="17" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="92" endline="92" begincolumn="38" endcolumn="38" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="setThumbBounds" variable="x" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="87" endline="87" begincolumn="36" endcolumn="36" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="setThumbBounds" variable="x" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like x
 </violation>
-<violation beginline="92" endline="92" begincolumn="45" endcolumn="45" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="setThumbBounds" variable="y" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="87" endline="87" begincolumn="43" endcolumn="43" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="setThumbBounds" variable="y" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like y
 </violation>
 </file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\Dialogs.java">
-<violation beginline="43" endline="43" begincolumn="6" endcolumn="33" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\DialogUtils.java">
+<violation beginline="43" endline="43" begincolumn="6" endcolumn="33" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'jPanel' could be declared final
 </violation>
-<violation beginline="45" endline="45" begincolumn="6" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="45" endline="45" begincolumn="6" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'jPanelFooting' could be declared final
 </violation>
-<violation beginline="48" endline="48" begincolumn="6" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="48" endline="48" begincolumn="6" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'jack' could be declared final
 </violation>
-<violation beginline="52" endline="52" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseClicked" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="52" endline="52" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseClicked" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like e
 </violation>
-<violation beginline="56" endline="56" begincolumn="12" endcolumn="29" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseClicked" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+<violation beginline="56" endline="56" begincolumn="12" endcolumn="29" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseClicked" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
 System.out.println is used
 </violation>
-<violation beginline="60" endline="60" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseEntered" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="60" endline="60" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseEntered" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like e
 </violation>
-<violation beginline="64" endline="64" begincolumn="48" endcolumn="48" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseExited" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="64" endline="64" begincolumn="48" endcolumn="48" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseExited" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like e
 </violation>
-<violation beginline="65" endline="65" begincolumn="46" endcolumn="54" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseExited" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+<violation beginline="65" endline="65" begincolumn="46" endcolumn="54" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseExited" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
 The String literal "#008787" appears 4 times in this file; the first occurrence is on line 65
 </violation>
-<violation beginline="70" endline="70" begincolumn="6" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="70" endline="70" begincolumn="6" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'fletch' could be declared final
 </violation>
-<violation beginline="74" endline="74" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseClicked" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="74" endline="74" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseClicked" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like e
 </violation>
-<violation beginline="78" endline="78" begincolumn="12" endcolumn="29" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseClicked" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+<violation beginline="78" endline="78" begincolumn="12" endcolumn="29" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseClicked" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
 System.out.println is used
 </violation>
-<violation beginline="82" endline="82" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseEntered" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="82" endline="82" begincolumn="49" endcolumn="49" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseEntered" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like e
 </violation>
-<violation beginline="86" endline="86" begincolumn="48" endcolumn="48" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="mouseExited" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
+<violation beginline="86" endline="86" begincolumn="48" endcolumn="48" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="mouseExited" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
 Avoid variables with short names like e
 </violation>
-<violation beginline="93" endline="93" begincolumn="6" endcolumn="109" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="93" endline="93" begincolumn="6" endcolumn="109" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'mainMessageA' could be declared final
 </violation>
-<violation beginline="94" endline="94" begincolumn="6" endcolumn="100" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Dialogs" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+<violation beginline="94" endline="94" begincolumn="6" endcolumn="100" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="DialogUtils" method="about" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'mainMessageB' could be declared final
 </violation>
 </file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\ExportDialog.java">
-<violation beginline="68" endline="68" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="69" endline="69" begincolumn="3" endcolumn="31" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'source' could be declared final
-</violation>
-<violation beginline="71" endline="71" begincolumn="7" endcolumn="28" rule="CompareObjectsWithEquals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#compareobjectswithequals" priority="3">
-Use equals() to compare object references.
-</violation>
-<violation beginline="73" endline="73" begincolumn="14" endcolumn="35" rule="CompareObjectsWithEquals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#compareobjectswithequals" priority="3">
-Use equals() to compare object references.
-</violation>
-<violation beginline="76" endline="76" begincolumn="14" endcolumn="35" rule="CompareObjectsWithEquals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#compareobjectswithequals" priority="3">
-Use equals() to compare object references.
-</violation>
-<violation beginline="78" endline="78" begincolumn="8" endcolumn="25" rule="LongVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" variable="formatChoiceLength" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
-Avoid excessively long variable names like formatChoiceLength
-</violation>
-<violation beginline="78" endline="78" begincolumn="4" endcolumn="65" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'formatChoiceLength' could be declared final
-</violation>
-<violation beginline="78" endline="78" begincolumn="29" endcolumn="65" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="79" endline="79" begincolumn="19" endcolumn="104" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="86" endline="86" begincolumn="3" endcolumn="55" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="openBrowseDialog" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileChooser' could be declared final
-</violation>
-<violation beginline="90" endline="90" begincolumn="22" endcolumn="68" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="openBrowseDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="96" endline="96" begincolumn="3" endcolumn="70" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getContentPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'contentPanel' could be declared final
-</violation>
-<violation beginline="107" endline="107" begincolumn="3" endcolumn="51" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getFilePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'filePanel' could be declared final
-</violation>
-<violation beginline="114" endline="114" begincolumn="3" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getFilePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'destinationPanel' could be declared final
-</violation>
-<violation beginline="119" endline="119" begincolumn="30" endcolumn="80" rule="ConfusingTernary" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getFilePanel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
-Avoid if (x != y) ..; else ..;
-</violation>
-<violation beginline="124" endline="124" begincolumn="47" endcolumn="83" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getFilePanel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="124" endline="124" begincolumn="86" endcolumn="120" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getFilePanel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="133" endline="133" begincolumn="3" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getFormatPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'formatPanel' could be declared final
-</violation>
-<violation beginline="153" endline="153" begincolumn="3" endcolumn="70" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ExportDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'buttonPanel' could be declared final
-</violation>
-</file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\FileIO.java">
-<violation beginline="43" endline="43" begincolumn="3" endcolumn="102" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'saveChoice' could be declared final
-</violation>
-<violation beginline="44" endline="44" begincolumn="3" endcolumn="19" rule="PrematureDeclaration" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
-Avoid declaring a variable if it is unreferenced before a possible exit point.
-</violation>
-<violation beginline="59" endline="59" begincolumn="4" endcolumn="64" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileChooser' could be declared final
-</violation>
-<violation beginline="62" endline="62" begincolumn="5" endcolumn="74" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'loaded' could be declared final
-</violation>
-<violation beginline="62" endline="62" begincolumn="27" endcolumn="73" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="65" endline="70" begincolumn="5" endcolumn="5" rule="AvoidDeeplyNestedIfStmts" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoiddeeplynestedifstmts" priority="3">
-Deeply nested if..then statements are hard to read
-</violation>
-<violation beginline="66" endline="66" begincolumn="6" endcolumn="45" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="67" endline="67" begincolumn="6" endcolumn="43" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="73" endline="76" begincolumn="5" endcolumn="5" rule="AvoidDeeplyNestedIfStmts" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoiddeeplynestedifstmts" priority="3">
-Deeply nested if..then statements are hard to read
-</violation>
-<violation beginline="74" endline="74" begincolumn="21" endcolumn="67" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="79" endline="81" begincolumn="5" endcolumn="5" rule="AvoidDeeplyNestedIfStmts" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoiddeeplynestedifstmts" priority="3">
-Deeply nested if..then statements are hard to read
-</violation>
-<violation beginline="84" endline="86" begincolumn="5" endcolumn="5" rule="AvoidDeeplyNestedIfStmts" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="open" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoiddeeplynestedifstmts" priority="3">
-Deeply nested if..then statements are hard to read
-</violation>
-<violation beginline="97" endline="97" begincolumn="5" endcolumn="17" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="save" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="101" endline="101" begincolumn="5" endcolumn="21" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="save" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="110" endline="110" begincolumn="3" endcolumn="63" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="saveAs" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileChooser' could be declared final
-</violation>
-<violation beginline="115" endline="115" begincolumn="44" endcolumn="90" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="saveAs" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="116" endline="116" begincolumn="20" endcolumn="66" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="saveAs" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="118" endline="118" begincolumn="5" endcolumn="17" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="saveAs" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="130" endline="130" begincolumn="3" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileMIME' could be declared final
-</violation>
-<violation beginline="136" endline="136" begincolumn="5" endcolumn="18" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="144" endline="144" begincolumn="6" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="147" endline="147" begincolumn="6" endcolumn="19" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="150" endline="150" begincolumn="6" endcolumn="21" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="153" endline="153" begincolumn="6" endcolumn="21" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="159" endline="159" begincolumn="4" endcolumn="21" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="160" endline="160" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+<violation beginline="153" endline="153" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
 </violation>
-<violation beginline="168" endline="168" begincolumn="4" endcolumn="60" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToPdf" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileName' could be declared final
-</violation>
-<violation beginline="170" endline="170" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToPdf" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+<violation beginline="184" endline="184" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToPdf" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
 </violation>
-<violation beginline="177" endline="177" begincolumn="4" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToOdt" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileName' could be declared final
-</violation>
-<violation beginline="179" endline="179" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToOdt" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+<violation beginline="193" endline="193" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToOdt" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
 </violation>
-<violation beginline="186" endline="186" begincolumn="4" endcolumn="45" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToRtf" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileName' could be declared final
-</violation>
-<violation beginline="188" endline="188" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToRtf" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
+<violation beginline="202" endline="202" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="FileIO" method="exportToRtf" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
 </violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\FileMime.java">
-<violation beginline="12" endline="12" begincolumn="46" endcolumn="74" rule="UseDiamondOperator" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileMime" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#usediamondoperator" priority="3">
-Explicit type arguments can be replaced by Diamond Operator
-</violation>
-<violation beginline="58" endline="58" begincolumn="4" endcolumn="15" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileMime" method="getFileMime" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="61" endline="61" begincolumn="4" endcolumn="28" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileMime" method="getFileMime" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="68" endline="68" begincolumn="3" endcolumn="37" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileMime" method="getFileStyle" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileMime' could be declared final
-</violation>
-<violation beginline="71" endline="71" begincolumn="4" endcolumn="32" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="FileMime" method="getFileStyle" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\InformationBar.java">
-<violation beginline="13" endline="13" begincolumn="17" endcolumn="23" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="InformationBar" variable="details" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'details' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="14" endline="14" begincolumn="17" endcolumn="25" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="InformationBar" variable="zoomlevel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'zoomlevel' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="15" endline="15" begincolumn="17" endcolumn="24" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="InformationBar" variable="filetype" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'filetype' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="40" endline="40" begincolumn="3" endcolumn="105" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="InformationBar" method="setTheme" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'theme' could be declared final
-</violation>
-<violation beginline="50" endline="50" begincolumn="21" endcolumn="59" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="InformationBar" method="setInformationBarFileText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
+<violation beginline="65" endline="65" begincolumn="16" endcolumn="19" rule="NullAssignment" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="FileMime" method="getFileMime" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#nullassignment" priority="3">
+Assigning an Object to null is a code smell.  Consider refactoring.
 </violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\KeyBinder.java">
-<violation beginline="11" endline="11" begincolumn="19" endcolumn="30" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" variable="areaInstance" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'areaInstance' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="12" endline="12" begincolumn="17" endcolumn="30" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" variable="windowInstance" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'windowInstance' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="23" endline="30" begincolumn="3" endcolumn="3" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="addKeyBindings" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'escapeFind' could be declared final
-</violation>
-<violation beginline="26" endline="26" begincolumn="44" endcolumn="44" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="actionPerformed" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="27" endline="27" begincolumn="31" endcolumn="44" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
+<violation beginline="27" endline="27" begincolumn="39" endcolumn="52" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
-</violation>
-<violation beginline="35" endline="35" begincolumn="3" endcolumn="54" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="addKeyBindings" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'textfield' could be declared final
-</violation>
-<violation beginline="36" endline="36" begincolumn="3" endcolumn="78" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="addKeyBindings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="36" endline="36" begincolumn="3" endcolumn="78" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="addKeyBindings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="37" endline="37" begincolumn="3" endcolumn="57" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="addKeyBindings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="37" endline="37" begincolumn="3" endcolumn="57" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="addKeyBindings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="41" endline="41" begincolumn="3" endcolumn="34" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="bindToMainArea" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="42" endline="42" begincolumn="3" endcolumn="35" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="KeyBinder" method="bindToMainArea" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
 </violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\MainTheme.java">
@@ -568,306 +115,23 @@ Overridable method 'setTheme' called during object construction
 <violation beginline="28" endline="28" begincolumn="4" endcolumn="22" rule="AvoidPrintStackTrace" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="MainTheme" method="MainTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#avoidprintstacktrace" priority="3">
 Avoid printStackTrace(); use a logger call instead.
 </violation>
-<violation beginline="52" endline="52" begincolumn="28" endcolumn="90" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MainTheme" method="setLightTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="56" endline="56" begincolumn="33" endcolumn="41" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="MainTheme" method="setLightTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
 The String literal "#383838" appears 4 times in this file; the first occurrence is on line 56
 </violation>
-<violation beginline="69" endline="69" begincolumn="28" endcolumn="87" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MainTheme" method="setDarkTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\MenuBar.java">
-<violation beginline="12" endline="244" begincolumn="1" endcolumn="1" rule="TooManyFields" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanyfields" priority="3">
-Too many fields
-</violation>
-<violation beginline="15" endline="15" begincolumn="16" endcolumn="29" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="menuBackground" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'menuBackground' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="16" endline="16" begincolumn="16" endcolumn="36" rule="LongVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="menuItemTabForeground" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
+<violation beginline="16" endline="16" begincolumn="22" endcolumn="42" rule="LongVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="menuItemTabForeground" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
 Avoid excessively long variable names like menuItemTabForeground
 </violation>
-<violation beginline="16" endline="16" begincolumn="16" endcolumn="36" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="menuItemTabForeground" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'menuItemTabForeground' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="19" endline="19" begincolumn="10" endcolumn="27" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'newItem' could be replaced by a local variable.
-</violation>
-<violation beginline="20" endline="20" begincolumn="10" endcolumn="33" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'newWindowItem' could be replaced by a local variable.
-</violation>
-<violation beginline="21" endline="21" begincolumn="10" endcolumn="28" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'openItem' could be replaced by a local variable.
-</violation>
-<violation beginline="22" endline="22" begincolumn="10" endcolumn="28" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'saveItem' could be replaced by a local variable.
-</violation>
-<violation beginline="23" endline="23" begincolumn="10" endcolumn="30" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'saveAsItem' could be replaced by a local variable.
-</violation>
-<violation beginline="24" endline="24" begincolumn="10" endcolumn="29" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'printItem' could be replaced by a local variable.
-</violation>
-<violation beginline="25" endline="25" begincolumn="10" endcolumn="27" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'pdfItem' could be replaced by a local variable.
-</violation>
-<violation beginline="26" endline="26" begincolumn="10" endcolumn="28" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'exitItem' could be replaced by a local variable.
-</violation>
-<violation beginline="33" endline="33" begincolumn="10" endcolumn="29" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'pasteItem' could be replaced by a local variable.
-</violation>
-<violation beginline="34" endline="34" begincolumn="10" endcolumn="33" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'selectAllItem' could be replaced by a local variable.
-</violation>
-<violation beginline="36" endline="36" begincolumn="10" endcolumn="28" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'findItem' could be replaced by a local variable.
-</violation>
-<violation beginline="37" endline="37" begincolumn="10" endcolumn="26" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'tDItem' could be replaced by a local variable.
-</violation>
-<violation beginline="43" endline="43" begincolumn="10" endcolumn="35" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'lineNumbersItem' could be replaced by a local variable.
-</violation>
-<violation beginline="44" endline="44" begincolumn="10" endcolumn="29" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'themeItem' could be replaced by a local variable.
-</violation>
-<violation beginline="45" endline="45" begincolumn="10" endcolumn="35" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'themeDialogItem' could be replaced by a local variable.
-</violation>
-<violation beginline="48" endline="48" begincolumn="10" endcolumn="29" rule="SingularField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#singularfield" priority="3">
-Perhaps 'aboutItem' could be replaced by a local variable.
-</violation>
-<violation beginline="67" endline="67" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuBar" method="addFileMenu" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fileMenu' could be declared final
-</violation>
-<violation beginline="116" endline="116" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuBar" method="addEditMenu" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'editMenu' could be declared final
-</violation>
-<violation beginline="169" endline="169" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuBar" method="addViewMenu" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'viewMenu' could be declared final
-</violation>
-<violation beginline="207" endline="207" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuBar" method="addHelpMenu" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'helpMenu' could be declared final
-</violation>
 </file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\MenuListener.java">
-<violation beginline="15" endline="15" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="MenuListener" method="actionPerformed" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="15" endline="97" begincolumn="9" endcolumn="2" rule="NcssCount" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuListener" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#ncsscount" priority="3">
-The method 'actionPerformed(ActionEvent)' has a NCSS line count of 73.
-</violation>
-<violation beginline="26" endline="26" begincolumn="5" endcolumn="29" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuListener" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="29" endline="29" begincolumn="5" endcolumn="29" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuListener" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="32" endline="32" begincolumn="5" endcolumn="31" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="MenuListener" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\OdtIO.java">
-<violation beginline="16" endline="84" begincolumn="1" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
-Each class should declare at least one constructor
-</violation>
-<violation beginline="18" endline="18" begincolumn="36" endcolumn="44" rule="SignatureDeclareThrowsException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception" priority="3">
+<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\OdtUtils.java">
+<violation beginline="49" endline="49" begincolumn="54" endcolumn="62" rule="SignatureDeclareThrowsException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtUtils" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception" priority="3">
 A method/constructor should not explicitly throw java.lang.Exception
-</violation>
-<violation beginline="20" endline="20" begincolumn="11" endcolumn="13" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" variable="odt" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this ZipFile object are closed after use
-</violation>
-<violation beginline="20" endline="20" begincolumn="3" endcolumn="33" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'odt' could be declared final
-</violation>
-<violation beginline="21" endline="21" begincolumn="15" endcolumn="27" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" variable="contentStream" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this InputStream object are closed after use
-</violation>
-<violation beginline="21" endline="21" begincolumn="3" endcolumn="77" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'contentStream' could be declared final
-</violation>
-<violation beginline="26" endline="26" begincolumn="14" endcolumn="91" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="26" endline="26" begincolumn="14" endcolumn="91" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="29" endline="29" begincolumn="3" endcolumn="70" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'textNodes' could be declared final
-</violation>
-<violation beginline="34" endline="34" begincolumn="12" endcolumn="44" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="43" endline="43" begincolumn="47" endcolumn="55" rule="SignatureDeclareThrowsException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception" priority="3">
-A method/constructor should not explicitly throw java.lang.Exception
-</violation>
-<violation beginline="46" endline="46" begincolumn="8" endcolumn="32" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="51" endline="51" begincolumn="3" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'lines' could be declared final
-</violation>
-<violation beginline="54" endline="54" begincolumn="19" endcolumn="26" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" variable="document" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this OdfTextDocument object are closed after use
-</violation>
-<violation beginline="54" endline="54" begincolumn="3" endcolumn="62" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'document' could be declared final
-</violation>
-<violation beginline="56" endline="56" begincolumn="3" endcolumn="28" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="61" endline="61" begincolumn="3" endcolumn="25" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="62" endline="62" begincolumn="3" endcolumn="18" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="65" endline="65" begincolumn="10" endcolumn="59" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="65" endline="65" begincolumn="29" endcolumn="54" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="75" endline="75" begincolumn="3" endcolumn="44" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="OdtIO" method="getTextNodes" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'childNodes' could be declared final
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\PdfExporter.java">
-<violation beginline="11" endline="39" begincolumn="1" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PdfExporter" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
-Each class should declare at least one constructor
-</violation>
-<violation beginline="13" endline="13" begincolumn="63" endcolumn="71" rule="SignatureDeclareThrowsException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception" priority="3">
-A method/constructor should not explicitly throw java.lang.Exception
-</violation>
-<violation beginline="16" endline="16" begincolumn="8" endcolumn="32" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="21" endline="21" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'document' could be declared final
-</violation>
-<violation beginline="22" endline="22" begincolumn="3" endcolumn="84" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'writer' could be declared final
-</violation>
-<violation beginline="26" endline="26" begincolumn="22" endcolumn="61" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="36" endline="36" begincolumn="10" endcolumn="59" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="36" endline="36" begincolumn="29" endcolumn="54" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="PdfExporter" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\PlainTextIO.java">
-<violation beginline="10" endline="40" begincolumn="1" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
-Each class should declare at least one constructor
-</violation>
-<violation beginline="14" endline="14" begincolumn="18" endcolumn="23" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" method="loadFile" variable="reader" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this FileReader object are closed after use
-</violation>
-<violation beginline="14" endline="14" begincolumn="3" endcolumn="66" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'reader' could be declared final
-</violation>
-<violation beginline="21" endline="21" begincolumn="8" endcolumn="41" rule="AssignmentInOperand" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#assignmentinoperand" priority="3">
-Avoid assignments in operands
-</violation>
-<violation beginline="22" endline="22" begincolumn="5" endcolumn="49" rule="ControlStatementBraces" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#controlstatementbraces" priority="3">
-This statement should have braces
-</violation>
-<violation beginline="34" endline="34" begincolumn="18" endcolumn="23" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" method="saveFile" variable="writer" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this FileWriter object are closed after use
-</violation>
-<violation beginline="34" endline="34" begincolumn="3" endcolumn="73" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="PlainTextIO" method="saveFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'writer' could be declared final
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\RtfIO.java">
-<violation beginline="10" endline="51" begincolumn="1" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
-Each class should declare at least one constructor
-</violation>
-<violation beginline="12" endline="12" begincolumn="36" endcolumn="44" rule="SignatureDeclareThrowsException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception" priority="3">
-A method/constructor should not explicitly throw java.lang.Exception
-</violation>
-<violation beginline="14" endline="14" begincolumn="19" endcolumn="24" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" variable="stream" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this FileInputStream object are closed after use
-</violation>
-<violation beginline="14" endline="14" begincolumn="3" endcolumn="52" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'stream' could be declared final
-</violation>
-<violation beginline="15" endline="15" begincolumn="3" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'kit' could be declared final
-</violation>
-<violation beginline="16" endline="16" begincolumn="3" endcolumn="49" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'document' could be declared final
-</violation>
-<violation beginline="21" endline="21" begincolumn="3" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'text' could be declared final
-</violation>
-<violation beginline="21" endline="21" begincolumn="17" endcolumn="57" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="21" endline="21" begincolumn="37" endcolumn="56" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="loadFile" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="28" endline="28" begincolumn="47" endcolumn="55" rule="SignatureDeclareThrowsException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#signaturedeclarethrowsexception" priority="3">
-A method/constructor should not explicitly throw java.lang.Exception
-</violation>
-<violation beginline="31" endline="31" begincolumn="8" endcolumn="32" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="36" endline="36" begincolumn="20" endcolumn="25" rule="CloseResource" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" variable="stream" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#closeresource" priority="3">
-Ensure that resources like this FileOutputStream object are closed after use
-</violation>
-<violation beginline="36" endline="36" begincolumn="3" endcolumn="58" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'stream' could be declared final
-</violation>
-<violation beginline="37" endline="37" begincolumn="3" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'kit' could be declared final
-</violation>
-<violation beginline="38" endline="38" begincolumn="3" endcolumn="49" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'document' could be declared final
-</violation>
-<violation beginline="41" endline="41" begincolumn="3" endcolumn="38" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="49" endline="49" begincolumn="10" endcolumn="59" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="49" endline="49" begincolumn="29" endcolumn="54" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RtfIO" method="export" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
 </violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\RunApp.java">
-<violation beginline="3" endline="9" begincolumn="21" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RunApp" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#useutilityclass" priority="3">
-All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\ScrollPane.java">
-<violation beginline="26" endline="26" begincolumn="3" endcolumn="49" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="29" endline="29" begincolumn="3" endcolumn="37" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'theme' could be declared final
-</violation>
-<violation beginline="30" endline="30" begincolumn="3" endcolumn="56" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="30" endline="30" begincolumn="29" endcolumn="55" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="31" endline="31" begincolumn="3" endcolumn="53" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="31" endline="31" begincolumn="30" endcolumn="52" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="32" endline="32" begincolumn="3" endcolumn="61" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="32" endline="32" begincolumn="34" endcolumn="60" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ScrollPane" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
+<violation beginline="3" endline="13" begincolumn="8" endcolumn="1" rule="ClassWithOnlyPrivateConstructorsShouldBeFinal" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="RunApp" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#classwithonlyprivateconstructorsshouldbefinal" priority="1">
+A class which only has private constructors should be final
 </violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\SearchBar.java">
@@ -901,26 +165,11 @@ Local variable 'searchtext' could be declared final
 <violation beginline="95" endline="95" begincolumn="4" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'text' could be declared final
 </violation>
-<violation beginline="97" endline="97" begincolumn="17" endcolumn="40" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
 <violation beginline="98" endline="98" begincolumn="4" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'length' could be declared final
 </violation>
-<violation beginline="98" endline="98" begincolumn="17" endcolumn="35" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="101" endline="101" begincolumn="4" endcolumn="50" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="103" endline="104" begincolumn="4" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'painter' could be declared final
-</violation>
-<violation beginline="109" endline="109" begincolumn="6" endcolumn="77" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="110" endline="110" begincolumn="15" endcolumn="50" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
 </violation>
 <violation beginline="111" endline="111" begincolumn="14" endcolumn="22" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
@@ -943,23 +192,14 @@ Local variable 'replacementtext' could be declared final
 <violation beginline="129" endline="129" begincolumn="4" endcolumn="77" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
 Local variable 'result' could be declared final
 </violation>
-<violation beginline="129" endline="129" begincolumn="20" endcolumn="77" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="131" endline="131" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
 </violation>
 <violation beginline="132" endline="132" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
 System.out.println is used
 </violation>
-<violation beginline="137" endline="137" begincolumn="7" endcolumn="49" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="checkFindWarnings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="142" endline="142" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="checkFindWarnings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="150" endline="150" begincolumn="7" endcolumn="55" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="checkReplaceWarnings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
 </violation>
 <violation beginline="154" endline="154" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="checkReplaceWarnings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
@@ -979,9 +219,6 @@ Avoid autogenerated methods to access private fields and methods of inner / oute
 <violation beginline="180" endline="180" begincolumn="36" endcolumn="50" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusGained" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
 </violation>
-<violation beginline="180" endline="180" begincolumn="9" endcolumn="51" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusGained" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="181" endline="181" begincolumn="6" endcolumn="22" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusGained" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
 </violation>
@@ -993,9 +230,6 @@ Avoid variables with short names like e
 </violation>
 <violation beginline="188" endline="188" begincolumn="9" endcolumn="25" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusLost" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
-</violation>
-<violation beginline="188" endline="188" begincolumn="9" endcolumn="37" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusLost" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
 </violation>
 <violation beginline="189" endline="189" begincolumn="6" endcolumn="28" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusLost" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
@@ -1024,9 +258,6 @@ Avoid autogenerated methods to access private fields and methods of inner / oute
 <violation beginline="212" endline="212" begincolumn="39" endcolumn="56" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusGained" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
 </violation>
-<violation beginline="212" endline="212" begincolumn="9" endcolumn="57" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusGained" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="213" endline="213" begincolumn="6" endcolumn="25" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusGained" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
 </violation>
@@ -1038,9 +269,6 @@ Avoid variables with short names like e
 </violation>
 <violation beginline="220" endline="220" begincolumn="9" endcolumn="28" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusLost" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
-</violation>
-<violation beginline="220" endline="220" begincolumn="9" endcolumn="40" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusLost" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
 </violation>
 <violation beginline="221" endline="221" begincolumn="6" endcolumn="31" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="focusLost" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
@@ -1057,9 +285,6 @@ Avoid variables with short names like e
 <violation beginline="229" endline="229" begincolumn="5" endcolumn="15" rule="AccessorMethodGeneration" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="actionPerformed" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#accessormethodgeneration" priority="3">
 Avoid autogenerated methods to access private fields and methods of inner / outer classes
 </violation>
-<violation beginline="241" endline="241" begincolumn="4" endcolumn="50" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="hideFindBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
 <violation beginline="242" endline="242" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="hideFindBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
 Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
 </violation>
@@ -1073,299 +298,41 @@ Avoid catching generic exceptions such as NullPointerException, RuntimeException
 System.out.println is used
 </violation>
 </file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\TextArea.java">
-<violation beginline="29" endline="29" begincolumn="3" endcolumn="58" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextArea" method="TextArea" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'listener' could be declared final
-</violation>
-<violation beginline="38" endline="38" begincolumn="3" endcolumn="37" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'theme' could be declared final
-</violation>
-<violation beginline="41" endline="41" begincolumn="3" endcolumn="36" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="41" endline="41" begincolumn="3" endcolumn="36" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="44" endline="44" begincolumn="17" endcolumn="41" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="45" endline="45" begincolumn="17" endcolumn="42" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="46" endline="46" begincolumn="21" endcolumn="49" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="47" endline="47" begincolumn="17" endcolumn="41" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="48" endline="48" begincolumn="32" endcolumn="72" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="setTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (object not created locally)
-</violation>
-<violation beginline="58" endline="58" begincolumn="3" endcolumn="79" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextArea" method="addTimeAndDate" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'formatter' could be declared final
-</violation>
-<violation beginline="61" endline="61" begincolumn="4" endcolumn="84" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="addTimeAndDate" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="63" endline="63" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="TextArea" method="addTimeAndDate" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\TextActionUtils.java">
+<violation beginline="38" endline="38" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="TextActionUtils" method="performPaste" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
 System.out.println is used
 </violation>
-<violation beginline="94" endline="94" begincolumn="3" endcolumn="49" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextArea" method="zoom" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'newSize' could be declared final
+<violation beginline="51" endline="51" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="TextActionUtils" method="performCopy" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
 </violation>
-<violation beginline="95" endline="95" begincolumn="11" endcolumn="79" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="zoom" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="95" endline="95" begincolumn="32" endcolumn="51" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="TextArea" method="zoom" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\TextAreaListener.java">
-<violation beginline="18" endline="18" begincolumn="41" endcolumn="41" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextAreaListener" method="insertUpdate" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="25" endline="25" begincolumn="41" endcolumn="41" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextAreaListener" method="removeUpdate" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="32" endline="32" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextAreaListener" method="changedUpdate" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="39" endline="39" begincolumn="37" endcolumn="37" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="TextAreaListener" method="caretUpdate" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\ThemeDialog.java">
-<violation beginline="74" endline="74" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="actionPerformed" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="104" endline="104" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getContentPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'contentPanel' could be declared final
-</violation>
-<violation beginline="119" endline="119" begincolumn="3" endcolumn="55" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontFamilyPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fontPanel' could be declared final
-</violation>
-<violation beginline="123" endline="123" begincolumn="3" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontFamilyPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'fontLabel' could be declared final
-</violation>
-<violation beginline="127" endline="127" begincolumn="14" endcolumn="32" rule="UseDiamondOperator" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontFamilyPanel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#usediamondoperator" priority="3">
-Explicit type arguments can be replaced by Diamond Operator
-</violation>
-<violation beginline="131" endline="131" begincolumn="24" endcolumn="102" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontFamilyPanel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="138" endline="138" begincolumn="3" endcolumn="56" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontStylePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'stylePanel' could be declared final
-</violation>
-<violation beginline="142" endline="142" begincolumn="3" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontStylePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'styleLabel' could be declared final
-</violation>
-<violation beginline="146" endline="146" begincolumn="3" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontStylePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'content' could be declared final
-</violation>
-<violation beginline="147" endline="147" begincolumn="15" endcolumn="33" rule="UseDiamondOperator" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontStylePanel" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#usediamondoperator" priority="3">
-Explicit type arguments can be replaced by Diamond Operator
-</violation>
-<violation beginline="159" endline="159" begincolumn="3" endcolumn="55" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontSizePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'sizePanel' could be declared final
-</violation>
-<violation beginline="163" endline="163" begincolumn="3" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontSizePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'sizeLabel' could be declared final
-</violation>
-<violation beginline="167" endline="167" begincolumn="3" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getFontSizePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'content' could be declared final
-</violation>
-<violation beginline="177" endline="177" begincolumn="3" endcolumn="56" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getThemePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'themePanel' could be declared final
-</violation>
-<violation beginline="181" endline="181" begincolumn="3" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getThemePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'themeLabel' could be declared final
-</violation>
-<violation beginline="185" endline="185" begincolumn="3" endcolumn="53" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getThemePanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'content' could be declared final
-</violation>
-<violation beginline="199" endline="199" begincolumn="3" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'buttonPanel' could be declared final
-</violation>
-<violation beginline="203" endline="203" begincolumn="3" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'defaultPanel' could be declared final
-</violation>
-<violation beginline="205" endline="205" begincolumn="3" endcolumn="54" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'defaultButton' could be declared final
-</violation>
-<violation beginline="210" endline="210" begincolumn="3" endcolumn="33" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'savePanel' could be declared final
-</violation>
-<violation beginline="212" endline="212" begincolumn="3" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'saveButton' could be declared final
-</violation>
-<violation beginline="216" endline="216" begincolumn="3" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="getButtonPanel" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'cancelButton' could be declared final
-</violation>
-<violation beginline="228" endline="228" begincolumn="14" endcolumn="57" rule="UseDiamondOperator" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="ThemeDialog" method="setStyleMap" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#usediamondoperator" priority="3">
-Explicit type arguments can be replaced by Diamond Operator
-</violation>
-</file>
-<file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\WinListener.java">
-<violation beginline="15" endline="15" begincolumn="39" endcolumn="39" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowOpened" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="21" endline="21" begincolumn="40" endcolumn="40" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowClosing" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="26" endline="26" begincolumn="39" endcolumn="39" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowClosed" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="32" endline="32" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowIconified" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="38" endline="38" begincolumn="44" endcolumn="44" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowDeiconified" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="44" endline="44" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowActivated" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="50" endline="50" begincolumn="44" endcolumn="44" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="WinListener" method="windowDeactivated" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
+<violation beginline="64" endline="64" begincolumn="4" endcolumn="21" rule="SystemPrintln" ruleset="Best Practices" package="nz.ac.massey.cs.flackpad" class="TextActionUtils" method="performCut" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+System.out.println is used
 </violation>
 </file>
 <file name="Z:\Uni\Y3S2\Software Engineering\Assignments\nz.ac.massey.cs.flackpad\src\main\java\nz\ac\massey\cs\flackpad\Window.java">
-<violation beginline="19" endline="351" begincolumn="14" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+<violation beginline="19" endline="348" begincolumn="7" endcolumn="1" rule="GodClass" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=60, ATFD=98, TCC=32.620%)
+</violation>
+<violation beginline="19" endline="348" begincolumn="20" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanymethods" priority="3">
 This class has too many methods, consider refactoring it.
 </violation>
-<violation beginline="19" endline="351" begincolumn="1" endcolumn="1" rule="TooManyFields" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanyfields" priority="3">
+<violation beginline="19" endline="348" begincolumn="7" endcolumn="1" rule="TooManyFields" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanyfields" priority="3">
 Too many fields
 </violation>
 <violation beginline="20" endline="20" begincolumn="23" endcolumn="29" rule="FinalFieldCouldBeStatic" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" variable="appName" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#finalfieldcouldbestatic" priority="3">
 This final field could be made static
 </violation>
-<violation beginline="36" endline="36" begincolumn="14" endcolumn="29" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" variable="scrollBarBreadth" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'scrollBarBreadth' could be made final; it is only initialized in the declaration or constructor.
+<violation beginline="37" endline="37" begincolumn="20" endcolumn="35" rule="FinalFieldCouldBeStatic" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" variable="scrollBarBreadth" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#finalfieldcouldbestatic" priority="3">
+This final field could be made static
 </violation>
-<violation beginline="47" endline="47" begincolumn="26" endcolumn="47" rule="UseDiamondOperator" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#usediamondoperator" priority="3">
-Explicit type arguments can be replaced by Diamond Operator
+<violation beginline="88" endline="88" begincolumn="95" endcolumn="103" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "#202020" appears 12 times in this file; the first occurrence is on line 88
 </violation>
-<violation beginline="47" endline="47" begincolumn="3" endcolumn="47" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'iconList' could be declared final
+<violation beginline="88" endline="88" begincolumn="69" endcolumn="77" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "#aaaaaa" appears 12 times in this file; the first occurrence is on line 88
 </violation>
-<violation beginline="85" endline="85" begincolumn="119" endcolumn="127" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
-The String literal "#202020" appears 12 times in this file; the first occurrence is on line 85
-</violation>
-<violation beginline="85" endline="85" begincolumn="93" endcolumn="101" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
-The String literal "#aaaaaa" appears 12 times in this file; the first occurrence is on line 85
-</violation>
-<violation beginline="85" endline="85" begincolumn="70" endcolumn="76" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
-The String literal "light" appears 13 times in this file; the first occurrence is on line 85
-</violation>
-<violation beginline="85" endline="85" begincolumn="70" endcolumn="76" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="93" endline="93" begincolumn="69" endcolumn="75" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="100" endline="100" begincolumn="70" endcolumn="76" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="101" endline="101" begincolumn="71" endcolumn="77" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="106" endline="106" begincolumn="3" endcolumn="24" rule="ConstructorCallsOverridableMethod" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#constructorcallsoverridablemethod" priority="1">
-Overridable method 'updateUndoRedoEnable' called during object construction
-</violation>
-<violation beginline="107" endline="107" begincolumn="3" endcolumn="19" rule="ConstructorCallsOverridableMethod" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#constructorcallsoverridablemethod" priority="1">
-Overridable method 'updateCCDEnable' called during object construction
-</violation>
-<violation beginline="108" endline="108" begincolumn="3" endcolumn="20" rule="ConstructorCallsOverridableMethod" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#constructorcallsoverridablemethod" priority="1">
-Overridable method 'updateZoomEnable' called during object construction
-</violation>
-<violation beginline="124" endline="124" begincolumn="3" endcolumn="76" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="newDoc" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'saveChoice' could be declared final
-</violation>
-<violation beginline="125" endline="125" begincolumn="3" endcolumn="26" rule="PrematureDeclaration" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="newDoc" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
-Avoid declaring a variable if it is unreferenced before a possible exit point.
-</violation>
-<violation beginline="148" endline="148" begincolumn="3" endcolumn="76" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="exit" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'saveChoice' could be declared final
-</violation>
-<violation beginline="149" endline="149" begincolumn="3" endcolumn="26" rule="PrematureDeclaration" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="exit" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#prematuredeclaration" priority="3">
-Avoid declaring a variable if it is unreferenced before a possible exit point.
-</violation>
-<violation beginline="166" endline="166" begincolumn="3" endcolumn="60" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'currentThemeName' could be declared final
-</violation>
-<violation beginline="166" endline="166" begincolumn="29" endcolumn="60" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="167" endline="167" begincolumn="39" endcolumn="44" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="171" endline="171" begincolumn="34" endcolumn="65" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="171" endline="171" begincolumn="71" endcolumn="77" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="172" endline="172" begincolumn="33" endcolumn="64" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="172" endline="172" begincolumn="70" endcolumn="76" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="173" endline="173" begincolumn="34" endcolumn="65" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="173" endline="173" begincolumn="71" endcolumn="77" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="174" endline="174" begincolumn="35" endcolumn="66" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="174" endline="174" begincolumn="72" endcolumn="78" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="toggleTheme" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="179" endline="179" begincolumn="3" endcolumn="146" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'themeDialog' could be declared final
-</violation>
-<violation beginline="186" endline="186" begincolumn="35" endcolumn="66" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="186" endline="186" begincolumn="72" endcolumn="78" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="187" endline="187" begincolumn="34" endcolumn="65" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="187" endline="187" begincolumn="71" endcolumn="77" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="188" endline="188" begincolumn="35" endcolumn="66" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="188" endline="188" begincolumn="72" endcolumn="78" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="189" endline="189" begincolumn="36" endcolumn="67" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="189" endline="189" begincolumn="73" endcolumn="79" rule="UseEqualsToCompareStrings" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="openThemeDialog" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#useequalstocomparestrings" priority="3">
-Use equals() to compare strings instead of '==' or '!='
-</violation>
-<violation beginline="194" endline="194" begincolumn="3" endcolumn="69" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="export" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'exportDialog' could be declared final
-</violation>
-<violation beginline="255" endline="260" begincolumn="3" endcolumn="3" rule="ConfusingTernary" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="Window" method="updateZoomEnable" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
-Avoid if (x != y) ..; else ..;
-</violation>
-<violation beginline="270" endline="270" begincolumn="58" endcolumn="75" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="updateInformationBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
-</violation>
-<violation beginline="271" endline="271" begincolumn="12" endcolumn="31" rule="AvoidCatchingNPE" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="updateInformationBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidcatchingnpe" priority="3">
-Avoid catching NullPointerException; consider removing the cause of the NPE.
-</violation>
-<violation beginline="271" endline="271" begincolumn="12" endcolumn="31" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="updateInformationBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="349" endline="349" begincolumn="24" endcolumn="65" rule="LawOfDemeter" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="Window" method="getIcon" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
-Potential violation of Law of Demeter (method chain calls)
+<violation beginline="88" endline="88" begincolumn="5" endcolumn="11" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="Window" method="Window" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
+The String literal "light" appears 14 times in this file; the first occurrence is on line 88
 </violation>
 </file>
 </pmd>

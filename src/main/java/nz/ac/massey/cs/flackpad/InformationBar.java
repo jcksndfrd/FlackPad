@@ -10,10 +10,10 @@ import javax.swing.JMenuBar;
 
 public class InformationBar {
 
-	private JLabel details;
-	private JLabel zoomlevel;
-	private JLabel filetype;
-	
+	private final JLabel details;
+	private final JLabel zoomlevel;
+	private final JLabel filetype;
+
 	public InformationBar(JMenuBar menu) {
 		// Char count
 		details = new JLabel("0 | Char");
@@ -36,8 +36,9 @@ public class InformationBar {
 		filetype.setForeground(Color.decode("#777777"));
 		menu.add(filetype);
 	}
+
 	void setTheme(Config config) {
-		Color theme = "light".equals(config.getThemeName()) ? Color.decode("#990000") : Color.decode("#770BD8");
+		final Color theme = "light".equals(config.getThemeName()) ? Color.decode("#990000") : Color.decode("#770BD8");
 		details.setForeground(theme);
 	}
 

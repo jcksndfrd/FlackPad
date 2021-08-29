@@ -65,25 +65,25 @@ class ExportDialog extends JDialog implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		Object source = e.getSource();
+	public void actionPerformed(ActionEvent event) {
+		final Object source = event.getSource();
 		
-		if (source == browseButton) {
+		if (source.equals(browseButton)) {
 			openBrowseDialog();
-		} else if (source == cancelButton) {
+		} else if (source.equals(cancelButton)) {
 			option = CANCEL_OPTION;
 			dispose();
-		} else if (source == exportButton) {
+		} else if (source.equals(exportButton)) {
 			fileChoice = new File(fileField.getText());
-			int formatChoiceLength = formatMenu.getSelectedItem().length();
-			formatChoice = formatMenu.getSelectedItem().substring(formatChoiceLength - 4, formatChoiceLength - 1);
+			final int formatLength = formatMenu.getSelectedItem().length();
+			formatChoice = formatMenu.getSelectedItem().substring(formatLength - 4, formatLength - 1);
 			option = EXPORT_OPTION;
 			dispose();
 		}
 	}
 	
 	private void openBrowseDialog() {
-		JFileChooser fileChooser = new JFileChooser(location);
+		final JFileChooser fileChooser = new JFileChooser(location);
 		fileChooser.setDialogTitle("Export As");
 		
 		if (fileChooser.showSaveDialog(parent) == JFileChooser.APPROVE_OPTION) {
@@ -93,7 +93,7 @@ class ExportDialog extends JDialog implements ActionListener {
 
 	private JPanel getContentPanel() {
 		// Create content panel
-		JPanel contentPanel = new JPanel(new FlowLayout(FlowLayout.LEADING));
+		final JPanel contentPanel = new JPanel(new FlowLayout(FlowLayout.LEADING));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		contentPanel.add(getFilePanel());
@@ -104,19 +104,19 @@ class ExportDialog extends JDialog implements ActionListener {
 
 	private JPanel getFilePanel() {
 		// Create file panel
-		JPanel filePanel = new JPanel(new BorderLayout());
+		final JPanel filePanel = new JPanel(new BorderLayout());
 		filePanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		// Add label
 		filePanel.add(new JLabel("Destination"), BorderLayout.NORTH);
 		
 		// Create text field and button panel		
-		JPanel destinationPanel = new JPanel();
+		final JPanel destinationPanel = new JPanel();
 		destinationPanel.setLayout(new BoxLayout(destinationPanel, BoxLayout.X_AXIS));
 		filePanel.add(destinationPanel, BorderLayout.CENTER);
 		
 		// Add text field
-		fileField = new JTextField(location != null ? location.getAbsolutePath(): null, 37);
+		fileField = new JTextField(location == null ? null : location.getAbsolutePath(), 37);
 		destinationPanel.add(fileField);
 		
 		// Add browse button
@@ -130,7 +130,7 @@ class ExportDialog extends JDialog implements ActionListener {
 
 	private JPanel getFormatPanel() {
 		// Create format panel
-		JPanel formatPanel = new JPanel(new BorderLayout());
+		final JPanel formatPanel = new JPanel(new BorderLayout());
 		formatPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		// Add label
@@ -150,7 +150,7 @@ class ExportDialog extends JDialog implements ActionListener {
 
 	private JPanel getButtonPanel() {
 		// Create button panel
-		JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.TRAILING));
+		final JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.TRAILING));
 		
 		// Add cancel and export buttons
 		cancelButton = new JButton("Cancel");

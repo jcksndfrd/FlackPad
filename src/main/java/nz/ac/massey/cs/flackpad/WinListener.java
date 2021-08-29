@@ -12,44 +12,38 @@ class WinListener implements WindowListener {
 	}
 
 	@Override
-	public void windowOpened(WindowEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void windowClosing(WindowEvent e) {
+	public void windowClosing(WindowEvent event) {
 		window.exit();
 	}
 
 	@Override
-	public void windowClosed(WindowEvent e) {
-		// TODO Auto-generated method stub
-
+	public void windowOpened(WindowEvent event) {
+		// Ignore
 	}
 
 	@Override
-	public void windowIconified(WindowEvent e) {
-		// TODO Auto-generated method stub
-
+	public void windowClosed(WindowEvent event) {
+		// Ignore
 	}
 
 	@Override
-	public void windowDeiconified(WindowEvent e) {
-		// TODO Auto-generated method stub
-
+	public void windowIconified(WindowEvent event) {
+		// Ignore
 	}
 
 	@Override
-	public void windowActivated(WindowEvent e) {
-		// TODO Auto-generated method stub
-
+	public void windowDeiconified(WindowEvent event) {
+		// Ignore
 	}
 
 	@Override
-	public void windowDeactivated(WindowEvent e) {
-		// TODO Auto-generated method stub
+	public void windowActivated(WindowEvent event) {
+		// Ignore
+	}
 
+	@Override
+	public void windowDeactivated(WindowEvent event) {
+		// Ignore
 	}
 
 }
