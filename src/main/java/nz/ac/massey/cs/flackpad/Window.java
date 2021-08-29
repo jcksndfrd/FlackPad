@@ -3,7 +3,6 @@ package nz.ac.massey.cs.flackpad;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,22 +17,21 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 class Window {
-	private String appName = "FlackPad";
-	private JFrame frame;
-	private InformationBar informationBar;
-	private WindowListener winListener;
-	private Config config;
-	private FileMIME MIME = new FileMIME();
-	private FileIO fileIO;
+	private final String appName = "FlackPad";
+	private final JFrame frame;
+	private final InformationBar informationBar;
+	private final Config config;
+	private final FileMime mime = new FileMime();
+	private final FileIO fileIO;
 
-	private MenuBar menuBar;
-	private TextArea textArea;
-	private SearchBar searchBar;
-	private ScrollPane scrollPane;
-	private JScrollBar scrollbarVert;
-	private JScrollBar scrollbarHor;
-	private JPanel bottomRightCorner;
-	private JPanel bottomLeftCorner;
+	private final MenuBar menuBar;
+	private final TextArea textArea;
+	private final SearchBar searchBar;
+	private final ScrollPane scrollPane;
+	private final JScrollBar scrollbarVert;
+	private final JScrollBar scrollbarHor;
+	private final JPanel bottomRightCorner;
+	private final JPanel bottomLeftCorner;
 	
 	private int scrollBarBreadth = 13;
 
@@ -54,8 +52,7 @@ class Window {
 		frame.setIconImages(iconList);
 
 		// Add window listener
-		winListener = new WinListener(this);
-		frame.addWindowListener(winListener);
+		frame.addWindowListener(new WinListener(this));
 
 		// Add menu bar
 		menuBar = new MenuBar(this);
@@ -326,8 +323,8 @@ class Window {
 		this.file = file;
 		fileName = file == null ? "Untitled" : file.getName();
 		// Set syntax highlighting and info bar text based on file type
-		textArea.setSyntaxEditingStyle(MIME.getFileStyle(file));
-		informationBar.setInformationBarFileText(MIME.getFileStyle(file));
+		textArea.setSyntaxEditingStyle(mime.getFileStyle(file));
+		informationBar.setInformationBarFileText(mime.getFileStyle(file));
 		// Clear undo/redo history
 		textArea.discardAllEdits();
 	}

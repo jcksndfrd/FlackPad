@@ -5,7 +5,7 @@ import java.awt.event.WindowListener;
 
 class WinListener implements WindowListener {
 	
-	private Window window;
+	private final Window window;
 	
 	WinListener(Window window) {
 		this.window = window;

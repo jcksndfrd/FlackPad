@@ -15,7 +15,7 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 public class CustomScrollbar extends BasicScrollBarUI {
 	
 	  private final Dimension dimension = new Dimension(0, 0);
-	  private int orientation; // default to vertical
+	  private final int orientation; // default to vertical
 
 	  CustomScrollbar(int o) {
 		  orientation = o;

@@ -104,6 +104,9 @@
 				<configuration>
 					<outputDirectory>reports/pmd</outputDirectory>
 					<targetDirectory>reports/pmd</targetDirectory>
+					<rulesets>
+                        <ruleset>/rulesets/customrules.xml</ruleset>
+                    </rulesets>
 				</configuration>
 			</plugin>
 

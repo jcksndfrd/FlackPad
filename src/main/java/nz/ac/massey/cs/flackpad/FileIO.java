@@ -9,11 +9,16 @@ import javax.swing.JOptionPane;
 class FileIO {
 	
 	// Static variables
-	final static int SAVED = 0, NOT_SAVED = 1;
-	private final static int NOT_LOADED = -1, LOADED = 0, WRONG_TYPE = 1, IMPORTED = 2;
+	final static int SAVED = 0;
+	final static int NOT_SAVED = 1;
+	
+	private final static int NOT_LOADED = -1;
+	private final static int LOADED = 0;
+	private final static int WRONG_TYPE = 1;
+	private final static int IMPORTED = 2;
 
-	private Window window;
-	private FileMIME mime;
+	private final Window window;
+	private final FileMime mime;
 	
 	// File IO classes
 	PlainTextIO plainTextIO;
@@ -24,7 +29,7 @@ class FileIO {
 	FileIO(Window window) {
 		// Save window and FileMIME instances
 		this.window = window;
-		mime = new FileMIME();
+		mime = new FileMime();
 		
 		// Save loader instances
 		plainTextIO = new PlainTextIO();
@@ -122,7 +127,7 @@ class FileIO {
 
 	int loadFile(File file) {
 		// Get file MIME type
-		String fileMIME = mime.getFileMIME(file);
+		String fileMIME = mime.getFileMime(file);
 
 		try {
 			// File is plain text

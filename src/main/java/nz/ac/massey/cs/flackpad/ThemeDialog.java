@@ -26,12 +26,16 @@ import org.apache.commons.text.WordUtils;
 @SuppressWarnings("serial")
 class ThemeDialog extends JDialog implements ActionListener {
 
-	static int CLOSED_OPTION = -1, SAVE_OPTION = 0, CANCEL_OPTION = 1;
+	static final int CLOSED_OPTION = -1;
+	static final int SAVE_OPTION = 0;
+	static final int CANCEL_OPTION = 1;
 
 	private int option;
 
-	private Font fontChoice, defaultFont;
-	private String themeChoice, defaultTheme;
+	private Font fontChoice;
+	private final Font defaultFont;
+	private String themeChoice;
+	private final String defaultTheme;
 
 	private JList<String> fontList;
 	private JList<String> styleList;
@@ -220,7 +224,7 @@ class ThemeDialog extends JDialog implements ActionListener {
 		return buttonPanel;
 	}
 
-	void setStyleMap() {
+	private void setStyleMap() {
 		styleMap = new DualLinkedHashBidiMap<Integer, String>();
 		styleMap.put(Font.PLAIN, "Plain");
 		styleMap.put(Font.BOLD, "Bold");

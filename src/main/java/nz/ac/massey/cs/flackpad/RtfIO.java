@@ -10,8 +10,6 @@ import javax.swing.text.rtf.RTFEditorKit;
 class RtfIO {
 
 	String loadFile(File file) throws Exception {
-		String text = "";
-
 		// Get input stream, RTFEditorKit and a blank document to write to
 		FileInputStream stream = new FileInputStream(file);
 		RTFEditorKit kit = new RTFEditorKit();
@@ -20,7 +18,7 @@ class RtfIO {
 		// Write read stream data to document
 		kit.read(stream, document, 0);
 		// Get text from document
-		text = document.getText(0, document.getLength());
+		String text = document.getText(0, document.getLength());
 
 		// Close stream and return read text
 		stream.close();

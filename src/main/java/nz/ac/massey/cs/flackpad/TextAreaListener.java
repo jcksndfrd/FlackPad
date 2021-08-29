@@ -7,7 +7,7 @@ import javax.swing.event.DocumentListener;
 
 class TextAreaListener implements DocumentListener, CaretListener {
 	
-	private Window window;
+	private final Window window;
 
 	TextAreaListener(Window window) {
 		super();

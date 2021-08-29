@@ -1,24 +1,21 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipFile;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.odftoolkit.odfdom.doc.OdfTextDocument;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 class OdtIO {
 
-	String loadFile(File file) throws IOException {
+	String loadFile(File file) throws Exception {
 		// Get ODT content
 		ZipFile odt = new ZipFile(file);
 		InputStream contentStream = odt.getInputStream(odt.getEntry("content.xml"));
@@ -26,11 +23,7 @@ class OdtIO {
 
 		// Parse input stream to XML document
 		Document document;
-		try {
-			document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(contentStream);
-		} catch (ParserConfigurationException | SAXException e) {
-			throw new IOException();
-		}
+		document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(contentStream);
 
 		// Get just text nodes
 		List<Node> textNodes = getTextNodes(document, new ArrayList<Node>());
@@ -75,7 +68,7 @@ class OdtIO {
 	// Gets just text nodes
 	private static List<Node> getTextNodes(Node node, List<Node> textNodes) {
 		// Add node if it is a paragraph or heading
-		if (node.getNodeName() == "text:p" || node.getNodeName() == "text:h") {
+		if ("text:p".equals(node.getNodeName()) ||  "text:h".equals(node.getNodeName())) {
 			textNodes.add(node);
 		}
 		// Get child nodes

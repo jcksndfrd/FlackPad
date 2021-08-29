@@ -21,11 +21,13 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 class ExportDialog extends JDialog implements ActionListener {
 	
-	static int CLOSED_OPTION = -1, EXPORT_OPTION = 0, CANCEL_OPTION = 1;
+	static final int CLOSED_OPTION = -1;
+	static final int EXPORT_OPTION = 0;
+	static final int CANCEL_OPTION = 1;
 	
 	private int option = CLOSED_OPTION;
 	
-	private Frame parent;
+	private final Frame parent;
 	private File location;
 	
 	private File fileChoice;
@@ -35,7 +37,8 @@ class ExportDialog extends JDialog implements ActionListener {
 	JButton browseButton;
 	Choice formatMenu;
 	
-	JButton cancelButton, exportButton;
+	JButton cancelButton;
+	JButton exportButton;
 	
 	ExportDialog(Frame parent, File location, String fileName) {
 		super(parent, "Export as...", true);
@@ -43,9 +46,10 @@ class ExportDialog extends JDialog implements ActionListener {
 		this.parent = parent;
 		
 		if (location == null) {
-			location = new File(System.getProperty("user.home") + "/" + fileName);
+			this.location = new File(System.getProperty("user.home") + "/" + fileName);
+		} else {
+			this.location = location;
 		}
-		this.location = location;
 		
 		setBounds(100, 100, 500, 250);
 		

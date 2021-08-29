@@ -1,6 +1,7 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
+import java.util.Locale;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -36,7 +37,7 @@ public class InformationBar {
 		menu.add(filetype);
 	}
 	void setTheme(Config config) {
-		Color theme = config.getThemeName().equals("light") ? Color.decode("#990000") : Color.decode("#770BD8");
+		Color theme = "light".equals(config.getThemeName()) ? Color.decode("#990000") : Color.decode("#770BD8");
 		details.setForeground(theme);
 	}
 
@@ -46,7 +47,7 @@ public class InformationBar {
 
 	void setInformationBarFileText(String val) {
 		if (val.startsWith("text/")) {
-			filetype.setText(val.substring(5).toUpperCase());
+			filetype.setText(val.substring(5).toUpperCase(Locale.US));
 		} else {
 			filetype.setText(val);
 		}

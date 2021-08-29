@@ -5,12 +5,13 @@ import java.awt.event.ActionListener;
 
 class MenuListener implements ActionListener {
 
-	private Window window;
+	private final Window window;
 
 	MenuListener(Window window) {
 		this.window = window;
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
 
 		switch (e.getActionCommand()) {

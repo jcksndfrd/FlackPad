@@ -6,9 +6,9 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 
-public class Actions {
+class Actions {
 
-	public static void performPaste(Window window) {
+	static void performPaste(Window window) {
 		try {
 			TextArea textArea = window.getTextArea();
 			/*
@@ -32,7 +32,7 @@ public class Actions {
 
 	}
 
-	public static void performCopy(Window window) {
+	static void performCopy(Window window) {
 		try {
 			TextArea textArea = window.getTextArea();
 			StringSelection stringSelection = new StringSelection(textArea.getSelectedText());
@@ -43,7 +43,7 @@ public class Actions {
 		}
 	}
 
-	public static void performCut(Window window) {
+	static void performCut(Window window) {
 		try {
 			TextArea textArea = window.getTextArea();
 			StringSelection stringSelection = new StringSelection(textArea.getSelectedText());
@@ -55,7 +55,7 @@ public class Actions {
 		}
 	}
 
-	public static void performSelectAll(Window window) {
+	static void performSelectAll(Window window) {
 		try {
 			TextArea textArea = window.getTextArea();
 			textArea.setSelectionStart(0);
@@ -65,12 +65,12 @@ public class Actions {
 		}
 	}
 
-	public static void performFind(Window window) {
+	static void performFind(Window window) {
 		// Show find / replace bar
 		window.showFindBar();
 	}
 
-	public static void performEscapeFind(Window window) {
+	static void performEscapeFind(Window window) {
 		try {
 			if (window.getFindField().isVisible()) {
 				window.hideFindBar();
@@ -80,7 +80,7 @@ public class Actions {
 		}
 	}
 
-	public static void performFindString(Window window) {
+	static void performFindString(Window window) {
 		try {
 			if (window.getFindField().isVisible()) {
 				window.hideFindBar();
@@ -90,7 +90,7 @@ public class Actions {
 		}
 	}
 
-	public static void performDelete(Window window) {
+	static void performDelete(Window window) {
 		try {
 			window.getTextArea().replaceSelection(null);
 		} catch (Exception e) {

@@ -11,7 +11,7 @@ import javax.swing.KeyStroke;
 @SuppressWarnings("serial")
 class MenuBar extends JMenuBar {
 
-	private ActionListener menuListener;
+	private final ActionListener menuListener;
 	private Color menuBackground = Color.decode("#ffffff");
 	private Color menuItemTabForeground = Color.decode("#555555");
 
