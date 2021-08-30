@@ -81,10 +81,13 @@ class MenuListener implements ActionListener {
 				window.resetZoom();
 				break;
 			case "Line Numbers":
-				window.gutterToggle();
+				window.toggleGutter();
 				break;
 			case "Toggle Theme":
 				window.toggleTheme();
+				break;
+			case "Word Wrapping":
+				window.toggleWrapping();
 				break;
 			case "Font and Theme":
 				window.openThemeDialog();

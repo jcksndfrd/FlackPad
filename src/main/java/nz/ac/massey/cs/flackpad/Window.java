@@ -89,7 +89,7 @@ final class Window {
 				| UnsupportedLookAndFeelException error) {
 			// Ignore, use default look and feel
 		}
-		
+
 		// Set window size, visibility and to not close
 		frame.setSize(1000, 500);
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -163,7 +163,7 @@ final class Window {
 			}
 		}
 	}
-	
+
 	void print() {
 		try {
 			final JTextArea printArea = new JTextArea(getText());
@@ -175,8 +175,12 @@ final class Window {
 		}
 	}
 
-	void gutterToggle() {
+	void toggleGutter() {
 		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
+	}
+
+	void toggleWrapping() {
+		textArea.setLineWrap(!textArea.getLineWrap());
 	}
 
 	void undo() {
