@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -184,11 +185,17 @@ class MenuBar extends JMenuBar {
 		resetZoomItem.setIcon(new ImageIcon(getClass().getResource("/menuIcons/reset-zoom.png")));
 		viewMenu.add(resetZoomItem);
 
-		final JMenuItem lineNumbersItem = new JMenuItem("Line Numbers");
+		final JCheckBoxMenuItem lineNumbersItem = new JCheckBoxMenuItem("Line Numbers", true);
 		lineNumbersItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, InputEvent.CTRL_DOWN_MASK));
 		lineNumbersItem.addActionListener(menuListener);
 		lineNumbersItem.setIcon(new ImageIcon(getClass().getResource("/menuIcons/line-numbers.png")));
 		viewMenu.add(lineNumbersItem);
+
+		final JCheckBoxMenuItem wrappingItem = new JCheckBoxMenuItem("Word Wrapping", false);
+		wrappingItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U, InputEvent.CTRL_DOWN_MASK));
+		wrappingItem.addActionListener(menuListener);
+		wrappingItem.setIcon(new ImageIcon(getClass().getResource("/menuIcons/word-wrap.png")));
+		viewMenu.add(wrappingItem);
 
 		final JMenuItem themeItem = new JMenuItem("Toggle Theme");
 		themeItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK));

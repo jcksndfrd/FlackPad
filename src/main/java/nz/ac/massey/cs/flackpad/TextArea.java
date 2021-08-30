@@ -19,9 +19,11 @@ class TextArea extends RSyntaxTextArea {
 	TextArea(Window window) {
 		// Call RSyntaxTextArea constructor
 		super();
+		
 		// Set variables
 		fontSize = getFont().getSize();
 		zoomPercentage = 100;
+		
 		// Set border
 		setBorder(BorderFactory.createCompoundBorder(this.getBorder(), BorderFactory.createEmptyBorder(0, 5, 0, 5)));
 
@@ -29,6 +31,9 @@ class TextArea extends RSyntaxTextArea {
 		final TextAreaListener listener = new TextAreaListener(window);
 		getDocument().addDocumentListener(listener);
 		addCaretListener(listener);
+		
+		//
+		setWrapStyleWord(true);
 
 		// Add language support
 		LanguageSupportFactory.get().register(this);
