@@ -14,7 +14,7 @@ import org.fife.ui.rtextarea.RTextScrollPane;
 @SuppressWarnings("serial")
 public class ScrollPane extends RTextScrollPane {
 
-	private final int scrollBarBreadth = 13;
+	private static final int scrollBarBreadth = 13;
 	
 	private final JScrollBar scrollbarVert;
 	private final JScrollBar scrollbarHor;

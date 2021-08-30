@@ -19,6 +19,16 @@ final class Config {
 	private Map<String, Object> configMap = new LinkedHashMap<>();
 
 	private final Component parent;
+	
+	// Constant literal strings
+	private final static String FONTSIZELIT = "fontSize";
+	private final static String FONTFAMILYLIT = "fontFamily";
+	private final static String FONTSTYLELIT = "fontStyle";
+	private final static String THEMELIT = "theme";
+	private final static String LIGHTLIT = "light";
+	private final static String DARKLIT = "dark";
+
+
 	private Font font;
 	private MainTheme theme;
 
@@ -33,10 +43,10 @@ final class Config {
 
 	private void loadDefaults() {
 		// Default values
-		defaultsMap.put("fontFamily", "Consolas");
-		defaultsMap.put("fontStyle", Font.PLAIN);
-		defaultsMap.put("fontSize", 12);
-		defaultsMap.put("theme", "light");
+		defaultsMap.put(FONTFAMILYLIT, "Consolas");
+		defaultsMap.put(FONTSTYLELIT, Font.PLAIN);
+		defaultsMap.put(FONTSIZELIT, 12);
+		defaultsMap.put(THEMELIT, LIGHTLIT);
 	}
 
 	private void loadConfigFile() {
@@ -65,9 +75,9 @@ final class Config {
 
 	private void setFontFromMap() {
 		// Get font values
-		final Object fontFamily = configMap.get("fontFamily");
-		final Object fontStyle = configMap.get("fontStyle");
-		final Object fontSize = configMap.get("fontSize");
+		final Object fontFamily = configMap.get(FONTFAMILYLIT);
+		final Object fontStyle = configMap.get(FONTSTYLELIT);
+		final Object fontSize = configMap.get(FONTSIZELIT);
 
 		// Check font values are valid and set font
 		if (fontFamily.getClass() == String.class && fontStyle.getClass() == Integer.class
@@ -75,8 +85,8 @@ final class Config {
 			font = new Font((String) fontFamily, (Integer) fontStyle, (Integer) fontSize);
 		} else {
 			// Use default font
-			setFont(new Font((String) defaultsMap.get("fontFamily"), (int) defaultsMap.get("fontStyle"),
-					(int) defaultsMap.get("fontSize")));
+			setFont(new Font((String) defaultsMap.get(FONTFAMILYLIT), (int) defaultsMap.get(FONTSTYLELIT),
+					(int) defaultsMap.get(FONTSIZELIT)));
 			DialogUtils.error("Something went wrong when loading the configured font, using default font.", parent);
 		}
 	}
@@ -86,15 +96,15 @@ final class Config {
 		final Object themeName = configMap.get("theme");
 		// Set theme
 		if ("light".equals(themeName)) {
-			theme = new MainTheme("light");
+			theme = new MainTheme(LIGHTLIT);
 		} else if ("dark".equals(themeName)) {
-			theme = new MainTheme("dark");
+			theme = new MainTheme(DARKLIT);
 		} else {
 			// Use default theme
-			configMap.put("theme", defaultsMap.get("theme"));
-			theme = new MainTheme((String) configMap.get("theme"));
+			configMap.put("theme", defaultsMap.get(THEMELIT));
+			theme = new MainTheme((String) configMap.get(THEMELIT));
 			DialogUtils.error("Something went wrong when loading the configured theme, using default theme \""
-					+ (String) configMap.get("theme") + "\".", parent);
+					+ (String) configMap.get(THEMELIT) + "\".", parent);
 		}
 	}
 
@@ -121,9 +131,9 @@ final class Config {
 
 	void setFont(Font font) {
 		// Set font values
-		configMap.put("fontFamily", font.getFamily());
-		configMap.put("fontStyle", font.getStyle());
-		configMap.put("fontSize", font.getSize());
+		configMap.put(FONTFAMILYLIT, font.getFamily());
+		configMap.put(FONTSTYLELIT, font.getStyle());
+		configMap.put(FONTSIZELIT, font.getSize());
 		setFontFromMap();
 	}
 
@@ -132,13 +142,13 @@ final class Config {
 	}
 
 	String getThemeName() {
-		return (String) configMap.get("theme");
+		return (String) configMap.get(THEMELIT);
 	}
 
 	void setTheme(String themeName) {
 		// Check themeName is valid
-		if ("light".equals(themeName) || "dark".equals(themeName)) {
-			configMap.put("theme", themeName);
+		if (LIGHTLIT.equals(themeName) || DARKLIT.equals(themeName)) {
+			configMap.put(THEMELIT, themeName);
 			setThemeFromMap();
 		} else {
 			DialogUtils.error("Theme \"" + themeName + "\" is not a valid theme", parent);
@@ -146,12 +156,12 @@ final class Config {
 	}
 
 	Font getDefaultFont() {
-		return new Font((String) defaultsMap.get("fontFamily"), (Integer) defaultsMap.get("fontStyle"),
-				(Integer) defaultsMap.get("fontSize"));
+		return new Font((String) defaultsMap.get(FONTFAMILYLIT), (Integer) defaultsMap.get(FONTSTYLELIT),
+				(Integer) defaultsMap.get(FONTSIZELIT));
 	}
 
 	String getDefaultThemeName() {
-		return (String) defaultsMap.get("theme");
+		return (String) defaultsMap.get(THEMELIT);
 	}
 
 }
