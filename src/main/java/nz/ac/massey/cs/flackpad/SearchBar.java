@@ -14,7 +14,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
-import javax.swing.event.MenuDragMouseListener;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
