@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-final class AboutDialog {
+final class DialogAboutUtils {
 	
 	private static final Color LINK_COLOUR = Color.decode("#008787");
 	private static final Color HOVER_COLOUR = Color.decode("#009900");
 	
-	private AboutDialog() {
+	private DialogAboutUtils() {
 		throw new UnsupportedOperationException();
 	}
 	
