@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -81,11 +82,12 @@ final class Window {
 		// Add key bindings to instance
 		new KeyBinder(this);
 
+		// Set look and feel to system default
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException error) {
-			// ignore, use default look and feel
+			// Ignore, use default look and feel
 		}
 		
 		// Set window size, visibility and to not close
@@ -161,18 +163,20 @@ final class Window {
 			}
 		}
 	}
-
-	void gutterToggle() {
-		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
-	}
-
+	
 	void print() {
-		final Printer printer = new Printer();
 		try {
-			printer.printString(getText(), config.getFont());
+			final JTextArea printArea = new JTextArea(getText());
+			printArea.setWrapStyleWord(true);
+			printArea.setLineWrap(true);
+			printArea.print();
 		} catch (PrinterException error) {
 			DialogUtils.error("Something went wrong when printing", frame);
 		}
+	}
+
+	void gutterToggle() {
+		scrollPane.setLineNumbersEnabled(!scrollPane.getLineNumbersEnabled());
 	}
 
 	void undo() {
