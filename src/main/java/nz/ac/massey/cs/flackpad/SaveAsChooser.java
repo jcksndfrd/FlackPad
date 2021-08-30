@@ -22,7 +22,7 @@ class SaveAsChooser extends JFileChooser {
 
 	@Override
 	public void approveSelection() {
-		File file = getSelectedFile();
+		final File file = getSelectedFile();
 
 		if (file.exists()) {
 			if (DialogUtils.overwriteWarning(file.getName(), this) == JOptionPane.YES_OPTION) {

@@ -14,7 +14,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
-import javax.swing.event.MenuDragMouseListener;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 
@@ -112,12 +111,12 @@ public class SearchBar {
 					textArea.getHighlighter().addHighlight(offset, offset + length, painter);
 					offset = text.indexOf(searchtext, offset + 1);
 				} catch (Exception e1) {
-					System.out.println("SearchBar\\findText() - Error: Could not highlight search phrase");
+        			DialogUtils.warning("Could not highlight search phrase", textArea);
 				}
 			}
 
 		} catch (Exception err) {
-			System.out.println("SearchBar\\findText() - Error: Issue with finding text");
+			DialogUtils.warning("Could not find search phrase", textArea);
 		}
 	}
 
@@ -132,7 +131,7 @@ public class SearchBar {
 			String result = textArea.getText().replaceAll(searchtext, replacementtext);
 			textArea.setText(result);
 		} catch (Exception e) {
-			System.out.println("SearchBar\\replaceText() - Error: Could not replace occurrences of text");
+			DialogUtils.warning("Could not replace occurrences of text", textArea);
 		}
 	}
 
@@ -243,7 +242,7 @@ public class SearchBar {
 			replaceField.setVisible(false);
 			textArea.getHighlighter().removeAllHighlights();
 		} catch (Exception e) {
-			System.out.println("SearchBar\\hideFindBar() - Error: Could not hide search bar");
+			DialogUtils.warning("Could not hide search bar", textArea);
 		}
 
 	}
@@ -257,7 +256,7 @@ public class SearchBar {
 			replaceButton.setVisible(true);
 			replaceField.setVisible(true);
 		} catch (Exception e) {
-			System.out.println("SearchBar\\showFindBar() - Error: Could not show search bar");
+			DialogUtils.warning("Could not show search bar", textArea);
 		}
 	}
 

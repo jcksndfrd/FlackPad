@@ -15,7 +15,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.BadLocationException;
 
 final class Window {
-	private final String appName = "FlackPad";
+	private static final String appName = "FlackPad";
 	private final Config config;
 	private final FileMime mime = new FileMime();
 	private final FileIO fileIO;

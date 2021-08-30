@@ -16,8 +16,8 @@ final class TextActionUtils {
 	}
 
 	static void performPaste(Window window) {
+		final TextArea textArea = window.getTextArea();
 		try {
-			final TextArea textArea = window.getTextArea();
 			/*
 			 * Handle 2 cases: a. Paste with no text selected b. Paste with text selected
 			 */
@@ -35,33 +35,33 @@ final class TextActionUtils {
 
 		} catch (UnsupportedFlavorException | IOException err) {
 			// Change to error dialog
-			System.out.println("Actions\\performPaste() - Error: Could not paste from clipboard");
+			DialogUtils.warning("Could not paste from clipboard", textArea);
 		}
 
 	}
 
 	static void performCopy(Window window) {
+		final TextArea textArea = window.getTextArea();
 		try {
-			final TextArea textArea = window.getTextArea();
 			final StringSelection stringSelection = new StringSelection(textArea.getSelectedText());
 			final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 			clipboard.setContents(stringSelection, null);
 		} catch (AWTError | IllegalStateException err) {
 			// Change to error dialog
-			System.out.println("Actions\\performCopy() - Error: Could not copy selected text to clipboard");
+			DialogUtils.warning("Could not copy selected text to clipboard", textArea);
 		}
 	}
 
 	static void performCut(Window window) {
+		final TextArea textArea = window.getTextArea();
 		try {
-			final TextArea textArea = window.getTextArea();
 			final StringSelection stringSelection = new StringSelection(textArea.getSelectedText());
 			textArea.replaceSelection("");
 			final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 			clipboard.setContents(stringSelection, null);
 		} catch (AWTError | IllegalStateException err) {
 			// Change to error dialog
-			System.out.println("Actions\\performCut() - Error: Could not cut selected text");
+			DialogUtils.warning("Could not cut selected text to clipboard", textArea);
 		}
 	}
 

@@ -39,7 +39,7 @@ final class DialogAboutUtils {
                 try {
                     Desktop.getDesktop().browse(new URI("https://github.com/jcksndfrd"));
                 } catch (IOException | URISyntaxException error) {
-        			System.out.println("Dialogs\\About() - Error: Could not open URL");
+        			DialogUtils.warning("Could not open URL", parent);
                 }
             } 
             @Override
@@ -61,7 +61,7 @@ final class DialogAboutUtils {
                 try {
                     Desktop.getDesktop().browse(new URI("https://github.com/fletchthefletch"));
                 } catch (IOException | URISyntaxException error) {
-        			System.out.println("Dialogs\\About() - Error: Could not open URL");
+        			DialogUtils.warning("Could not open URL", parent);
                 }
             } 
             @Override
