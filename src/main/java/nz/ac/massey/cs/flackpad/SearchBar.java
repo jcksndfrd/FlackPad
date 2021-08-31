@@ -2,10 +2,6 @@ package nz.ac.massey.cs.flackpad;
 
 import java.awt.Color;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -31,6 +27,8 @@ public class SearchBar {
 	private JTextField findField;
 	private JTextField replaceField;
 	private Border padding;
+	
+	private SearchBarListener searchBarListener;
 
 	public SearchBar(JTextArea textArea, JMenuBar menu) {
 		this.menu = menu;
@@ -47,6 +45,8 @@ public class SearchBar {
 		this.addReplaceBar();
 		menu.add(item); // Right margin
 
+		
+		searchBarListener = new SearchBarListener(this);
 		addListenersToSearchBar();
 	}
 
@@ -120,7 +120,7 @@ public class SearchBar {
 		}
 	}
 
-	private void replaceText() {
+	void replaceText() {
 		// If there is no text in the find bar or replace bar, do not replace anything
 		if (!checkReplaceWarnings() || !checkFindWarnings()) {
 			return;
@@ -161,76 +161,44 @@ public class SearchBar {
 	}
 
 	private void addListenersToSearchBar() {
-		exitFindButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				hideFindBar();
-			}
-		});
-
+		// Set close listener
+		exitFindButton.addActionListener(searchBarListener);
 		// Set search listener
-		findField.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				findText();
-			}
-		});
-		// Set focus listener
-		findField.addFocusListener(new FocusListener() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				if (findField.getText().equals(defaultFindText)) {
-					findField.setText("");
-					findField.setForeground(Color.BLACK);
-				}
-			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (findField.getText().isEmpty()) {
-					findField.setForeground(Color.GRAY);
-					findField.setText(defaultFindText);
-				}
-			}
-		});
-		findButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				findText();
-			}
-		});
-
-		// Set replace listeners
-		replaceField.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				replaceText();
-			}
-		});
-		// set focus listener
-		replaceField.addFocusListener(new FocusListener() {
-			@Override
-			public void focusGained(FocusEvent e) {
-				if (replaceField.getText().equals(defaultReplaceText)) {
-					replaceField.setText("");
-					replaceField.setForeground(Color.BLACK);
-				}
-			}
-
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (replaceField.getText().isEmpty()) {
-					replaceField.setForeground(Color.GRAY);
-					replaceField.setText(defaultReplaceText);
-				}
-			}
-		});
-		replaceButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				replaceText();
-			}
-		});
+		findField.addActionListener(searchBarListener);
+		// Set find field listener
+		findField.addFocusListener(searchBarListener);
+		// Set find button listener
+		findButton.addActionListener(searchBarListener);
+		// Set replace listener
+		replaceField.addActionListener(searchBarListener);
+		// Set relace field listener
+		replaceField.addFocusListener(searchBarListener);
+		// Set replace button listener
+		replaceButton.addActionListener(searchBarListener);
+	}
+	void setFindField() {
+		if (findField.getText().equals(defaultFindText)) {
+			findField.setText("");
+			findField.setForeground(Color.BLACK);
+		}
+	}
+	void resetFindField() {
+		if (findField.getText().isEmpty()) {
+			findField.setText(defaultFindText);
+			findField.setForeground(Color.GRAY);
+		}
+	}
+	void setReplaceField() {
+		if (replaceField.getText().equals(defaultReplaceText)) {
+			replaceField.setText("");
+			replaceField.setForeground(Color.BLACK);
+		}
+	}
+	void resetReplaceField() {
+		if (replaceField.getText().isEmpty()) {
+			replaceField.setForeground(Color.GRAY);
+			replaceField.setText(defaultReplaceText);
+		}
 	}
 
 	void hideFindBar() {
@@ -263,8 +231,17 @@ public class SearchBar {
 	JTextField getFindField() {
 		return findField;
 	}
-
+	JTextField getReplaceField() {
+		return replaceField;
+	}
+	JButton getFindButton() {
+		return findButton;
+	}
+	JButton getReplaceButton() {
+		return replaceButton;
+	}
 	JButton getFindClose() {
 		return exitFindButton;
 	}
+
 }
