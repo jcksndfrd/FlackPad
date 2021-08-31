@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.29.0" timestamp="2021-08-31T23:27:14.385">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.29.0" timestamp="2021-09-01T00:05:30.086">
 <file name="C:\Users\Fletcher\Desktop\159.251\Assignment1\a1\251-Assignment1-2021-Jack-Fletch\src\main\java\nz\ac\massey\cs\flackpad\CustomScrollbar.java">
 <violation beginline="59" endline="69" begincolumn="3" endcolumn="3" rule="ConfusingTernary" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="CustomScrollbar" method="paintThumb" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#confusingternary" priority="3">
 Avoid if (x != y) ..; else ..;
@@ -86,88 +86,8 @@ The constant name 'scrollBarBreadth' doesn't match '[A-Z][A-Z_0-9]*'
 </violation>
 </file>
 <file name="C:\Users\Fletcher\Desktop\159.251\Assignment1\a1\251-Assignment1-2021-Jack-Fletch\src\main\java\nz\ac\massey\cs\flackpad\SearchBar.java">
-<violation beginline="16" endline="247" begincolumn="24" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanymethods" priority="3">
+<violation beginline="17" endline="230" begincolumn="24" endcolumn="1" rule="TooManyMethods" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#toomanymethods" priority="3">
 This class has too many methods, consider refactoring it.
-</violation>
-<violation beginline="17" endline="17" begincolumn="19" endcolumn="22" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="menu" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'menu' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="18" endline="18" begincolumn="20" endcolumn="27" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="textArea" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'textArea' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="23" endline="23" begincolumn="14" endcolumn="31" rule="LongVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="warningBorderWidth" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
-Avoid excessively long variable names like warningBorderWidth
-</violation>
-<violation beginline="23" endline="23" begincolumn="14" endcolumn="31" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="warningBorderWidth" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'warningBorderWidth' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="25" endline="25" begincolumn="17" endcolumn="34" rule="LongVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="defaultReplaceText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#longvariable" priority="3">
-Avoid excessively long variable names like defaultReplaceText
-</violation>
-<violation beginline="29" endline="29" begincolumn="17" endcolumn="23" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="padding" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'padding' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="31" endline="31" begincolumn="28" endcolumn="44" rule="ImmutableField" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" variable="searchBarListener" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#immutablefield" priority="3">
-Private field 'searchBarListener' could be made final; it is only initialized in the declaration or constructor.
-</violation>
-<violation beginline="36" endline="36" begincolumn="3" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="SearchBar" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'item' could be declared final
-</violation>
-<violation beginline="57" endline="57" begincolumn="70" endcolumn="78" rule="AvoidDuplicateLiterals" ruleset="Error Prone" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="addReplaceBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_errorprone.html#avoidduplicateliterals" priority="3">
-The String literal "#000099" appears 4 times in this file; the first occurrence is on line 57
-</violation>
-<violation beginline="96" endline="96" begincolumn="4" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'searchtext' could be declared final
-</violation>
-<violation beginline="97" endline="97" begincolumn="4" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'text' could be declared final
-</violation>
-<violation beginline="100" endline="100" begincolumn="4" endcolumn="35" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'length' could be declared final
-</violation>
-<violation beginline="105" endline="106" begincolumn="4" endcolumn="34" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'painter' could be declared final
-</violation>
-<violation beginline="113" endline="113" begincolumn="14" endcolumn="22" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="118" endline="118" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="findText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="129" endline="129" begincolumn="4" endcolumn="42" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'searchtext' could be declared final
-</violation>
-<violation beginline="130" endline="130" begincolumn="4" endcolumn="50" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'replacementtext' could be declared final
-</violation>
-<violation beginline="131" endline="131" begincolumn="4" endcolumn="77" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
-Local variable 'result' could be declared final
-</violation>
-<violation beginline="133" endline="133" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="replaceText" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="144" endline="144" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="checkFindWarnings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="156" endline="156" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="checkReplaceWarnings" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
-A method should have only one exit point, and that should be the last statement in the method
-</violation>
-<violation beginline="212" endline="212" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="hideFindBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-<violation beginline="226" endline="226" begincolumn="12" endcolumn="20" rule="AvoidCatchingGenericException" ruleset="Design" package="nz.ac.massey.cs.flackpad" class="SearchBar" method="showFindBar" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_design.html#avoidcatchinggenericexception" priority="3">
-Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
-</violation>
-</file>
-<file name="C:\Users\Fletcher\Desktop\159.251\Assignment1\a1\251-Assignment1-2021-Jack-Fletch\src\main\java\nz\ac\massey\cs\flackpad\SearchBarListener.java">
-<violation beginline="17" endline="17" begincolumn="42" endcolumn="42" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBarListener" method="actionPerformed" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="36" endline="36" begincolumn="37" endcolumn="37" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBarListener" method="focusGained" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
-</violation>
-<violation beginline="47" endline="47" begincolumn="35" endcolumn="35" rule="ShortVariable" ruleset="Code Style" package="nz.ac.massey.cs.flackpad" class="SearchBarListener" method="focusLost" variable="e" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#shortvariable" priority="3">
-Avoid variables with short names like e
 </violation>
 </file>
 <file name="C:\Users\Fletcher\Desktop\159.251\Assignment1\a1\251-Assignment1-2021-Jack-Fletch\src\main\java\nz\ac\massey\cs\flackpad\Window.java">
