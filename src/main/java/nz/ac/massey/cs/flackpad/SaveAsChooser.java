@@ -12,8 +12,8 @@ class SaveAsChooser extends JFileChooser {
 		super();
 	}
 
-	public SaveAsChooser(String currentDirectoryPath) {
-		super(currentDirectoryPath);
+	public SaveAsChooser(String currentDirectory) {
+		super(currentDirectory);
 	}
 
 	public SaveAsChooser(File currentDirectory) {

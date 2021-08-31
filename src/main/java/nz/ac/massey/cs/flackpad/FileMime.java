@@ -54,7 +54,7 @@ final class FileMime {
 	}
 
 	String getFileMime(File file) {
-		String fileMime = null;
+		String fileMime = "";
 		
 		// Detect MIME
 		if (file != null) {
@@ -62,7 +62,7 @@ final class FileMime {
 				fileMime = tika.detect(file);
 			} catch (IOException e) {
 				// Unable to detect MIME
-				fileMime = null;
+				fileMime = "";
 			}
 		}
 		

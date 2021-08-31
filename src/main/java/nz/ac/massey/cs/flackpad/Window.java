@@ -16,7 +16,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.BadLocationException;
 
 final class Window {
-	private static final String appName = "FlackPad";
+	private static final String APP_NAME = "FlackPad";
 	private final Config config;
 	private final FileMime mime = new FileMime();
 	private final FileIO fileIO;
@@ -36,7 +36,7 @@ final class Window {
 
 	Window() {
 		// Create JFrame and set title
-		frame = new JFrame(fileName + " - " + appName);
+		frame = new JFrame(fileName + " - " + APP_NAME);
 
 		// Add icons
 		final List<Image> iconList = new ArrayList<>();
@@ -87,7 +87,7 @@ final class Window {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException error) {
-			// Ignore, use default look and feel
+			DialogUtils.warning("Failed to load system look and feel, using default", frame);
 		}
 
 		// Set window size, visibility and to not close
@@ -151,7 +151,7 @@ final class Window {
 			if (exportDialog.showDialog() == ExportDialog.EXPORT_OPTION) {
 				switch (exportDialog.getFormatChoice()) {
 				case ".pdf":
-					fileIO.exportToPdf(textArea.getText(), appName, exportDialog.getFileChoice());
+					fileIO.exportToPdf(textArea.getText(), APP_NAME, exportDialog.getFileChoice());
 					break;
 				case ".odt":
 					fileIO.exportToOdt(textArea.getText(), exportDialog.getFileChoice());
@@ -281,7 +281,7 @@ final class Window {
 	}
 
 	void setSaved(boolean saved) {
-		frame.setTitle((saved ? "" : "*") + fileName + " - " + appName);
+		frame.setTitle((saved ? "" : "*") + fileName + " - " + APP_NAME);
 		this.saved = saved;
 	}
 
@@ -309,7 +309,7 @@ final class Window {
 	}
 
 	String getAppName() {
-		return appName;
+		return APP_NAME;
 	}
 
 	void setText(String text) {

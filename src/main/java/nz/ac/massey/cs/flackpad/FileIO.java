@@ -1,10 +1,18 @@
 package nz.ac.massey.cs.flackpad;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.UnknownHostException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.text.BadLocationException;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
+import com.itextpdf.text.DocumentException;
 
 class FileIO {
 
@@ -150,7 +158,7 @@ class FileIO {
 				loadStatus = WRONG_TYPE;
 			}
 
-		} catch (Exception error) {
+		} catch (IOException | BadLocationException | SAXException | ParserConfigurationException error) {
 			// Error loading file
 			loadStatus = NOT_LOADED;
 		}
@@ -181,8 +189,7 @@ class FileIO {
 		try {
 			PdfUtils.export(text, appName, file);
 			DialogUtils.message("Succesfully exported as \"" + file.getName() + "\"", window.getFrame());
-		} catch (Exception error) {
-			error.printStackTrace();
+		} catch (FileNotFoundException | UnknownHostException | DocumentException error) {
 			DialogUtils.error("Something went wrong when exporting to PDF", window.getFrame());
 		}
 	}
@@ -200,7 +207,7 @@ class FileIO {
 		try {
 			RtfUtils.export(text, file);
 			DialogUtils.message("Succesfully exported as \"" + file.getName() + "\"", window.getFrame());
-		} catch (Exception error) {
+		} catch (IOException | BadLocationException error) {
 			DialogUtils.error("Something went wrong when exporting to RTF", window.getFrame());
 		}
 	}
