@@ -19,7 +19,7 @@ final class Config {
 	private Map<String, Object> configMap = new LinkedHashMap<>();
 
 	private final Component parent;
-	
+
 	// Constant literal strings
 	private final static String FONTSIZELIT = "fontSize";
 	private final static String FONTFAMILYLIT = "fontFamily";
@@ -28,9 +28,8 @@ final class Config {
 	private final static String LIGHTLIT = "light";
 	private final static String DARKLIT = "dark";
 
-
 	private Font font;
-	private MainTheme theme;
+	private final MainTheme theme = new MainTheme();
 
 	Config(Component parent) {
 		// Save parent component to instance
@@ -92,19 +91,23 @@ final class Config {
 	}
 
 	private void setThemeFromMap() {
-		// Get theme value
-		final Object themeName = configMap.get("theme");
-		// Set theme
-		if ("light".equals(themeName)) {
-			theme = new MainTheme(LIGHTLIT);
-		} else if ("dark".equals(themeName)) {
-			theme = new MainTheme(DARKLIT);
-		} else {
-			// Use default theme
-			configMap.put("theme", defaultsMap.get(THEMELIT));
-			theme = new MainTheme((String) configMap.get(THEMELIT));
-			DialogUtils.error("Something went wrong when loading the configured theme, using default theme \""
-					+ (String) configMap.get(THEMELIT) + "\".", parent);
+		try {
+			// Get theme value
+			final Object themeName = configMap.get("theme");
+			// Set theme
+			if ("light".equals(themeName)) {
+				theme.setTheme(LIGHTLIT);
+			} else if ("dark".equals(themeName)) {
+				theme.setTheme(DARKLIT);
+			} else {
+				// Use default theme
+				configMap.put("theme", defaultsMap.get(THEMELIT));
+				theme.setTheme((String) configMap.get(THEMELIT));
+				DialogUtils.error("Something went wrong when loading the configured theme, using default theme \""
+						+ (String) configMap.get(THEMELIT) + "\".", parent);
+			}
+		} catch (IOException error) {
+			DialogUtils.error("Could not load theme, package may be corrupt", parent);
 		}
 	}
 

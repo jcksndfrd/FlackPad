@@ -14,7 +14,7 @@ import org.fife.ui.rtextarea.RTextScrollPane;
 @SuppressWarnings("serial")
 public class ScrollPane extends RTextScrollPane {
 
-	private static final int scrollBarBreadth = 13;
+	private static final int SCROLL_BAR_BREDTH = 13;
 	
 	private final JScrollBar scrollbarVert;
 	private final JScrollBar scrollbarHor;
@@ -51,15 +51,15 @@ public class ScrollPane extends RTextScrollPane {
 
 	private void setCustomScrollBar() {
 		// Custom Scrollbar
-		scrollbarVert.setSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-		scrollbarVert.setMaximumSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
-		scrollbarVert.setPreferredSize(new Dimension(scrollBarBreadth, Integer.MAX_VALUE));
+		scrollbarVert.setSize(new Dimension(SCROLL_BAR_BREDTH, Integer.MAX_VALUE));
+		scrollbarVert.setMaximumSize(new Dimension(SCROLL_BAR_BREDTH, Integer.MAX_VALUE));
+		scrollbarVert.setPreferredSize(new Dimension(SCROLL_BAR_BREDTH, Integer.MAX_VALUE));
 		scrollbarVert.setUI(new CustomScrollbar(0));
 
 		// Custom Scrollbar
-		scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-		scrollbarHor.setMaximumSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
-		scrollbarHor.setPreferredSize(new Dimension(Integer.MAX_VALUE, scrollBarBreadth));
+		scrollbarHor.setSize(new Dimension(Integer.MAX_VALUE, SCROLL_BAR_BREDTH));
+		scrollbarHor.setMaximumSize(new Dimension(Integer.MAX_VALUE, SCROLL_BAR_BREDTH));
+		scrollbarHor.setPreferredSize(new Dimension(Integer.MAX_VALUE, SCROLL_BAR_BREDTH));
 		scrollbarHor.setUI(new CustomScrollbar(1));
 
 		// Set corners

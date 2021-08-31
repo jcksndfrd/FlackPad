@@ -15,7 +15,7 @@ class MenuBar extends JMenuBar {
 
 	private final ActionListener menuListener;
 	private final Color menuBackground = Color.decode("#ffffff");
-	private final Color menuItemTabForeground = Color.decode("#555555");
+	private final Color menuForeground = Color.decode("#555555");
 
 	// Items that can be disabled
 	private JMenuItem undoItem;
@@ -45,7 +45,7 @@ class MenuBar extends JMenuBar {
 
 	private void addFileMenu() {
 		final JMenu fileMenu = new JMenu("File");
-		fileMenu.setForeground(menuItemTabForeground);
+		fileMenu.setForeground(menuForeground);
 		fileMenu.setMnemonic(KeyEvent.VK_F);
 
 		final JMenuItem newItem = new JMenuItem("New");
@@ -102,7 +102,7 @@ class MenuBar extends JMenuBar {
 
 	private void addEditMenu() {
 		final JMenu editMenu = new JMenu("Edit");
-		editMenu.setForeground(menuItemTabForeground);
+		editMenu.setForeground(menuForeground);
 		editMenu.setMnemonic(KeyEvent.VK_E);
 
 		undoItem = new JMenuItem("Undo");
@@ -164,7 +164,7 @@ class MenuBar extends JMenuBar {
 
 	private void addViewMenu() {
 		final JMenu viewMenu = new JMenu("View");
-		viewMenu.setForeground(menuItemTabForeground);
+		viewMenu.setForeground(menuForeground);
 		viewMenu.setMnemonic(KeyEvent.VK_V);
 
 		zoomInItem = new JMenuItem("Zoom In");
@@ -214,7 +214,7 @@ class MenuBar extends JMenuBar {
 
 	private void addHelpMenu() {
 		final JMenu helpMenu = new JMenu("Help");
-		helpMenu.setForeground(menuItemTabForeground);
+		helpMenu.setForeground(menuForeground);
 		helpMenu.setMnemonic(KeyEvent.VK_H);
 
 		final JMenuItem aboutItem = new JMenuItem("About");

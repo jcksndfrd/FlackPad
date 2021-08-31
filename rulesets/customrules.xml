@@ -12,12 +12,14 @@
 	<rule ref="category/java/bestpractices.xml">
 		<exclude name="GuardLogStatement" />
 		<exclude name="SwitchStmtsShouldHaveDefault" />
+		<exclude name="SwitchStmtsShouldHaveDefault" />
 	</rule>
 	
 	<rule ref="category/java/codestyle.xml">
 		<exclude name="MethodArgumentCouldBeFinal" />
 		<exclude name="CommentDefaultAccessModifier" />
 		<exclude name="DefaultPackage" />
+		<exclude name="AtLeastOneConstructor" />
 	</rule>
 	
 	<rule ref="category/java/design.xml">
@@ -27,6 +29,11 @@
 		<exclude name="NcssCount" />
 		<exclude name="NPathComplexity" />
 		<exclude name="LawOfDemeter" />
+		<exclude name="AvoidCatchingGenericException" />
+		<exclude name="SignatureDeclareThrowsException" />
+		<exclude name="UseUtilityClass" />
+		<exclude name="TooManyMethods" />
+		<exclude name="GodClass" />
 	</rule>
 	
 	<rule ref="category/java/errorprone.xml">

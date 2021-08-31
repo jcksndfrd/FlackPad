@@ -31,7 +31,7 @@ public class CustomScrollbar extends BasicScrollBarUI {
 	protected JButton createIncreaseButton(int orientation) {
 		return getButton();
 	}
-	
+
 	@SuppressWarnings("serial")
 	private JButton getButton() {
 		return new JButton() {
@@ -56,36 +56,34 @@ public class CustomScrollbar extends BasicScrollBarUI {
 
 		Color color;
 
-		if (!scrollbar.isEnabled()) {
-			return;
-		} else if (rectangle.width > rectangle.height && orientation == 0) {
-			return;
-		} else if (isDragging) {
-			color = Color.decode("#787878");
-		} else if (isThumbRollover()) {
-			color = Color.decode("#787878");
-		} else {
-			color = Color.decode("#565656");
+		if (scrollbar.isEnabled() || rectangle.width <= rectangle.height && orientation != 0) {
+			if (isDragging) {
+				color = Color.decode("#787878");
+			} else if (isThumbRollover()) {
+				color = Color.decode("#787878");
+			} else {
+				color = Color.decode("#565656");
+			}
+			graphics2d.setPaint(color);
+			switch (orientation) {
+			case 0:
+				graphics2d.fillRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 20, 10);
+				graphics2d.setPaint(Color.BLACK);
+				graphics2d.drawRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 20, 10);
+				break;
+			case 1:
+				graphics2d.fillRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 10, 20);
+				graphics2d.setPaint(Color.BLACK);
+				graphics2d.drawRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 10, 20);
+				break;
+			}
+			graphics2d.dispose();
 		}
-		graphics2d.setPaint(color);
-		switch (orientation) {
-		case 0:
-			graphics2d.fillRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 20, 10);
-			graphics2d.setPaint(Color.BLACK);
-			graphics2d.drawRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 20, 10);
-			break;
-		case 1:
-			graphics2d.fillRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 10, 20);
-			graphics2d.setPaint(Color.BLACK);
-			graphics2d.drawRoundRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 10, 20);
-			break;
-		}
-		graphics2d.dispose();
 	}
 
 	@Override
-	protected void setThumbBounds(int x, int y, int width, int height) {
-		super.setThumbBounds(x, y, width, height);
+	protected void setThumbBounds(int xPos, int yPos, int width, int height) {
+		super.setThumbBounds(xPos, yPos, width, height);
 		scrollbar.repaint();
 	}
 
