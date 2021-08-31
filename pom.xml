@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nz.ac.massey.cs</groupId>
 	<artifactId>nz.ac.massey.cs.flackpad</artifactId>
-	<version>0.5.10</version>
+	<version>0.6.0</version>
 
 	<properties>
 		<javaVersion>1.8</javaVersion>
@@ -105,8 +105,8 @@
 					<outputDirectory>reports/pmd</outputDirectory>
 					<targetDirectory>reports/pmd</targetDirectory>
 					<rulesets>
-                        <ruleset>/rulesets/customrules.xml</ruleset>
-                    </rulesets>
+						<ruleset>/rulesets/customrules.xml</ruleset>
+					</rulesets>
 				</configuration>
 			</plugin>
 
@@ -162,4 +162,12 @@
 
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Flack Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/jcksndfrd/251-Assignment1-2021-Jack-Fletch</url>
+		</repository>
+	</distributionManagement>
 </project>
