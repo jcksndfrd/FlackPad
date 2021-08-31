@@ -34,6 +34,7 @@
 		<exclude name="UseUtilityClass" />
 		<exclude name="TooManyMethods" />
 		<exclude name="GodClass" />
+		<exclude name="LoosePackageCoupling" />
 	</rule>
 	
 	<rule ref="category/java/errorprone.xml">
