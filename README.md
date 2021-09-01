@@ -18,16 +18,18 @@ Student ID:   19025303
 
 ## **II. Flackpad Application**
 ### *1. How to run our program*
- - Java version 1.8 or greater is required to launch this application
+ - Java version 1.8 or greater is required to run this application
  - Simply launch the FlackPad application (JAR)
+ - A conguration file will be automatically generated if one is not in the working directory
 
 ### *2. Core features*
-This application has the following core features, as per the assignment brief: 
+This application has the following core features, as per the assignment brief:
  - New, Open, Exit, Time & Date, About
  - Select, Copy, Paste & Cut, Delete
  - Save, Save As, Search
  - Print
- - Export to PDF (PDF Conversion Function)
+ - Ability to open ODT and RTF files (Saving does not overwrite the original files)
+ - Exporting to PDF (PDF Conversion Function), ODT and RTF
  - Source Code Syntax Highlighting (Theme-Based)
  - Configuration File to Save Font & Theme Options (YAML)
 
@@ -37,16 +39,14 @@ This application has the following core features, as per the assignment brief:
  - Replace Text (In conjunction with 'Search' feature)
  - Keyboard Shorcuts (Mnemonics, including additional keyboard combinations, for all listed operations)
  - Line Numbers
- - Brace Folding (Syntactical) 
+ - Brace Folding (Syntactical)
  - Dark & Light Themes
  - Editor Configuration Dialog (Fonts, Sizing, & Theme Selection)
  - Character Count
- - File Type Detection (Shown adjacent to Character Count) 
- - Redo / Undo
- - Zoom In / Zoom Out / Reset
- - Basic Autocompletion
- - RTF (Without overwriting the original file) & Exporting to RTF
- - ODT (Without overwriting the original file) & Exporting to ODT
+ - File Type Detection (Shown adjacent to Character Count)
+ - Undo / Redo
+ - Zoom In / Zoom Out / Reset Zoom
+ - Basic Autocompletion (ctrl + spacebar shotcut)
  - Custom scrollbar
  - Testing & Continuous Integration (Travis)
  - Status bar
