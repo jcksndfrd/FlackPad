@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Metrics scope="nz.ac.massey.cs.texteditor" type="Project" date="2021-08-18" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
+<Metrics scope="nz.ac.massey.cs.texteditor" type="Project" date="2021-09-01" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
    <Metric id = "VG" description ="McCabe Cyclomatic Complexity" max ="10" hint ="use Extract-method to split the method up">
-      <Values per = "method" avg = "1.703" stddev = "2.33" max = "25" maxinrange="false">
-         <Value name="actionPerformed" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="25" inrange="false"/>
-         <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="14" inrange="false"/>
+      <Values per = "method" avg = "1.673" stddev = "2.091" max = "26" maxinrange="false">
+         <Value name="actionPerformed" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="26" inrange="false"/>
+         <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="openDialog" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
          <Value name="paintThumb" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
-         <Value name="exit" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="newDoc" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="actionPerformed" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="export" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
          <Value name="loadConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="findText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="getFontFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="getThemeFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="getTextNodes" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="loadFile" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="export" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="replaceText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="setFontFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="setThemeFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="actionPerformed" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="export" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="saveWarning" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="getTextNodes" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="findText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="actionPerformed" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="performEscapeFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="performFindString" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="performPaste" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="setTheme" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="setTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="loadFile" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="performCopy" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performCut" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performSelectAll" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="getFileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="loadFile" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="loadFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="approveSelection" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="replaceText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="focusGained" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="focusLost" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="performPaste" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="saveConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="saveFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getFileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getFileStyle" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="mouseClicked" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="openBrowseDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToOdt" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToRtf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="getFileStyle" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="setInformationBarFileText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="setTheme" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!3#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!3#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!6#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!6#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="export" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="checkFindWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="checkReplaceWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="resetFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="resetReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="setFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="setReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performCopy" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performCut" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performEscapeFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performFindString" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exit" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="getText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="newDoc" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="openThemeDialog" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="print" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="updateInformationBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="updateZoomEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performDelete" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performPrint" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="saveFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="testSearch" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getDefaultFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getDefaultThemeName" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -62,45 +72,43 @@
          <Value name="setFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="createDecreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="createIncreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="paintTrack" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setThumbBounds" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="about" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="error" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="message" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="saveWarning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="warning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseEntered" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseExited" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="show" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="error" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="message" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="overwriteWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="saveWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="warning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getButtonPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getContentPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFileChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFilePanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFormatChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFormatPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="showDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="setMIMEMap" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="setMimeMap" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarZoomText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarZoomVisible" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addKeyBindings" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[#actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="bindToMainArea" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getCaretForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getCurrentLineHighlightBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterBorder" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterLineNumber" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getSelectionHighlight" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getScrollbarColor" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getSyntaxTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getTextBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getTextForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getThemeName" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="setDarkTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="setLightTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="setTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addEditMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addFileMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -114,23 +122,39 @@
          <Value name="setZoomInEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setZoomOutEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="export" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="saveFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="export" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFile" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="main" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="setCustomScrollBar" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addListenersToSearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!2#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!4#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!5#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!7#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addReplaceBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFindButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFindClose" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getReplaceButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performDelete" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performSelectAll" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getZoomPercentage" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="resetZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setFontWithZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -143,7 +167,6 @@
          <Value name="changedUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="insertUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="removeUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getButtonPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getContentPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -164,8 +187,6 @@
          <Value name="windowDeiconified" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="windowIconified" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="windowOpened" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getAppName" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFile" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFileIO" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -174,9 +195,8 @@
          <Value name="getFindField" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFrame" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getIcon" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getSearchBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getTextArea" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="gutterToggle" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="hideFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="isSaved" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="redo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -186,7 +206,9 @@
          <Value name="setSaved" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="showFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="toggleGutter" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="toggleTheme" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="toggleWrapping" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="undo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="updateCCDEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="updateUndoRedoEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -195,47 +217,43 @@
       </Values>
    </Metric>
    <Metric id = "PAR" description ="Number of Parameters" max ="5" hint ="Move invoked method or pass an object">
-      <Values per = "method" avg = "0.599" stddev = "0.84" max = "5">
+      <Values per = "method" avg = "0.607" stddev = "0.844" max = "5">
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="setThumbBounds" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="bindToMainArea" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="paintThumb" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="paintTrack" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="about" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="error" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="message" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="saveWarning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="warning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getTextNodes" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="export" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performCopy" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performCut" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performDelete" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performEscapeFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performFindString" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performPaste" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performPrint" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performSelectAll" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="export" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="show" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="error" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="message" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="overwriteWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="saveWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="warning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToOdt" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToRtf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="export" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="getTextNodes" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="saveFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="export" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="createDecreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="createIncreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseClicked" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseEntered" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseExited" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="actionPerformed" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="saveFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getFileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getFileStyle" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFileStyle" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarFileText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -243,8 +261,7 @@
          <Value name="setInformationBarZoomVisible" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[#actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setCCDEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -255,19 +272,26 @@
          <Value name="setZoomOutEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="actionPerformed" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="loadFile" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFile" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFile" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="main" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!2#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!3#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!3#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!4#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!5#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!6#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!6#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!7#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="actionPerformed" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="focusGained" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="focusLost" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performCopy" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performCut" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performDelete" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performEscapeFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performFindString" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performPaste" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performSelectAll" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setFontWithZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -276,7 +300,6 @@
          <Value name="changedUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="insertUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="removeUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="loadFile" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="actionPerformed" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="windowActivated" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -293,59 +316,73 @@
          <Value name="getDefaultFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getDefaultThemeName" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getFontFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getTheme" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getThemeFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getThemeName" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="loadConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="loadDefaults" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="saveConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="setFontFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="setThemeFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="export" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getButtonPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getContentPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getFileChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getFilePanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getFormatChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getFormatPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="openBrowseDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="showDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="openDialog" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="setMIMEMap" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="saveWarning" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="setMimeMap" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addKeyBindings" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getCaretForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getCurrentLineHighlightBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getGutterBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getGutterBorder" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getGutterLineNumber" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getSelectionHighlight" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getScrollbarColor" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getSyntaxTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getTextBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="getTextForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getThemeName" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="setDarkTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="setLightTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addEditMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addFileMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addHelpMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addViewMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getMenuListener" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="approveSelection" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="setCustomScrollBar" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addListenersToSearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addReplaceBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="checkFindWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="checkReplaceWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="findText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getFindButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFindClose" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getReplaceButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="replaceText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="resetFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="resetReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="setFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="setReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getZoomPercentage" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="resetZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="zoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="zoomIn" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="zoomOut" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getButtonPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getContentPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFontChoice" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
@@ -360,6 +397,7 @@
          <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="exit" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="export" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getAppName" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFile" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFileIO" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
@@ -368,17 +406,20 @@
          <Value name="getFindField" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getFrame" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getIcon" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="getSearchBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="getTextArea" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="gutterToggle" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="hideFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="isSaved" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="newDoc" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="openThemeDialog" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="print" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="redo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="resetZoom" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="showFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="toggleGutter" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="toggleTheme" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="toggleWrapping" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="undo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="updateCCDEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="updateInformationBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
@@ -386,61 +427,73 @@
          <Value name="updateZoomEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="zoomIn" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="zoomOut" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="loadFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="saveFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="testSearch" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NBD" description ="Nested Block Depth" max ="5" hint ="use Extract-method to split the method up">
-      <Values per = "method" avg = "1.32" stddev = "0.626" max = "4">
-         <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+      <Values per = "method" avg = "1.37" stddev = "0.65" max = "4">
+         <Value name="loadFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="findText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="performEscapeFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="performFindString" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="performPaste" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="getThemeFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="about" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="loadConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="setThemeFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="paintThumb" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="export" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="loadFile" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="export" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="addListenersToSearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="performCopy" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performCut" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performSelectAll" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getFontFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="loadConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="openDialog" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="getFileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="export" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="loadFile" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="approveSelection" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="performPaste" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="export" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="saveConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="setFontFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="setTheme" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="createDecreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="createIncreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="paintThumb" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="saveFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getFileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getFileStyle" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="getButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="mouseClicked" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="actionPerformed" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="openBrowseDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToOdt" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="exportToRtf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="saveWarning" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="getFileStyle" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="setInformationBarFileText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="addKeyBindings" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="getTextNodes" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!3#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!3#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!6#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!6#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="getTextNodes" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="saveFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="export" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="loadFile" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="checkFindWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="checkReplaceWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="replaceText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="loadFile" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="resetFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="resetReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="setFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="setReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="actionPerformed" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="focusGained" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="focusLost" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performCopy" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performCut" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performEscapeFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="performFindString" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="exit" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="newDoc" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="openThemeDialog" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="print" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="updateInformationBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="updateZoomEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performDelete" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performPrint" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="loadFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="saveFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="testSearch" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getDefaultFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getDefaultThemeName" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -450,43 +503,43 @@
          <Value name="loadDefaults" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="createDecreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="createIncreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="paintTrack" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setThumbBounds" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="error" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="message" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="saveWarning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="warning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseEntered" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="mouseExited" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="show" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="error" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="message" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="overwriteWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="saveWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="warning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getButtonPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getContentPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFileChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFilePanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFormatChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFormatPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="showDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="setMIMEMap" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="setMimeMap" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarZoomText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarZoomVisible" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[#actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="addKeyBindings" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="bindToMainArea" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getCaretForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getCurrentLineHighlightBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterBorder" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterLineNumber" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getSelectionHighlight" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getScrollbarColor" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getSyntaxTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getTextBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getTextForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getThemeName" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="setDarkTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="setLightTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addEditMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -502,22 +555,36 @@
          <Value name="setZoomOutEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="actionPerformed" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="export" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="main" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="setCustomScrollBar" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setTheme" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!2#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!4#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!5#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!7#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="addListenersToSearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="addReplaceBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFindButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFindClose" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getReplaceButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performDelete" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performSelectAll" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getZoomPercentage" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="resetZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setFontWithZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -530,7 +597,6 @@
          <Value name="changedUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="insertUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="removeUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="actionPerformed" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getButtonPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -552,8 +618,6 @@
          <Value name="windowDeiconified" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="windowIconified" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="windowOpened" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getAppName" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFile" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFileIO" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -562,9 +626,9 @@
          <Value name="getFindField" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFrame" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getIcon" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getSearchBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getTextArea" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="gutterToggle" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="hideFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="isSaved" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="redo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -574,7 +638,9 @@
          <Value name="setSaved" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="showFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="toggleGutter" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="toggleTheme" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="toggleWrapping" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="undo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="updateCCDEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="updateUndoRedoEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -585,520 +651,515 @@
    <Metric id = "CA" description ="Afferent Coupling">
       <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
          <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "CE" description ="Efferent Coupling">
-      <Values per = "packageFragment" avg = "8" stddev = "0" max = "8">
-         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+      <Values per = "packageFragment" avg = "5.5" stddev = "3.5" max = "9">
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="2"/>
       </Values>
    </Metric>
    <Metric id = "RMI" description ="Instability">
       <Values per = "packageFragment" avg = "1" stddev = "0" max = "1">
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="1"/>
       </Values>
    </Metric>
    <Metric id = "RMA" description ="Abstractness">
       <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
          <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "RMD" description ="Normalized Distance">
       <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
          <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "DIT" description ="Depth of Inheritance Tree">
-      <Values per = "type" avg = "2.136" stddev = "2.242" max = "9">
+      <Values per = "type" avg = "2.241" stddev = "2.176" max = "9">
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
       </Values>
    </Metric>
    <Metric id = "WMC" description ="Weighted methods per Class">
-      <Values per = "type" total = "293" avg = "13.318" stddev = "10.827" max = "46">
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="46"/>
-         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="29"/>
+      <Values per = "type" total = "353" avg = "12.172" stddev = "11.627" max = "51">
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="51"/>
+         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="37"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="30"/>
+         <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="27"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="26"/>
-         <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="26"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="23"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="18"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="17"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="19"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="16"/>
-         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
+         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
+         <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
       </Values>
    </Metric>
    <Metric id = "NSC" description ="Number of Children">
       <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NORM" description ="Number of Overridden Methods">
-      <Values per = "type" total = "4" avg = "0.182" stddev = "0.833" max = "4">
+      <Values per = "type" total = "7" avg = "0.241" stddev = "0.897" max = "4">
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "LCOM" description ="Lack of Cohesion of Methods">
-      <Values per = "type" avg = "0.359" stddev = "0.376" max = "0.946">
-         <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0.946"/>
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0.895"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0.846"/>
+      <Values per = "type" avg = "0.31" stddev = "0.349" max = "0.868">
+         <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0.868"/>
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0.86"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0.856"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0.8"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0.75"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0.689"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0.773"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0.75"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0.683"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="0.667"/>
-         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0.667"/>
-         <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0.619"/>
-         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0.333"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0.667"/>
+         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0.625"/>
+         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0.438"/>
+         <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0.417"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0.333"/>
+         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0.25"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NOF" description ="Number of Attributes">
-      <Values per = "type" total = "105" avg = "4.773" stddev = "6.809" max = "27">
-         <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="27"/>
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="19"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
+      <Values per = "type" total = "88" avg = "3.034" stddev = "3.783" max = "12">
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
+         <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NSF" description ="Number of Static Attributes">
-      <Values per = "type" total = "9" avg = "0.409" stddev = "1.37" max = "6">
+      <Values per = "type" total = "26" avg = "0.897" stddev = "1.749" max = "6">
+         <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NOM" description ="Number of Methods">
-      <Values per = "type" total = "156" avg = "7.091" stddev = "7.204" max = "33">
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="33"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+      <Values per = "type" total = "188" avg = "6.483" stddev = "7.403" max = "37">
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="37"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="19"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
-         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NSM" description ="Number of Static Methods">
-      <Values per = "type" total = "16" avg = "0.727" stddev = "2.093" max = "9">
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+      <Values per = "type" total = "23" avg = "0.793" stddev = "1.769" max = "8">
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "SIX" description ="Specialization Index">
-      <Values per = "type" avg = "0.121" stddev = "0.555" max = "2.667">
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2.667"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="Actions" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+      <Values per = "type" avg = "0.131" stddev = "0.491" max = "2.286">
+         <Value name="CustomScrollbar.anonymous#~getButton[" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2.286"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1.5"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="RunApp" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!2" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!3" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!4" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!5" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!6" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="SearchBar.anonymous#[!7" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="TextAreaListener" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestPlainTextUtils" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="TestSearchBar" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NOC" description ="Number of Classes">
-      <Values per = "packageFragment" total = "22" avg = "22" stddev = "0" max = "22">
-         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="22"/>
+      <Values per = "packageFragment" total = "29" avg = "14.5" stddev = "12.5" max = "27">
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="27"/>
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="2"/>
       </Values>
    </Metric>
    <Metric id = "NOI" description ="Number of Interfaces">
       <Values per = "packageFragment" total = "0" avg = "0" stddev = "0" max = "0">
          <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
+         <Value name="nz.ac.massey.cs.flackpad" package ="nz.ac.massey.cs.flackpad" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NOP" description ="Number of Packages">
-      <Value value="1"/>
+      <Value value="2"/>
    </Metric>
    <Metric id = "TLOC" description ="Total Lines of Code">
-      <Value value="1903"/>
+      <Value value="2185"/>
    </Metric>
    <Metric id = "MLOC" description ="Method Lines of Code">
-      <Values per = "method" total = "1205" avg = "7.006" stddev = "11.05" max = "74">
-         <Value name="actionPerformed" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="74"/>
-         <Value name="addListenersToSearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="62"/>
-         <Value name="about" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="57"/>
-         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="49"/>
-         <Value name="addEditMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="40"/>
-         <Value name="addFileMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="35"/>
-         <Value name="setMIMEMap" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="34"/>
-         <Value name="paintThumb" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="31"/>
-         <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="30"/>
-         <Value name="addViewMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="28"/>
-         <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="24"/>
-         <Value name="findText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="23"/>
-         <Value name="export" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="20"/>
-         <Value name="loadFile" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="18"/>
+      <Values per = "method" total = "1306" avg = "6.19" stddev = "9.027" max = "77">
+         <Value name="actionPerformed" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="77"/>
+         <Value name="addEditMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="49"/>
+         <Value name="addFileMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="44"/>
+         <Value name="addViewMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="39"/>
+         <Value name="Window" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="37"/>
+         <Value name="loadFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="35"/>
+         <Value name="setMimeMap" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="34"/>
+         <Value name="paintThumb" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="27"/>
+         <Value name="openDialog" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="20"/>
+         <Value name="show" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="18"/>
+         <Value name="export" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="18"/>
+         <Value name="export" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="17"/>
+         <Value name="findText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="17"/>
          <Value name="actionPerformed" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="17"/>
-         <Value name="loadConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="16"/>
          <Value name="getButtonPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="16"/>
-         <Value name="newDoc" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="16"/>
-         <Value name="getThemeFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
+         <Value name="loadConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
+         <Value name="setThemeFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
          <Value name="InformationBar" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
-         <Value name="addFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
-         <Value name="performPaste" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
-         <Value name="replaceText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
-         <Value name="saveConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="setTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="addReplaceBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="exit" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="openThemeDialog" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
-         <Value name="getFontFromConfig" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
-         <Value name="addKeyBindings" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
-         <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="SearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
+         <Value name="actionPerformed" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="15"/>
+         <Value name="getFilePanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+         <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+         <Value name="loadFile" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+         <Value name="addFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+         <Value name="loadFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="14"/>
+         <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
+         <Value name="performPaste" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="13"/>
+         <Value name="loadFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="12"/>
+         <Value name="setFontFromMap" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="ExportDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="addReplaceBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="checkFindWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="checkReplaceWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
          <Value name="ThemeDialog" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
          <Value name="getThemePanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
-         <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
-         <Value name="loadFile" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
+         <Value name="saveFileTest" source ="TestPlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="11"/>
+         <Value name="saveConfigFile" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
+         <Value name="setCustomScrollBar" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
          <Value name="getFontStylePanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
-         <Value name="performCut" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="saveAs" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="setDarkTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="setLightTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="openThemeDialog" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="10"/>
+         <Value name="actionPerformed" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="getFormatPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="getFileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="export" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="performCut" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
          <Value name="TextArea" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="setTheme" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
          <Value name="getFontSizePanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="toggleTheme" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
          <Value name="updateZoomEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
-         <Value name="performCopy" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="performEscapeFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="performFindString" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="saveFile" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="getTextNodes" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="checkFindWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="checkReplaceWarnings" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="testSearch" source ="TestSearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="9"/>
+         <Value name="DialogAboutUtils" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="getButtonPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="saveWarning" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="addHelpMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="export" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="getTextNodes" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="approveSelection" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="performCopy" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
          <Value name="getContentPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
          <Value name="getFontFamilyPanel" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
-         <Value name="performSelectAll" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
-         <Value name="createDecreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
-         <Value name="createIncreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
-         <Value name="getFileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
+         <Value name="newDoc" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
+         <Value name="print" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="8"/>
          <Value name="MenuBar" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
-         <Value name="addHelpMenu" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
+         <Value name="addListenersToSearchBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="7"/>
          <Value name="setTheme" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="save" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="getFileStyle" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseClicked" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="getButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="mouseClicked" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="exportToOdt" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="exportToRtf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="getFileStyle" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="export" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="loadFile" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="setTheme" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="hideFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="replaceText" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="showFindBar" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="focusGained" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="focusLost" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="toggleTheme" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="6"/>
+         <Value name="getContentPanel" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="openBrowseDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="setInformationBarFileText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="MainTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="ScrollPane" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
-         <Value name="setTheme" source ="ScrollPane.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="setStyleMap" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
+         <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="setFile" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="updateInformationBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="5"/>
          <Value name="loadDefaults" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="setFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="SearchBar.anonymous#[!3#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="SearchBar.anonymous#[!3#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="SearchBar.anonymous#[!6#focusGained" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
-         <Value name="SearchBar.anonymous#[!6#focusLost" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="addKeyBindings" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="saveFile" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="resetFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="resetReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="setFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="setReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="setTheme" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="updateSelectedOptions" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
+         <Value name="exit" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="4"/>
          <Value name="Config" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
-         <Value name="KeyBinder" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="saveWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="open" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="setTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="setCCDEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="performEscapeFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="performFindString" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="performSelectAll" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="setFontWithZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="changedUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="insertUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
          <Value name="removeUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="3"/>
+         <Value name="getDefaultFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="setThumbBounds" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="saveWarning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="mouseEntered" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="mouseExited" source ="DialogAboutUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="overwriteWarning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="showDialog" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="FileIO" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="setTheme" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="bindToMainArea" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="PdfExporter" source ="PdfExporter.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
+         <Value name="addTimeAndDate" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="resetZoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="zoom" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="zoomIn" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
@@ -1110,39 +1171,26 @@
          <Value name="updateUndoRedoEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="zoomIn" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
          <Value name="zoomOut" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="2"/>
-         <Value name="performDelete" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performFind" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getDefaultFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getDefaultThemeName" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFont" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getTheme" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getThemeName" source ="Config.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createDecreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="CustomScrollbar.anonymous#~createIncreaseButton~I[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[!2#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseEntered" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="Dialogs.anonymous#~about~QComponent;~QImageIcon;[#mouseExited" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="error" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="message" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="warning" source ="Dialogs.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="exportToPdf" source ="FileIO.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="FileMIME" source ="FileMIME.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="createDecreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="createIncreaseButton" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="CustomScrollbar.anonymous#~getButton[#getPreferredSize" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="DialogUtils" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="error" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="message" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="warning" source ="DialogUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFileChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFormatChoice" source ="ExportDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="FileMime" source ="FileMime.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarZoomText" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBarZoomVisible" source ="InformationBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="KeyBinder.anonymous#~addKeyBindings[#actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getCaretForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getCurrentLineHighlightBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterBorder" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getGutterLineNumber" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getSelectionHighlight" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="actionPerformed" source ="KeyBinder.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getScrollbarColor" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getSyntaxTheme" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getTextBackground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="getTextForeground" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getThemeName" source ="MainTheme.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getMenuListener" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setRedoEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -1151,21 +1199,29 @@
          <Value name="setZoomInEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setZoomOutEnabled" source ="MenuBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="MenuListener" source ="MenuListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="OdtUtils" source ="OdtUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PdfUtils" source ="PdfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="PlainTextUtils" source ="PlainTextUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="RtfUtils" source ="RtfUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="main" source ="RunApp.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!2#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!4#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!5#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[!7#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="SearchBar.anonymous#[#actionPerformed" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SaveAsChooser" source ="SaveAsChooser.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getFindButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFindClose" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFindField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getReplaceButton" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getReplaceField" source ="SearchBar.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="SearchBarListener" source ="SearchBarListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="TextActionUtils" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performDelete" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="performFind" source ="TextActionUtils.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getZoomPercentage" source ="TextArea.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="caretUpdate" source ="TextAreaListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFontChoice" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getThemeChoice" source ="ThemeDialog.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="WinListener" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="windowClosing" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="addTimeAndDate" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getAppName" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFile" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFileIO" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
@@ -1174,21 +1230,20 @@
          <Value name="getFindField" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getFrame" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getIcon" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="getSearchBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="getTextArea" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="gutterToggle" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="hideFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="isSaved" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="redo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setInformationBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="setText" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="showFindBar" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="toggleGutter" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
+         <Value name="toggleWrapping" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="undo" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
          <Value name="updateCCDEnable" source ="Window.java" package ="nz.ac.massey.cs.flackpad" value ="1"/>
-         <Value name="performPrint" source ="Actions.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="paintTrack" source ="CustomScrollbar.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="OdtFileLoader" source ="OdtFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
-         <Value name="TextFileLoader" source ="TextFileLoader.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="windowActivated" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="windowClosed" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
          <Value name="windowDeactivated" source ="WinListener.java" package ="nz.ac.massey.cs.flackpad" value ="0"/>
