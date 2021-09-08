@@ -55,7 +55,7 @@ final class DialogAboutUtils extends MouseAdapter {
 	    
 	    
 	    final JLabel mainMessageA = new JLabel("This application was created for a tertiary assignment in late 2021."); 
-	    final JLabel mainMessageB = new JLabel("We hope you enjoy using it at much as we enjoyed making it!");
+	    final JLabel mainMessageB = new JLabel("We hope you enjoy using it as much as we enjoyed making it!");
 	    
 	    jPanel.add(mainMessageA);	
 	    jPanel.add(mainMessageB);	
