@@ -16,7 +16,7 @@ Student ID:   19025303
 ```
 ---
 
-## **II. Flackpad Application**
+## **II. FlackPad Application**
 ### *1. How to run our program*
  - Java version 1.8 or greater is required to run this application
  - Simply launch the FlackPad application (JAR)
